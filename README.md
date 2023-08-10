@@ -1,0 +1,1 @@
+Personal coding project for school that is a replica of popular app Discord
