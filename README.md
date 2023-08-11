@@ -17,6 +17,10 @@ Personal coding project for school that is a replica of popular app Discord, by 
 - 8/11/2023
     - Combed through freeCodeCamp video to how to connect Angular and Node and eventually found out how to
     - Decided a good first goal is to create the message bar
+    - Need to do:
+        - Make index.js route, make app.js talk to Angular
+        - Fix onSubmit() error in message-box.component.html
+        - Working @ 54:41 in freeCodeCamp video
 
 Resources I used:  
 [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

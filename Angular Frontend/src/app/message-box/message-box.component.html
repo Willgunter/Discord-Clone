@@ -1,14 +1,12 @@
 <!-- class means class in css -->
 
-<form class="message box">
+<form class="message-box" (ngSubmit)="onSubmit()">
     <div class="form-control">
         <!-- Might not need the label <label for="">
           
         </label> -->
-        <!-- [(ngModel)]="text" -->
         <!-- TODO Eventually I want it to say "Message {name of channel}"-->
-        <input type="text" name="text" id="text" placeholder="Enter Text">
-
+        <input type="text" [(ngModel)]="text" name="text" id="text" placeholder="Enter Text">
     </div>
     <input type="submit" value="Send Message" class="btn btn-block"/>
 </form>

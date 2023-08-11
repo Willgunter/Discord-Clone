@@ -22,7 +22,7 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
   
   // string can be replaced with Employee probably
-  talkWithBackend(filler: string) {
+  postMessage(filler: string) {
     return this.http.post(this.apiUrl, filler);
   }
 
