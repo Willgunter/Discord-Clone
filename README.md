@@ -2,7 +2,17 @@
 
 Personal coding project for school that is a replica of popular app Discord, by me, Will Gunter
 
-Started during August 2023 in summer of rising Junior year of college
+## Timeline  
+
+
+
+- 8/10/2023
+    - Initialized Angular + Node parts + pushed to GitHub
+    - Current issue: trying to find the smallest part of having Node and Angular talk to one another
+
+- 8/11/2023
+    - Combed through freeCodeCamp video to how to connect Angular and Node and eventually found out how to
+    - Decided a good first goal is to create the message bar
 
 Resources I used:  
 [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
