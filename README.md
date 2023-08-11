@@ -2,6 +2,10 @@
 
 Personal coding project for school that is a replica of popular app Discord, by me, Will Gunter
 
+## Ideas
+
+- Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff)
+
 ## Timeline  
 
 
