@@ -1,6 +1,6 @@
 <!-- class means class in css -->
 
-<form class="message-box" (ngSubmit)="onSubmit()">
+<form #messageForm="ngForm" class="message-box" (ngSubmit)="onSubmit(messageForm)">
     <div class="form-control">
         <!-- Might not need the label <label for="">
           

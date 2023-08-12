@@ -1,5 +1,4 @@
-export class User {
+export class Message {
     _id: string | undefined;
-    name: string | undefined;
-    age: number | undefined;
+    text: string | undefined;
 }

@@ -2,6 +2,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ConfigService } from 'src/services/config.service';
 
+// used for materialize framework (makes alerts look fancy and clean)
+declare var M: any;
+
 @Component({
   selector: 'app-message-box',
   templateUrl: './message-box.component.html',
@@ -10,14 +13,18 @@ import { ConfigService } from 'src/services/config.service';
 })
 export class MessageBoxComponent {
   @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
-  text: String;
+  text: string;
 
   constructor(private configService: ConfigService) {}
 
-  onSubmit(form : NgForm) { 
+  onSubmit(form: NgForm) { // (form : NgForm) 
 
-    this.configService.postMessage(form.value).subscribe((res) => {}
-    // this.resetForm???
+    //form.value = just the text message in this case
+    this.configService.postMessage(form.value).subscribe((res) => {
+      // TODO this.resetForm???  add later once it becomes an
+      M.toast({html: 'sent', classes: 'rounded'});
+    }
+
     );
 
     if(!this.text) {

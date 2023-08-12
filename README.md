@@ -15,12 +15,20 @@ Personal coding project for school that is a replica of popular app Discord, by 
     - Current issue: trying to find the smallest part of having Node and Angular talk to one another
 
 - 8/11/2023
-    - Combed through freeCodeCamp video to how to connect Angular and Node and eventually found out how to
+    - Combed through freeCodeCamp (fCC) video to how to connect Angular and Node and eventually found out how to
     - Decided a good first goal is to create the message bar
     - Need to do to finish 1st little message box:
         - Make index.js route, make app.js talk to Angular
         - Fix onSubmit() error in message-box.component.html
         - Working @ 54:41 in freeCodeCamp video
+
+- 8/12/2023
+    - Fixed onSubmit() error in message-box.component.html
+    - Trying to make app.js talk to Angular but running
+    into a problem in testroute.js along the lines of "MessageSchema
+    is not a constructor". Sounds kinda easy to fix but idk. Tomorrow
+    I am planning on combing through more of the fCC video to see how
+    the guy manages it, maybe that will help?
     
 Resources I used:  
 [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

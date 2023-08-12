@@ -5,7 +5,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { User } from './user.model'; // TODO
+import { Message } from './user.model'; // TODO
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,15 @@ export class ConfigService {
   // in the tutorial project, this was the url
   // that we interacted with (CRUD interactions)
 
-  name: String | undefined;
+  message: Message;
   private apiUrl = 'http://localhost:3000/test';
 
   // what does private http:HttpClient service do?
   constructor(private http: HttpClient) { }
   
   // string can be replaced with Employee probably
-  postMessage(filler: string) {
-    return this.http.post(this.apiUrl, filler);
+  postMessage(message: Message) {
+    return this.http.post(this.apiUrl, message);
   }
 
 }
