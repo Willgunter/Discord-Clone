@@ -24,6 +24,7 @@ Personal coding project for school that is a replica of popular app Discord, by 
 
 - 8/12/2023
     - Fixed onSubmit() error in message-box.component.html
+    - Set up backend server
     - Trying to make app.js talk to Angular but running
     into a problem in testroute.js along the lines of "MessageSchema
     is not a constructor". Sounds kinda easy to fix but idk. Tomorrow
