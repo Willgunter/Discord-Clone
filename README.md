@@ -32,6 +32,10 @@ Personal coding project for school that is a replica of popular app Discord, by 
     maybe that will help?
     - Looking more into the issue, working theory is issue w MongoDB
     setup
+
+- 8/13/2023
+    - Looking more into issue w MongoDB. Tried lots and lots of things but still
+    making seemingly no progress. Will hopefully work on again a little later today
     
 Resources I used:  
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

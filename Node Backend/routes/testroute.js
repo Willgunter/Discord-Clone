@@ -3,7 +3,7 @@ const express = require('express');
 var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 
-var { MessageSchema } = require('../models/message');
+const { MessageModel } = require('../models/message');
 
 // => localhost:3000/test
 router.get('/', (req, res) => {
@@ -12,13 +12,19 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    var mes = new MessageSchema({
-        text: req.body.text,
-    });
-    mes.save((err, doc) => {
-        if (!err) { res.send(doc); }
-        else { console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)); }
-    });
+
+    
+saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+async function saveMessage(doc) {
+    const mes = new MessageModel({ text: req.body.text }); // text: req.body.text
+    await mes.save();
+    res.send(doc);
+}
+
+    // mes.save((err, doc) => {
+    //     if (!err) { res.send(doc); }
+    //     else { console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)); }
+    // });
 });
 
 module.exports = router;
