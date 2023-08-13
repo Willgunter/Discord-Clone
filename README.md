@@ -26,13 +26,13 @@ Personal coding project for school that is a replica of popular app Discord, by 
     - Fixed onSubmit() error in message-box.component.html
     - Set up backend server
     - Trying to make app.js talk to Angular but running
-    into a problem in testroute.js along the lines of "MessageSchema
-    is not a constructor". Sounds kinda easy to fix but idk. Tomorrow
-    I am planning on combing through more of the fCC video to see how
-    the guy manages it, maybe that will help?
+    into a problem in testroute.js titled "MessageSchema
+    is not a constructor". Tomorrow I am planning on combing 
+    through more of the fCC video to see how the guy manages it, 
+    maybe that will help?
     
 Resources I used:  
-[How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
-[GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  
-[Angular Tutorial by Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&t=3s)  
-[Angular Docs](https://angular.io/)
+- [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
+- [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  
+- [Angular Tutorial by Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&t=3s)  
+- [Angular Docs](https://angular.io/)
