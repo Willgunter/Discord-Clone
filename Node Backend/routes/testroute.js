@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     
 saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
 async function saveMessage(doc) {
-    const mes = new MessageModel({ text: req.body.text }); // text: req.body.text
+    const mes = new MessageModel({ text: req.body.text });
     await mes.save();
     res.send(doc);
 }

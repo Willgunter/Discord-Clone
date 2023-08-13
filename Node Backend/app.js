@@ -1,6 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const secrets = require('dotenv').config();
+
+const mongoKey = process.env.MONGO;
 
 // const { mongooseSignIn } = require('./db.js');
 var testRoute = require('./routes/testroute.js');
@@ -13,7 +16,7 @@ const mongoDB = "mongodb://localhost:27017/DiscordClone";
 
 main().catch((err) => console.log(err));
 async function main() {
-    await mongoose.connect(mongoDB);
+    await mongoose.connect(mongoKey);
 }
 
 mongoose.set("strictQuery", false);
@@ -22,7 +25,6 @@ mongoose.set("strictQuery", false);
 // TODO
 // TODO
 // TODO
-const mongoDBurl = "mongodb+srv://admin:adminpwd@cluster0.0tnfah7.mongodb.net/DiscordClone?retryWrites=true&w=majority";
 
 app.use(bodyParser.json());
 app.use(cors({ origin: 'http://localhost:4200' }));
