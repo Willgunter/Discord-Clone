@@ -13,14 +13,12 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     var mes = new MessageSchema({
-        body: req.body.text
+        text: req.body.text,
     });
     mes.save((err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)); }
     });
 });
-
-
 
 module.exports = router;

@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-const Model = mongoose.Schema;
-
-const MessageSchema = new Model ({
+var MessageSchema = mongoose.model('Message', {
     text: { type: String },
 })
 

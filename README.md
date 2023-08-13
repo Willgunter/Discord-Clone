@@ -30,6 +30,8 @@ Personal coding project for school that is a replica of popular app Discord, by 
     is not a constructor". Tomorrow I am planning on combing 
     through more of the fCC video to see how the guy manages it, 
     maybe that will help?
+    - Looking more into the issue, working theory is issue w MongoDB
+    setup
     
 Resources I used:  
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

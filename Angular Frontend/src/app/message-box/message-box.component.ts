@@ -17,11 +17,20 @@ export class MessageBoxComponent {
 
   constructor(private configService: ConfigService) {}
 
-  onSubmit(form: NgForm) { // (form : NgForm) 
+  resetForm(form?: NgForm) {
+    if (form)
+      form.reset();
+    this.configService.message = {
+      _id: "",
+      text: ""
+    }
+  }
 
-    //form.value = just the text message in this case
+  onSubmit(form: NgForm) {
+
+    //form.value is just referring to the text message in this case
     this.configService.postMessage(form.value).subscribe((res) => {
-      // TODO this.resetForm???  add later once it becomes an
+      this.resetForm(form);
       M.toast({html: 'sent', classes: 'rounded'});
     }
 
