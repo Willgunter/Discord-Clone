@@ -45,6 +45,14 @@ Personal coding project for school that is a replica of popular app Discord, by 
     
     - Update 2: working through a specific part of code that appears to be making it display
     to the screen under certain conditions. Currently investigating similar parts in other projects to see what I can replicate
+
+- 8/14/2023
+    - 🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉
+    
+    - (When I submit a thing in the message box and refresh the page, a new message displays in the backend along with 
+    the rest of the messages)
+
+    - Still need to figure out how to get the actual new message to display though...
     
 Resources I used:  
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

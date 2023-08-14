@@ -12,19 +12,21 @@ router.get('/', (req, res) => {
     // routes AND controller files just like in project
     // titled twilltch
 
-    saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
-    async function saveMessage() {
-        // TODO req.body.text does not work
-        const mes = new MessageModel({ text: "req.body.text" });
-        console.log(mes.text);
-        await mes.save();
-        // why is it only displaying one at a time
-        // vvv is needed? vvv
-        res.send(mes.text);
-        console.log("after");
+        saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+        async function saveMessage() {
+            // TODO req.body.text does not work
+            const mes = new MessageModel({ text: "req.body.text" });
+            await mes.save();
+            // why is it only displaying one at a time
+            // check out video
+            // vvv is needed? vvv
+            res.send(
+                // is this the part where we get all the documents from the database??
+                await MessageModel.find({}, {text:1, _id:0})
+            );
+            
+        }
         
-    }
-
 });
 
 module.exports = router;
