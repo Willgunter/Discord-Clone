@@ -8,7 +8,7 @@ Personal coding project for school that is a replica of popular app Discord, by 
 
 - *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms)
 
-- Write something about RESTful apis in resume once you get it to work more --> might be cool 
+- Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
 
 ## Timeline  
 
