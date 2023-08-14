@@ -21,11 +21,6 @@ async function main() {
 
 mongoose.set("strictQuery", false);
 
-// TODO replace string w .env variable
-// TODO
-// TODO
-// TODO
-
 app.use(bodyParser.json());
 app.use(cors({ origin: 'http://localhost:4200' }));
 

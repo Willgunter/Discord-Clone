@@ -7,24 +7,24 @@ const { MessageModel } = require('../models/message');
 
 // => localhost:3000/test
 router.get('/', (req, res) => {
-    res.send('it probably fucking works');
-    
-});
 
-router.post('/', (req, res) => {
+    // TODO: Note to self, rearrange this shit into
+    // routes AND controller files just like in project
+    // titled twilltch
 
-    
-saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
-async function saveMessage(doc) {
-    const mes = new MessageModel({ text: req.body.text });
-    await mes.save();
-    res.send(doc);
-}
+    saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+    async function saveMessage() {
+        // TODO req.body.text does not work
+        const mes = new MessageModel({ text: "req.body.text" });
+        console.log(mes.text);
+        await mes.save();
+        // why is it only displaying one at a time
+        // vvv is needed? vvv
+        res.send(mes.text);
+        console.log("after");
+        
+    }
 
-    // mes.save((err, doc) => {
-    //     if (!err) { res.send(doc); }
-    //     else { console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)); }
-    // });
 });
 
 module.exports = router;

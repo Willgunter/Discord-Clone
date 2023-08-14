@@ -6,6 +6,8 @@ Personal coding project for school that is a replica of popular app Discord, by 
 
 - Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff)
 
+- *Eventually* rearrange routes into routes and controller files like in node project called "twilltch"
+
 ## Timeline  
 
 
@@ -36,6 +38,13 @@ Personal coding project for school that is a replica of popular app Discord, by 
 - 8/13/2023
     - Looking more into issue w MongoDB. Tried lots and lots of things but still
     making seemingly no progress. Will hopefully work on again a little later today
+
+    - Update: got it to not give an error.
+    However, it is still not displaying on 
+    localhost3000/test, which is strange. Will do even more digging later.
+    
+    - Update 2: working through a specific part of code that appears to be making it display
+    to the screen under certain conditions. Currently investigating similar parts in other projects to see what I can replicate
     
 Resources I used:  
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

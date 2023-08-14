@@ -31,7 +31,7 @@ export class MessageBoxComponent {
     //form.value is just referring to the text message in this case
     this.configService.postMessage(form.value).subscribe((res) => {
       this.resetForm(form);
-      M.toast({html: 'sent', classes: 'rounded'});
+      M.toast({html: 'Message sent', classes: 'rounded', timeOut: 1});
     }
 
     );
@@ -43,6 +43,8 @@ export class MessageBoxComponent {
 
     const newMessage = this.text;
 
+    // TODO where is the message going?
+    // Probably the next step in this journey
     this.onAddMessage.emit(newMessage);
 
     this.text = '';
