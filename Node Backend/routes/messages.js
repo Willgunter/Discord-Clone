@@ -9,9 +9,9 @@ const message_controller = require("../controllers/messageController");
 // TODO rename message controller to 
 // something more appropriate
 
-router.get("/", message_controller.index);
+router.post("/", message_controller.index);
 
-router.post("/", message_controller.post);
+// router.post("/", message_controller.post);
 
 // LETS NOT WORK ON ROUTING UNTIL WE AT LEAST FIGURE OUT HOW TO ADD A MESSAGE
 // ALSO, WE HAVE TO DO THE ROUTING IN ANGULAR DUMBASS

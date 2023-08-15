@@ -5,7 +5,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Message } from './user.model'; // TODO
+import { Message } from './user.model';
 
 @Injectable({
   providedIn: 'root'

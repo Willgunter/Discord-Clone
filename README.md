@@ -73,6 +73,13 @@ like it could be just a button where it Deletes it from the collection and it re
 
     - Still working on req.body.text is undefined problem...
     
+- 8/15/2023
+    - Actually fixed weird glitch where .env
+    was still able to be seen (command: git rm --cached .env)
+
+    - Next small problem: figure out why exports.post in messageController is not being read (might help with req.body.text)
+    (or we could like just focus on req.body.text)
+
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  
