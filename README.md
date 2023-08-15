@@ -1,8 +1,8 @@
 ## Stack: MongoDB, Express, Angular, Node.js
 
-Personal coding project for school that is a replica of popular app Discord, by me, Will Gunter
+An independent coding project for my resume, serving as a replica of the widely used platform Discord
 
-## Ideas
+## Ideas (check when completed)
 
 - Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff)
 *will work on when I can display a freaking message*
@@ -17,11 +17,17 @@ Personal coding project for school that is a replica of popular app Discord, by 
 like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
 
 - ideas for server names: 
-    - skewl or something??? (I hate skewl)
-        - updates on whether hell is frozen over or not???
-    - gym or something?
-    - Some sort of boys only / no girls allowed club
-    
+
+    - server1
+        - Skewl or something??? (I hate skewl)
+            - updates on whether hell is frozen over or not???
+
+    - server2
+        - Gym or something?
+
+    - server3
+        - Some sort of boys only / no girls allowed club
+
 ## Timeline  
 
 - 8/10/2023
@@ -43,7 +49,7 @@ like it could be just a button where it Deletes it from the collection and it re
 
 - 8/12/2023
 
-    - Fixed onSubmit() error in message-box.component.html
+    - __Fixed onSubmit() error in message-box.component.html__
 
     - Set up backend server
 
@@ -74,11 +80,14 @@ like it could be just a button where it Deletes it from the collection and it re
     - Still working on req.body.text is undefined problem...
     
 - 8/15/2023
-    - Actually fixed weird glitch where .env
-    was still able to be seen (command: git rm --cached .env)
+    - __Fixed weird glitch where .env was still able to be seen (command: git rm --cached .env)__ 
 
     - Next small problem: figure out why exports.post in messageController is not being read (might help with req.body.text)
     (or we could like just focus on req.body.text)
+
+    - Update on both exports.post and req.body.text problems: with req.body.text, it has to be inside of a post request, not a get request, and with exports.post you have to use an outside source (Postman in this case) to read post requests for some reason
+
+    - Still need to figure out how to display it on the frontend tho
 
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
