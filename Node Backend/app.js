@@ -6,7 +6,8 @@ const secrets = require('dotenv').config();
 const mongoKey = process.env.MONGO;
 
 // const { mongooseSignIn } = require('./db.js');
-var testRoute = require('./routes/testroute.js');
+var indexRouter = require('./routes/index');
+var messagesRouter = require('./routes/messages');
 
 const app = express();
 
@@ -26,6 +27,8 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 
 app.listen(3000, () => console.log('Server started at port : 3000'));
 
-app.use('/test', testRoute); // not the problem
+app.use('/', indexRouter);
+
+app.use('/messages', messagesRouter);
 
 module.exports = app;

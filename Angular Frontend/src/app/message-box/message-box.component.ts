@@ -47,6 +47,7 @@ export class MessageBoxComponent {
     // Probably the next step in this journey
     this.onAddMessage.emit(newMessage);
 
+    // vvv does this do anything vvv
     this.text = '';
   }
 
