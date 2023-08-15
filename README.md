@@ -7,6 +7,8 @@ Personal coding project for school that is a replica of popular app Discord, by 
 - Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff)
 *will work on when I can display a freaking message*
 
+- Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*
+
 - *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *currently working on*
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
@@ -68,6 +70,8 @@ like it could be just a button where it Deletes it from the collection and it re
     the rest of the messages)
 
     - Still need to figure out how to get the actual new message to display though...
+
+    - Still working on req.body.text is undefined problem...
     
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
