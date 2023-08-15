@@ -5,14 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
-import { MessageBoxComponent } from './message-box/message-box.component';
+import { MessageBoxComponent } from './components/message-box/message-box.component';
+import { MainComponent } from './components/main/main.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    MessageBoxComponent
+    MessageBoxComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

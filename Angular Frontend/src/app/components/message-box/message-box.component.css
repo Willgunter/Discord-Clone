@@ -1,0 +1,23 @@
+
+/** in general */
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+.message-form {
+    max-width: 650px;
+    margin: 40px auto;
+    border: 1px solid steelblue;
+}
+
+.input-box {
+    max-width: 400px;
+    margin: 30px auto;
+    overflow: auto;
+    max-height: 300px;
+    border: 1px solid steelblue;
+    padding: 30px;
+    border-radius: 5px;
+}

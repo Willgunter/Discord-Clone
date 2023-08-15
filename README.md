@@ -89,6 +89,8 @@ like it could be just a button where it Deletes it from the collection and it re
 
     - Still need to figure out how to display it on the frontend tho
 
+    - Started work on organization of frontend. Current task is trying to figure out how to put the send message button right beside the input message form
+
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  
