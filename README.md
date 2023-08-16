@@ -4,12 +4,12 @@ An independent coding project for my resume, serving as a replica of the widely 
 
 ## Ideas (check when completed)
 
-- Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff)
-*will work on when I can display a freaking message*
+- ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff)
+*will work on when I can display a freaking message*✅✅✅
 
 - Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*
 
-- *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *currently working on*
+- *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
 
