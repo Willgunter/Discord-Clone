@@ -11,18 +11,23 @@
 */
 
 .message-form {
+
+    /* Note: position needs to be relative so send button calibrates off of correct element*/
+    position: relative;
+
+    height: 45px;
+
+    /* message form is the red thing that contains both the input box and the send message button */
     /** goal: make messageform at the bottom 
     /* of the page */
-    /* max-width: 650px; */
-    /* position: relative; */
     /* temporary thing, will probably break 
     once we introduce div for message box */
-    margin-top: 400px;
     /* max-height: 300px; */
     /* margin: 30px auto; */
     /* TODO: red border = contains message 
     form + send button on right */
-    border: 1px solid rgb(195, 69, 49); 
+    margin-bottom: 0px;
+    /* border: 1px solid rgb(195, 69, 49);  */
 }
 
 .btn-block {
@@ -32,13 +37,16 @@
 
 .input-box {
     /* max-width: 300px; */
-    margin: 30px auto;
-    overflow: auto;
+    /* margin: 100px; */
+    height: 44px;
+    overflow: hidden;
     max-height: 300px;
+    /* height: 3px; */
     /* TODO: eventually make border invisible,
     we just have it for visibility purposes 
     right now */
-    border: 1px solid steelblue;
-    padding: 30px;
+    padding: 10px;
+    margin-right: 60px;
     border-radius: 8px;
+    border: 1px solid steelblue;
 }

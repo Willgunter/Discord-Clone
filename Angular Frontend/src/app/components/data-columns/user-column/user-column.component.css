@@ -1,5 +1,7 @@
 .user-column {
     position: absolute;
+    /* overflow: hidden gets rid of scroll bar (problem we have been having) (actually, plot twist, no it does not  */
+    overflow: hidden; 
     /* float: right; */
     width: 225px;
     right: 0;

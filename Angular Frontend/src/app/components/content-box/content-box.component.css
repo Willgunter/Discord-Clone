@@ -1,0 +1,6 @@
+.content-box {
+    /* Note: height is probably exactly level w actual message box (on my laptop screen anyway) */
+    /* TODO: make height adjustable for any screen (and make the columns reach the bottom w/o scroll bar appearing */
+    height: 615px;
+    border: 1px solid steelblue;
+}

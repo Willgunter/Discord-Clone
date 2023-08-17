@@ -99,6 +99,11 @@ like it could be just a button where it Deletes it from the collection and it re
     - Found out how to do the thing where the main box fills both the left and right sides. Next step: resize message box to be similar to discord and also figure out how to get "send message"
     button to display next to message box
 
+- 8/17/2023
+    - Less time today bc marching band camp, but still made some progress
+
+    - made content box componnt (main area where messages will be displayed) and made ui closer to discords ui (only really works on my laptop screens display tho) 
+
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  

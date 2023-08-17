@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ServerColumnComponent } from './components/data-columns/server-column/server-column.component';
 import { ChannelColumnComponent } from './components/data-columns/channel-column/channel-column.component';
 import { UserColumnComponent } from './components/data-columns/user-column/user-column.component';
+import { ContentBoxComponent } from './components/content-box/content-box.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { UserColumnComponent } from './components/data-columns/user-column/user-
     ServerColumnComponent,
     ChannelColumnComponent,
     UserColumnComponent,
+    ContentBoxComponent,
   ],
   imports: [
     BrowserModule,
