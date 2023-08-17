@@ -107,6 +107,9 @@ like it could be just a button where it Deletes it from the collection and it re
     - **Fixed problem where I couldn't get send message button to be next to input message form**
     
     - Next step: have messages display to the content box area (then work on routing)
+    
+    - Update: currently working on above, but can't even get messages to send to MongoDB
+    properly. Tried to fix that and now am getting actual errors (how did we step backwards?)
 
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

@@ -23,6 +23,4 @@ router.post("/", message_controller.post);
 // POST request for general chat for server 1
 // router.post("/:<server1>/:general");
 
-// 
-
 module.exports = router;

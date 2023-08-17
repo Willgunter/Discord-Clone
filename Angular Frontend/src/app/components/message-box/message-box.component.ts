@@ -28,10 +28,10 @@ export class MessageBoxComponent {
 
   onSubmit(form: NgForm) {
 
-    // form.value is just referring to the text message in this case
+    // currently only sends it to MongoDB (and might not even do that...)
     this.configService.postMessage(form.value).subscribe((res) => {
-      this.resetForm(form);
-      M.toast({html: 'Message sent', classes: 'rounded', timeOut: 1});
+      // this.resetForm(form);
+      M.toast({html: 'Message sent', classes: 'rounded'});
     }
 
     );
