@@ -102,7 +102,11 @@ like it could be just a button where it Deletes it from the collection and it re
 - 8/17/2023
     - Less time today bc marching band camp, but still made some progress
 
-    - Made content box component (main area where messages will be displayed) and made ui closer to discords ui (only really works on my laptop screens display tho) 
+    - Made content box component (main area where messages will be displayed) and made ui closer to discords ui (only really works on my laptop screens display tho). 
+
+    - **Fixed problem where I couldn't get send message button to be next to input message form**
+    
+    - Next step: have messages display to the content box area (then work on routing)
 
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
