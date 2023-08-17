@@ -49,7 +49,7 @@ like it could be just a button where it Deletes it from the collection and it re
 
 - 8/12/2023
 
-    - __Fixed onSubmit() error in message-box.component.html__
+    - **Fixed onSubmit() error in message-box.component.html**
 
     - Set up backend server
 
@@ -80,7 +80,7 @@ like it could be just a button where it Deletes it from the collection and it re
     - Still working on req.body.text is undefined problem...
     
 - 8/15/2023
-    - __Fixed weird glitch where .env was still able to be seen (command: git rm --cached .env)__ 
+    - **Fixed weird glitch where .env was still able to be seen (command: git rm --cached .env)**
 
     - Next small problem: figure out why exports.post in messageController is not being read (might help with req.body.text)
     (or we could like just focus on req.body.text)
@@ -92,6 +92,11 @@ like it could be just a button where it Deletes it from the collection and it re
     - Started work on organization of frontend. Current task is trying to figure out how to put the send message button right beside the input message form
 
     - Update: made tremendous progress of organizing main frontend page. Next task is of couse putting the send message button right beside the input message form
+
+- 8/16/2023
+    - Less time today bc coming back home & haircut & shopping
+
+    - Found out how to do the thing where the main box fills both the left and right sides
 
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

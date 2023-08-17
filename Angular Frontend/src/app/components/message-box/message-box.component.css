@@ -14,7 +14,7 @@
     /** goal: make messageform at the bottom 
     /* of the page */
     /* max-width: 650px; */
-    position: relative;
+    /* position: relative; */
     /* temporary thing, will probably break 
     once we introduce div for message box */
     margin-top: 400px;
@@ -31,7 +31,7 @@
 }
 
 .input-box {
-    max-width: 200px;
+    /* max-width: 300px; */
     margin: 30px auto;
     overflow: auto;
     max-height: 300px;

@@ -1,0 +1,6 @@
+.server-column {
+    float: left;
+    width: 75px;
+    height: 660px; 
+    border: 1px solid steelblue;
+}

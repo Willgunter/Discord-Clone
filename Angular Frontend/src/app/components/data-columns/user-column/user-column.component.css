@@ -1,0 +1,9 @@
+.user-column {
+    position: absolute;
+    /* float: right; */
+    width: 225px;
+    right: 0;
+    top: 0;
+    height: 660px;
+    border: 1px solid steelblue;
+}
