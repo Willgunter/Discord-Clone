@@ -111,6 +111,8 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update: currently working on above, but can't even get messages to send to MongoDB
     properly. Tried to fix that and now am getting actual errors (how did we step backwards?)
 
+    - Update 2 (literally 11pm the night b4 day 2 band camp): **fixed problem where it won't connect to MongoDB (.connect means the connection url (username + pwd), not the the connection string (thing w 2710 whatever + name of database))**
+
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  

@@ -3,13 +3,21 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const secrets = require('dotenv').config();
 
-const mongoKey = process.env.MONGO;
+const { mongoose } = require('./db.js');
 
-const { mongooseSignIn } = require('./db.js');
 var indexRouter = require('./routes/index.js');
 var messagesRouter = require('./routes/messages.js');
 
 const app = express();
+
+// const mongoose = require('mongoose');
+mongoose.set("strictQuery", false);
+// const mongoDB = "mongodb://localhost:27017/DiscordClone";
+
+// main().catch((err) => console.log(err));
+// async function main() {
+//     await mongoose.connect(mongoKey);
+// }
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true,}),);
