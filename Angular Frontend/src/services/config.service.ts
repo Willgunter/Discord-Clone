@@ -15,15 +15,20 @@ export class ConfigService {
   // in the tutorial project, this was the url
   // that we interacted with (CRUD interactions)
 
-  message: Message;
-  private apiUrl = 'http://localhost:3000/test';
+  selectedMessage: Message;
+  messages: Message[];
+  readonly apiUrl = 'http://localhost:3000/messages';
 
   // what does private http:HttpClient service do?
   constructor(private http: HttpClient) { }
   
   // string can be replaced with Employee probably
-  postMessage(message: Message) {
-    return this.http.post(this.apiUrl, message);
+  postMessage(selectedMessage: Message) {
+    return this.http.post(this.apiUrl, selectedMessage);
+  }
+
+  getMessageList() {
+    return this.http.get(this.apiUrl);
   }
 
 }

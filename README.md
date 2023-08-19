@@ -113,6 +113,13 @@ like it could be just a button where it Deletes it from the collection and it re
 
     - Update 2 (literally 11pm the night b4 day 2 band camp): **fixed problem where it won't connect to MongoDB (.connect means the connection url (username + pwd), not the the connection string (thing w 2710 whatever + name of database))**
 
+- 8/18/2023
+    - Current problem: typing a message + pressing send is not sending the message (what is it doing?) (Sln: keep watching the video)
+
+    - Update: made the url correct in config.service.ts file and therefore whenever I type message + press send, the backend server updates, but still cannot display it in the console
+
+    - Update: can't focus for some reason (bc im blasting music) and that kinda messed up my focus session for tonight. Currently @ ~52:07, maybe that will help us display data (please actually watch the video next time).
+
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  
