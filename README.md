@@ -70,7 +70,7 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update 2: working through a specific part of code that appears to be making it display to the screen under certain conditions. Currently investigating similar parts in other projects to see what I can replicate
 
 - 8/14/2023
-    - 🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉
+    - **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉**
     
     - (When I submit a thing in the message box and refresh the page, a new message displays in the backend along with 
     the rest of the messages)
@@ -137,7 +137,7 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update: found out where the backend server not starting problem is (messageController.js, apparently MessageModel.find() is not a valid line) 
 
     - Update 2: **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉** Messages will now display in the content-box 
-    in the frontend. (however the messages have no scroll bar and currently go above and below the message input box lol)
+    in the frontend. (however the messages have no scroll bar and currently go above and below the message input box lol) currently working on getting messages to have a scroll bar lol, should hopefully be not as difficult
 
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
