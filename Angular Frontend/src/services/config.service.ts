@@ -23,13 +23,13 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
   
   // string can be replaced with Employee probably
-  postMessage(newMessage: Message) {
+  postMessage(selectedMessage: Message) {
     console.log("postMessage being read");
-    return this.http.post(this.apiUrl, newMessage);
+    return this.http.post(this.apiUrl, selectedMessage);
   }
 
   getMessageList() {
-    console.log("getMessageList being read");
+    // console.log("getMessageList being read");
     return this.http.get(this.apiUrl);
   }
 

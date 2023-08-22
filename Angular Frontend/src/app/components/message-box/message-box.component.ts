@@ -39,6 +39,9 @@ export class MessageBoxComponent implements OnInit {
     // how is console.log not even being read
 
     console.log("this is being read");
+    // this.configService.postMessage(form.value).subscribe((res) => {
+
+    // });
 
     // currently only sends it to MongoDB (and might not even do that...)
     // theory: .subscribe is deprecated and therefore need to write in try 
@@ -54,7 +57,7 @@ export class MessageBoxComponent implements OnInit {
     // };
 
     this.configService.getMessageList().subscribe((res) => { // form.value
-      console.log("this is being read"); // this is *not* being read
+      // console.log("this is being read"); // this is *not* being read
       this.resetForm(form);
       this.refreshMessageList();
       M.toast({html: 'Message sent', classes: 'rounded'});

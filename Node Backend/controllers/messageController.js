@@ -13,15 +13,7 @@ exports.index = asyncHandler(async (req, res, next) => {
         async function saveMessage() {
             // TODO why is this not working
             // TODO req.body.text does not work. It keeps being displayed as undefined
-            // res.send(await MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(1));
-            MessageModel.find();
-            // const [ messageThing ] = await Promise.all([ MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(4).exec()]); 
-            // console.log("test");
-            
-            // res.render("index", messageThing); // TODO what does this even do
-            // res.send(messageThing) works for some reason???
-
-            // res.send(messageThing);
+            res.send(await MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(8));
 
         }
                 

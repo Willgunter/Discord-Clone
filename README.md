@@ -134,6 +134,11 @@ like it could be just a button where it Deletes it from the collection and it re
     - Found the part in the video where it actually solves the problem, tried that and it did not work. Now 
     the backend server is like not loading or something like how does that even work
 
+    - Update: found out where the backend server not starting problem is (messageController.js, apparently MessageModel.find() is not a valid line) 
+
+    - Update 2: **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉** Messages will now display in the content-box 
+    in the frontend. (however the messages have no scroll bar and currently go above and below the message input box lol)
+
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  

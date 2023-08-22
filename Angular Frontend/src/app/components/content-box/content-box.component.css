@@ -4,3 +4,7 @@
     height: 615px;
     border: 1px solid steelblue;
 }
+
+.messages {
+    Overflow-x: scroll;
+}

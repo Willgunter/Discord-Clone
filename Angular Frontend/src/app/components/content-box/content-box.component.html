@@ -1,11 +1,12 @@
 <div class="content-box">
     <p>content-box works! (and main-column does too!)</p>
+
     <table>
         <thead>
             <th>Message:</th>
 
         </thead>
-        <tr *ngFor="let mes of configService.messages">
+        <tr *ngFor="let mes of configService.messages" class="messages">
             <td>{{mes.text}}</td>
         </tr>
     </table>
