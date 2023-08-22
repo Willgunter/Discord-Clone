@@ -9,11 +9,20 @@ const { body, validationResult} = require("express-validator");
 // => localhost:3000/messages
 exports.index = asyncHandler(async (req, res, next) => {
     
-    saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+    saveMessage().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
             // TODO why is this not working
             // TODO req.body.text does not work. It keeps being displayed as undefined
-            res.send(await MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(1));
+            // res.send(await MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(1));
+            MessageModel.find();
+            // const [ messageThing ] = await Promise.all([ MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(4).exec()]); 
+            // console.log("test");
+            
+            // res.render("index", messageThing); // TODO what does this even do
+            // res.send(messageThing) works for some reason???
+
+            // res.send(messageThing);
+
         }
                 
     // where we get all the messages from mongo + send all the messages to the backend (*very important*)
@@ -22,21 +31,22 @@ exports.index = asyncHandler(async (req, res, next) => {
 
 });
 
-// Note: has to be read through Postman for now for some reason
+// TODO not a todo but has to be read through Postman for now for some reason
 exports.post = asyncHandler(async (req, res, next) => {
 
     saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
 
-            const mes = new MessageModel({
-                text: req.body.text,
-            })
+            const mes = new MessageModel({ text: req.body.text });
 
-            await mes.save(); 
+            // shouldn't it go through like the "sendMessage"
+            // parts instead of only this part?
+            console.log("post");
+            mes.save(); // await mes.save();
 
             console.log("Message: " + mes.text);
 
-            res.send(mes.text);
+            res.send(mes.text); // mes.text // doc
 
         }
 

@@ -5,7 +5,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Message } from './user.model';
+import { Message } from './message.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,11 +23,13 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
   
   // string can be replaced with Employee probably
-  postMessage(selectedMessage: Message) {
-    return this.http.post(this.apiUrl, selectedMessage);
+  postMessage(newMessage: Message) {
+    console.log("postMessage being read");
+    return this.http.post(this.apiUrl, newMessage);
   }
 
   getMessageList() {
+    console.log("getMessageList being read");
     return this.http.get(this.apiUrl);
   }
 

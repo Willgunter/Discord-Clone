@@ -9,7 +9,9 @@ const message_controller = require("../controllers/messageController");
 // TODO rename message controller to 
 // something more appropriate
 
-router.get("/", message_controller.index);
+router.get("/", message_controller.index); // render something might have something 
+// to do with the anglar docs idk???
+// why is this being called twice???
 
 router.post("/", message_controller.post);
 

@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
+// is used to interact w http (interact w backend I think??)
 const cors = require('cors');
 const secrets = require('dotenv').config();
 
@@ -21,6 +23,8 @@ mongoose.set("strictQuery", false);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true,}),);
+
+// specifies which server to set it to or something
 app.use(cors({ origin: 'http://localhost:4200' }));
 
 app.listen(3000, () => console.log('Server started at port : 3000'));

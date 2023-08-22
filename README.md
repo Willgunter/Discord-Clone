@@ -118,7 +118,21 @@ like it could be just a button where it Deletes it from the collection and it re
 
     - Update: made the url correct in config.service.ts file and therefore whenever I type message + press send, the backend server updates, but still cannot display it in the console
 
-    - Update: can't focus for some reason (bc im blasting music) and that kinda messed up my focus session for tonight. Currently @ ~52:07, maybe that will help us display data (please actually watch the video next time).
+    - Update: can't focus for some reason (bc im blasting music) and that kinda messed up my focus session for tonight. Currently @ ~52:07, maybe that will help us display data (please actually watch the video next time). Watched video, followed instructions and code is not working as intended. Maybe it has to do w the div heirarchy in message-box?
+
+
+- 8/19/2023
+    - Update: Apparently "Message send" displays and an empty message is pushed when the button is pushed w empty text, how is that possible???
+
+    - theory: .subscribe is deprecated --> replacing w try catch or whatever 
+    oh wait but onSubmit() isnt even being read so Im going after like the wrong problem I think
+
+- 8/21/2023
+    - Update: Digging deeper into the problem, looking around in both frontend and backend to see what code is and is not being read.
+
+- 8/22/2023
+    - Found the part in the video where it actually solves the problem, tried that and it did not work. Now 
+    the backend server is like not loading or something like how does that even work
 
 ## Resources   
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

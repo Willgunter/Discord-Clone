@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { ConfigService } from 'src/services/config.service';
-import { Message } from 'src/services/user.model';
+import { Message } from 'src/services/message.model';
 
 
 // used for materialize framework (makes alerts look fancy and clean)
@@ -14,7 +14,7 @@ declare var M: any;
   styleUrls: ['./message-box.component.css'],
   providers: [ConfigService],
 })
-export class MessageBoxComponent {
+export class MessageBoxComponent implements OnInit {
   @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
   text: string;
 
@@ -36,14 +36,29 @@ export class MessageBoxComponent {
 
   onSubmit(form: NgForm) {
 
+    // how is console.log not even being read
+
+    console.log("this is being read");
+
     // currently only sends it to MongoDB (and might not even do that...)
-    this.configService.postMessage(form.value).subscribe((res) => {
+    // theory: .subscribe is deprecated and therefore need to write in try 
+    // catch or whatever idk what to title this
+    // WORRY ABOUT LATER
+    // idkMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+    // async function idkMessage() { 
+    //   console.log("this is being read"); // this is *not* being read
+    //   this.resetForm(form);
+    //   this.refreshMessageList();
+    //   M.toast({html: 'Message sent', classes: 'rounded'});
+
+    // };
+
+    this.configService.getMessageList().subscribe((res) => { // form.value
+      console.log("this is being read"); // this is *not* being read
       this.resetForm(form);
       this.refreshMessageList();
       M.toast({html: 'Message sent', classes: 'rounded'});
-    }
-
-    );
+    });
 
     if(!this.text) {
       alert('Please add a message');
@@ -67,7 +82,5 @@ export class MessageBoxComponent {
       this.configService.messages = res as Message[];
     });
   }
-
-
 
 }
