@@ -1,6 +1,7 @@
-## Stack: MongoDB, Express, Angular, Node.js
+## Description
 
-An independent coding project for my resume, serving as a replica of the widely used platform Discord
+An independent coding project for my resume, serving as a replica of the widely used platform Discord  
+Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 ## Ideas (check when completed)
 
@@ -139,7 +140,7 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update 2: **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉** Messages will now display in the content-box 
     in the frontend. (however the messages have no scroll bar and currently go above and below the message input box lol) currently working on getting messages to have a scroll bar lol, should hopefully be not as difficult
 
-## Resources   
+## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  
 - [Angular Tutorial by Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&t=3s)  
