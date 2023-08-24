@@ -6,5 +6,7 @@
 }
 
 .messages {
-    Overflow-x: scroll;
+    /* scroll bar might have something to do here */
+    Height: 25 px;
+    Overflow-y: scroll;
 }
