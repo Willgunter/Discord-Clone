@@ -3,10 +3,12 @@
     /* TODO: make height adjustable for any screen (and make the columns reach the bottom w/o scroll bar appearing */
     height: 615px;
     border: 1px solid steelblue;
+    Overflow-y: scroll;
 }
 
 .messages {
     /* scroll bar might have something to do here */
-    Height: 25 px;
+    Height: 150 px;
     Overflow-y: scroll;
+    /* border: red; */
 }

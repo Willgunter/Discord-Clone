@@ -12,6 +12,7 @@ import { ServerColumnComponent } from './components/data-columns/server-column/s
 import { ChannelColumnComponent } from './components/data-columns/channel-column/channel-column.component';
 import { UserColumnComponent } from './components/data-columns/user-column/user-column.component';
 import { ContentBoxComponent } from './components/content-box/content-box.component';
+import { OrganizationComponent } from './components/organization/organization.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ContentBoxComponent } from './components/content-box/content-box.compon
     ChannelColumnComponent,
     UserColumnComponent,
     ContentBoxComponent,
+    OrganizationComponent,
   ],
   imports: [
     BrowserModule,

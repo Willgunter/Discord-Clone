@@ -24,10 +24,10 @@ like it could be just a button where it Deletes it from the collection and it re
             - updates on whether hell is frozen over or not???
 
     - server2
-        - Gym or something?
+        - Gym
 
     - server3
-        - Some sort of boys only / no girls allowed club
+        - Boys only club
 
 ## Timeline  
 
@@ -132,13 +132,21 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update: Digging deeper into the problem, looking around in both frontend and backend to see what code is and is not being read.
 
 - 8/22/2023
-    - Found the part in the video where it actually solves the problem, tried that and it did not work. Now 
-    the backend server is like not loading or something like how does that even work
+    - Found the part in the video where it actually solves the problem, tried that and it did not work. Now the backend server is like not loading or something like how does that even work
 
     - Update: found out where the backend server not starting problem is (messageController.js, apparently MessageModel.find() is not a valid line) 
 
-    - Update 2: **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉** Messages will now display in the content-box 
-    in the frontend. (however the messages have no scroll bar and currently go above and below the message input box lol) currently working on getting messages to have a scroll bar lol, should hopefully be not as difficult
+    - Update 2: **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉** Messages will now display in the content-box in the frontend. (however the messages have no scroll bar and currently go above and below the message input box lol) currently working on getting messages to have a scroll bar lol, should hopefully be not as difficult
+
+- 8/25/2023
+    - **🎉🎉🎉🎉🍻🍻Made scroll bar🍻🍻🎉🎉🎉🎉** I played around with the html and apparently I was attaching the overflow css tag in the wrong html object --> also used borders to help vizualize how the content-box object was divided up on screen
+    (still need postman to send messages tho...)
+
+    Proceeding to work on routing - will work on getting messages to send without postman later (not a priority, but could also likely be an easy fix (1:01:49 in the video))
+
+- 8/26/2023
+    - Got routing to start working: made different routes for the different servers and different routes for the channels within each server. Right now it all really displays the same thing so tailoring each link and each set of messages for each server and channel is going to be the next step in the process
+
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

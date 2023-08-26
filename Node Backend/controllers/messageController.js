@@ -13,7 +13,7 @@ exports.index = asyncHandler(async (req, res, next) => {
         async function saveMessage() {
             // TODO why is this not working
             // TODO req.body.text does not work. It keeps being displayed as undefined
-            res.send(await MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(8));
+            res.send(await MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(20));
 
         }
                 

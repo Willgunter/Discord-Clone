@@ -6,8 +6,8 @@
             <th>Message:</th>
 
         </thead>
-        <tr *ngFor="let mes of configService.messages" class="messages">
-            <td>{{mes.text}}</td>
+        <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+            <td >{{mes.text}}</td> <!-- style="border:1px solid black;" -->
         </tr>
     </table>
 </div>
