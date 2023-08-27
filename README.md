@@ -10,6 +10,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
+- add wildcard route / 404 page / redirects (should be extremely easy I just have a more pressing task rn)
+
 - *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
@@ -146,6 +148,8 @@ like it could be just a button where it Deletes it from the collection and it re
 
 - 8/26/2023
     - Got routing to start working: made different routes for the different servers and different routes for the channels within each server. Right now it all really displays the same thing so tailoring each link and each set of messages for each server and channel is going to be the next step in the process
+
+    - Update: trying to use if statements in combination with obtaining current route value in order to display channel links and whatnot (might also have to do something with user-column and main message box as well): I think I found out how to obtain current route value
 
 
 ## Resources I used

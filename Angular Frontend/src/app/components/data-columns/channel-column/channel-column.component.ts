@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-channel-column',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ChannelColumnComponent {
 
+    currentRoute: string;
+    // router: Router;
+
+    // how to get access to router
+
 }
+
