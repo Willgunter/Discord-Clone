@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { NavigationEnd, Router } from '@angular/router';
 
 import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/services/message.model';
@@ -8,16 +9,19 @@ import { Message } from 'src/services/message.model';
 // used for materialize framework (makes alerts look fancy and clean)
 declare var M: any;
 
+
 @Component({
-  selector: 'app-message-box',
-  templateUrl: './message-box.component.html',
-  styleUrls: ['./message-box.component.css'],
-  providers: [ConfigService],
+    selector: 'app-message-box',
+    templateUrl: './message-box.component.html',
+    styleUrls: ['./message-box.component.css'],
+    providers: [ConfigService],
 })
 export class MessageBoxComponent implements OnInit {
-  @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
-  text: string;
+    
+    @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
+    text: string;
 
+    
   constructor(private configService: ConfigService) {}
 
   ngOnInit() {

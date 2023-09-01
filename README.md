@@ -151,9 +151,22 @@ like it could be just a button where it Deletes it from the collection and it re
 
     - Update: trying to use if statements in combination with obtaining current route value in order to display channel links and whatnot (might also have to do something with user-column and main message box as well): I think I found out how to obtain current route value
 
+    Update: the way I found out did not work as I intended and I am going back
+    to the drawing board
+
+- 8/31/2023
+
+    - I am picking back up where I started and am browsing through the wiki and I learned about "template" objects in Angular. Maybe this can help me with trying to display different databases to the respective routes? Backup option: try to learn more about Angular services and see how they can help? Or Structural directives (apparently structural directives are basically ng templates in disguise)? New idea: have like a global variable and have it update every time we change the route (but how would we detect changes in routes?)
+
+    - Update: found out how to detect navigation changes. small problem, it updates like 10 times every time I change pages. Also, it doesn't detect which server I am in
+
+    - Update: found out a thing that works. Still updates like 10 times every time I change pages, but will probably find a solution around that. Still not quite at custumizing it for each server tho
+
+    - Update: Made big progress today w/ finding out how to get current route. Now all I need to do is find out how to use *ngIf statements properly
+
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
-- [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)  
+- [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)
 - [Angular Tutorial by Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&t=3s)  
 - [Angular Docs](https://angular.io/)
