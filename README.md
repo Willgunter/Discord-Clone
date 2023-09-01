@@ -144,14 +144,14 @@ like it could be just a button where it Deletes it from the collection and it re
     - **🎉🎉🎉🎉🍻🍻Made scroll bar🍻🍻🎉🎉🎉🎉** I played around with the html and apparently I was attaching the overflow css tag in the wrong html object --> also used borders to help vizualize how the content-box object was divided up on screen
     (still need postman to send messages tho...)
 
-    Proceeding to work on routing - will work on getting messages to send without postman later (not a priority, but could also likely be an easy fix (1:01:49 in the video))
+    - Proceeding to work on routing - will work on getting messages to send without postman later (not a priority, but could also likely be an easy fix (1:01:49 in the video))
 
 - 8/26/2023
     - Got routing to start working: made different routes for the different servers and different routes for the channels within each server. Right now it all really displays the same thing so tailoring each link and each set of messages for each server and channel is going to be the next step in the process
 
     - Update: trying to use if statements in combination with obtaining current route value in order to display channel links and whatnot (might also have to do something with user-column and main message box as well): I think I found out how to obtain current route value
 
-    Update: the way I found out did not work as I intended and I am going back
+    - Update: the way I found out did not work as I intended and I am going back
     to the drawing board
 
 - 8/31/2023
