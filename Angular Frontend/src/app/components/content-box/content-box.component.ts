@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component } from '@angular/core';
 
 import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/services/message.model';
@@ -13,39 +12,9 @@ import { Message } from 'src/services/message.model';
 })
 export class ContentBoxComponent {
 
-    currentRoute: String;
-
-    isSchool: Boolean;
-
-  constructor(public configService: ConfigService, private _router: Router) { 
     
-    this._router.events.subscribe((val) =>
-        {
-            
-        if (val instanceof NavigationEnd) {
 
-            this.currentRoute = this._router.url;
-
-            if (this.currentRoute == "/skewl/welcome") {
-                this.isSchool = true;
-            } else {
-                this.isSchool = false;
-            }
-
-            console.log(this.currentRoute)
-        }
-
-        else {
-            console.log("failure");
-        };
-        
-    }
-        
-        // console.log(' newline: %b', val instanceof NavigationEnd)
-        // console.log("test")
-    )
-
-  }
+  constructor(public configService: ConfigService) {}
 
   ngOnInit() {
     this.refreshMessageList();

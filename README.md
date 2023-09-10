@@ -178,6 +178,12 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Also, thing to note: for some reason it is really easy to become focused at the house during the evening times (7pm-10pm + beyond) hopefully I can use this to my advantage in the future
 
+- 9/9/2023
+
+    - Moved detect router code from component-box.component.ts to main.component.ts in order to give message-box and content-box access to current route values and in order to not need duplicate code (currently I don't know how to transmit values from one component to another)
+
+    - Losing ability to focus pretty badly so next step is to continue 1) adding current server and channel data to message when we send the message in message-box and 2)
+    filtering message data according to current server and channel value in content-box. I am doing this by putting the current route detection code in main.Content.html and relaying the current route value into the app-content-box and message-box components in main.component.html. Currently not exactly sure how to do this.
 
 
 ## Resources I used

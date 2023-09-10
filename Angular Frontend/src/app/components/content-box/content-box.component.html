@@ -9,7 +9,7 @@
             Next we need to custumize it if we are on a specific server. This would be
             the next big step we are working on -->
 
-            <div *ngIf="isSchool">
+            <!-- <div *ngIf="isSchool"> -->
                 <!-- <div if is skewl welcome>
 
                 </div>
@@ -19,7 +19,7 @@
                 <div if is skewl server-specific>
 
                 </div> -->
-            </div>
+            <!-- </div> -->
             <!-- <div *ngIf="is bicep bicep">
                 <div if is skewl welcome>
 
@@ -44,18 +44,19 @@
                 </div>
             </div> -->
 
-
-
         </thead>
+
+        <!-- basically the code for displaying only messages of a certain server (can easily be applied to channels as well) -->
         <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
             <div *ngIf="mes.server==='defaultserver'">
 
-                <td >{{mes.text}}</td>
+                <td>{{mes.text}}</td>
             </div>
 
             <!-- how to check for only messages with a specific server / channel? -->
             <!-- have 9 different post requests (ex: postskewlwelcome, postskewlgeneral postboysonlywelcome...)
             in the message controller file? -->
+            <!-- next step: figure out how to send a message with its current server and channel -->
 
         </tr>
     </table>

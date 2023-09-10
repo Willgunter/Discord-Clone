@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { NavigationEnd, Router } from '@angular/router';
 
 import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/services/message.model';
@@ -21,8 +20,8 @@ export class MessageBoxComponent implements OnInit {
     @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
     text: string;
 
-    
-  constructor(private configService: ConfigService) {}
+
+  constructor(public configService: ConfigService) {}
 
   ngOnInit() {
     this.resetForm();
