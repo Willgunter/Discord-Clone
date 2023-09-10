@@ -34,7 +34,9 @@ export class MessageBoxComponent implements OnInit {
       form.reset();
     this.configService.selectedMessage = {
       _id: "",
-      text: ""
+      text: "",
+      server: "",
+      channel: "",
     }
   }
 
@@ -80,6 +82,7 @@ export class MessageBoxComponent implements OnInit {
 
     // vvv does this do anything vvv
     this.text = '';
+    // I think it might reset the text value?
 
   }
 

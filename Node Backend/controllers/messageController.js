@@ -13,7 +13,7 @@ exports.index = asyncHandler(async (req, res, next) => {
         async function saveMessage() {
             // TODO why is this not working
             // TODO req.body.text does not work. It keeps being displayed as undefined
-            res.send(await MessageModel.find({}, {text:1, _id:0}).sort({_id:-1}).limit(20));
+            res.send(await MessageModel.find({}, {text:1, server:1, _id:0}).sort({_id:-1}).limit(20));
 
         }
                 
@@ -29,7 +29,13 @@ exports.post = asyncHandler(async (req, res, next) => {
     saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
 
-            const mes = new MessageModel({ text: req.body.text });
+            const mes = new MessageModel({ 
+                text: req.body.text,
+                // TODO: get current server and channel and replace "defaultserver/channel" with it here when
+                // it comes time to work more on the messages
+                server: "defaultserver",
+                channel: "defaultchannel",
+            });
 
             // shouldn't it go through like the "sendMessage"
             // parts instead of only this part?
@@ -38,7 +44,7 @@ exports.post = asyncHandler(async (req, res, next) => {
 
             console.log("Message: " + mes.text);
 
-            res.send(mes.text); // mes.text // doc
+            res.send(mes.text); // mes.text doc
 
         }
 

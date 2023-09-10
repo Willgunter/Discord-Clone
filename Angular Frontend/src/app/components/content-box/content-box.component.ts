@@ -13,8 +13,9 @@ import { Message } from 'src/services/message.model';
 })
 export class ContentBoxComponent {
 
-
     currentRoute: String;
+
+    isSchool: Boolean;
 
   constructor(public configService: ConfigService, private _router: Router) { 
     
@@ -22,7 +23,15 @@ export class ContentBoxComponent {
         {
             
         if (val instanceof NavigationEnd) {
+
             this.currentRoute = this._router.url;
+
+            if (this.currentRoute == "/skewl/welcome") {
+                this.isSchool = true;
+            } else {
+                this.isSchool = false;
+            }
+
             console.log(this.currentRoute)
         }
 
@@ -48,6 +57,7 @@ export class ContentBoxComponent {
     this.configService.getMessageList().subscribe((res) => {
       // what tf does this line even do
       this.configService.messages = res as Message[];
+
     });
   }
 }

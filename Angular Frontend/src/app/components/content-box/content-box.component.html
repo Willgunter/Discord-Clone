@@ -4,25 +4,59 @@
         <thead>
             <th>Messages:</th>
 
-            <p>{{currentRoute}}</p>
-
             <!-- goal: if server is in school, display icky, else, display not icky -->
             <!-- or literally some other simple thing just to get familiar w *ngIf. 
-            Next we need to custumise it if we are on a specific server. This would be
+            Next we need to custumize it if we are on a specific server. This would be
             the next big step we are working on -->
-            <!-- <div *ngIf="currentRoute; then else notschool">
-                icky
+
+            <div *ngIf="isSchool">
+                <!-- <div if is skewl welcome>
+
+                </div>
+                <div if is skewl general>
+
+                </div>
+                <div if is skewl server-specific>
+
+                </div> -->
             </div>
-            <ng-template #school>
-                icky
-            </ng-template>
-        
-            <ng-template #not school>
-                not icky
-            </ng-template> -->
+            <!-- <div *ngIf="is bicep bicep">
+                <div if is skewl welcome>
+
+                </div>
+                <div if is skewl general>
+
+                </div>
+                <div if is skewl server-specific>
+
+                </div>
+            </div>
+
+            <div *ngIf="is boys only">
+                <div if is skewl welcome>
+
+                </div>
+                <div if is skewl general>
+
+                </div>
+                <div if is skewl server-specific>
+
+                </div>
+            </div> -->
+
+
+
         </thead>
         <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
-            <td >{{mes.text}}</td> <!-- style="border:1px solid black;" -->
+            <div *ngIf="mes.server==='defaultserver'">
+
+                <td >{{mes.text}}</td>
+            </div>
+
+            <!-- how to check for only messages with a specific server / channel? -->
+            <!-- have 9 different post requests (ex: postskewlwelcome, postskewlgeneral postboysonlywelcome...)
+            in the message controller file? -->
+
         </tr>
     </table>
 </div>

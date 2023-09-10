@@ -5,8 +5,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 ## Ideas (check when completed)
 
-- ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff)
-*will work on when I can display a freaking message*✅✅✅
+- ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
@@ -16,10 +15,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
 
-- Should I add delete functionality to messages? I really don't want to because that would maybe take time? would it really though?
-like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
+- Should I add delete functionality to messages? I really don't want to because that would maybe take time? would it really though? like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
 
-- ideas for server names: 
+- ✅✅✅ideas for server names: 
 
     - server1
         - Skewl or something??? (I hate skewl)
@@ -29,7 +27,7 @@ like it could be just a button where it Deletes it from the collection and it re
         - Gym
 
     - server3
-        - Boys only club
+        - Boys only club✅✅✅
 
 ## Timeline  
 
@@ -83,6 +81,7 @@ like it could be just a button where it Deletes it from the collection and it re
     - Still working on req.body.text is undefined problem...
     
 - 8/15/2023
+
     - **Fixed weird glitch where .env was still able to be seen (command: git rm --cached .env)**
 
     - Next small problem: figure out why exports.post in messageController is not being read (might help with req.body.text)
@@ -97,12 +96,13 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update: made tremendous progress of organizing main frontend page. Next task is of couse putting the send message button right beside the input message form
 
 - 8/16/2023
+
     - Less time today bc coming back home & haircut & shopping
 
-    - Found out how to do the thing where the main box fills both the left and right sides. Next step: resize message box to be similar to discord and also figure out how to get "send message"
-    button to display next to message box
+    - Found out how to do the thing where the main box fills both the left and right sides. Next step: resize message box to be similar to discord and also figure out how to get "send message" button to display next to message box
 
 - 8/17/2023
+
     - Less time today bc marching band camp, but still made some progress
 
     - Made content box component (main area where messages will be displayed) and made ui closer to discords ui (only really works on my laptop screens display tho). 
@@ -117,6 +117,7 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update 2 (literally 11pm the night b4 day 2 band camp): **fixed problem where it won't connect to MongoDB (.connect means the connection url (username + pwd), not the the connection string (thing w 2710 whatever + name of database))**
 
 - 8/18/2023
+
     - Current problem: typing a message + pressing send is not sending the message (what is it doing?) (Sln: keep watching the video)
 
     - Update: made the url correct in config.service.ts file and therefore whenever I type message + press send, the backend server updates, but still cannot display it in the console
@@ -125,15 +126,18 @@ like it could be just a button where it Deletes it from the collection and it re
 
 
 - 8/19/2023
+
     - Update: Apparently "Message send" displays and an empty message is pushed when the button is pushed w empty text, how is that possible???
 
     - theory: .subscribe is deprecated --> replacing w try catch or whatever 
     oh wait but onSubmit() isnt even being read so Im going after like the wrong problem I think
 
 - 8/21/2023
+
     - Update: Digging deeper into the problem, looking around in both frontend and backend to see what code is and is not being read.
 
 - 8/22/2023
+
     - Found the part in the video where it actually solves the problem, tried that and it did not work. Now the backend server is like not loading or something like how does that even work
 
     - Update: found out where the backend server not starting problem is (messageController.js, apparently MessageModel.find() is not a valid line) 
@@ -141,12 +145,14 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update 2: **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK🍻🍻🎉🎉🎉🎉** Messages will now display in the content-box in the frontend. (however the messages have no scroll bar and currently go above and below the message input box lol) currently working on getting messages to have a scroll bar lol, should hopefully be not as difficult
 
 - 8/25/2023
+
     - **🎉🎉🎉🎉🍻🍻Made scroll bar🍻🍻🎉🎉🎉🎉** I played around with the html and apparently I was attaching the overflow css tag in the wrong html object --> also used borders to help vizualize how the content-box object was divided up on screen
     (still need postman to send messages tho...)
 
     - Proceeding to work on routing - will work on getting messages to send without postman later (not a priority, but could also likely be an easy fix (1:01:49 in the video))
 
 - 8/26/2023
+
     - Got routing to start working: made different routes for the different servers and different routes for the channels within each server. Right now it all really displays the same thing so tailoring each link and each set of messages for each server and channel is going to be the next step in the process
 
     - Update: trying to use if statements in combination with obtaining current route value in order to display channel links and whatnot (might also have to do something with user-column and main message box as well): I think I found out how to obtain current route value
@@ -163,6 +169,15 @@ like it could be just a button where it Deletes it from the collection and it re
     - Update: found out a thing that works. Still updates like 10 times every time I change pages, but will probably find a solution around that. Still not quite at custumizing it for each server tho
 
     - Update: Made big progress today w/ finding out how to get current route. Now all I need to do is find out how to use *ngIf statements properly
+
+- 9/1/2023
+    
+    - Used a boolean variable to show if current route is a certain route (ex: skewl), which proved to be successful in working with *ngIf statements
+
+    - Now am figuring out how to organize the 8 other mongodb collections so I can start storing messages for multiple servers / channels and didn't find out a good way to do that. Instead I created a way where I store the current server and channel in the message object itself and use mongodb commands to filter out messages w a certain server / channel for each respective server and channel. For this, I do need to eventually figure out how to get the current server and channel to come through to the backend though. Hopefully that shouldn't be too much of a problem. I might also have to use 9 different post requests to filter it by server and channel but even if that does sound redundant and kind of dumb and there is probably a way easier and less complex way to do it, I am kind of ok with it because I am still learning.
+
+    - Also, thing to note: for some reason it is really easy to become focused at the house during the evening times (7pm-10pm + beyond) hopefully I can use this to my advantage in the future
+
 
 
 ## Resources I used
