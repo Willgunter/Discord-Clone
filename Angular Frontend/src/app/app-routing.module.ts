@@ -27,6 +27,7 @@ const routes: Routes = [
         ],
 
     },
+    
     // { path: 'skewl/general', component: OrganizationComponent},
     // { path: 'skewl/server-specific', component: OrganizationComponent},
 

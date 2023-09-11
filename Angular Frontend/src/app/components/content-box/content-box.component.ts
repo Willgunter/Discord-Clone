@@ -12,8 +12,6 @@ import { Message } from 'src/services/message.model';
 })
 export class ContentBoxComponent {
 
-    
-
   constructor(public configService: ConfigService) {}
 
   ngOnInit() {

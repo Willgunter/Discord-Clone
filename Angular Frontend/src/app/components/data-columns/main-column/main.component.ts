@@ -9,31 +9,33 @@ import { ConfigService } from 'src/services/config.service';
 })
 export class MainComponent {
     
-    currentRoute: String;
+    currentRoute: string;
 
     isSchool: Boolean;
 
     constructor(public configService: ConfigService, private _router: Router) {
-    
-    this._router.events.subscribe((val) =>
-        {
+
+        this.configService.getMessage.subscribe(msg => this.currentRoute = msg);;
+
+        this._router.events.subscribe((val) =>
+            {
             
-        if (val instanceof NavigationEnd) {
+            if (val instanceof NavigationEnd) {
 
-            this.currentRoute = this._router.url;
+                this.currentRoute = this._router.url;
 
-            if (this.currentRoute == "/skewl/welcome") {
-                this.isSchool = true;
-            } else {
-                this.isSchool = false;
-            }
+                if (this.currentRoute == "/skewl/welcome") {
+                    this.isSchool = true;
+                } else {
+                    this.isSchool = false;
+                }
 
-            console.log(this.currentRoute)
+            console.log(this.currentRoute);
         }
 
-        else {
-            console.log("failure");
-        };
+            else {
+                console.log("failure");
+            };
         
     }
         
@@ -42,4 +44,9 @@ export class MainComponent {
     )
 
     }
+
+    updateMessage() {
+        this.configService.setMessage(this.currentRoute);
+    }
+
 }

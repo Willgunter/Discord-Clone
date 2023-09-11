@@ -185,9 +185,14 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Losing ability to focus pretty badly so next step is to continue 1) adding current server and channel data to message when we send the message in message-box and 2)
     filtering message data according to current server and channel value in content-box. I am doing this by putting the current route detection code in main.Content.html and relaying the current route value into the app-content-box and message-box components in main.component.html. Currently not exactly sure how to do this.
 
+- 9/11/2023
+
+    - Trying to transmit currentroute data from main to content box and message box. Found an online guide (see Resources) on how to do it and working through method 4. will probably try to do method 1 instead when I next get the chance
+
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)
 - [Angular Tutorial by Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&t=3s)  
 - [Angular Docs](https://angular.io/)
+- [Online Guide](https://www.samarpaninfotech.com/blog/methods-to-share-data-between-angular-components/#h-method-4-unrelated-components-via-a-service)
