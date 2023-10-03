@@ -7,26 +7,11 @@ const routes: Routes = [
     // Note: may need to add a component that contains all of the components
     // in order to get all the important components to display in each
     // route (I hope that makes sense)
-    { // skewl redirects --> skewl/general
-        path: 'skewl', 
-        component: OrganizationComponent,
-        children: [
-            {
-                path: 'welcome',
-                component: OrganizationComponent,
-            },
-            {
-                path: 'general',
-                // component: MainComponent,
-                component: OrganizationComponent,
-            },
-            {
-                path: 'server-specific',
-                component: OrganizationComponent,
-            },
-        ],
-
-    },
+    // TODO: start here to delete things and start with a different method
+    // skewl redirects --> skewl/general
+    { path: 'skewl/welcome', component: OrganizationComponent},
+    { path: 'skewl/general', component: OrganizationComponent},
+    { path: 'skewl/server-specific', component: OrganizationComponent},
     
     // { path: 'skewl/general', component: OrganizationComponent},
     // { path: 'skewl/server-specific', component: OrganizationComponent},

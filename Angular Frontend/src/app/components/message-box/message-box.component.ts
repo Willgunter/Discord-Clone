@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { ConfigService } from 'src/services/config.service';
@@ -20,6 +20,18 @@ export class MessageBoxComponent implements OnInit {
     @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
     text: string;
 
+    // Boolean(s) for state of server
+    @Input() isSchoolWelcome: Boolean;
+    @Input() isSchoolGeneral: Boolean;
+    @Input() isSchoolSpecific: Boolean;
+
+    @Input() isGymWelcome: Boolean;
+    @Input() isGymGeneral: Boolean;
+    @Input() isGymSpecific: Boolean;
+
+    @Input() isThirdWelcome: Boolean;
+    @Input() isThirdGeneral: Boolean;
+    @Input() isThirdSpecific: Boolean;
 
   constructor(public configService: ConfigService) {}
 

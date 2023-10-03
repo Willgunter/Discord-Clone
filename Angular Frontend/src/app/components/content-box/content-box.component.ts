@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/services/message.model';
@@ -11,6 +11,19 @@ import { Message } from 'src/services/message.model';
   providers: [ConfigService]
 })
 export class ContentBoxComponent {
+
+    // booleans
+    @Input() isSchoolWelcome: Boolean;
+    @Input() isSchoolGeneral: Boolean;
+    @Input() isSchoolSpecific: Boolean;
+
+    @Input() isGymWelcome: Boolean;
+    @Input() isGymGeneral: Boolean;
+    @Input() isGymSpecific: Boolean;
+
+    @Input() isThirdWelcome: Boolean;
+    @Input() isThirdGeneral: Boolean;
+    @Input() isThirdSpecific: Boolean;
 
   constructor(public configService: ConfigService) {}
 

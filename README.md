@@ -15,6 +15,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
 
+- Get it to work with different screen sizes
+
 - Should I add delete functionality to messages? I really don't want to because that would maybe take time? would it really though? like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
 
 - ✅✅✅ideas for server names: 
