@@ -17,9 +17,9 @@ const routes: Routes = [
     // { path: 'skewl/server-specific', component: OrganizationComponent},
 
 
-    { path: '💪💪/welcome', component: OrganizationComponent},
-    { path: '💪💪/general', component: OrganizationComponent},
-    { path: '💪💪/server-specific', component: OrganizationComponent},
+    { path: 'gym/welcome', component: OrganizationComponent},
+    { path: 'gym/general', component: OrganizationComponent},
+    { path: 'gym/server-specific', component: OrganizationComponent},
 
 
     { path: 'boys_only/welcome', component: OrganizationComponent},

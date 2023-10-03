@@ -9,19 +9,22 @@ import { ConfigService } from 'src/services/config.service';
 })
 export class MainComponent {
     
+    // test
+    testString: string;
+
     currentRoute: string;
     
-    isSchoolWelcome: Boolean;
-    isSchoolGeneral: Boolean;
-    isSchoolSpecific: Boolean;
+    isSchoolWelcome: boolean;
+    isSchoolGeneral: boolean;
+    isSchoolSpecific: boolean;
     
-    isGymWelcome: Boolean;
-    isGymGeneral: Boolean;
-    isGymSpecific: Boolean;
+    isGymWelcome: boolean;
+    isGymGeneral: boolean;
+    isGymSpecific: boolean;
 
-    isThirdWelcome: Boolean;
-    isThirdGeneral: Boolean;
-    isThirdSpecific: Boolean;
+    isThirdWelcome: boolean;
+    isThirdGeneral: boolean;
+    isThirdSpecific: boolean;
 
     // current goal: undo whatever you did in order to follow Method 1 of the online guide thing. 
 
@@ -29,6 +32,7 @@ export class MainComponent {
 
     constructor(public configService: ConfigService, private _router: Router) {
 
+        this.testString = "hi";
         this.configService.getMessage.subscribe(msg => this.currentRoute = msg);;
 
         this._router.events.subscribe((val) =>
@@ -81,7 +85,7 @@ export class MainComponent {
                     this.isThirdSpecific = false;
 
                     // might be an issue here with VV (emojis)
-                } else if (this.currentRoute == "/💪💪/welcome") {
+                } else if (this.currentRoute == "/gym/welcome") {
 
                     this.isSchoolWelcome = false;
                     this.isSchoolGeneral = false;
@@ -95,7 +99,7 @@ export class MainComponent {
                     this.isThirdGeneral = false;
                     this.isThirdSpecific = false;
 
-                } else if (this.currentRoute == "/💪💪/general") {
+                } else if (this.currentRoute == "/gym/general") {
 
                     this.isSchoolWelcome = false;
                     this.isSchoolGeneral = false;
@@ -109,7 +113,7 @@ export class MainComponent {
                     this.isThirdGeneral = false;
                     this.isThirdSpecific = false;
 
-                } else if (this.currentRoute == "/💪💪/server-specific") {
+                } else if (this.currentRoute == "/gym/server-specific") {
 
                     this.isSchoolWelcome = false;
                     this.isSchoolGeneral = false;
@@ -192,7 +196,7 @@ export class MainComponent {
                     this.isThirdWelcome = false;
                     this.isThirdGeneral = false;
                     this.isThirdSpecific = false;
-                    
+
                 }
                 
 

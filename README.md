@@ -191,6 +191,18 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Trying to transmit currentroute data from main to content box and message box. Found an online guide (see Resources) on how to do it and working through method 4. will probably try to do method 1 instead when I next get the chance
 
+- 10/3/2023
+
+    - Tried translating message data using @Input declaration and I didn't get it to work.
+    (as in literally everything would dissapear when I tried it) will continue trying next time
+
+    - Update: I think it has to do with me trying to send boolean objects to a child class.
+    when I send a normal string object, e... wait let me just try to assign it to false
+
+    - New Update: I found out that when I define the booleans in @Input, than it may or may not display based on whether it was initialized to true, false, or it was unitialized. I assumed that when I initialized it, the value will change based on the 
+    inputted value regardless but apparently the inputted value doesn't matter? Either way, even if it didn't work, I still learned something (maybe output will work??)
+    Also, maybe method 3 could work
+
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

@@ -13,17 +13,20 @@ import { Message } from 'src/services/message.model';
 export class ContentBoxComponent {
 
     // booleans
-    @Input() isSchoolWelcome: Boolean;
-    @Input() isSchoolGeneral: Boolean;
-    @Input() isSchoolSpecific: Boolean;
+    // @Input() isSchoolWelcome: string = "";
+    @Input() isSchoolWelcome: BooleanConstructor; // problem is that 1) if it is unititialized
+    // it doesn't do anything 2) if initialied to true, it stays true forever 3)
+    // if initialized to false it stays false forever
+    @Input() isSchoolGeneral: boolean;
+    @Input() isSchoolSpecific: boolean;
 
-    @Input() isGymWelcome: Boolean;
-    @Input() isGymGeneral: Boolean;
-    @Input() isGymSpecific: Boolean;
+    @Input() isGymWelcome: boolean;
+    @Input() isGymGeneral: boolean;
+    @Input() isGymSpecific: boolean;
 
-    @Input() isThirdWelcome: Boolean;
-    @Input() isThirdGeneral: Boolean;
-    @Input() isThirdSpecific: Boolean;
+    @Input() isThirdWelcome: boolean;
+    @Input() isThirdGeneral: boolean;
+    @Input() isThirdSpecific: boolean;
 
   constructor(public configService: ConfigService) {}
 

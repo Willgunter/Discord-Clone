@@ -1,17 +1,27 @@
 <!-- Acting parent of content-box and message-box (idk how to actually make it a parent) -->
 <div class="main-column">
-    <p>
-        {{ currentRoute }}
-    </p>
+    
+
     <!-- need to add all 9 boolean statements -->
-    <app-content-box [isSchoolWelcome]="isSchoolWelcome", [isSchoolGeneral]="isSchoolGeneral", [isSchoolSpecific]="isSchoolSpecific",
-                     [isGymWelcome]="isGymWelcome",    [isGymGeneral]="isGymGeneral",    [isGymSpecific]="isGymSpecific",
-                     [isThirdWelcome]="isThirdWelcome",  [isThirdGeneral]="isThirdGeneral",  [isSchoolSpecific]="isSchoolSpecific"
-    ></app-content-box>
-    <app-message-box [isSchoolWelcome]="isSchoolWelcome", [isSchoolGeneral]="isSchoolGeneral", [isSchoolSpecific]="isSchoolSpecific",
-                     [isGymWelcome]="isGymWelcome",       [isGymGeneral]="isGymGeneral",       [isGymSpecific]="isGymSpecific",
-                     [isThirdWelcome]="isThirdWelcome",   [isThirdGeneral]="isThirdGeneral",   [isSchoolSpecific]="isSchoolSpecific"
-    ></app-message-box>
+    <!-- I might need them to be parent/child classes for it to work -->
+    <app-content-box>
+        [isSchoolWelcome]="isSchoolWelcome", [isSchoolGeneral]="isSchoolGeneral", [isSchoolSpecific]="isSchoolSpecific",
+        [isGymWelcome]="isGymWelcome",       [isGymGeneral]="isGymGeneral",       [isGymSpecific]="isGymSpecific",
+        [isThirdWelcome]="isThirdWelcome",   [isThirdGeneral]="isThirdGeneral",   [isSchoolSpecific]="isSchoolSpecific"
+    </app-content-box>
+    
+    <!-- </app-content-box> -->
+    <p>
+        {{currentRoute}}
+        route(left) isSchoolWelcome(right)
+        {{ isSchoolWelcome }}
+    </p>
+    <app-message-box>
+        [isSchoolWelcome]="isSchoolWelcome", [isSchoolGeneral]="isSchoolGeneral", [isSchoolSpecific]="isSchoolSpecific",
+        [isGymWelcome]="isGymWelcome",       [isGymGeneral]="isGymGeneral",       [isGymSpecific]="isGymSpecific",
+        [isThirdWelcome]="isThirdWelcome",   [isThirdGeneral]="isThirdGeneral",   [isSchoolSpecific]="isSchoolSpecific"
+    </app-message-box>
+    <!-- </app-message-box> -->
     <!-- TODO: next step: giving app-content-box and app-message-box both 
         access to current Route server and channel values so they can filter
         messages accordingly and trasmit the route data respectively -->
