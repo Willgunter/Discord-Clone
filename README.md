@@ -9,6 +9,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
+- Do exactly above but without needing post man and without needing to refresh the 
+backend everytime I want to see updates
+
 - add wildcard route / 404 page / redirects (should be extremely easy I just have a more pressing task rn)
 
 - *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*
@@ -201,7 +204,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - New Update: I found out that when I define the booleans in @Input, than it may or may not display based on whether it was initialized to true, false, or it was unitialized. I assumed that when I initialized it, the value will change based on the 
     inputted value regardless but apparently the inputted value doesn't matter? Either way, even if it didn't work, I still learned something (maybe output will work??)
-    Also, maybe method 3 could work
+    Also, maybe method 3 could work.
 
 
 ## Resources I used
