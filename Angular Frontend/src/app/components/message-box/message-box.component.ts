@@ -20,18 +20,9 @@ export class MessageBoxComponent implements OnInit {
     @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
     text: string;
 
-    // Boolean(s) for state of server
-    @Input() isSchoolWelcome: Boolean;
-    @Input() isSchoolGeneral: Boolean;
-    @Input() isSchoolSpecific: Boolean;
 
-    @Input() isGymWelcome: Boolean;
-    @Input() isGymGeneral: Boolean;
-    @Input() isGymSpecific: Boolean;
-
-    @Input() isThirdWelcome: Boolean;
-    @Input() isThirdGeneral: Boolean;
-    @Input() isThirdSpecific: Boolean;
+    // String for current route of server, courtesy of Main Component
+    @Input() currentRoute: String = "";
 
   constructor(public configService: ConfigService) {}
 
@@ -89,10 +80,12 @@ export class MessageBoxComponent implements OnInit {
 
     // TODO where is the message going?
     // Probably the next step in this journey
+    // and probably where I need to go...
     this.onAddMessage.emit(newMessage);
 
     // vvv does this do anything vvv
     this.text = '';
+
     // I think it might reset the text value?
 
   }

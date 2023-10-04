@@ -3,64 +3,30 @@
         <thead>
             <th>Messages:</th>
         </thead>
-            
-            <!-- goal: if server is in school, display icky, else, display not icky -->
-            <!-- or literally some other simple thing just to get familiar w *ngIf. 
-                Next we need to custumize it if we are on a specific server. This would be
-                the next big step we are working on -->
                 
-                <div>
-                    <p>
-                        {{ isSchoolWelcome }}
-                    </p>
-                    <!-- example if we are in school welcome -->
-                    <div *ngIf="isSchoolWelcome">
-                        <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
-                            
-                            <!-- <div *ngIf=" mes.server==='School' && mes.channel==='SchoolWelcome' "> -->
-                                <div *ngIf=" mes.server==='defaultserver'">
-                                    
-                                    <td>{{mes.text}}</td>
-                                    
-                                </div>
-                                
+            <div [ngSwitch]="currentRoute">
+                
+                <div *ngSwitchCase="'/skewl/welcome'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='skewl' && mes.channel==='welcome'">
+                            <td>{{mes.text}}</td>      
+                        </div>            
                     </tr>
-                </div>
-                
-                
-                <!-- <div *ngIf="isSchoolGeneral">
-                    
-                </div>
-                <div *ngIf="isSchoolSpecific">
-                    
-                </div> -->
-            </div>
-            <!-- <div *ngIf="is bicep bicep">
-                <div if is skewl welcome>
+                </div>  
 
-                </div>
-                <div if is skewl general>
+                <div *ngSwitchCase="'/skewl/general'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='skewl' && mes.channel==='general'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>  
 
-                </div>
-                <div if is skewl server-specific>
+                <!-- . -->
+                <!-- . -->
+                <!-- . -->                
 
-                </div>
-            </div>
-
-            <div *ngIf="is boys only">
-                <div if is skewl welcome>
-
-                </div>
-                <div if is skewl general>
-
-                </div>
-                <div if is skewl server-specific>
-
-                </div>
-            </div> -->
-
-        <!-- basically the code for displaying only messages of a certain server (can easily be applied to channels as well) -->
-        
+            </div>  <!-- div for parent ngSwitch class -->
 
             <!-- how to check for only messages with a specific server / channel? -->
             <!-- have 9 different post requests (ex: postskewlwelcome, postskewlgeneral postboysonlywelcome...)

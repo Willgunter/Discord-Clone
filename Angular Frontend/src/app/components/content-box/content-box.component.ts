@@ -12,21 +12,8 @@ import { Message } from 'src/services/message.model';
 })
 export class ContentBoxComponent {
 
-    // booleans
-    // @Input() isSchoolWelcome: string = "";
-    @Input() isSchoolWelcome: BooleanConstructor; // problem is that 1) if it is unititialized
-    // it doesn't do anything 2) if initialied to true, it stays true forever 3)
-    // if initialized to false it stays false forever
-    @Input() isSchoolGeneral: boolean;
-    @Input() isSchoolSpecific: boolean;
-
-    @Input() isGymWelcome: boolean;
-    @Input() isGymGeneral: boolean;
-    @Input() isGymSpecific: boolean;
-
-    @Input() isThirdWelcome: boolean;
-    @Input() isThirdGeneral: boolean;
-    @Input() isThirdSpecific: boolean;
+    // taking input from Main Component
+    @Input() currentRoute: string = "";
 
   constructor(public configService: ConfigService) {}
 

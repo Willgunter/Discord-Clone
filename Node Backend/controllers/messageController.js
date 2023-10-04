@@ -26,6 +26,7 @@ exports.index = asyncHandler(async (req, res, next) => {
 // TODO not a todo but has to be read through Postman for now for some reason
 exports.post = asyncHandler(async (req, res, next) => {
 
+    // it looks like the code is not being read here
     saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
 
@@ -34,17 +35,24 @@ exports.post = asyncHandler(async (req, res, next) => {
                 // TODO: get current server and channel and replace "defaultserver/channel" with it here when
                 // it comes time to work more on the messages
                 server: "defaultserver",
-                channel: "defaultchannel",
+                // WHY IS IT NOT FREAKING WORKING GRRR
+                channel: req.body.channel,
             });
 
+            console.log(req.body.channel+"we");
             // shouldn't it go through like the "sendMessage"
             // parts instead of only this part?
-            console.log("post");
-            mes.save(); // await mes.save();
+            console.log("postwe");
+            // why will mes.save() not save the object with server and channel data?
+            await mes.save(); // await mes.save();
 
             console.log("Message: " + mes.text);
 
-            res.send(mes.text); // mes.text doc
+            // why is it only sending mes.text
+            // vvv what is this vvv
+            res.send(mes.text);
+            // mes.text doc
+            // what is res.send(mes) even doing
 
         }
 

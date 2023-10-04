@@ -3,37 +3,33 @@
     <ul>
         <li class="list">
         <!-- TODO: replace words w server icons later -->
-        <a
-            routerLink="/skewl/welcome" 
+            <a
+                routerLink="/skewl/welcome" 
+                routerLinkActive="active" 
+                ariaCurrentWhenActive="page">
+                <!-- how to determine whether a page is active -->
+                welcome
+            </a>
+        </li>
+        
+        <li class="list">
+            <a
+            routerLink="/gym/general" 
             routerLinkActive="active" 
             ariaCurrentWhenActive="page">
-            welcome
-        </a>
-            
-    </li>
-        
-    <li class="list">
-        <a
-        routerLink="/gym/general" 
-        routerLinkActive="active" 
-        ariaCurrentWhenActive="page">
-        general
-        </a>
-    </li>
+            general
+            </a>
+        </li>
     
-    <li class="list">
-        <a
-        routerLink="/boys_only/server-specific" 
-        routerLinkActive="active" 
-        ariaCurrentWhenActive="page">
-        server-specific
-    </a>
-</li>
-</ul>
+        <li class="list">
+            <a
+            routerLink="/boys_only/server-specific" 
+            routerLinkActive="active" 
+            ariaCurrentWhenActive="page">
+            server-specific
+            </a>
+        </li>
+    </ul>
 
-<!-- TODO: idea: get current url and if it is a certain thing,
-display certain things + how to display things under certain 
-conditions? -->
-<!-- </nav> -->
 </div>
 

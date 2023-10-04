@@ -206,6 +206,12 @@ backend everytime I want to see updates
     inputted value regardless but apparently the inputted value doesn't matter? Either way, even if it didn't work, I still learned something (maybe output will work??)
     Also, maybe method 3 could work.
 
+- 10/4/2023
+
+    -  **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK!!!🍻🍻🎉🎉🎉🎉** Instead of using if statements, which were clunky and extremely repetitive, I somehow stumbled on ngSwitch and ngSwitchCase statements, which not only reduced 9 booleans down to 1 string, but erradicated loads of other discusting nested if / else statements I was planning on using. I cannot describe to you how much more simplified and convenient this is.
+    Next step is to figure out how to embed server / channel data into the Message object --> this will give us the thing to filter in the ngSwitchCase statements.
+
+    - Update: tried to send a request via PostMan with server and channel data and it did not work that is okay though I did not fully expect it to.
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
