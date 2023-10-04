@@ -18,8 +18,11 @@ declare var M: any;
 export class MessageBoxComponent implements OnInit {
     
     @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
-    text: string;
 
+    // text, server, and channel of specific message data
+    text: string;
+    server: string;
+    channel: string;
 
     // String for current route of server, courtesy of Main Component
     @Input() currentRoute: String = "";
@@ -76,15 +79,22 @@ export class MessageBoxComponent implements OnInit {
       return;
     }
 
-    const newMessage = this.text;
+    // supposed to be a Message object? no?
+    // const newMessage = this.text;
+    const newMessage = new Message(this.text, this.channel, this.server);
+
 
     // TODO where is the message going?
     // Probably the next step in this journey
     // and probably where I need to go...
     this.onAddMessage.emit(newMessage);
+    // I have answered this question but I still have not writted it down
+    // here yet because I am dumb???
 
     // vvv does this do anything vvv
     this.text = '';
+    this.server = '';
+    this.channel = '';
 
     // I think it might reset the text value?
 
