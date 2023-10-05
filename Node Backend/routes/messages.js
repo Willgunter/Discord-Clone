@@ -13,6 +13,8 @@ router.get("/", message_controller.index); // render something might have someth
 // to do with the anglar docs idk???
 // why is this being called twice???
 
+
+// why is posting not working?
 router.post("/", message_controller.post);
 
 // LETS NOT WORK ON ROUTING UNTIL WE AT LEAST FIGURE OUT HOW TO ADD A MESSAGE

@@ -219,6 +219,8 @@ backend everytime I want to see updates
 
     - Update: working to debug why we cannot post the Message object to the backend directly from the frontend, next step is to check the repo from the vid about how to connect frontend to backend so maybe that will help us figure out what is happening
 
+    - Update: worked on debugging why it cannot send, and got it to send with the message box, but it still won't change the server value in the backend (it will change the channel value tho). Like I searched through every file and couldn't even find the string "default server" so I have no idea what is happening
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

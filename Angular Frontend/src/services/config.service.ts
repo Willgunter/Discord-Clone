@@ -30,10 +30,16 @@ export class ConfigService {
   
     // string can be replaced with Employee probably
     // why don't I use this method anywhere?
-    postMessage(selectedMessage: Message) {
+    postMessage(message: any) {
         // works for some reason?
-        console.log("postMessage being read(i aim in config.service.ts)");
-        return this.http.post(this.apiUrl, selectedMessage);
+        // how to turn selectedMessage -> form.value or something?
+        
+        // doesn't quite work with like json values or
+        // sending server + channel data?
+        // where is it sending "default server" from?
+        return this.http.post(this.apiUrl, message);
+        // return this.http.post(this.apiUrl, this.form.value);
+
     }
 
     getMessageList() {

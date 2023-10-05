@@ -11,9 +11,11 @@ exports.index = asyncHandler(async (req, res, next) => {
     
     saveMessage().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
-            // TODO why is this not working
-            // TODO req.body.text does not work. It keeps being displayed as undefined
-            res.send(await MessageModel.find({}, {text:1, server:1, _id:0}).sort({_id:-1}).limit(20));
+            
+            // why can't it display channel?
+            // why is it not updating at all?
+            res.send("ppoop");
+            // res.send(await MessageModel.find({}, { _id:1}).sort({_id:-1}).limit(20));
 
         }
                 
@@ -56,6 +58,7 @@ exports.post = asyncHandler(async (req, res, next) => {
             // why is it only sending mes.text
             // vvv what is this vvv
             res.send(mes);
+            // res.save?
             // mes.text doc
             // what is res.send(mes) even doing
 

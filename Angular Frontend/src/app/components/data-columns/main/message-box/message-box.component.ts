@@ -49,7 +49,7 @@ export class MessageBoxComponent implements OnInit {
     // NOTE: CONSOLE.LOG() COMMANDS DISPLAY IN THE BROWSER CONSOLE,
     // NOT IN THE VSCODE TERMINAL
     onSubmit(form: NgForm) {
-
+        
         // parsing current route string
         this.server = this.currentRoute.substring(1).split("/", 2)[0];
         this.channel = this.currentRoute.substring(1).split("/", 2)[1];
@@ -65,16 +65,6 @@ export class MessageBoxComponent implements OnInit {
             return;
         }
 
-        // vvv what is this for ??? vvv
-        // maybe it posts it but since its here its in the wrong place?
-        // it works for no value, but doesn't work 
-        this.configService.postMessage(form.value).subscribe((res) => {
-            console.log("postmessage in message box works");
-            // ... no it does not
-            // what does unexpected token "a" in "asdf is not valid JSON.parse mean?"
-            // lets check the repo of the video that connects backend to frontend 
-        });
-
         const newMessage: Message = {
             // problem with id obviously
             // _id: "w",
@@ -82,15 +72,36 @@ export class MessageBoxComponent implements OnInit {
             server: this.server,
             channel: this.channel,
         };
-    // 
-    newMessage.text = this.text;
-    newMessage.server = this.server;
-    newMessage.channel = this.channel;
+
+        form.setValue({
+            text: JSON.stringify(this.text),
+            server: JSON.stringify(this.server),
+            channel: JSON.stringify(this.channel),
+        });
+
+        // does not include quotes
+        console.log(this.text+"text");
+        console.log(this.server+"s");
+        console.log(this.channel+"c");
+
+        // does not include quotes
+        console.log(form.value.text+"word");
+        console.log(form.value.server+"s");
+        console.log(form.value.channel+"c"); 
+
+        // ...postMessage(newMessage) kind of works but somehow gives an error as well???
+        this.configService.postMessage(form.value).subscribe((res) => {
+            console.log("postmessage in message box works");
+            // how to pass form value onto config.service?
+        });
+
 
     // TODO where is the message going?
     // Probably the next step in this journey
     // and probably where I need to go...
+    // is this where "defaultserver" is happening?
     this.onAddMessage.emit(newMessage);
+    // WHAT DOES THIS DO??
     // is it going to confit.service.ts?
 
     // vvv does this do anything vvv
