@@ -217,6 +217,8 @@ backend everytime I want to see updates
 
     - Reorganized content box and message box component to be closer to main component in files. This should help with organization. Currently in the midsts of debugging why my message is not sending with route and server information and I am making lots of progress. (Why did it take me so long to realize console.log() in typescript outputs to the browser and not the vscode terminal...)
 
+    - Update: working to debug why we cannot post the Message object to the backend directly from the frontend, next step is to check the repo from the vid about how to connect frontend to backend so maybe that will help us figure out what is happening
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

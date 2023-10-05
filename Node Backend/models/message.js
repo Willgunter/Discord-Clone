@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const MessageModelSchema = new Schema({
-    text: { type: String },
+    text: {type: String },
     server: {type: String},
     channel: {type: String},
 })

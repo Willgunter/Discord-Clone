@@ -29,13 +29,18 @@ export class ConfigService {
     constructor(private http: HttpClient) { }
   
     // string can be replaced with Employee probably
+    // why don't I use this method anywhere?
     postMessage(selectedMessage: Message) {
+        // works for some reason?
         console.log("postMessage being read(i aim in config.service.ts)");
         return this.http.post(this.apiUrl, selectedMessage);
     }
 
     getMessageList() {
-        // console.log("getMessageList being read");
+        console.log("getMessageList being read");
+        // this is working so progress?
+        // maybe it was always working I just needed
+        // to uncomment it?
         return this.http.get(this.apiUrl);
     }
 

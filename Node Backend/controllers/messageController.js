@@ -26,6 +26,8 @@ exports.index = asyncHandler(async (req, res, next) => {
 // TODO not a todo but has to be read through Postman for now for some reason
 exports.post = asyncHandler(async (req, res, next) => {
 
+    console.log("messageControllerPostworks");
+
     // it looks like the code is not being read here
     saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
@@ -42,7 +44,7 @@ exports.post = asyncHandler(async (req, res, next) => {
 
             console.log(req.body.text+"<text");
             console.log(req.body.server+"<server");
-            console.log(req.body.channel+"<chanel");
+            console.log(req.body.channel+"<chanasdfsadfel");
             // shouldn't it go through like the "sendMessage"
             // parts instead of only this part?
             console.log("<tex>");
