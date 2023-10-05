@@ -213,6 +213,10 @@ backend everytime I want to see updates
 
     - Update: tried to send a request via PostMan with server and channel data and it did not work that is okay though I did not fully expect it to.
 
+- 10/5/2023
+
+    - Reorganized content box and message box component to be closer to main component in files. This should help with organization. Currently in the midsts of debugging why my message is not sending with route and server information and I am making lots of progress. (Why did it take me so long to realize console.log() in typescript outputs to the browser and not the vscode terminal...)
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

@@ -30,7 +30,7 @@ export class ConfigService {
   
     // string can be replaced with Employee probably
     postMessage(selectedMessage: Message) {
-        console.log("postMessage being read");
+        console.log("postMessage being read(i aim in config.service.ts)");
         return this.http.post(this.apiUrl, selectedMessage);
     }
 
@@ -41,6 +41,7 @@ export class ConfigService {
 
     // see above resource
     setMessage(message: string) {
+        console.log("setMessage being read");
         this.message.next(message);
     }
 

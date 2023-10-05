@@ -33,14 +33,12 @@ export class MainComponent {
                 console.log("failure");
             };
         
-    }
-        
-        // console.log(' newline: %b', val instanceof NavigationEnd)
-        // console.log("test")
-    )
+        }
+        )
 
     }
 
+    // I am so confused, what does this do, when and why did I add it?
     updateMessage() {
         this.configService.setMessage(this.currentRoute);
     }

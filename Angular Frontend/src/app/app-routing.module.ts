@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrganizationComponent } from './components/organization/organization.component';
-import { MainComponent } from './components/data-columns/main-column/main.component';
 
 const routes: Routes = [
     // Note: may need to add a component that contains all of the components

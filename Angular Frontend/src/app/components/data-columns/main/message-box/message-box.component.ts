@@ -17,13 +17,13 @@ declare var M: any;
 })
 export class MessageBoxComponent implements OnInit {
     
-    @Output() onAddMessage: EventEmitter<String> = new EventEmitter();
+    @Output() onAddMessage: EventEmitter<Message> = new EventEmitter();
 
     // text, server, and channel of specific message data
-    text: string;
-    server: string;
-    channel: string;
-
+    text: string = "";
+    server: string = "";
+    channel: string = "";
+    
     // String for current route of server, courtesy of Main Component
     @Input() currentRoute: String = "";
 
@@ -35,6 +35,7 @@ export class MessageBoxComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
+    console.log("resetForm is working");
     if (form)
       form.reset();
     this.configService.selectedMessage = {
@@ -45,27 +46,17 @@ export class MessageBoxComponent implements OnInit {
     }
   }
 
+  // NOTE: CONSOLE.LOG() COMMANDS DISPLAY IN THE BROWSER CONSOLE,
+  // NOT IN THE VSCODE TERMINAL
   onSubmit(form: NgForm) {
 
-    // how is console.log not even being read
-
-    console.log("this is being read");
+    // vvv what is this for ??? vvv
     // this.configService.postMessage(form.value).subscribe((res) => {
 
     // });
 
-    // currently only sends it to MongoDB (and might not even do that...)
-    // theory: .subscribe is deprecated and therefore need to write in try 
-    // catch or whatever idk what to title this
-    // WORRY ABOUT LATER
-    // idkMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
-    // async function idkMessage() { 
-    //   console.log("this is being read"); // this is *not* being read
-    //   this.resetForm(form);
-    //   this.refreshMessageList();
-    //   M.toast({html: 'Message sent', classes: 'rounded'});
-
-    // };
+    // parsing current route string 
+    // <current issue>
 
     this.configService.getMessageList().subscribe((res) => { // form.value
       // console.log("this is being read"); // this is *not* being read
@@ -79,10 +70,23 @@ export class MessageBoxComponent implements OnInit {
       return;
     }
 
-    // supposed to be a Message object? no?
-    // const newMessage = this.text;
-    const newMessage = new Message(this.text, this.channel, this.server);
+    // current issue is that server and channel are still not 
+    // being assigned anything because they need to be parsed
+    // out of the currentRoute (should be easy)
+    console.log(this.text+"thistext");
+    console.log(this.server+"thisserver");
+    console.log(this.channel+"thischannel");
 
+    const newMessage: Message = new Message();
+    // 
+    newMessage.text = this.text;
+    newMessage.server = this.server;
+    newMessage.channel = this.channel;
+
+    // not running  a
+    console.log(newMessage.text+"<text>");
+    console.log(newMessage.server+"<server>");
+    console.log(newMessage.channel+"<channel>");
 
     // TODO where is the message going?
     // Probably the next step in this journey

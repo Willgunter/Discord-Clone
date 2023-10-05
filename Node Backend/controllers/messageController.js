@@ -30,27 +30,30 @@ exports.post = asyncHandler(async (req, res, next) => {
     saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
 
-            const mes = new MessageModel({ 
+            // why is this not working?
+            const mes = new MessageModel({
                 text: req.body.text,
                 // TODO: get current server and channel and replace "defaultserver/channel" with it here when
                 // it comes time to work more on the messages
-                server: "defaultserver",
+                server: req.body.server,
                 // WHY IS IT NOT FREAKING WORKING GRRR
                 channel: req.body.channel,
             });
 
-            console.log(req.body.channel+"we");
+            console.log(req.body.text+"<text");
+            console.log(req.body.server+"<server");
+            console.log(req.body.channel+"<chanel");
             // shouldn't it go through like the "sendMessage"
             // parts instead of only this part?
-            console.log("postwe");
+            console.log("<tex>");
             // why will mes.save() not save the object with server and channel data?
-            await mes.save(); // await mes.save();
-
-            console.log("Message: " + mes.text);
+            mes.save(); // await mes.save();
+            
+            console.log("Messge: " + mes.text);
 
             // why is it only sending mes.text
             // vvv what is this vvv
-            res.send(mes.text);
+            res.send(mes);
             // mes.text doc
             // what is res.send(mes) even doing
 
