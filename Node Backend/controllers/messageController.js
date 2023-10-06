@@ -8,14 +8,16 @@ const { body, validationResult} = require("express-validator");
 
 // => localhost:3000/messages
 exports.index = asyncHandler(async (req, res, next) => {
+
+    console.log("backend index works");
     
     saveMessage().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
             
             // why can't it display channel?
             // why is it not updating at all?
-            res.send("ppoop");
-            // res.send(await MessageModel.find({}, { _id:1}).sort({_id:-1}).limit(20));
+            res.send("ppoasdfop");
+            // res.send(await MessageModel.find({}, { _id:1}).sort({_id:-1}).limit(24));
 
         }
                 
@@ -54,7 +56,7 @@ exports.post = asyncHandler(async (req, res, next) => {
             mes.save(); // await mes.save();
             
             console.log("Messge: " + mes.text);
-
+            
             // why is it only sending mes.text
             // vvv what is this vvv
             res.send(mes);

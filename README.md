@@ -221,6 +221,18 @@ backend everytime I want to see updates
 
     - Update: worked on debugging why it cannot send, and got it to send with the message box, but it still won't change the server value in the backend (it will change the channel value tho). Like I searched through every file and couldn't even find the string "default server" so I have no idea what is happening
 
+- 10/6/2023
+
+    - Ok so the problem is actually in a PREVIOUS VERSION of messageController.js, which is good to know, but makes no sense on how the code is not acessing the new post (and get) methods.
+    This is now the current problem
+
+    - Ok so the problem is NOT in a previous version of messageController.js, it was just looked like it was running that version of code because the Node server doesn't automatically update the code the way angular does. Oh wait it does with the "nodemon app.js" command...
+    - ...
+    - ...
+    - fml
+
+    - **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK!!!🍻🍻🎉🎉🎉🎉** This was the most mind boggling problem I have ran into so far and I had no idea how to solve it. I read through literally every single file in both the frontend and backend and even that gave me no clue on what was going wrong, but I fixed it by... drumroll please... **turning it off and on again**... wow.
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

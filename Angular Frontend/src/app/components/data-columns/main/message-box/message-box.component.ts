@@ -88,19 +88,20 @@ export class MessageBoxComponent implements OnInit {
         console.log(form.value.text+"word");
         console.log(form.value.server+"s");
         console.log(form.value.channel+"c"); 
-
-        // ...postMessage(newMessage) kind of works but somehow gives an error as well???
+        
+        // postMessage(newMessage) kind of works but somehow gives an error as well???
         this.configService.postMessage(form.value).subscribe((res) => {
             console.log("postmessage in message box works");
             // how to pass form value onto config.service?
         });
-
-
-    // TODO where is the message going?
-    // Probably the next step in this journey
-    // and probably where I need to go...
+        
+        // TODO where is the message going?
+        // Probably the next step in this journey
+        // and probably where I need to go...
+        this.onAddMessage.emit(newMessage);
     // is this where "defaultserver" is happening?
-    this.onAddMessage.emit(newMessage);
+    // does this even do anything?????
+    
     // WHAT DOES THIS DO??
     // is it going to confit.service.ts?
 

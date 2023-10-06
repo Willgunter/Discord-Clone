@@ -17,7 +17,7 @@ export class MainComponent {
 
     constructor(public configService: ConfigService, private _router: Router) {
 
-        this.configService.getMessage.subscribe(msg => this.currentRoute = msg);
+        // this.configService.getMessage.subscribe(msg => this.currentRoute = msg);
 
         this._router.events.subscribe((val) =>
         {
@@ -39,8 +39,8 @@ export class MainComponent {
     }
 
     // I am so confused, what does this do, when and why did I add it?
-    updateMessage() {
-        this.configService.setMessage(this.currentRoute);
-    }
+    // updateMessage() {
+    //     this.configService.setMessage(this.currentRoute);
+    // }
 
 }
