@@ -9,7 +9,7 @@
                 <div *ngSwitchCase="'/skewl/welcome'">
                     <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
                         <div *ngIf=" mes.server==='skewl' && mes.channel==='welcome'">
-                            <td>{{mes.text}}</td>      
+                            <td class="table-data">{{mes.text}}</td>     
                         </div>            
                     </tr>
                 </div>  

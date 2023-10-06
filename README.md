@@ -234,6 +234,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Small update but I just cleaned up the code, got rid of a bunch of test error messages and made sure the code works for all 9 servers + channels (it does) and wow getting this to work feels amazing. Now to see if we can do it without hitting refresh, that would be a cool bonus but I guess not super necessary.
     Next step is getting it to change to its specific channel when it is in a given server. This shouldn't be too challenging but given how long this took idfk.
+    Another small next step is making sure the messages go all the way to the right instead of just stopping when the longest message ends. Not sure how to implement this but it should be easy given that its html / css
+
+    - going to do schoolwork now, hopefully I don't fail my assignments because of this major discovery
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

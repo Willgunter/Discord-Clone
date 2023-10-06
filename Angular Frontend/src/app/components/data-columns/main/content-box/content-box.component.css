@@ -12,3 +12,8 @@
     Overflow-y: scroll;
     /* border: red; */
 }
+
+.table-data {
+    /* want it to automatically fill to the right whether it is 200 px or 800 px over */
+    width: auto;
+}
