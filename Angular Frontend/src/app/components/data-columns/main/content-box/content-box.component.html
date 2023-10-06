@@ -22,9 +22,61 @@
                     </tr>
                 </div>  
 
-                <!-- . -->
-                <!-- . -->
-                <!-- . -->                
+                <div *ngSwitchCase="'/skewl/server-specific'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='skewl' && mes.channel==='server-specific'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>  
+
+                <div *ngSwitchCase="'/gym/welcome'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='gym' && mes.channel==='welcome'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>  
+
+                <div *ngSwitchCase="'/gym/general'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='gym' && mes.channel==='general'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>  
+
+                <div *ngSwitchCase="'/gym/server-specific'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='gym' && mes.channel==='server-specific'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>  
+                
+                <div *ngSwitchCase="'/boys_only/general'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='boys_only' && mes.channel==='general'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>  
+
+                <div *ngSwitchCase="'/boys_only/welcome'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='boys_only' && mes.channel==='welcome'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>  
+
+                <div *ngSwitchCase="'/boys_only/server-specific'">
+                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                        <div *ngIf=" mes.server==='boys_only' && mes.channel==='server-specific'">
+                            <td>{{mes.text}}</td>        
+                        </div>            
+                    </tr>
+                </div>           
 
             </div>  <!-- div for parent ngSwitch class -->
 

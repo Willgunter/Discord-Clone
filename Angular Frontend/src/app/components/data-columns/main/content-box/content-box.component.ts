@@ -22,12 +22,13 @@ export class ContentBoxComponent {
   }
 
   refreshMessageList() {
-    console.log("test");
-    
+
     this.configService.getMessageList().subscribe((res) => {
       // what tf does this line even do
       this.configService.messages = res as Message[];
-
+      
     });
+
   }
+
 }

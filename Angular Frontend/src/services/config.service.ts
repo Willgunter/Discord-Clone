@@ -32,21 +32,11 @@ export class ConfigService {
     // why don't I use this method anywhere?
     postMessage(message: Message) {
         // works for some reason?
-        // how to turn selectedMessage -> form.value or something?
-        
-        // doesn't quite work with like json values or
-        // sending server + channel data?
-        // where is it sending "default server" from?
-        console.log(message);
-        console.log(this.http+"<wtf");
-        return this.http.post(this.apiUrl, message); // what does this.http even mean??? maybe http is a variable in the video but we renamed it to something
-        // else here
-        // return this.http
-        // return this.http.post(this.apiUrl, this.form.value);
+        return this.http.post(this.apiUrl, message);
     }
 
     getMessageList() {
-        console.log("getMessageList being read");
+        
         // this is working so progress?
         // maybe it was always working I just needed
         // to uncomment it?
@@ -54,6 +44,7 @@ export class ConfigService {
     }
 
     // see above resource
+    // (we are not using said above resource so I commented it out)
     // setMessage(message: string) {
     //     console.log("setMessage being read");
     //     this.message.next(message);

@@ -12,23 +12,7 @@ const message_controller = require("../controllers/messageController");
 // router.get('/', message_controller.index); // render something might have something 
 // to do with the anglar docs idk???
 // why is this being called twice???
-router.get('/', message_controller.index)
-    // saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
-    // async function saveMessage() {
-        
-    //     // TODO req.body.text does not work
-    //     const mes = new MessageModel({ text: "req.body.text" });
-    //     console.log(".get works");
-    //     await mes.save();
-    //     // why is it only displaying one at a time
-    //     // check out video
-    //     // vvv is needed? vvv
-    //     res.send(
-    //         // is this the part where we get all the documents from the database??
-    //         await MessageModel.find({}, {text:1, _id:0})
-    //     );
-        
-    // }
+router.get('/', message_controller.index);
 
 // why is posting not working?
 router.post("/", message_controller.post);

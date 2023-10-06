@@ -9,10 +9,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
-- Do exactly above but without needing post man and without needing to refresh the 
-backend everytime I want to see updates
-
 - add wildcard route / 404 page / redirects (should be extremely easy I just have a more pressing task rn)
+
+-  (Definetely not necessary) Get messages to refresh on the frontend without needing to push the refresh button
 
 - *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*
 
@@ -232,6 +231,9 @@ backend everytime I want to see updates
     - fml
 
     - **🎉🎉🎉🎉🍻🍻I GOT IT TO WORK!!!🍻🍻🎉🎉🎉🎉** This was the most mind boggling problem I have ran into so far and I had no idea how to solve it. I read through literally every single file in both the frontend and backend and even that gave me no clue on what was going wrong, but I fixed it by... drumroll please... **turning it off and on again**... wow.
+
+    - Small update but I just cleaned up the code, got rid of a bunch of test error messages and made sure the code works for all 9 servers + channels (it does) and wow getting this to work feels amazing. Now to see if we can do it without hitting refresh, that would be a cool bonus but I guess not super necessary.
+    Next step is getting it to change to its specific channel when it is in a given server. This shouldn't be too challenging but given how long this took idfk.
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

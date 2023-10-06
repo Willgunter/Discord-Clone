@@ -26,11 +26,12 @@ export class MainComponent {
 
                 this.currentRoute = this._router.url;
                 
-                console.log(this.currentRoute);
+                // console.log(this.currentRoute);
             }
 
             else {
-                console.log("failure");
+                // console.log("failure");
+                // do nothing
             };
         
         }
