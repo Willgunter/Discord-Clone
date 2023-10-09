@@ -249,6 +249,10 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Made server, user, and server column extend to the bottom of the screen. Main column is proving to be a challeng because of the messages having a scroll bar and of both input form componenet and message component in the same column.
 
+    - Maybe when I come back from my break, I could use borders w colors to help organize things
+
+    - Found out how to get it to work ( calc() in css can combine 100vh and pixel values), frontend now looks like its coming together now
+
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

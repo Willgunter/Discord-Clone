@@ -5,11 +5,15 @@
     Overflow-y: scroll;
     background-color: #313338;
     /* height vh here helps a little bit */
+    /* height: 100vh; */
+    /* border: 1px solid red; */
+    max-height: calc(100vh - 44px);
+    /* max-height: 100vh - 48px; */
 }
 
 .messages {
     /* scroll bar might have something to do here */
-    /* Height: 150 px; */
+    height: 150 px;
     Overflow-y: scroll;
 }
 
