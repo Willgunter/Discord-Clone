@@ -1,27 +1,15 @@
 .content-box {
-    /* Note: height is probably exactly level w actual message box (on my laptop screen anyway) */
-    /* TODO: make height adjustable for any screen (and make the columns reach the bottom w/o scroll bar appearing */
-    /* height: 615px; */
     Overflow-y: scroll;
     background-color: #313338;
-    /* height vh here helps a little bit */
-    /* height: 100vh; */
-    /* border: 1px solid red; */
-    max-height: calc(100vh - 44px);
-    /* max-height: 100vh - 48px; */
+    height: calc(100vh - 68px);
 }
 
 .messages {
-    /* scroll bar might have something to do here */
     height: 150 px;
     Overflow-y: scroll;
 }
 
 .message {
-    /* want it to automatically fill to the right whether it is 200 px or 800 px over */
-    /* width: auto is probably wrong */
-    /* maybe its in a previous version? */
-    /* background-color: red; */
     border-collapse:collapse;
 }
 /*  TODO later???

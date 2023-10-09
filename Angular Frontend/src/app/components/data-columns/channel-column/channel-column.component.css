@@ -19,7 +19,7 @@
     margin: 8px;
 }
 
-.serverlink:hover {
+li:hover {
     width: auto;
     background-color: #404249;
     border-radius: 3px;
@@ -27,4 +27,16 @@
 
 .channel-type {
     color: "red";
+}
+
+ol {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+li {
+    padding-top: 5px;
+    padding-left: 3px;
+    height: 30px;
 }

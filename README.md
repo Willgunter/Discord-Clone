@@ -245,7 +245,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Update: got rid of ugly send button (users submit messages with enter)
     Next issue: getting components to extend to the bottom of the screen wo making scrollbar appear (or I could just keep it hidden)
 
-- 10/8/2023
+- 10/9/2023
 
     - Made server, user, and server column extend to the bottom of the screen. Main column is proving to be a challeng because of the messages having a scroll bar and of both input form componenet and message component in the same column.
 
@@ -253,6 +253,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Found out how to get it to work ( calc() in css can combine 100vh and pixel values), frontend now looks like its coming together now
 
+    - Copying more and more of look and feel of Discord, this time I am making the message bar look more realistic and the channel links look more realistic, especially when you hover over them. Also, I added a global background color so if I zoomed in too fast, the edges of html components wouldn't flash white. It's really the small things that matter most. Next thing to work on is wild card routes in order to get us ready for user authentication. We should probably send Mr. Hodgin our resume before we do that though
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

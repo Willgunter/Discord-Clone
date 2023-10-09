@@ -7,41 +7,42 @@
         <!-- ul: extends to end of screen, curvable, idk -->
         <!-- li: better fitted, cons: bullet point -->
          <!-- TODO: replace words w server icons later -->
-            <ol class="serverlink">
+            <ol class="serverlink" style="list-style: none;">
 
+                <li>
+                    <a
+                    routerLink="/{{splicedChannel}}/welcome"
+                    routerLinkActive="active" 
+                    ariaCurrentWhenActive="page"
+                    >
+                    <!-- how to determine whether a page is active -->
+                    <!-- <span style="color: black" hover># </span> -->
+                    # welcome
+                    </a>
+
+                </li>
+
+                <li>
+                    <a
+                    routerLink="/{{splicedChannel}}/general"
+                    routerLinkActive="active" 
+                    ariaCurrentWhenActive="page"
+                    >
+                    <!-- how to determine whether a page is active -->
+                    # general
+                    </a>
+                </li>
+
+                <li>
                 <a
-                routerLink="/{{splicedChannel}}/welcome"
-                routerLinkActive="active" 
-                ariaCurrentWhenActive="page"
-                >
-                <!-- how to determine whether a page is active -->
-                <!-- <span style="color: black" hover># </span> -->
-                # welcome
-                </a>
-
-            </ol>
-
-            <ol class="serverlink">
-                <a
-                routerLink="/{{splicedChannel}}/general"
-                routerLinkActive="active" 
-                ariaCurrentWhenActive="page"
-                >
-                <!-- how to determine whether a page is active -->
-                # general
-                </a>
-
-            </ol>
-
-            <ol class="serverlink">
-                <a
-                routerLink="/{{splicedChannel}}/server-specific"
-                routerLinkActive="active" 
-                ariaCurrentWhenActive="page"
-                >
-                <!-- how to determine whether a page is active -->
-                # server-specific
-                </a>
+                    routerLink="/{{splicedChannel}}/server-specific"
+                    routerLinkActive="active" 
+                    ariaCurrentWhenActive="page"
+                    >
+                    <!-- how to determine whether a page is active -->
+                    # server-specific
+                    </a>
+                </li>
 
             </ol>
           

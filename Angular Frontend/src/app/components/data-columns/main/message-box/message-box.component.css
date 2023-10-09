@@ -16,7 +16,7 @@
     position: relative;
 
     /* height: 100vh; */
-    /* height: 48px; */
+    height: 68px;
 
     /* message form is the red thing that contains both the input box and the send message button */
     /** goal: make messageform at the bottom 
@@ -31,7 +31,6 @@
     /* border: 1px solid rgb(195, 69, 49);  */
     /* background-color: #313338; */
     /* margin-bottom: 0px; */
-    /* border: 1px solid blue; */
 }
 
 .btn-block {
@@ -50,12 +49,20 @@
     we just have it for visibility purposes 
     right now */
 
-    padding: 5px;
+    padding-right: 14px;
     /* what we need to modify for the right sidevvv */
     margin-right: 10px;
     margin-left: 10px;
-    /* margin-bottom: 3px; */
+    margin-bottom: 3px;
     border-radius: 8px;
     /* height: 100vh; */
     background-color: #35373C;
+}
+
+::placeholder {
+    color: #6D6F78;
+}
+
+.input:focus {
+    border-color: #35373C;
 }
