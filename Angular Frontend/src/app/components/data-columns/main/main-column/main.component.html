@@ -3,10 +3,16 @@
     
     <!-- Passing currentRoute from Main Component to Content Box and Message Box component -->
     <!-- I cannot describe to you how good it feels to reduce 9 booleans to 1 string -->
-    <app-content-box [currentRoute]="currentRoute">
-    </app-content-box>
+    <div class="content">
+        <app-content-box [currentRoute]="currentRoute">
+        </app-content-box>
 
-    <app-message-box [currentRoute]="currentRoute">
-    </app-message-box>
+    </div>
+
+    <div class="message">
+        <app-message-box [currentRoute]="currentRoute">
+        </app-message-box>
+
+    </div>
     
 </div>

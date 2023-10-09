@@ -3,4 +3,5 @@
 
 .column {
     position: relative;
+    /* height: max-content; */
 }

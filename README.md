@@ -238,11 +238,17 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - going to do schoolwork now, hopefully I don't fail my assignments because of this major discovery
 
-- 10/9/2023
+- 10/8/2023
 
     - Made more visual changes such as copying color of Discords objects onto my objects, adding color change when hovering over certain links, and only being able to switch to channels withing a server instead of channels outside of a server
 
     - Update: got rid of ugly send button (users submit messages with enter)
+    Next issue: getting components to extend to the bottom of the screen wo making scrollbar appear (or I could just keep it hidden)
+
+- 10/8/2023
+
+    - Made server, user, and server column extend to the bottom of the screen. Main column is proving to be a challeng because of the messages having a scroll bar and of both input form componenet and message component in the same column.
+
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

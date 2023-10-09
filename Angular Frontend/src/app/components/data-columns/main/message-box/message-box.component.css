@@ -15,7 +15,7 @@
     /* Note: position needs to be relative so send button calibrates off of correct element*/
     position: relative;
 
-    height: 45px;
+    /* height: 100vh; */
 
     /* message form is the red thing that contains both the input box and the send message button */
     /** goal: make messageform at the bottom 
@@ -26,9 +26,10 @@
     /* margin: 30px auto; */
     /* TODO: red border = contains message 
     form + send button on right */
-    margin-bottom: 0px;
+    /* margin-bottom: 0px; */
     /* border: 1px solid rgb(195, 69, 49);  */
     background-color: #313338;
+    /* margin-bottom: 0px; */
 }
 
 .btn-block {
@@ -41,7 +42,7 @@
     /* margin: 100px; */
     height: 44px;
     overflow: hidden;
-    max-height: 300px;
+    /* max-height: 300px; */
     /* height: 3px; */
     /* TODO: eventually make border invisible,
     we just have it for visibility purposes 
@@ -51,7 +52,7 @@
     /* what we need to modify for the right sidevvv */
     margin-right: 10px;
     margin-left: 10px;
-    margin-bottom: 3px;
+    /* margin-bottom: 3px; */
     border-radius: 8px;
     background-color: #35373C;
 }
