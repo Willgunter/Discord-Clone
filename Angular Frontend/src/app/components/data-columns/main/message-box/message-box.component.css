@@ -28,6 +28,7 @@
     form + send button on right */
     margin-bottom: 0px;
     /* border: 1px solid rgb(195, 69, 49);  */
+    background-color: #313338;
 }
 
 .btn-block {
@@ -45,8 +46,12 @@
     /* TODO: eventually make border invisible,
     we just have it for visibility purposes 
     right now */
-    padding: 10px;
-    margin-right: 60px;
+
+    padding: 5px;
+    /* what we need to modify for the right sidevvv */
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 3px;
     border-radius: 8px;
-    border: 1px solid steelblue;
+    background-color: #35373C;
 }

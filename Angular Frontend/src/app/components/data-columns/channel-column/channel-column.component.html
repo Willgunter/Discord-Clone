@@ -1,35 +1,53 @@
 <div class="channel-column">
         <!-- <nav class="nav"> -->
-    <ul>
-        <li class="list">
-        <!-- TODO: replace words w server icons later -->
-            <a
-                routerLink="/skewl/welcome" 
+    <!-- <table> -->
+        <!-- <li class="list"> -->
+        <div [ngSwitch]="currentRoute">
+
+        <!-- ul: extends to end of screen, curvable, idk -->
+        <!-- li: better fitted, cons: bullet point -->
+         <!-- TODO: replace words w server icons later -->
+            <ol class="serverlink">
+
+                <a
+                routerLink="/{{splicedChannel}}/welcome"
                 routerLinkActive="active" 
-                ariaCurrentWhenActive="page">
+                ariaCurrentWhenActive="page"
+                >
                 <!-- how to determine whether a page is active -->
-                welcome
-            </a>
-        </li>
+                <!-- <span style="color: black" hover># </span> -->
+                # welcome
+                </a>
+
+            </ol>
+
+            <ol class="serverlink">
+                <a
+                routerLink="/{{splicedChannel}}/general"
+                routerLinkActive="active" 
+                ariaCurrentWhenActive="page"
+                >
+                <!-- how to determine whether a page is active -->
+                # general
+                </a>
+
+            </ol>
+
+            <ol class="serverlink">
+                <a
+                routerLink="/{{splicedChannel}}/server-specific"
+                routerLinkActive="active" 
+                ariaCurrentWhenActive="page"
+                >
+                <!-- how to determine whether a page is active -->
+                # server-specific
+                </a>
+
+            </ol>
+          
+        </div>
         
-        <li class="list">
-            <a
-            routerLink="/gym/general" 
-            routerLinkActive="active" 
-            ariaCurrentWhenActive="page">
-            general
-            </a>
-        </li>
-    
-        <li class="list">
-            <a
-            routerLink="/boys_only/server-specific" 
-            routerLinkActive="active" 
-            ariaCurrentWhenActive="page">
-            server-specific
-            </a>
-        </li>
-    </ul>
+    <!-- </table> -->
 
 </div>
 

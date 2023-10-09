@@ -2,18 +2,24 @@
     /* Note: height is probably exactly level w actual message box (on my laptop screen anyway) */
     /* TODO: make height adjustable for any screen (and make the columns reach the bottom w/o scroll bar appearing */
     height: 615px;
-    border: 1px solid steelblue;
     Overflow-y: scroll;
+    background-color: #313338;
 }
 
 .messages {
     /* scroll bar might have something to do here */
     Height: 150 px;
     Overflow-y: scroll;
-    /* border: red; */
 }
 
-.table-data {
+.message {
     /* want it to automatically fill to the right whether it is 200 px or 800 px over */
-    width: auto;
+    /* width: auto is probably wrong */
+    /* maybe its in a previous version? */
+    /* background-color: red; */
+    border-collapse:collapse;
 }
+/*  TODO later???
+.message#hover {
+    background-color: #2E3035;
+} */

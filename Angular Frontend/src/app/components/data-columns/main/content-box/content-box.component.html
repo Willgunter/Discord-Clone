@@ -7,9 +7,9 @@
             <div [ngSwitch]="currentRoute">
                 
                 <div *ngSwitchCase="'/skewl/welcome'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:1px solid black;">
+                    <tr *ngFor="let mes of configService.messages"  style = "border:1px solid black;">
                         <div *ngIf=" mes.server==='skewl' && mes.channel==='welcome'">
-                            <td class="table-data">{{mes.text}}</td>     
+                            <td class="message">{{mes.text}}</td>
                         </div>            
                     </tr>
                 </div>  
