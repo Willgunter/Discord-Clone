@@ -13,6 +13,8 @@ import { ChannelColumnComponent } from './components/data-columns/channel-column
 import { UserColumnComponent } from './components/data-columns/user-column/user-column.component';
 import { ContentBoxComponent } from './components/data-columns/main/content-box/content-box.component';
 import { OrganizationComponent } from './components/organization/organization.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { OrganizationComponent } from './components/organization/organization.co
     UserColumnComponent,
     ContentBoxComponent,
     OrganizationComponent,
+    NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

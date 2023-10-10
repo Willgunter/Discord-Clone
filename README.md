@@ -255,6 +255,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Copying more and more of look and feel of Discord, this time I am making the message bar look more realistic and the channel links look more realistic, especially when you hover over them. Also, I added a global background color so if I zoomed in too fast, the edges of html components wouldn't flash white. It's really the small things that matter most. Next thing to work on is wild card routes in order to get us ready for user authentication. We should probably send Mr. Hodgin our resume before we do that though
 
+    - Update: added wildcard route + login + notfound component. Intenet is acting up so will continue in the morning
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)
