@@ -247,7 +247,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     Next step is getting it to change to its specific channel when it is in a given server. This shouldn't be too challenging but given how long this took idfk.
     Another small next step is making sure the messages go all the way to the right instead of just stopping when the longest message ends. Not sure how to implement this but it should be easy given that its html / css
 
-    - going to do schoolwork now, hopefully I don't fail my assignments because of this major discovery
+    - going to do schoolwork now, hopefully I don't fail my assignments because of this major discovery (worth it btw)
 
 - 10/8/2023
 
