@@ -14,7 +14,8 @@ import { UserColumnComponent } from './components/data-columns/user-column/user-
 import { ContentBoxComponent } from './components/data-columns/main/content-box/content-box.component';
 import { OrganizationComponent } from './components/organization/organization.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/user-handling/login/login.component';
+import { RegisterComponent } from './components/user-handling/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoginComponent } from './components/login/login.component';
     OrganizationComponent,
     NotFoundComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

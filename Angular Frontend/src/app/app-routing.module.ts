@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrganizationComponent } from './components/organization/organization.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/user-handling/login/login.component';
+import { RegisterComponent } from './components/user-handling/register/register.component';
 
 const routes: Routes = [
     // Note: may need to add a component that contains all of the components
@@ -12,6 +13,7 @@ const routes: Routes = [
     // skewl redirects --> skewl/general
     
     { path: 'login', component: LoginComponent},
+    { path: 'register', component: RegisterComponent},
 
     { path: 'skewl/welcome', component: OrganizationComponent},
     { path: 'skewl/general', component: OrganizationComponent},

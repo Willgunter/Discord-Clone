@@ -17,21 +17,32 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
 
-- Get it to work with different screen sizes
+- Use websockets to add voice channels --> might be cool to see what websockets are
+
+- Read through Angular docs to see what else we can do with logic inside of html elements (ex: (click), [ngStyle], [Icon]... idk what any of these mean)
+
+- Slight problem that just occured to me... Angular is best for Single Page Applications. This is great and all, but adding the login and register page would make it a non-single page application because the login and register components would not be embedded in the app-component... but they still work somehow???
+
+- Not an idea for here but next project could be a program that takes as input your industry / target internship and the network of people you are close and have good relationships with (maybe using linkedin or ancestory or other email groups, or it basically stalks you online or something), and gives you potential people you could ask for internship referrals to (ex: ask for software engineering internships, and gives you a list of people like ex: Mr. such and such's cousin / best friend works at Capital One and could probably give you a solid referral). The program might also give you the ability to "sell yourself" maybe? Ok how would I fit that in there
+
+- ✅✅✅Get it to work with different screen sizes✅✅✅
 
 - Should I add delete functionality to messages? I really don't want to because that would maybe take time? would it really though? like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
 
-- ✅✅✅ideas for server names: 
+- ideas for server names: 
 
     - server1
-        - Skewl or something??? (I hate skewl)
-            - updates on whether hell is frozen over or not???
+        - school or something???
+            - Information on school assignments or something
+            - voice channel to collaborate on homework?
 
     - server2
         - Gym
 
     - server3
-        - Boys only club✅✅✅
+        - Internships?
+            - Definetely apply to SAS (the HR people at SAS are very hard-working and extremenly cool btw)
+            - Discussion on how to get one and who does and does not have an internship yet
 
 ## Timeline  
 
@@ -257,6 +268,14 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Update: added wildcard route + login + notfound component. Intenet is acting up so will continue in the morning
 
+- 10/10/2023
+
+    - Made more progress on register and login route (register specifically). Running into a problem where the top of a div component is not extending to the top of the screen and idk why.
+
+- 10/11/2023
+
+    - Solved problem where div component is not extending to top of screen --> solution, set top padding value of outer div that controls background to like ~11%. This makes it behave slighly differently than Discord's actual create an account screen but I guess it works for my purposes, also I don't want to spend any more time on html and css than I already have so I am not worrying abt it.
+ 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)
