@@ -253,7 +253,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Made more visual changes such as copying color of Discords objects onto my objects, adding color change when hovering over certain links, and only being able to switch to channels withing a server instead of channels outside of a server
 
-    - Update: got rid of ugly send button (users submit messages with enter)
+    - Update: got rid of ugly send button (users can still submit messages with enter)
     Next issue: getting components to extend to the bottom of the screen wo making scrollbar appear (or I could just keep it hidden)
 
 - 10/9/2023
