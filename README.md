@@ -275,6 +275,10 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 10/11/2023
 
     - Solved problem where div component is not extending to top of screen --> solution, set top padding value of outer div that controls background to like ~11%. This makes it behave slighly differently than Discord's actual create an account screen but I guess it works for my purposes, also I don't want to spend any more time on html and css than I already have so I am not worrying abt it.
+
+- 10/14/2023
+
+    - Added labels for the inputs and removed placeholders. Settled on default date type for date input. Next step is to construct a User object with the given information and send it to the server. I am learning that html and css are boring af to me for some reason, not sure why.
  
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
