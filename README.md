@@ -17,7 +17,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
 
-- Use websockets to add voice channels --> might be cool to see what websockets are
+- Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication
 
 - Read through Angular docs to see what else we can do with logic inside of html elements (ex: (click), [ngStyle], [Icon]... idk what any of these mean)
 
@@ -279,6 +279,10 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 10/14/2023
 
     - Added labels for the inputs and removed placeholders. Settled on default date type for date input. Next step is to construct a User object with the given information and send it to the server. I am learning that html and css are boring af to me for some reason, not sure why.
+
+- 10/16/2023
+
+    - Looking through past tutorials to see how to authenticate using passport.js. No actual coding today unfortunately :C .
  
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

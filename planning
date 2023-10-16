@@ -1,0 +1,11 @@
+**temp file** WILL DELETE WHEN I AM DONE
+
+1 - create a post request for the user in app.js that corresponds to the submit form in the sign-up page (don't forget to sanitize + validate later!!)
+
+2 - use Passport.js to do something??? --> what does it *not* do??? --> passport.use function
+
+ - serialize + deserialize??
+
+ - all have to be **before** app.use(passport.initialize())
+
+3 - app.post --> something login?
