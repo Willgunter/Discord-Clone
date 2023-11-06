@@ -41,7 +41,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - server3
         - Internships?
-            - Definetely apply to SAS (the HR people at SAS are very hard-working and extremenly cool btw)
+            - Definetely apply to SAS (the HR people at Volvo are very hard-working and extremenly cool btw)
             - Discussion on how to get one and who does and does not have an internship yet
 
 ## Timeline  
