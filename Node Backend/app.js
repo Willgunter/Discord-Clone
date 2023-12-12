@@ -12,7 +12,7 @@ var messagesRouter = require('./routes/messages.js');
 
 const app = express();
 
-mongoose.set("strictQuery", false);
+// mongoose.set("strictQuery", false);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true,}),);
 

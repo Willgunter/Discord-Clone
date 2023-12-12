@@ -11,27 +11,22 @@
             
             <label for="display-name" style="color: #B5BAC1;"><b>DISPLAY NAME</b></label>
             <input type="text" [(ngModel)]="displayName" name="displayName" id="text" style=" border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
-            
-            <P style="color: white;">
-                only display when the cursor is focused on the display name or something idk
-            </P>
 
             <label for="username" style="color: #B5BAC1;"><b>USERNAME <span style="color: #F23F42">*</span></b></label>
             <input type="text" [(ngModel)]="username" name="username" id="text"  style="border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
-            <!-- Do things differ when the type is password vs text or something? -->
+
             <label for="password" style="color: #B5BAC1;"><b> PASSWORD <span style="color: #F23F42">*</span></b></label>
             <input type="password" [(ngModel)]="pwd" name="password" id="text" style="border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
 
             <label for="birth-date" style="color: #B5BAC1;"><b>DATE OF BIRTH <span style="color: #F23F42">*</span></b></label>
             <input type="date" [(ngModel)]="date" name="password" id="text" style="border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
-            <!-- Note: I tried other options for date input but they weren't really working so I just decided to stick with this one -->
-             
-            <input type="submit">
+
+            <input style="color: black;" type="submit">
         </form>
 
-        <p style="color: white">
+        <!-- <p style="color: white">
             insert passportjs>
-        </p>
+        </p> -->
          
     </div> 
 </div>

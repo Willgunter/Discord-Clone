@@ -8,6 +8,6 @@ const MessageModelSchema = new Schema({
     channel: {type: String},
 })
 
-const MessageModel = mongoose.model("MessageModel", MessageModelSchema);
+const MessageModel = mongoose.model("MessageModel", MessageModelSchema, "messagemodels");
 
 module.exports = { MessageModel, };
