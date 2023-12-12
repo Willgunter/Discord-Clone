@@ -283,6 +283,10 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 10/16/2023
 
     - Looking through past tutorials to see how to authenticate using passport.js. No actual coding today unfortunately :C .
+
+- 12/10/2023 + 12/11/2023 + 12/12/2023 
+
+    - Had a lot of trouble trying to figure out how to set up all the packages and things I needed to download (Node, Angular, mongoose, express, etc...) on my other computer. Thankfully with the help of GitHub Copilot I figured it out in three days and also changed a couple small things in the login screen. Will start working on the user object and will figure out how to 1) display users on the side of the screen and 2) attach each message to a user and 3) do login and logout after I finish studying for my last exam.
  
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
