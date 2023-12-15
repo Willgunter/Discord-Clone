@@ -285,7 +285,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 12/15/2023
     - Completed adding User object and got it to display. Also did many small things like change text color to make it more readable, threw table borders away, and cleaned up the names of server 1 and server 3. Still need to do 2) login and logout and 3) attach each message to a user though (I think switching the order is better) I think I might have already done 3 though thanks to MongoDB I think it was / is an easy process.
-    Picture: ![Alt text](image.png)
+    Updated project (right side is list of Users I added) ![Alt text](image.png)
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
