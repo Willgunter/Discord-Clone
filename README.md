@@ -9,17 +9,19 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
-- Add a little more to the wrong turn page to make it seem more distinct? (ex: say: "here is a hippo for you to stare at while you debate what went wrong" <🦛>) FINISH UP WITH ADDING A NEW USER (CURRENTLY NEED TO MAKE IT SEND TO USER COLLECTION? USE LOG STATEMENTS AND STUFF TO FIGURE IT OUT)
+- Add a little more to the wrong turn page to make it seem more distinct? (ex: say: "These might help: <links>") 
+
+-  change "server-specific" to like homework or gainz or weekend trips or something (channel-column.component.html), put the number of users next to the table head "users" add a checkbox in the register page for if someone wants to be added to the camping server (Note: do this AFTER you do login / logout just to make it easier I think) CREATE A LIST OF A COUPLE HUNDRED FAKE USERS USING THAT ONE TOOL WE LEARNED
 
 - add wildcard route / 404 page / redirects (should be extremely easy I just have a more pressing task rn)
 
 -  (Definetely not necessary) Get messages to refresh on the frontend without needing to push the refresh button
 
-- *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*
+- ✅✅✅ *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*  ✅✅✅
 
 - Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
 
-- Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication
+- Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication (OORRRR DO IT FOR NEXT PROJECT???)
 
 - Read through Angular docs to see what else we can do with logic inside of html elements (ex: (click), [ngStyle], [Icon]... idk what any of these mean)
 

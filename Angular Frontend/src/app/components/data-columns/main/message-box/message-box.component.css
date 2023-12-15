@@ -1,36 +1,9 @@
-
-/** in general */
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
-/*
-    idea: snap message box thing to bottom right
-    of 2nd left component
-*/
-
 .message-form {
 
     /* Note: position needs to be relative so send button calibrates off of correct element*/
     position: relative;
 
-    /* height: 100vh; */
     height: 68px;
-
-    /* message form is the red thing that contains both the input box and the send message button */
-    /** goal: make messageform at the bottom 
-    /* of the page */
-    /* temporary thing, will probably break 
-    once we introduce div for message box */
-    /* max-height: 300px; */
-    /* margin: 30px auto; */
-    /* TODO: red border = contains message 
-    form + send button on right */
-    /* margin-bottom: 0px; */
-    /* border: 1px solid rgb(195, 69, 49);  */
-    /* background-color: #313338; */
-    /* margin-bottom: 0px; */
 }
 
 .btn-block {
@@ -57,6 +30,7 @@
     border-radius: 8px;
     /* height: 100vh; */
     background-color: #35373C;
+    /* existing styles */
 }
 
 ::placeholder {

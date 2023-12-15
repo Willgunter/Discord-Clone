@@ -15,7 +15,7 @@ export class RegisterComponent {
     displayName : string = "";
     username : string = "";
     pwd : string = "";
-    date : string = ""; // in format mm/dd/yyyy I think but if not idk
+    date : string = "";
     
     // note: not sure how to implement yet (send user object to database and stuff), will
     // come back to in a bit once we define the user object

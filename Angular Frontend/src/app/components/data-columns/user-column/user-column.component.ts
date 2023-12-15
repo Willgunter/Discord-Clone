@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ConfigService } from 'src/services/config.service';
+import { User } from 'src/services/user.model';
 
 @Component({
   selector: 'app-user-column',
@@ -7,4 +9,19 @@ import { Component } from '@angular/core';
 })
 export class UserColumnComponent {
 
+    constructor(public configService: ConfigService) {}
+
+    ngOnInit() {
+      this.refreshUserList();
+    }
+  
+    refreshUserList() {
+  
+      this.configService.getUserList().subscribe((res) => {
+        // what tf does this line even do
+        this.configService.users = res as User[];
+        
+      });
+  
+    }
 }

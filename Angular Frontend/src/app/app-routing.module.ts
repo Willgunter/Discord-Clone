@@ -13,26 +13,23 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
 
-    { path: 'skewl/welcome', component: OrganizationComponent},
-    { path: 'skewl/general', component: OrganizationComponent},
-    { path: 'skewl/server-specific', component: OrganizationComponent},
-    
-    // { path: 'skewl/general', component: OrganizationComponent},
-    // { path: 'skewl/server-specific', component: OrganizationComponent},
+    { path: 'school/welcome', component: OrganizationComponent},
+    { path: 'school/general', component: OrganizationComponent},
+    { path: 'school/server-specific', component: OrganizationComponent},
 
     { path: 'gym/welcome', component: OrganizationComponent},
     { path: 'gym/general', component: OrganizationComponent},
     { path: 'gym/server-specific', component: OrganizationComponent},
 
-    { path: 'boys_only/welcome', component: OrganizationComponent},
-    { path: 'boys_only/general', component: OrganizationComponent},
-    { path: 'boys_only/server-specific', component: OrganizationComponent},
+    { path: 'camping/welcome', component: OrganizationComponent},
+    { path: 'camping/general', component: OrganizationComponent},
+    { path: 'camping/server-specific', component: OrganizationComponent},
 
-    { path: 'skewl', redirectTo: 'skewl/welcome', pathMatch: 'full' },
+    { path: 'school', redirectTo: 'school/welcome', pathMatch: 'full' },
     { path: 'gym', redirectTo: 'gym/welcome', pathMatch: 'full'  },
-    { path: 'boys_only', redirectTo: 'boys_only/welcome', pathMatch: 'full' },
+    { path: 'camping', redirectTo: 'camping/welcome', pathMatch: 'full' },
 
-    // wild card route, will become a NotFoundComponent once we create it
+    // wild card route, anything link that isn't above links to NotFoundComponent
     { path: '**', component: NotFoundComponent}
 
 ];
