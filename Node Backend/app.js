@@ -9,6 +9,7 @@ const { mongoose } = require('./db.js');
 
 var indexRouter = require('./routes/index.js');
 var messagesRouter = require('./routes/messages.js');
+var usersRouter = require('./routes/users.js');
 
 const app = express();
 
@@ -21,6 +22,8 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 
 app.listen(3000, () => console.log('Server started at port : 3000'));
 
-app.use('/', indexRouter);
+app.use('/', indexRouter); // redirect to messages
 
 app.use('/messages', messagesRouter);
+
+app.use('/users', usersRouter);

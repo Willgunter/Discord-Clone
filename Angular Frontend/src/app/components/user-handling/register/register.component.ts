@@ -21,6 +21,26 @@ export class RegisterComponent {
     // come back to in a bit once we define the user object
 
     constructor(public configService: ConfigService) {}
+    
+    ngOnInit() {
+        this.resetForm();
+        this.refreshUserList();
+    }
+    
+    resetForm(form?: NgForm) {
+        if (form)
+        form.reset();
+
+        this.configService.selectedUser = {
+            // commented it out in message.model.ts (is it really necessary?)
+            // _id: "",
+            displayName: "",
+            username: "",
+            pwd: "",
+            date: "",
+        }
+
+    }
 
     onSubmit(form: NgForm) {
         
@@ -28,12 +48,12 @@ export class RegisterComponent {
             alert('Please add a username');
             return;
         }
-
+        
         if(!this.pwd) {
             alert('Please add a password');
             return;
         }
-
+        
         if(!this.date) {
             alert('Please add a date of birth');
             return;
@@ -45,22 +65,16 @@ export class RegisterComponent {
             displayName: this.displayName,
             username: this.username,
             pwd: this.pwd,
-            date: this.date,
+            date: this.date, // YYYY-MM-DD
         };
-        
-        console.log("trynew");
-        // postMessage(newMessage) kind of works but somehow gives an error as well???
-        this.configService.postUser(form.value).subscribe((res) => {
-            // how to pass form value onto config.service?
-            // TODO: need it to add to user instead of message collection
+
+        // can use newUser OR form.value (I think)
+        this.configService.postUser(newUser).subscribe((res) => {
         });
         
-        // TODO where is the message going?
-        // Probably the next step in this journey
-        // and probably where I need to go...
-        
+        // what does this even do vvv
         // this.onAddMessage.emit(newUser); // I don't know what this is but code seems to work find without it
-
+ 
         this.configService.getUserList().subscribe((res) => {
             this.resetForm(form);
             this.refreshUserList();
@@ -69,20 +83,6 @@ export class RegisterComponent {
             M.toast({html: 'User created', classes: 'rounded'});
         });
         
-    }
-
-    resetForm(form: NgForm) {
-        if (form)
-        form.reset();
-        this.configService.selectedUser = {
-            // commented it out in message.model.ts (is it really necessary?)
-            // _id: "",
-            displayName: "",
-            username: "",
-            pwd: "",
-            date: "",
-        }
-
     }
 
     // is this where "defaultserver" is happening?

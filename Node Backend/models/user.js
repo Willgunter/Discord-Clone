@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserModelSchema = new Schema({
-    displayname: { type: String },
+    displayName: { type: String },
+    username: { type: String },
     pwd: { type: String },
     date: { type: String }, // not completely sure what format this is in tbh
 });
