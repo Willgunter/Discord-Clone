@@ -13,6 +13,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 -  change "server-specific" to like homework or gainz or weekend trips or something (channel-column.component.html), put the number of users next to the table head "users" add a checkbox in the register page for if someone wants to be added to the camping server (Note: do this AFTER you do login / logout just to make it easier I think) CREATE A LIST OF A COUPLE HUNDRED FAKE USERS USING THAT ONE TOOL WE LEARNED
 
+- go back and do most of / all the small TODOs in the TODO extension
+
 - add wildcard route / 404 page / redirects (should be extremely easy I just have a more pressing task rn)
 
 -  (Definetely not necessary) Get messages to refresh on the frontend without needing to push the refresh button
@@ -283,6 +285,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 12/15/2023
     - Completed adding User object and got it to display. Also did many small things like change text color to make it more readable, threw table borders away, and cleaned up the names of server 1 and server 3. Still need to do 2) login and logout and 3) attach each message to a user though (I think switching the order is better) I think I might have already done 3 though thanks to MongoDB I think it was / is an easy process.
+    Picture: ![Alt text](image.png)
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
