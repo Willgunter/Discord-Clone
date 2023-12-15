@@ -33,20 +33,6 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - Should I add delete functionality to messages? I really don't want to because that would maybe take time? would it really though? like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
 
-- ideas for server names: 
-
-    - server1
-        - school or something???
-            - Information on school assignments or something
-            - voice channel to collaborate on homework?
-
-    - server2
-        - Gym
-
-    - server3
-        - Internships?
-            - Definetely apply to SAS (the HR people at Volvo are very hard-working and extremenly cool btw)
-            - Discussion on how to get one and who does and does not have an internship yet
 
 ## Timeline  
 
@@ -290,8 +276,14 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 12/10/2023 + 12/11/2023 + 12/12/2023 
 
-    - Had a lot of trouble trying to figure out how to set up all the packages and things I needed to download (Node, Angular, mongoose, express, etc...) on my other computer. Thankfully with the help of GitHub Copilot I figured it out in three days and also changed a couple small things in the login screen. Will start working on the user object and will figure out how to 1) display users on the side of the screen and 2) attach each message to a user and 3) do login and logout after I finish studying for my last exam.
+    - Had a lot of trouble trying to figure out how to set up all the packages and things I needed to download (Node, Angular, mongoose, express, etc...) on my other computer. Thankfully with the help of GitHub Copilot I figured it out in three days and also changed a couple small things in the login screen. Will start working on the user object and will figure out how to ✅✅✅1) display users on the side of the screen and 2) attach each message to a user and 3) do login and logout after I finish studying for my last exam.
  
+- 12/14/2023
+    - Started to add User object but ran into lots of trouble
+
+- 12/15/2023
+    - Completed adding User object and got it to display. Also did many small things like change text color to make it more readable, threw table borders away, and cleaned up the names of server 1 and server 3. Still need to do 2) login and logout and 3) attach each message to a user though (I think switching the order is better) I think I might have already done 3 though thanks to MongoDB I think it was / is an easy process.
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)
