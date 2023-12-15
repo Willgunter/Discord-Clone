@@ -9,8 +9,6 @@ const routes: Routes = [
     // Note: may need to add a component that contains all of the components
     // in order to get all the important components to display in each
     // route (I hope that makes sense)
-    // TODO: start here to delete things and start with a different method
-    // skewl redirects --> skewl/general
     
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},

@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Message } from './message.model';
 import { BehaviorSubject } from 'rxjs';
+import { User } from './user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,26 +22,33 @@ export class ConfigService {
     // in the tutorial project, this was the url
     // that we interacted with (CRUD interactions)
 
-    selectedMessage: Message;
+    selectedMessage: Message; // why do I even need this?
+    selectedUser: User;
     messages: Message[];
-    readonly apiUrl = 'http://localhost:3000/messages';
+    users: User[];
+    readonly messageApiUrl = 'http://localhost:3000/messages';
+    readonly userApiUrl = 'http://localhost:3000/users';
 
     // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }
   
-    // string can be replaced with Employee probably
-    // why don't I use this method anywhere?
     postMessage(message: Message) {
-        // works for some reason?
-        return this.http.post(this.apiUrl, message);
+        return this.http.post(this.messageApiUrl, message);
+    }
+
+    postUser(user: User) {
+        return this.http.post(this.userApiUrl, user);
     }
 
     getMessageList() {
-        
         // this is working so progress?
         // maybe it was always working I just needed
         // to uncomment it?
-        return this.http.get(this.apiUrl);
+        return this.http.get(this.messageApiUrl);
+    }
+
+    getUserList() {
+        return this.http.get(this.userApiUrl);
     }
 
     // see above resource

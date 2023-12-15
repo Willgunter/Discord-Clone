@@ -9,6 +9,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
+- Add a little more to the wrong turn page to make it seem more distinct? (ex: say: "here is a hippo for you to stare at while you debate what went wrong" <🦛>) FINISH UP WITH ADDING A NEW USER (CURRENTLY NEED TO MAKE IT SEND TO USER COLLECTION? USE LOG STATEMENTS AND STUFF TO FIGURE IT OUT)
+
 - add wildcard route / 404 page / redirects (should be extremely easy I just have a more pressing task rn)
 
 -  (Definetely not necessary) Get messages to refresh on the frontend without needing to push the refresh button
@@ -278,7 +280,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 10/14/2023
 
-    - Added labels for the inputs and removed placeholders. Settled on default date type for date input. Next step is to construct a User object with the given information and send it to the server. I am learning that html and css are boring af to me for some reason, not sure why.
+    - Added labels for the inputs and removed placeholders. Settled on default date type for date input. Next step is to construct a User object with the given information and send it to the server. Going to start working on something else bc I am learning that html and css are boring to me for some reason, not sure why.
 
 - 10/16/2023
 

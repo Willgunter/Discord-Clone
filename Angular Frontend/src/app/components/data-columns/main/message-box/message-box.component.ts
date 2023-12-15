@@ -16,6 +16,7 @@ declare var M: any;
 })
 export class MessageBoxComponent implements OnInit {
     
+
     @Output() onAddMessage: EventEmitter<Message> = new EventEmitter();
 
     // String for current route of server, courtesy of Main Component
@@ -74,13 +75,14 @@ export class MessageBoxComponent implements OnInit {
 
         // postMessage(newMessage) kind of works but somehow gives an error as well???
         this.configService.postMessage(form.value).subscribe((res) => {
-            // how to pass form value onto config.service?
+        //     // how to pass form value onto config.service?
         });
         
         // TODO where is the message going?
         // Probably the next step in this journey
         // and probably where I need to go...
-        this.onAddMessage.emit(newMessage);
+        
+        // this.onAddMessage.emit(newMessage); // I don't know what this is but code seems to work find without it
 
         this.configService.getMessageList().subscribe((res) => {
             this.resetForm(form);
