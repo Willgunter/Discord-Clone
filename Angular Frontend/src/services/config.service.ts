@@ -51,6 +51,11 @@ export class ConfigService {
         return this.http.get(this.userApiUrl);
     }
 
+    authenticateUser(user: User) {
+        
+        return this.http.post(this.userApiUrl + '/authenticate', user);
+    }
+
     // see above resource
     // (we are not using said above resource so I commented it out)
     // setMessage(message: string) {

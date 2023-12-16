@@ -8,7 +8,7 @@ const user_controller = require("../controllers/userController");
 // GET home page (log-in page?)
 router.get('/', user_controller.index);
 
-router.post("/", user_controller.post);
+router.post('/', user_controller.post);
 
 // LETS NOT WORK ON ROUTING UNTIL WE AT LEAST FIGURE OUT HOW TO ADD A MESSAGE
 // ALSO, WE HAVE TO DO THE ROUTING IN ANGULAR DUMBASS

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ConfigService } from 'src/services/config.service';
 import { User } from 'src/services/user.model';
+import { Router } from '@angular/router';
 
 declare var M: any;
 
@@ -20,7 +21,7 @@ export class RegisterComponent {
     // note: not sure how to implement yet (send user object to database and stuff), will
     // come back to in a bit once we define the user object
 
-    constructor(public configService: ConfigService) {}
+    constructor(public configService: ConfigService, public router: Router) {}
     
     ngOnInit() {
         this.resetForm();
@@ -70,6 +71,7 @@ export class RegisterComponent {
 
         // can use newUser OR form.value (I think)
         this.configService.postUser(newUser).subscribe((res) => {
+            // saves it to the database I think
         });
         
         // what does this even do vvv
@@ -82,6 +84,8 @@ export class RegisterComponent {
             // or I may even just get rid of it altogether
             M.toast({html: 'User created', classes: 'rounded'});
         });
+
+        this.router.navigate(['/school']);
         
     }
 

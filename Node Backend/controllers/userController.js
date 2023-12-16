@@ -39,10 +39,9 @@ exports.post = asyncHandler(async (req, res, next) => {
         });
 
         await u.save();
-
         // vvv what does this even do lmao vvv
         res.send(u);
-
+        
     }
 
 });
