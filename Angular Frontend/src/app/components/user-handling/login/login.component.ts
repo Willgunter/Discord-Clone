@@ -33,6 +33,15 @@ export class LoginComponent {
         if (form)
         form.reset();
 
+        this.configService.selectedUser = {
+            // commented it out in message.model.ts (is it really necessary?)
+            // _id: "",
+            displayName: "",
+            username: "",
+            pwd: "",
+            date: "",
+        }
+
     }
 
     onSubmit(form: NgForm) {
@@ -58,10 +67,13 @@ export class LoginComponent {
         // and probably where I need to go...
         
         // this.onAddMessage.emit(newMessage); // I don't know what this is but code seems to work find without it
-        this.configService.authenticateUser(form.value).subscribe((res) => {
+        console.log("what");
 
+        this.configService.authenticateUser(form.value).subscribe((res) => {
             this.resetForm(form);
+            
         });
+        
         // this.configService.getMessageList().subscribe((res) => {
             // at some point I would like to either make this in a better spot
             // or I may even just get rid of it altogether

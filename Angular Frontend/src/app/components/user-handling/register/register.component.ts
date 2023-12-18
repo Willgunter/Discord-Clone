@@ -44,7 +44,6 @@ export class RegisterComponent {
     }
 
     onSubmit(form: NgForm) {
-        
         if(!this.username) {
             alert('Please add a username');
             return;
@@ -68,7 +67,6 @@ export class RegisterComponent {
             pwd: this.pwd,
             date: this.date, // YYYY-MM-DD
         };
-
         // can use newUser OR form.value (I think)
         this.configService.postUser(newUser).subscribe((res) => {
             // saves it to the database I think

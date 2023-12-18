@@ -289,6 +289,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 12/16/2023
     - Starting to add login / logout but am getting sort of confused. Things are not working as intended. Will come back later and hopefully debug and read more into the issues.
 
+- 12/18/2023
+    - Worked a lot more on login / logout and after a while discovered it isn't natively possible to send something from Node to Angular so went to bard for ways to do it. Going to hopefully implement one soon
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

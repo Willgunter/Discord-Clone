@@ -30,24 +30,25 @@ app.listen(3000, () => console.log('Server started at port : 3000'));
 //     successRedirect: "/",
 //     failureRedirect: "/"
 //   })     
-passport.use(
-    new LocalStrategy(async (username, password, done) => {
-        try {
-            const user = await UserModel.findOne({ username: username });
-            if (!user) {
-                return done(null, false, { message: "Incorrect username" });
-            };
-        if (user.password !== password) {
-          return done(null, false, { message: "Incorrect password" });
-        };
-        return done(null, user);
-      } catch(err) {
-          return done(err);
-        };
-    })
-  );
+// passport.use(
+//     new LocalStrategy(async (username, password, done) => {
+//         console.log("why");
+//         try {
+//             const user = await UserModel.findOne({ username: username });
+//             if (!user) {
+//                 return done(null, false, { message: "Incorrect username" });
+//             };
+//         if (user.password !== password) {
+//           return done(null, false, { message: "Incorrect password" });
+//         };
+//         return done(null, user);
+//       } catch(err) {
+//           return done(err);
+//         };
+//     })
+//   );
   
-  app.use(passport.initialize());
+app.use(passport.initialize());
   
   app.use('/', indexRouter); // redirect to messages
   
@@ -55,5 +56,5 @@ passport.use(
   
   app.use('/users', usersRouter);
   
-  app.use('/users/authenticate', usersAuthRouter);
+  app.use('/authenticate', usersAuthRouter);
   

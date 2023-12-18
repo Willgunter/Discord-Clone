@@ -6,7 +6,7 @@ const userauth_controller = require("../controllers/userauthController");
 /// MESSAGE ROUTES ///
 
 // GET home page (log-in page?)
-// router.get('/', userauth_controller.index);
+router.get('/', userauth_controller.index);
 
 router.post('/', userauth_controller.post);
 
