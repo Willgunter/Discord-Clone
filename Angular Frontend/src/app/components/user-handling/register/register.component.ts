@@ -68,6 +68,7 @@ export class RegisterComponent {
             date: this.date, // YYYY-MM-DD
         };
         // can use newUser OR form.value (I think)
+        // issue I think
         this.configService.postUser(newUser).subscribe((res) => {
             // saves it to the database I think
         });

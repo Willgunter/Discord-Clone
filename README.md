@@ -292,6 +292,15 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 12/18/2023
     - Worked a lot more on login / logout and after a while discovered it isn't natively possible to send something from Node to Angular so went to bard for ways to do it. Going to hopefully implement one soon
 
+- 12/19/2023
+    - Learned that I could use LocalStorage in Angular to implement user login / logout which is much easier and probably faster than the methods I saw.
+    - Update: I found a small set of youtube videos that take me through a course of how to do login / logout but in order to do the problem I have I might have to watch the rest and do a bit of rewriting I think maybe???
+    - 2nd Update: found the github for the video, should make the process a lot faster I think
+    - Note: 2:55 on second video
+
+- 12/31/2023
+    - Back from band trip. 15:30ish on Part 2, just Pushing to save
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

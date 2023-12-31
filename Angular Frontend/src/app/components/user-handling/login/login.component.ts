@@ -65,14 +65,16 @@ export class LoginComponent {
         // TODO where is the message going?
         // Probably the next step in this journey
         // and probably where I need to go...
-        
+        // const user: User = {
+        //     username: this.username,
+        //     password: this.password,
+        // }
         // this.onAddMessage.emit(newMessage); // I don't know what this is but code seems to work find without it
-        console.log("what");
+        console.log(this.username);
 
-        this.configService.authenticateUser(form.value).subscribe((res) => {
-            this.resetForm(form);
-            
-        });
+        // this.configService.authenticateUser(form.value).subscribe((res) => {
+        //     this.resetForm(form);
+        // });
         
         // this.configService.getMessageList().subscribe((res) => {
             // at some point I would like to either make this in a better spot

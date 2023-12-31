@@ -28,20 +28,19 @@ exports.index = asyncHandler(async (req, res, next) => {
 exports.post = asyncHandler(async (req, res, next) => {
 
     // it looks like the code is not being read here
-    saveUser().catch((err) => console.log('Error in User Save :' + JSON.stringify(err, undefined, 2)));
-    async function saveUser() {
-
-        const u = new UserModel({
-            displayName: req.body.displayName, // might be displayname (n not capitalized)
-            username: req.body.username,
-            pwd: req.body.pwd,
-            date: req.body.date,
-        });
-
-        await u.save();
-        // vvv what does this even do lmao vvv
-        res.send(u);
-        
-    }
+    let newUser = new UserModel({
+        displayName: req.body.displayName, // might be displayname (n not capitalized)
+        username: req.body.username,
+        pwd: req.body.pwd,
+        date: req.body.date,
+    });
+    
+    UserModel.addUser(newUser, (err, user) => { // problem???
+        if(err){
+            res.json({success: false, msg: "Failed to register user"});
+        } else {
+            res.json({success: true, msg: "User registered"});
+        }
+    });
 
 });

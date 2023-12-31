@@ -2,8 +2,8 @@
 <form #loginForm="ngForm" class="login-form" (ngSubmit)="onSubmit(loginForm)">
 
     <div class="login">
-                <input type="text" [(ngModel)]="username" name="text" id="text" placeholder="Enter Username" style="background-color: blue; border: hidden;">
-                <input type="password" [(ngModel)]="password" name="text" id="text" placeholder="Enter Password" style="border: hidden;">
+                <input type="text" [(ngModel)]="username" name="username" id="text" placeholder="Enter Username" style="background-color: blue; border: hidden;">
+                <input type="password" [(ngModel)]="password" name="password" id="text" placeholder="Enter Password" style="border: hidden;">
     </div>
     <input style="color: black;" type="submit">
 </form>

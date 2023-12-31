@@ -54,29 +54,7 @@ export class ConfigService {
     }
 
     authenticateUser(user: User) {
-        // HERE IS THE PROBLEM HERE I AM
-        // PROBLEM IS HERE (PROBLEM IS THAT IDK HOW TO ACCESS RES.LOCALS)
-        // THIS IS THE PROBLEM
-        // WHAT THE FUCK HOW DO I SOLVE THIS
-        // SHOULD I USE WEBSOCKETS OR SOMETHING???
-        // ACCORDING TO BARD WE HAVE OPTIONS LIKE
-        // - SERVERSIDE EVENTS
         // - CHANGE IT USING A DATABASE
-        // - USE WEBSOCKETS
-        // GOING TO WORK ON IT TOMORROW
-    this.http.post(this.userauthApiUrl, user).subscribe((res: any) => { // doesnt work 
-        //but right Idea I think
-        const modifiedLocals = res.body.locals; // Access the modified res.locals object here
-        // Use the modifiedLocals object as needed
-        console.log("what: " + modifiedLocals.message);
-    });
-    
-        this.http.post(this.userauthApiUrl, user).subscribe((response) => {
-                const success = response['success']; // Access the 'success' property from the response
-                // Use the 'success' value in your Angular code
-                console.log(success);
-            });
-
         return this.http.post(this.userauthApiUrl, user); // THIS CAN'T CHANGE
     }
 

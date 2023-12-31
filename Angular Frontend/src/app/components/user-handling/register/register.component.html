@@ -10,16 +10,16 @@
         <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"> <!-- redirect to skewl or something? -->
             
             <label for="display-name" style="color: #B5BAC1;"><b>DISPLAY NAME</b></label>
-            <input type="text" [(ngModel)]="displayName" name="displayName" id="text" style=" border: hidden; background-color: #1E1F22; border-radius: 3px;">
+            <input type="text" [(ngModel)]="displayName" name="displayName" id="dname" style=" border: hidden; background-color: #1E1F22; border-radius: 3px;">
 
             <label for="username" style="color: #B5BAC1;"><b>USERNAME <span style="color: #F23F42">*</span></b></label>
-            <input type="text" [(ngModel)]="username" name="username" id="text"  style="border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
+            <input type="text" [(ngModel)]="username" name="username" id="uname"  style="border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
 
             <label for="password" style="color: #B5BAC1;"><b> PASSWORD <span style="color: #F23F42">*</span></b></label>
-            <input type="password" [(ngModel)]="pwd" name="password" id="text" style="border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
+            <input type="password" [(ngModel)]="pwd" name="password" id="pwd" style="border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
 
             <label for="birth-date" style="color: #B5BAC1;"><b>DATE OF BIRTH <span style="color: #F23F42">*</span></b></label>
-            <input type="date" [(ngModel)]="date" name="password" id="text" style="border: hidden; background-color: #1E1F22; border-radius: 3px; " required placeholder="mm/dd/yyyy" required>
+            <input type="date" [(ngModel)]="date" name="date" id="bdate" style="border: hidden; background-color: #1E1F22; border-radius: 3px; " required placeholder="mm/dd/yyyy" required>
 
             <input style="color: black;" type="submit">
         </form>

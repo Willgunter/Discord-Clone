@@ -18,11 +18,14 @@ const { UserModel } = require('./models/user.js');
 const app = express();
 
 // mongoose.set("strictQuery", false);
+// Body parser middleware (what does that mean)
+app.use(cors({ origin: 'http://localhost:4200' }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true,}),);
 
 // specifies which server to set it to or something
-app.use(cors({ origin: 'http://localhost:4200' }));
+// (only 4200 can access it I think???)
 
 app.listen(3000, () => console.log('Server started at port : 3000'));
 
