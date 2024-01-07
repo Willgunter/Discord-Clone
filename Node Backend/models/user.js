@@ -12,37 +12,25 @@ const UserModelSchema = new Schema({
 
 const UserModel = module.exports = mongoose.model("UserModel", UserModelSchema, "users");
 
-// NOTE: COMMENTED OUT FUNCTION BELOW IS THE CALLBACK VARIANT.
-// CALLBACKS ARE NOT SUPPORTED BY UserModel so I hope this works
 module.exports.getUserByUsername = function(username) {
     const query = {username: username}
     return UserModel.findOne(query); // was callback
 }
 
-// module.exports.getUserByUsername = function(username, callback) {
-//     const query = {username: username}
-//     UserModel.findOne(query, callback); // was callback
-// }
-
 module.exports.getUserById = function(id, callback) {
     return UserModel.findById(id, callback);
 }
 
-module.exports.addUser = async function(newUser) {
+module.exports.addUser = async function(newUser, callback) { // callback is not in function args but we can still use if for some reason
 
-    console.log(newUser.password);
-
-    // generated using copilot
     try {
-
-        const salt = bcrypt.genSalt(10);
-        const hash = bcrypt.hash(newUser.password, salt);
+        
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(newUser.password, salt);
         newUser.password = hash;
-
+        
         // break here so we can double check values are not empty
-        await newUser.save(); // Fix: Remove the argument from the save() method. ???
-        // Note: Postman is sending it and its working but postman is indefinetely loading
-        // and then says it "doesn't work"
+        await newUser.save(callback);
 
     } catch (error) {
         throw error;
@@ -61,11 +49,5 @@ module.exports.comparePassword = function(candidatePassword, hash) {
         throw error;
     }
 }
-// vvv callback variant vvv
-// bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
-//     if(err) throw err;
-//     callback(null, isMatch); // probly problem here
-// });
-
 
 module.exports = { UserModel };

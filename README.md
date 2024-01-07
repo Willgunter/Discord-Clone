@@ -308,6 +308,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 1/7/2024
     - Fixed authenticate by turning callbacks into promises
+    - Fixed other issue
+    - Ran into another issue something related to payload or some shit idk
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
