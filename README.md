@@ -311,6 +311,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Fixed other issue
     - Ran into another issue something related to circular data structures in JSON 
     - Fixed issue - had to do with a function not having async / await before it (why did that fix the problem???)
+    - Now on Part 5
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
