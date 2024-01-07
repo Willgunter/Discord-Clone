@@ -7,20 +7,21 @@ module.exports = function(passport) {
     let opts = {};
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("jwt");
     opts.secretOrKey = config.secret;
-    passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-
-        console.log("hi: " + jwt_payload.data._id);
-
+    passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
+        
         try {
-            user = UserModel.getUserById(jwt_payload.data._id);
+            // Note, ran into circular structure problem when 
+            // not using async / await
+            user = await UserModel.getUserById(jwt_payload.data._id);
         } catch (err) {
             return done(err, false);
         }
-        if (user) {
-            console.log("success");
+        
+        if(user) {
             return done(null, user);
         } else {
             return done(null, false);
         }
     }));
+
 }

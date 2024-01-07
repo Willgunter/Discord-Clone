@@ -309,7 +309,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 1/7/2024
     - Fixed authenticate by turning callbacks into promises
     - Fixed other issue
-    - Ran into another issue something related to payload or some shit idk
+    - Ran into another issue something related to circular data structures in JSON 
+    - Fixed issue - had to do with a function not having async / await before it (why did that fix the problem???)
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
