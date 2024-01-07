@@ -302,9 +302,12 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Back from band trip. 15:30ish on part 2, just Pushing to save
     - Finished part 2, how at start of part 3
 
-- 1/7/2924
+- 1/6/2924
     - At end of part 3, running into issues in two spots w/ Postman
     - Update: fixed one issue, but still have another
+
+- 1/7/2024
+    - Fixed authenticate by turning callbacks into promises
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  

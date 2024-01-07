@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true,}),);
 
 app.use(session({
-    secret: 'secret',
+    secret: 'secretlol',
     resave: true,
     saveUninitialized: true
 }));
@@ -45,36 +45,12 @@ require('./config/passport')(passport);
 
 ////////////////////////////////////////////////////
 app.listen(3000, () => console.log('Server started at port : 3000'));
+  
+app.use('/', indexRouter); // redirect to messages
 
-// called when passport.authenticate("local", {
-//     successRedirect: "/",
-//     failureRedirect: "/"
-//   })     
-// passport.use(
-//     new LocalStrategy(async (username, password, done) => {
-//         console.log("why");
-//         try {
-//             const user = await UserModel.findOne({ username: username });
-//             if (!user) {
-//                 return done(null, false, { message: "Incorrect username" });
-//             };
-//         if (user.password !== password) {
-//           return done(null, false, { message: "Incorrect password" });
-//         };
-//         return done(null, user);
-//       } catch(err) {
-//           return done(err);
-//         };
-//     })
-//   );
+app.use('/messages', messagesRouter);
+
+app.use('/users', usersRouter);
   
-// app.use(passport.initialize());
-  
-  app.use('/', indexRouter); // redirect to messages
-  
-  app.use('/messages', messagesRouter);
-  
-  app.use('/users', usersRouter);
-  
-  app.use('/authenticate', usersAuthRouter);
+app.use('/authenticate', usersAuthRouter);
   

@@ -25,20 +25,22 @@ module.exports.getUserByUsername = function(username) {
 // }
 
 module.exports.getUserById = function(id, callback) {
-    UserModel.findById(id, callback);
+    return UserModel.findById(id, callback);
 }
 
-module.exports.addUser = async function(newUser){
+module.exports.addUser = async function(newUser) {
+
+    console.log(newUser.password);
 
     // generated using copilot
     try {
 
-        const salt = await bcrypt.genSalt(10);
-        const hash = await bcrypt.hash(newUser.password, salt);
+        const salt = bcrypt.genSalt(10);
+        const hash = bcrypt.hash(newUser.password, salt);
         newUser.password = hash;
 
         // break here so we can double check values are not empty
-        newUser.save(); // Fix: Remove the argument from the save() method. ???
+        await newUser.save(); // Fix: Remove the argument from the save() method. ???
         // Note: Postman is sending it and its working but postman is indefinetely loading
         // and then says it "doesn't work"
 
@@ -51,7 +53,7 @@ module.exports.addUser = async function(newUser){
 }
 
 module.exports.comparePassword = function(candidatePassword, hash) {
-    console.log(candidatePassword, hash);
+
     try {
         const isMatch = bcrypt.compare(candidatePassword, hash);
         return isMatch;
