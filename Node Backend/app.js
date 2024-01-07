@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require("passport");
+const path = require('path');
 const LocalStrategy = require("passport-local").Strategy;
 const bodyParser = require('body-parser');
 
@@ -7,13 +8,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const secrets = require('dotenv').config();
 
-const { mongoose } = require('./db.js');
+const { mongoose } = require('./config/db.js');
 
 var indexRouter = require('./routes/index.js');
 var messagesRouter = require('./routes/messages.js');
 var usersRouter = require('./routes/users.js');
 var usersAuthRouter = require('./routes/usersauth.js');
 const { UserModel } = require('./models/user.js');
+const session = require('express-session'); // Import the express-session middleware
 
 const app = express();
 
@@ -21,12 +23,27 @@ const app = express();
 // Body parser middleware (what does that mean)
 app.use(cors({ origin: 'http://localhost:4200' }));
 
+// set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true,}),);
 
-// specifies which server to set it to or something
-// (only 4200 can access it I think???)
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
 
+// Middleware for Passport functions
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
+// Add the express-session middleware/////////////////
+
+////////////////////////////////////////////////////
 app.listen(3000, () => console.log('Server started at port : 3000'));
 
 // called when passport.authenticate("local", {
@@ -51,7 +68,7 @@ app.listen(3000, () => console.log('Server started at port : 3000'));
 //     })
 //   );
   
-app.use(passport.initialize());
+// app.use(passport.initialize());
   
   app.use('/', indexRouter); // redirect to messages
   

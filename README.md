@@ -299,7 +299,12 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Note: 2:55 on second video
 
 - 12/31/2023
-    - Back from band trip. 15:30ish on Part 2, just Pushing to save
+    - Back from band trip. 15:30ish on part 2, just Pushing to save
+    - Finished part 2, how at start of part 3
+
+- 1/7/2924
+    - At end of part 3, running into issues in two spots w/ Postman
+    - Update: fixed one issue, but still have another
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
