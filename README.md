@@ -316,6 +316,10 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Going to bed now but @ 13.24 (Implement Flash Messages) part of Part 6
     - Praying to God this next semester isn't nearly as bad as the last one.
 
+- 1/8/2024
+    - Finished Part 6 onto Part 7
+    - Finished Part 7 onto Part 8
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

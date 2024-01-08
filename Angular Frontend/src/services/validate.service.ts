@@ -9,7 +9,7 @@ export class ValidateService {
 
   validateRegister(user) {
 
-    if(user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined) {
+    if(user.name == "" || user.email == "" || user.username == "" || user.password == "") {
       return false;
     } else {
       return true;
@@ -17,10 +17,8 @@ export class ValidateService {
   }
 
   validateEmail(email) {
-
     // regex for email validation
     const re = /\S+@\S+\.\S+/;
-
     return re.test(email);
   }
 

@@ -4,6 +4,7 @@ import { ConfigService } from 'src/services/config.service';
 import { User } from 'src/services/user.model';
 import { Router } from '@angular/router';
 import { ValidateService } from 'src/services/validate.service';
+import { AuthService } from 'src/services/auth.service';
 
 declare var M: any;
 
@@ -13,10 +14,7 @@ declare var M: any;
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-    // name: { type: String },
-    // email: { type: String, required: true},
-    // username: { type: String, required: true },
-    // password: { type: String, required: true },
+    
     name : string = "";
     email: string = "";
     username : string = "";
@@ -25,7 +23,12 @@ export class RegisterComponent {
     // note: not sure how to implement yet (send user object to database and stuff), will
     // come back to in a bit once we define the user object
 
-    constructor(private validateService: ValidateService, public configService: ConfigService, public router: Router) {}
+    constructor(
+        private authService: AuthService,
+        private validateService: ValidateService,
+        public configService: ConfigService,
+        public router: Router
+        ) {}
     
     ngOnInit() {
         this.resetForm();
@@ -35,7 +38,6 @@ export class RegisterComponent {
     resetForm(form?: NgForm) {
         if (form)
         form.reset();
-
         this.configService.selectedUser = {
             // commented it out in message.model.ts (is it really necessary?)
             // _id: "",
@@ -44,7 +46,6 @@ export class RegisterComponent {
             username: "",
             password: "",
         }
-
     }
 
     onSubmit(form: NgForm) {
@@ -56,46 +57,39 @@ export class RegisterComponent {
             username: this.username,
             password: this.password,
         };
-        
+
+        // Validates the form
         if (!this.validateService.validateRegister(newUser)) {
-            console.log('Please fill in all fields');
+            // Note: instead of toast we could have used
+            // flash messages --> would probably look more like a website
+            M.toast({html: 'Please fill in all fields', classes: 'rounded'});
             return false;
         }
 
+        // Validate Email
         if(!this.validateService.validateEmail(newUser.email)) {
-            console.log('Please use a valid email');
+            M.toast({html: 'Please use a valid email', classes: 'rounded'});
             return false;
         }
 
-
-        this.configService.postUser(newUser).subscribe((res) => {
-            // saves it to the database I think
-        });
-        
-        // what does this even do vvv
-        // this.onAddMessage.emit(newUser); // I don't know what this is but code seems to work find without it
- 
-        this.configService.getUserList().subscribe((res) => {
-            this.resetForm(form);
-            this.refreshUserList();
-            // at some point I would like to either make this in a better spot
-            // or I may even just get rid of it altogether
-            M.toast({html: 'User created', classes: 'rounded'});
+        // Register User
+        this.authService.registerUser(newUser).subscribe({
+            next: (response) => {
+                M.toast({html: 'You are now registered and can log in', classes: 'rounded'});
+                this.resetForm(form);
+                this.router.navigate(['/login']);
+            },
+            error: (error) => {
+                M.toast({html: 'Something went wrong', classes: 'rounded'});
+                this.router.navigate(['/register']);
+            }
         });
 
-        this.router.navigate(['/school']);
-        return false; 
+        // why do I need to return?
+        return true;
+
+
     }
-
-    // is this where "defaultserver" is happening?
-    // does this even do anything?????
-    
-
-        // vvv does this do anything vvv
-        // I think it might reset the text value?
-        // this.text = '';
-        // this.server = '';
-        // this.channel = '';
 
   refreshUserList() {
     this.configService.getUserList().subscribe((res) => {
