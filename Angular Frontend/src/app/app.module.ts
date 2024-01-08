@@ -15,6 +15,7 @@ import { OrganizationComponent } from './components/organization/organization.co
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/user-handling/login/login.component';
 import { RegisterComponent } from './components/user-handling/register/register.component';
+import { ValidateService} from 'src/services/validate.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { RegisterComponent } from './components/user-handling/register/register.
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

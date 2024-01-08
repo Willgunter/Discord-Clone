@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ConfigService } from 'src/services/config.service';
 import { User } from 'src/services/user.model';
 import { Router } from '@angular/router';
+import { ValidateService } from 'src/services/validate.service';
 
 declare var M: any;
 
@@ -12,16 +13,19 @@ declare var M: any;
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-
-    displayName : string = "";
+    // name: { type: String },
+    // email: { type: String, required: true},
+    // username: { type: String, required: true },
+    // password: { type: String, required: true },
+    name : string = "";
+    email: string = "";
     username : string = "";
-    pwd : string = "";
-    date : string = "";
+    password : string = "";
     
     // note: not sure how to implement yet (send user object to database and stuff), will
     // come back to in a bit once we define the user object
 
-    constructor(public configService: ConfigService, public router: Router) {}
+    constructor(private validateService: ValidateService, public configService: ConfigService, public router: Router) {}
     
     ngOnInit() {
         this.resetForm();
@@ -35,40 +39,35 @@ export class RegisterComponent {
         this.configService.selectedUser = {
             // commented it out in message.model.ts (is it really necessary?)
             // _id: "",
-            displayName: "",
+            name: "",
+            email: "",
             username: "",
-            pwd: "",
-            date: "",
+            password: "",
         }
 
     }
 
     onSubmit(form: NgForm) {
-        if(!this.username) {
-            alert('Please add a username');
-            return;
-        }
-        
-        if(!this.pwd) {
-            alert('Please add a password');
-            return;
-        }
-        
-        if(!this.date) {
-            alert('Please add a date of birth');
-            return;
-        }
+
         // Constructing a new message object with text, server, and channel values
-        const newUser: User = {
-            // problem with id obviously
-            // _id: "w",
-            displayName: this.displayName,
+        const newUser = {
+            name: this.name,
+            email: this.email,
             username: this.username,
-            pwd: this.pwd,
-            date: this.date, // YYYY-MM-DD
+            password: this.password,
         };
-        // can use newUser OR form.value (I think)
-        // issue I think
+        
+        if (!this.validateService.validateRegister(newUser)) {
+            console.log('Please fill in all fields');
+            return false;
+        }
+
+        if(!this.validateService.validateEmail(newUser.email)) {
+            console.log('Please use a valid email');
+            return false;
+        }
+
+
         this.configService.postUser(newUser).subscribe((res) => {
             // saves it to the database I think
         });
@@ -85,7 +84,7 @@ export class RegisterComponent {
         });
 
         this.router.navigate(['/school']);
-        
+        return false; 
     }
 
     // is this where "defaultserver" is happening?

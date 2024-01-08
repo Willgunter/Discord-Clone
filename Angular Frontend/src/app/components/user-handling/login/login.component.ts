@@ -36,10 +36,10 @@ export class LoginComponent {
         this.configService.selectedUser = {
             // commented it out in message.model.ts (is it really necessary?)
             // _id: "",
-            displayName: "",
+            name: "",
+            email: "",
             username: "",
-            pwd: "",
-            date: "",
+            password: "",
         }
 
     }

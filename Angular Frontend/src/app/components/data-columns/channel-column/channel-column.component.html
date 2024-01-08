@@ -6,10 +6,12 @@
 
         <!-- ul: extends to end of screen, curvable, idk -->
         <!-- li: better fitted, cons: bullet point -->
-         <!-- TODO: replace emojis w server icons later -->
+         <!-- TODO: replace emojis w server icons (later) -->
             <ol class="serverlink" style="list-style: none;">
 
-                <li>
+                <li > <!--[routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" are two css classes basically -->
+                    <!-- I think they make the messages take longer to load to I did not include them 
+                        although that might just be my parents slow internet-->
                     <a
                     routerLink="/{{splicedChannel}}/welcome"
                     routerLinkActive="active" 
