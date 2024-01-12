@@ -46,6 +46,7 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
 
     try {
         isMatch = await UserModel.comparePassword(password, user.password);
+
     } catch (err) {
         throw err;
     }
@@ -53,7 +54,7 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
         const token = jwt.sign({ data: user }, config.secret, { // was {data: user}
             expiresIn: 604800 // 1 week in seconds
             });
-            res.json({
+            return res.json({
             success: true,
             token: 'JWT '+ token,
             user: {

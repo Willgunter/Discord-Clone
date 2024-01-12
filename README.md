@@ -320,6 +320,14 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Finished Part 6 onto Part 7
     - Finished Part 7 onto Part 8
 
+- 1/10/2024
+    - Part of the way through Part 8 and .storeUserData method is not working. Trying to debug but nothing seems to get desired result.
+    Will come back later.
+
+- 1/11/2024
+    - Fixed problem of auth / login not working --> we had a .json method in the auth service but it wasn't necessary because we imported a property called "map". Probably because it was out of date or something idfk. Solved it by using copilot ofc.
+    - Solved big problem relating to login not working. Now have to solve css problem of how to make an angular component snap to the bottom of the screen without extending the scrollbar.
+
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
 - [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)

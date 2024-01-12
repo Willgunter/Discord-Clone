@@ -75,6 +75,7 @@ export class RegisterComponent {
         // Register User
         this.authService.registerUser(newUser).subscribe({
             next: (response) => {
+                console.log(response);
                 M.toast({html: 'You are now registered and can log in', classes: 'rounded'});
                 this.resetForm(form);
                 this.router.navigate(['/login']);

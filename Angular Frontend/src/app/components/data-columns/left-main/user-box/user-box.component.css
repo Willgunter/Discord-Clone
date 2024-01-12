@@ -1,0 +1,10 @@
+.user-box {
+    float: left-bottom;
+    width: 75px;
+    /* height: 660px;  */
+    /* height: max-content; */
+    /* margin-bottom: 0px; */
+    /* height: 100%; */
+    background-color: #1E1F22;
+    
+}

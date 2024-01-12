@@ -1,5 +1,5 @@
 <!-- This is for login, not register for new account -->
-<form #loginForm="ngForm" class="login-form" (ngSubmit)="onSubmit(loginForm)">
+<form #loginForm="ngForm" class="login-form" (ngSubmit)="onLoginSubmit(loginForm)">
 
     <div class="login">
                 <input type="text" [(ngModel)]="username" name="username" id="text" placeholder="Enter Username" style="background-color: blue; border: hidden;">

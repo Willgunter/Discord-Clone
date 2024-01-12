@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from 'src/services/config.service';
-import { ContentBoxComponent } from '../main/content-box/content-box.component';
+import { ContentBoxComponent } from '../../main/content-box/content-box.component';
+import { UserBoxComponent } from 'src/app/components/data-columns/left-main/user-box/user-box.component';
+
 
 @Component({
   selector: 'app-channel-column',
