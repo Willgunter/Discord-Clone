@@ -20,7 +20,7 @@ import { UserBoxComponent } from './components/data-columns/left-main/user-box/u
 
 import { ValidateService} from 'src/services/validate.service';
 import { AuthService } from 'src/services/auth.service';
-import { MainLeftComponent } from './components/data-columns/left-main/main-left/main-left.component';
+import { ProfileComponent } from 'src/app/components/user-handling/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { MainLeftComponent } from './components/data-columns/left-main/main-left
     LoginComponent,
     RegisterComponent,
     UserBoxComponent,
-    MainLeftComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

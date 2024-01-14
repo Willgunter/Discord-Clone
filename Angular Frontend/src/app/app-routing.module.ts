@@ -4,6 +4,8 @@ import { OrganizationComponent } from './components/organization/organization.co
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/user-handling/login/login.component';
 import { RegisterComponent } from './components/user-handling/register/register.component';
+import { ProfileComponent } from './components/user-handling/profile/profile.component';
+// import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
     // Note: may need to add a component that contains all of the components
@@ -12,6 +14,9 @@ const routes: Routes = [
     
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
+    // { path: ':username', component: ProfileComponent}, // users profile page
+    { path: 'profile', component: ProfileComponent }, // users custom profile page. Not sure how to do this yet
+    // such that it can only access current user's profile page
 
     { path: 'school/welcome', component: OrganizationComponent},
     { path: 'school/general', component: OrganizationComponent},

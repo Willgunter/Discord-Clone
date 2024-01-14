@@ -2,7 +2,7 @@
 
     /* Note: position needs to be relative so send button calibrates off of correct element*/
     position: relative;
-
+    margin-top: 0px;
     height: 68px;
 }
 

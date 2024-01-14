@@ -1,5 +1,6 @@
 .content-box {
     Overflow-y: scroll;
+    margin-top: 0px;
     background-color: #313338;
     height: calc(100vh - 68px);
 }
