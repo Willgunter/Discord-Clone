@@ -1,3 +1,16 @@
-<button class="btn">Log out</button>
-eventually rename the /profile to whatever the user's name is. Not sure how to do that yet tho.
+<div *ngIf="user">
+    
+    <h1>Profile</h1>
+    <!-- <ul> -->
+        <li>
+            Username: {{user.username}}
+        </li>
+        <li>
+            Email: {{user.email}}
+        </li>
+    <!-- </ul> -->
+    <button class="btn" (click)="onLogoutClick()">Logout</button>
+    
+    eventually rename the /profile to whatever the user's name is. Not sure how to do that yet tho.
+</div>
 

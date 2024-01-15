@@ -331,6 +331,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 1/14/2024
     - Found out a setting on how to make bottom part of component snap to bottom part of screen (bottom: 0).
     Thank you copilot.
+    - Started Part 9 and ran into another error of Angular functions being out of date again. Figured out what to do becuase of a comment and then had to figure out I had to swap the places of the two functions.
 
 
 ## Resources I used

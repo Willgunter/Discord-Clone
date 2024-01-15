@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
     providedIn: 'root'
@@ -27,6 +28,19 @@ export class AuthService {
 
     }
 
+    getProfile() {
+
+        this.loadToken();
+        
+        const headers = new HttpHeaders({
+            'Content-type': 'application/json',
+            'Authorization': this.authToken
+        });
+
+        return this.http.get('http://localhost:3000/users/profile', {headers: headers})
+            .pipe(map((res: any) => res));
+    }
+
     storeUserData(token: any, user: any) {
 
         // id_token is default path for jwt to look for
@@ -35,6 +49,18 @@ export class AuthService {
         this.authToken = token;
         this.user = user;
 
+    }
+
+    loadToken() {
+        const token = localStorage.getItem('id_token');
+        this.authToken = token;
+    }
+
+    // Not useful to us *quite* yet
+    loggedIn() {
+        this.loadToken();
+        const helper = new JwtHelperService();
+        return !helper.isTokenExpired(this.authToken);
     }
 
     logout() {
