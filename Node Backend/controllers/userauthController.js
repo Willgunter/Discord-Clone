@@ -15,7 +15,7 @@ exports.index = asyncHandler(async (req, res, next) => {
             
             // why can't it display channel?
             // why is it not updating at all?
-            res.send(await UserModel.find({}, { displayName:1, username:1, pwd:1, date:1, _id:0}).sort({_id:-1}));
+            res.send(await UserModel.find({}, { name:1, _id:0}).sort({_id:-1}));
 
         }
                 

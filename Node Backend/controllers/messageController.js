@@ -15,6 +15,7 @@ exports.index = asyncHandler(async (req, res, next) => {
             // why can't it display channel?
             // why is it not updating at all?
             res.send(await MessageModel.find({}, { text:1, server:1, channel:1, _id:0}).sort({_id:-1}));
+            
         }
                 
     // where we get all the messages from mongo + send all the messages to the backend (*very important*)

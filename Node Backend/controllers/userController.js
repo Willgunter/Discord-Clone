@@ -76,6 +76,17 @@ exports.profile = asyncHandler(async (req, res, next) => {
     // console.log(user.username);
 });
 
+// delete maybe?
+exports.index = asyncHandler(async (req, res, next) => {
+    getUsers().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+        async function getUsers() {
+            
+            // why can't it display channel?
+            // why is it not updating at all?
+            res.send(await UserModel.find({}, { _id:1}));
+        }
+});
+
 exports.validate = asyncHandler(async (req, res, next) => {
     res.send("VALIDATE");
 });

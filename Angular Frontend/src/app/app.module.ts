@@ -21,6 +21,7 @@ import { UserBoxComponent } from './components/data-columns/left-main/user-box/u
 import { ValidateService} from 'src/services/validate.service';
 import { AuthService } from 'src/services/auth.service';
 import { ProfileComponent } from 'src/app/components/user-handling/profile/profile.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { ProfileComponent } from 'src/app/components/user-handling/profile/profi
     HttpClientModule,
     FormsModule,
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

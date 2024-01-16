@@ -78,10 +78,6 @@ export class MessageBoxComponent implements OnInit {
         //     // how to pass form value onto config.service?
         });
         
-        // TODO where is the message going?
-        // Probably the next step in this journey
-        // and probably where I need to go...
-        
         // this.onAddMessage.emit(newMessage); // I don't know what this is but code seems to work find without it
 
         this.configService.getMessageList().subscribe((res) => {
@@ -104,7 +100,6 @@ export class MessageBoxComponent implements OnInit {
   }
 
    // maybe try it on your own here (fetch most recent 10 comments from db maybe???)
-   // TODO: if we call this in onSubmit, does it automatically refresh the list of messages?
    // yes but you still have to refresh the page (lame)
   refreshMessageList() {
     this.configService.getMessageList().subscribe((res) => {

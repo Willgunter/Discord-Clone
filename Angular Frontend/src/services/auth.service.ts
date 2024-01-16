@@ -57,6 +57,8 @@ export class AuthService {
     }
 
     // Not useful to us *quite* yet
+    // use *ngIf="authService.loggedIn()" in html elements to hide/show elements
+    // if user is logged in or not
     loggedIn() {
         this.loadToken();
         const helper = new JwtHelperService();

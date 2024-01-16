@@ -20,11 +20,12 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), user_contr
 
 router.get('/validate', user_controller.validate);
 
+router.get('/users', user_controller.index);
+
 // LETS NOT WORK ON ROUTING UNTIL WE AT LEAST FIGURE OUT HOW TO ADD A MESSAGE
 // ALSO, WE HAVE TO DO THE ROUTING IN ANGULAR DUMBASS
 
 // GET request for general chat for server 1
-// TODO think of names for the three servers
 // router.get("/:<server1>/:general");
 
 // POST request for general chat for server 1

@@ -50,7 +50,8 @@ export class ConfigService {
     }
 
     getUserList() {
-        return this.http.get(this.userApiUrl);
+        // why is this not working?
+        return this.http.get(this.userauthApiUrl);
     }
 
     authenticateUser(user: User) {

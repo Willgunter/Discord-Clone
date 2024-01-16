@@ -7,7 +7,6 @@
         <!-- ngModel = probably where it stores data about the message
         (in this ) -->
             
-        <!-- TODO: goal rn: find out how to attatch current route server and channel values to the message when we press submit -->
         <input type="text" [(ngModel)]="text" name="text" id="text" placeholder="Enter Text" style="border: hidden; color: #f2f3f5; margin-left: 12px">
     </div>
 <!-- one of two ways we can do this maybe 1) create two hidden forms with server and channel as the values so we 
@@ -20,6 +19,5 @@ postmessage to make it happy. I like the second way more but don't know how to d
         <input name="channel" hidden ngModel>
     </div>
 
-    <!-- TODO: replace airplane w paper airplane from one of the websites -->
     <input style="display: none;" type="submit" class="btn btn-block"/>
 </form>

@@ -1,6 +1,6 @@
 ## Description
 
-An independent coding project for my resume, serving as a replica of the widely used platform Discord  
+An independent coding project for my own personal self learning (and resume), serving as a replica of the widely used platform Discord  
 Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 ## Ideas (check when completed)
@@ -15,19 +15,13 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - go back and do most of / all the small TODOs in the TODO extension
 
-- add wildcard route / 404 page / redirects (should be extremely easy I just have a more pressing task rn)
-
 -  (Definetely not necessary) Get messages to refresh on the frontend without needing to push the refresh button
 
 - ✅✅✅ *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*  ✅✅✅
 
-- Write something about RESTful apis in resume once you get it to work more --> might look good to resume ppl
-
 - Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication (OORRRR DO IT FOR NEXT PROJECT???)
 
 - Read through Angular docs to see what else we can do with logic inside of html elements (ex: (click), [ngStyle], [Icon]... idk what any of these mean)
-
-- Slight problem that just occured to me... Angular is best for Single Page Applications. This is great and all, but adding the login and register page would make it a non-single page application because the login and register components would not be embedded in the app-component... but they still work somehow???
 
 - Not an idea for here but next project could be a program that takes as input your industry / target internship and the network of people you are close and have good relationships with (maybe using linkedin or ancestory or other email groups, or it basically stalks you online or something), and gives you potential people you could ask for internship referrals to (ex: ask for software engineering internships, and gives you a list of people like ex: Mr. such and such's cousin / best friend works at Capital One and could probably give you a solid referral). The program might also give you the ability to "sell yourself" maybe? Ok how would I fit that in there
 
@@ -35,6 +29,13 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - Should I add delete functionality to messages? I really don't want to because that would maybe take time? would it really though? like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
 
+## Resources I used
+- [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
+- [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)
+- [Angular Tutorial by Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&t=3s)  
+- [Guide for login / logout and user authentication](https://www.youtube.com/playlist?list=PLillGF-RfqbZMNtaOXJQiDebNXjVapWPZ)
+- [Angular Docs](https://angular.io/)
+- [Online Guide](https://www.samarpaninfotech.com/blog/methods-to-share-data-between-angular-components/#h-method-4-unrelated-components-via-a-service)
 
 ## Timeline  
 
@@ -333,10 +334,16 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     Thank you copilot.
     - Started Part 9 and ran into another error of Angular functions being out of date again. Figured out what to do becuase of a comment and then had to figure out I had to swap the places of the two functions.
 
+- 1/15/2024
+    - Got guards to work and finished video series (finally)
+    - Got Users to display in User column
+    - Going to work on:
+        - Fix login screen 
+        - Turn server icons from emojis into pictures
+        - make a profile picture for users and current user
+        - let users change color of pictures 
+        - make "profile" route more pretty
+        - fix up messages and stuff
+        - Clean up routing and add server / channel feature (???)
+        - Change "Enter text" to "Message {channel name}"
 
-## Resources I used
-- [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
-- [GitHub repo of above video](https://github.com/CodAffection/MEAN-Stack-CRUD-Operations)
-- [Angular Tutorial by Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&t=3s)  
-- [Angular Docs](https://angular.io/)
-- [Online Guide](https://www.samarpaninfotech.com/blog/methods-to-share-data-between-angular-components/#h-method-4-unrelated-components-via-a-service)
