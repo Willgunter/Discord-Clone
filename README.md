@@ -11,7 +11,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         - make a profile picture for users and current user - shouldn't be that hard for Users column
         - let users change color of pictures 
         - make "profile" route more pretty
-        - fix up messages and stuff
+        - fix up messages and stuff (attach a user to a message, make box look better, etc...)
         - Clean up routing / add server / channel feature (???)
         - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
         - (maybe) clean up routing for nine different routes
