@@ -21,6 +21,7 @@ export class MessageBoxComponent implements OnInit {
 
     // String for current route of server, courtesy of Main Component
     @Input() currentRoute: string = "";
+    shortenedRoute: string = "";
     
     // text, server, and channel of specific message data
     text: string = "";
@@ -32,6 +33,9 @@ export class MessageBoxComponent implements OnInit {
     ngOnInit() {
         this.resetForm();
         this.refreshMessageList();
+        
+        let secondBackslash = this.currentRoute.indexOf("/", 1);
+        this.shortenedRoute = this.currentRoute.substring(secondBackslash + 1, this.currentRoute.length);
     }
 
     resetForm(form?: NgForm) {

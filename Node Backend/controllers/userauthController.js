@@ -13,8 +13,7 @@ exports.index = asyncHandler(async (req, res, next) => {
     doSomething().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
         async function doSomething() {
             
-            // why can't it display channel?
-            // why is it not updating at all?
+            // why does username:1 not work?
             res.send(await UserModel.find({}, { name:1, _id:0}).sort({_id:-1}));
 
         }
