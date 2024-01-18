@@ -1,6 +1,7 @@
 // place where we submit and store the messages
 
 var { ServerModel } = require("../models/server");
+var { ChannelModel } = require("../models/channel");
 // Note: NEEDS TO BE TITLED "MessageModel" exactly for it to work for some reason
 
 const asyncHandler = require("express-async-handler");
@@ -24,22 +25,20 @@ exports.index = asyncHandler(async (req, res, next) => {
 
 exports.post = asyncHandler(async (req, res, next) => {
 
-    // it looks like the code is not being read here
-    saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
-        async function saveMessage() {
+    let newServer = new ServerModel({
+        name: req.body.name,
+        // channels: req.body.channels,
+        // add channels here once I come back
+    }) 
 
-            // why is this not working?
-            const mes = new ServerModel({
-                text: req.body.text,
-                server: req.body.server,
-                channel: req.body.channel,
-            });
+    console.log(newServer.name);
 
-            await mes.save();
-            
-            // vvv what does this even do lmao vvv
-            res.send(mes);
-
-        }
+    try {
+        server = ServerModel.addServer(newServer);
+    } catch (err) {
+        return res.json({success: false, msg: 'Failed to add server'});
+    }
+    
+    return res.json({success: true, msg: 'Server added'});
 
 });

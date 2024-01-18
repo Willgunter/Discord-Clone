@@ -7,8 +7,8 @@ const server_controller = require("../controllers/serverController");
 
 router.get('/', server_controller.index);
 
-router.post('/:serverId', server_controller.post);
-
+router.post('/create', server_controller.post);
+// /:serverId ???
 // eventually add a delete server request?
 
 module.exports = router;

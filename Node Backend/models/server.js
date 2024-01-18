@@ -1,28 +1,32 @@
 const mongoose = require("mongoose");
+const config = require('../config/db');
 
 const Schema = mongoose.Schema;
 
-const ServerSchema = new Schema({
-    name: {type : String, required: true},
-    channels: {type : Array, required: true},
+const ServerModelSchema = new Schema({
+    name: { type: String, required: true },
+    // channels: { type: Array, required: true },
     // user: { type: Schema.Types.ObjectId, ref: "UserModel" }, // Reference to the User model
 });
 
-const ServerModel = mongoose.model("ServerModel", ServerSchema, "servers");
+const ServerModel = mongoose.model("ServerModel", ServerModelSchema, "servers");
 
-module.exports.getServerByName = function(name) {} // eventually
+module.exports.getServerByName = function (name) {} // eventually
 
-module.exports.addServer = async function(newServer, callback) { // callback is not in function args but we can still use if for some reason
-
+module.exports.addServer = async function (newServer, callback) {
     try {
-        
-        await newServer.save(callback);
-
+        // Save the new server to the database
+        await newServer.save();
+        console.log(newServer.name + " created");
+        if (callback) {
+            callback(null, newServer);
+        }
     } catch (error) {
+        console.log(error);
         throw error;
     }
 
-    console.log("Server: " + newServer.name + " added to database");
+    console.log(newServer.serverName + " created");
     
 }
 

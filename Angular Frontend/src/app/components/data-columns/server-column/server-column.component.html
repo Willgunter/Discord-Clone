@@ -33,7 +33,7 @@
 
         <!-- TEST -->
         <!-- <tr *ngFor="let mes of configService.messages" style = "border:none;"> -->
-            <li class="list">
+            <!-- <li class="list">
                 <a
                 routerLink="/{{test}}/general" 
                 routerLinkActive="active" 
@@ -42,7 +42,7 @@
 
             </a>
 
-            </li>
+            </li> -->
                 
             <li class="list">
                 <img src="assets/images/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
@@ -56,12 +56,9 @@
 </div>
 
 <div *ngIf="showBox"  style="text-align: center; margin: 0 auto; max-width: 350px; height: 150px">
-    <!-- Your box content here -->
-        <!-- Your existing code here -->
-                <form>
-                    <label for="serverName">Server Name:</label>
-                    <input type="text" id="serverName" name="serverName"><br>
-                    <input type="submit" value="Submit">
-                </form>
+    <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
+        <label for="name">Server Name:</label>
+        <input [(ngModel)]="name" type="text" id="name" name="name"><br>
+        <input type="submit" value="submit">
+    </form>
 </div>
-
