@@ -359,5 +359,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         - Clean up routing and add server / channel feature (???)
         - Change "Enter text" to "Message {channel name}"
 
-- 1/26/2024
+- 1/16/2024
     - Changed emojis of servers to actual images and cleaned tham up and changed placeholder text of message box. Starting to brainstorm how I can add the "add server" and "add channel" feature.
+
+- 1/17/2024
+    - Working on Add server feature. Things are not working as intended.

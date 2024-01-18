@@ -62,10 +62,10 @@ export class ServerColumnComponent {
             };
     
         //     // assigning form values to server and channel values inherited from app-main
-    
+            form.value.name = this.name;
         //     // postMessage(newMessage) kind of works but somehow gives an error as well???
-            this.configService.postServer(newServer).subscribe((res) => {
-        //     //     // how to pass form value onto config.service?
+            this.configService.postServer(form.value).subscribe((res) => {
+                // CURRENTL PROBLEM
                 console.log("test");
             });
             
