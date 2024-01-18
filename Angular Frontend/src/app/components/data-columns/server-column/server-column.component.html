@@ -9,7 +9,6 @@
                 ariaCurrentWhenActive="page">
                 <img src="assets/images/school.png" alt="School Icon" width="48" height="48" style="border-radius:50%;">
                 </a>
-<!-- // assets/images/my-image.png -->
             </li>
             
             <li class="list">
@@ -31,9 +30,38 @@
 
                 </a>
             </li>
-        </ul>
-        
 
-    <!-- </nav> -->
+        <!-- TEST -->
+        <!-- <tr *ngFor="let mes of configService.messages" style = "border:none;"> -->
+            <li class="list">
+                <a
+                routerLink="/{{test}}/general" 
+                routerLinkActive="active" 
+                ariaCurrentWhenActive="page">
+                <img src="assets/images/camping.png" alt="{{test}} Icon" width="48" height="48" style="border-radius:50%;">
+
+            </a>
+
+            </li>
+                
+            <li class="list">
+                <img src="assets/images/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
+            </li>
+                <!-- <td>{{mes.text}}</td>         -->
+        <!-- </tr> -->
+        <!-- Your box content here -->
+        
+        <!-- </nav> -->
+    </ul>
+</div>
+
+<div *ngIf="showBox"  style="text-align: center; margin: 0 auto; max-width: 350px; height: 150px">
+    <!-- Your box content here -->
+        <!-- Your existing code here -->
+                <form>
+                    <label for="serverName">Server Name:</label>
+                    <input type="text" id="serverName" name="serverName"><br>
+                    <input type="submit" value="Submit">
+                </form>
 </div>
 

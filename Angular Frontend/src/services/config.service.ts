@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { Message } from './message.model';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './user.model';
+import { Server } from './server.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,11 @@ export class ConfigService {
     selectedUser: User;
     messages: Message[];
     users: User[];
+    servers: Server[];
     readonly messageApiUrl = 'http://localhost:3000/messages';
     readonly userApiUrl = 'http://localhost:3000/users';
     readonly userauthApiUrl = 'http://localhost:3000/authenticate';
+    readonly serverApiUrl = 'http://localhost:3000/servers';
 
     // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }
@@ -38,8 +41,16 @@ export class ConfigService {
     }
 
     postUser(user: User) {
-        console.log("why");
         return this.http.post(this.userApiUrl, user);
+    }
+
+    postServer(server: Server) {
+        // how do I make a post request to a specific server? this.serverApiUrl + server ?
+        return this.http.post(this.serverApiUrl, server);
+    }
+
+    getServerList() {
+        return this.http.get(this.serverApiUrl);
     }
 
     getMessageList() {

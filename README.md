@@ -10,12 +10,12 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         - ✅✅✅Turn server icons from emojis into pictures✅✅✅
         - make a profile picture for users and current user - shouldn't be that hard for Users column
         - let users change color of pictures 
-        - make "profile" route more pretty
+        - make "profile" route more pretty --> remove profile route and put all information in user box?
         - fix up messages and stuff (attach a user to a message, make box look better, etc...)
-        - Clean up routing / add server / channel feature (???)
+        - Clean up routing / add add server / channel feature (???)
         - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
         - (maybe) clean up routing for nine different routes
-        and make it so that its more scalable
+        and make it so that its more scalable --> working on rn
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
