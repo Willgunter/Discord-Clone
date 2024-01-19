@@ -357,8 +357,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         - make "profile" route more pretty
         - fix up messages and stuff
         - Clean up routing and add server / channel feature (???)
-        - Change "Enter text" to "Message {channel name}"
-
+        - Change "Enter text" to "Message { name}"
+channel
 - 1/16/2024
     - Changed emojis of servers to actual images and cleaned tham up and changed placeholder text of message box. Starting to brainstorm how I can add the "add server" and "add channel" feature.
 
@@ -367,3 +367,4 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 1/18/2024
     - Restructuring models. Got add server feature to work on backend but haven't gotten to making it appear on the frontend yet and haven't gotten it to work with updated models yet.
+    - Running into issue where channels array of server object will not populate with given ObjectId for a channel. Not sure what to do but will come back tomorrow (hopefully).

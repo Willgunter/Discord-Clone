@@ -35,6 +35,9 @@ exports.create = asyncHandler(async (req, res, next) => {
         });
 
         await sev.save();
+
+        // bruh
+        await ServerModel.findOne({name: req.body.name}).populate('channels');
         
         // vvv what does this even do lmao vvv
         res.send(sev);

@@ -16,7 +16,7 @@ const ServerModel = mongoose.model("ServerModel", ServerModelSchema, "servers");
 module.exports.getServerByName = function (name) {} // eventually
 
 module.exports.addServer = asyncHandler(async (newServer, callback) => {
-
+    
     try {
         // Save the new server to the database
         await newServer.save(callback);
