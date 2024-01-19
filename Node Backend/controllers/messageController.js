@@ -33,8 +33,7 @@ exports.post = asyncHandler(async (req, res, next) => {
             // why is this not working?
             const mes = new MessageModel({
                 text: req.body.text,
-                server: req.body.server,
-                channel: req.body.channel,
+                user: req.body.user,
             });
 
             await mes.save();

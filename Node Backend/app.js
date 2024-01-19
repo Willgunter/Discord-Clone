@@ -15,6 +15,7 @@ var messagesRouter = require('./routes/messages.js');
 var usersRouter = require('./routes/users.js');
 var usersAuthRouter = require('./routes/usersauth.js');
 var serverRouter = require('./routes/servers.js');
+var channelRouter = require('./routes/channels.js');
 const { UserModel } = require('./models/user.js');
 const session = require('express-session'); // Import the express-session middleware
 
@@ -56,4 +57,6 @@ app.use('/users', usersRouter);
 app.use('/authenticate', usersAuthRouter);
 
 app.use('/servers', serverRouter);
+
+app.use('/channels', channelRouter);
   

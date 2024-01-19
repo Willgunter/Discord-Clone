@@ -1,22 +1,25 @@
 const mongoose = require("mongoose");
 const config = require('../config/db');
 
+const asyncHandler = require("express-async-handler");
+const { body, validationResult} = require("express-validator");
+
 const Schema = mongoose.Schema;
 
 const ServerModelSchema = new Schema({
     name: { type: String, required: true },
-    // channels: { type: Array, required: true },
-    // user: { type: Schema.Types.ObjectId, ref: "UserModel" }, // Reference to the User model
+    channels: [{ type: Schema.Types.ObjectId, ref: 'ChannelModel', required: true }],
 });
 
 const ServerModel = mongoose.model("ServerModel", ServerModelSchema, "servers");
 
 module.exports.getServerByName = function (name) {} // eventually
 
-module.exports.addServer = async function (newServer, callback) {
+module.exports.addServer = asyncHandler(async (newServer, callback) => {
+
     try {
         // Save the new server to the database
-        await newServer.save();
+        await newServer.save(callback);
         console.log(newServer.name + " created");
         if (callback) {
             callback(null, newServer);
@@ -26,9 +29,9 @@ module.exports.addServer = async function (newServer, callback) {
         throw error;
     }
 
-    console.log(newServer.serverName + " created");
+    console.log(newServer.name + " created");
     
-}
+});
 
 
 module.exports = { ServerModel };

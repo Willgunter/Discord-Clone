@@ -364,3 +364,6 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 1/17/2024
     - Working on Add server feature. Things are not working as intended.
+
+- 1/18/2024
+    - Restructuring models. Got add server feature to work on backend but haven't gotten to making it appear on the frontend yet and haven't gotten it to work with updated models yet.
