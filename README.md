@@ -372,3 +372,4 @@ channel
 - 1/19/2024
     - The problem was that I spelled "channels" "channel" in the part where I sent it to the
     database. 🤦🏼‍♂️🤦🏼‍♂️🤦🏼‍♂️
+    - Next step: having a user select a .png image (has to be png) for the server image. and somehow storing the image (how will we either migrate that to mysql or store it locally?) and finally having the server show up on screen.

@@ -57,8 +57,10 @@
 
 <div *ngIf="showBox"  style="text-align: center; margin: 0 auto; max-width: 350px; height: 150px">
     <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
+        <!-- I plan on cleaning this stuff up later -->
         <label for="name">Server Name:</label>
         <input [(ngModel)]="name" type="text" id="name" name="name"><br>
         <input type="submit" value="submit">
+        <input type="file" name="image">
     </form>
 </div>
