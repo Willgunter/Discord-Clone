@@ -4,10 +4,11 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { Message } from './message.model';
 import { BehaviorSubject } from 'rxjs';
+
 import { User } from './user.model';
+import { Message } from './message.model';
+import { Channel } from './channel.model';
 import { Server } from './server.model';
 
 @Injectable({
@@ -25,13 +26,20 @@ export class ConfigService {
 
     selectedMessage: Message; // why do I even need this?
     selectedUser: User;
-    messages: Message[];
     users: User[];
+    messages: Message[];
+    channels: Channel[];
     servers: Server[];
+
+    // organized by type of request
     readonly messageApiUrl = 'http://localhost:3000/messages';
     readonly userApiUrl = 'http://localhost:3000/users';
+    readonly getServerApiUrl = 'http://localhost:3000/servers/server-info';
+    
     readonly userauthApiUrl = 'http://localhost:3000/authenticate';
-    readonly serverApiUrl = 'http://localhost:3000/servers';
+    readonly createServerApiUrl = 'http://localhost:3000/servers/create-server';
+    readonly createChannelApiUrl = 'http://localhost:3000/channels/create-channel';
+    
 
     // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }
@@ -46,11 +54,15 @@ export class ConfigService {
 
     postServer(server: Server) {
         // how do I make a post request to a specific server? this.serverApiUrl + server ?
-        return this.http.post(this.serverApiUrl, server);
+        return this.http.post(this.createServerApiUrl, server);
+    }
+
+    postChannel(channel: Channel) {
+        return this.http.post(this.createChannelApiUrl, channel);
     }
 
     getServerList() {
-        return this.http.get(this.serverApiUrl);
+        return this.http.get(this.getServerApiUrl);
     }
 
     getMessageList() {

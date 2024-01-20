@@ -16,6 +16,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
         - (maybe) clean up routing for nine different routes
         and make it so that its more scalable --> working on rn
+        - make things more discord like (change font / color of name of channel)
+        - put a break in between three default channels and rest of channels
+        - add websockets for live message display / server updating / channel updating
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
@@ -373,3 +376,6 @@ channel
     - The problem was that I spelled "channels" "channel" in the part where I sent it to the
     database. 🤦🏼‍♂️🤦🏼‍♂️🤦🏼‍♂️
     - Next step: having a user select a .png image (has to be png) for the server image. and somehow storing the image (how will we either migrate that to mysql or store it locally?) and finally having the server show up on screen.
+
+- 1/20/2024
+    - FINALLY got form to work, had problems linking default channels w/ server but I fixed them. Server images now display on the screen, although they aren't custum tailored to specific server yet (have to get angular storage to work). Also, links technically work but I have to work on routing and stuff for them to not display the wrong thing.

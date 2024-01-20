@@ -7,7 +7,7 @@
                 routerLink="/school/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="assets/images/school.png" alt="School Icon" width="48" height="48" style="border-radius:50%;">
+                <img src="assets/images/serverImages/school.png" alt="School Icon" width="48" height="48" style="border-radius:50%;">
                 </a>
             </li>
             
@@ -16,7 +16,7 @@
                 routerLink="/gym/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="assets/images/gym.png" alt="Gym Icon" width="48" height="48" style="border-radius:50%;">
+                <img src="assets/images/serverImages/gym.png" alt="Gym Icon" width="48" height="48" style="border-radius:50%;">
 
                 </a>
             </li>
@@ -26,42 +26,52 @@
                 routerLink="/camping/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="assets/images/camping.png" alt="Camping Icon" width="48" height="48" style="border-radius:50%;">
+                <img src="assets/images/serverImages/camping.png" alt="Camping Icon" width="48" height="48" style="border-radius:50%;">
 
                 </a>
             </li>
 
         <!-- TEST -->
-        <!-- <tr *ngFor="let mes of configService.messages" style = "border:none;"> -->
-            <!-- <li class="list">
+        
+        <tr *ngFor="let sev of configService.servers" style = "border:none;">
+            <li class="list">
                 <a
-                routerLink="/{{test}}/general" 
+                routerLink="/{{sev.name}}/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="assets/images/camping.png" alt="{{test}} Icon" width="48" height="48" style="border-radius:50%;">
+                <img src="assets/images/serverImages/camping.png" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;">
+                <!-- TODO change camping.png to actual server image -->
 
             </a>
 
-            </li> -->
-                
-            <li class="list">
-                <img src="assets/images/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
             </li>
-                <!-- <td>{{mes.text}}</td>         -->
+            
+        </ul>
+        <ul>
+            <li class="list">
+                <img src="assets/images/serverImages/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
+            </li>
+
+        </ul>
+                <!-- <td>{{mes.text}}</td> -->
         <!-- </tr> -->
         <!-- Your box content here -->
         
         <!-- </nav> -->
-    </ul>
 </div>
 
 <div *ngIf="showBox"  style="text-align: center; margin: 0 auto; max-width: 350px; height: 150px">
+
     <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
-        <!-- I plan on cleaning this stuff up later -->
         
+        <!-- I plan on cleaning this stuff up later -->
         <label for="name">Server Name:</label>
         <input [(ngModel)]="name" type="text" id="name" name="name">
-        <input type="submit" value="submit" accept=".png" width="48" height="48">
-        <input type="file" name="image">
+        <!-- Does not have ngModel trait because we parse it in a different way in the typescript -->
+        <input type="file" id="file" name="image">
+        
+        <input type="submit" value="submit" width="48" height="48">
+    
     </form>
+
 </div>

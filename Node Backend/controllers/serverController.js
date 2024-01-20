@@ -11,7 +11,7 @@ const { body, validationResult} = require("express-validator");
 exports.serverinfo = asyncHandler(async (req, res, next) => {
     
     getServer().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
-        async function saveServer() {
+        async function getServer() {
             
             res.send(await ServerModel.find({}, { name:1, _id:0}).sort({_id:-1}));
             
@@ -32,6 +32,7 @@ exports.createserver = asyncHandler(async (req, res, next) => {
         const sev = new ServerModel({
             name: req.body.name,
             channels: req.body.channels,
+            imagePath: req.body.imagePath,
         });
 
         await sev.save();

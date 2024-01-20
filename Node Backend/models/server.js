@@ -9,6 +9,7 @@ const Schema = mongoose.Schema;
 const ServerModelSchema = new Schema({
     name: { type: String, required: true },
     channels: [{ type: Schema.Types.ObjectId, ref: 'ChannelModel', required: true }],
+    imagePath: { type: String, required: true },
 });
 
 const ServerModel = mongoose.model("ServerModel", ServerModelSchema, "servers");

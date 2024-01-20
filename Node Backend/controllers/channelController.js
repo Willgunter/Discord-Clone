@@ -27,6 +27,7 @@ exports.createchannel = asyncHandler(async (req, res, next) => {
 
         // why is this not working?
         const cha = new ChannelModel({
+            _id: req.body._id,
             name: req.body.name,
             messages: req.body.messages,
         });
