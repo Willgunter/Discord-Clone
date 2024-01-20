@@ -10,7 +10,7 @@ const { body, validationResult} = require("express-validator");
 // => localhost:3000/servers
 exports.serverinfo = asyncHandler(async (req, res, next) => {
     
-    saveServer().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+    getServer().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
         async function saveServer() {
             
             res.send(await ServerModel.find({}, { name:1, _id:0}).sort({_id:-1}));
@@ -23,21 +23,18 @@ exports.serverinfo = asyncHandler(async (req, res, next) => {
 
 });
 
-exports.create = asyncHandler(async (req, res, next) => {
+exports.createserver = asyncHandler(async (req, res, next) => {
     
-    saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
-    async function saveMessage() {
+    saveServer().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+    async function saveServer() {
 
         // why is this not working?
         const sev = new ServerModel({
             name: req.body.name,
-            channels: req.body.channel,
+            channels: req.body.channels,
         });
 
         await sev.save();
-
-        // bruh
-        await ServerModel.findOne({name: req.body.name}).populate('channels');
         
         // vvv what does this even do lmao vvv
         res.send(sev);

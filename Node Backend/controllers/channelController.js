@@ -20,7 +20,7 @@ exports.channelinfo = asyncHandler(async (req, res, next) => {
 
 });
 
-exports.create = asyncHandler(async (req, res, next) => {
+exports.createchannel = asyncHandler(async (req, res, next) => {
     
     saveChannel().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
     async function saveChannel() {

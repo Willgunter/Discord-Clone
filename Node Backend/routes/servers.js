@@ -7,7 +7,7 @@ const server_controller = require("../controllers/serverController");
 
 router.get('/server-info', server_controller.serverinfo);
 
-router.post('/create-server', server_controller.create);
+router.post('/create-server', server_controller.createserver);
 // /:serverId ???
 // eventually add a delete server request?
 

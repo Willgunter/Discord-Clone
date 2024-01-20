@@ -368,3 +368,7 @@ channel
 - 1/18/2024
     - Restructuring models. Got add server feature to work on backend but haven't gotten to making it appear on the frontend yet and haven't gotten it to work with updated models yet.
     - Running into issue where channels array of server object will not populate with given ObjectId for a channel. Not sure what to do but will come back tomorrow (hopefully).
+
+- 1/19/2024
+    - The problem was that I spelled "channels" "channel" in the part where I sent it to the
+    database. 🤦🏼‍♂️🤦🏼‍♂️🤦🏼‍♂️
