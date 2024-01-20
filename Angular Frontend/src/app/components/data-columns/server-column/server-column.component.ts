@@ -98,19 +98,11 @@ export class ServerColumnComponent {
             // Loop through defaultChannels and post the channels to the database
             defaultChannels.forEach((channel) => {
 
-                let isExecuted = false;
-
                 // bruh what the fuck is happening
                 this.configService.postChannel(channel).subscribe({
 
                     next: () => {
-                        // Code inside the next function
-                        // I don't need to do anything ( =I think???)
-                        // Handle the completion
-
-                        // for some reason isExecuted isn't working
-                        
-                        
+                        // do nothing???
                     },
                     error: (err) => {
                         console.error('Error posting channel to the database:', err);
@@ -122,43 +114,33 @@ export class ServerColumnComponent {
 
                 form.value.name = this.name;
                 form.value.channels = [ defaultChannels[0]._id, defaultChannels[1]._id, defaultChannels[2]._id ]; // I wanted there to be default channels but there needs to be an object id
+                
+                // replace name of file with name of imagePath for now
                 form.value.imagePath = "src/app/assets/images/serverImages/" + this.name + ".png"; 
-                console.log("this is a complete test:"  + form.value.imagePath);
-
-                // how is form.value.imagePath being lost in translation???
-
+                
                 this.configService.postServer(form.value).subscribe({
                     next: () => {
                         
                         // adds file image locally (I think)
                         // is inside postServer because it needs to be called after the server is created 
-                        // const reader = new FileReader();
-                        // reader.onload = (event) => {
-                            //     if (event.target) {
-                                //         const imageDataUrl = event.target.result as string;
-                                //         console.log(imageDataUrl);
-                                //     }
-                                // };
-                                // reader.readAsDataURL(serverImage);
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            if (event.target) {
+                                const imageDataUrl = event.target.result as string;
+                                console.log(imageDataUrl);
+                            }
+                        };
+                        
+                        reader.readAsDataURL(serverImage);
+                        
                     },
                     error: (err) => {
                         console.error('Error posting server to the database:', err);
                     },
                     
                 });
-
-            // const newServer: Server = {
-            //     name: this.name,
-            //     channels: defaultChannels,
-            //     imagePath: "assets/images/serverImages/${this.name}.png" // going to see if this works, might have to add app/images
-            // };
             
             // TODO eventually add a header for the channels (welcome to "general", or something, make sure it actually looks like discord, etc
-
-            // channel has to BE IN the database before object id can be referenced
-            
-            // at this point, form.value has name, channels, and imagePath
-
             
         this.refreshServerList();
         this.resetForm();

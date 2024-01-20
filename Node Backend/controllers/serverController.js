@@ -6,6 +6,8 @@ var { ChannelModel } = require("../models/channel");
 
 const asyncHandler = require("express-async-handler");
 const { body, validationResult} = require("express-validator");
+// const multer = require("multer");
+const path = require("path");
 
 // => localhost:3000/servers
 exports.serverinfo = asyncHandler(async (req, res, next) => {
@@ -23,11 +25,13 @@ exports.serverinfo = asyncHandler(async (req, res, next) => {
 
 });
 
+
+
 exports.createserver = asyncHandler(async (req, res, next) => {
     
     saveServer().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
     async function saveServer() {
-
+        
         // why is this not working?
         const sev = new ServerModel({
             name: req.body.name,
@@ -39,7 +43,30 @@ exports.createserver = asyncHandler(async (req, res, next) => {
         
         // vvv what does this even do lmao vvv
         res.send(sev);
-
+        
     }
+    
+});
 
+exports.getservericon = asyncHandler(async (req, res, next) => {
+        
+        // would it be better to fetch them all at once?
+        getServerIcon().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+            async function getServerIcon() {
+                
+                res.send("test");
+                
+            }
+});
+
+exports.postservericon = asyncHandler(async (req, res, next) => {
+    
+    // would it be better to fetch them all at once?
+    saveServerIcon().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+        async function saveServerIcon() {
+            // wtf...
+            res.send("upload successful");
+            // Set up storage using Multer
+            const imagePath = path.join(__dirname, '../uploads/', req.file.filename);
+    }
 });

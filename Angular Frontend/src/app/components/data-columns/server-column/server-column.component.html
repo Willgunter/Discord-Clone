@@ -39,7 +39,9 @@
                 routerLink="/{{sev.name}}/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="assets/images/serverImages/camping.png" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;">
+                <!-- fuck this -->
+                <img src="localhost:3000/servers/create-server-icon/:{{sev.name}}" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;">
+                <!-- TODO need to turn off webpacks or something to get non-assets folder images to appear -->
                 <!-- TODO change camping.png to actual server image -->
 
             </a>

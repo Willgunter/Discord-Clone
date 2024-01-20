@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 // is used to interact w http (interact w backend I think??)
 const cors = require('cors');
 const secrets = require('dotenv').config();
+const multer = require('multer');
 
 const { mongoose } = require('./config/db.js');
 
@@ -47,7 +48,7 @@ require('./config/passport')(passport);
 
 ////////////////////////////////////////////////////
 app.listen(3000, () => console.log('Server started at port : 3000'));
-  
+
 app.use('/', indexRouter); // redirect to messages
 
 app.use('/messages', messagesRouter);
