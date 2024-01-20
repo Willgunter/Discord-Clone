@@ -21,8 +21,7 @@ export class ChannelColumnComponent {
 
         // this.configService.getMessage.subscribe(msg => this.currentRoute = msg);
 
-        this._router.events.subscribe((val) =>
-        {
+        this._router.events.subscribe((val) => {
             if (val instanceof NavigationEnd) {
 
                 this.currentRoute = this._router.url;
@@ -37,8 +36,7 @@ export class ChannelColumnComponent {
                 // do nothing
             };
         
-        }
-        )
+        })
 
     }
     // how to get access to router
