@@ -380,3 +380,4 @@ channel
 - 1/20/2024
     - FINALLY got form to work, had problems linking default channels w/ server but I fixed them. Server images now display on the screen, although they aren't custum tailored to specific server yet (have to get angular storage to work). Also, links technically work but I have to work on routing and stuff for them to not display the wrong thing.
     - Not completely sure about how to solve file image problem thing but i've literally been working on this thing for like 5-6 hours today so maybe I need to take a break and come back later?
+    - Wait if we store it on the server, will we have to store the filepath in the database? I don't think so because it would maybe be all the same file path and if we name it the same thing as the server, we could just have a {{ variableLikeThis }} so maybe that's one good thing?? idk ill wait until tomorrow.
