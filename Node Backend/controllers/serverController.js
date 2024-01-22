@@ -60,16 +60,10 @@ exports.getservericon = asyncHandler(async (req, res, next) => {
 });
 
 exports.postservericon = asyncHandler(async (req, res, next) => {
-    
-    // would it be better to fetch them all at once?
-    // is not getting displayed???
-    console.log("test for server icon");
 
     saveServerIcon().catch((err) => console.log('Error in post Server Icon Save :' + JSON.stringify(err, undefined, 2)));
         async function saveServerIcon() {
-            
-            // wtf...
-            console.log("file name:" + req.file.name);
+
             res.send(req.file);
     }
 });

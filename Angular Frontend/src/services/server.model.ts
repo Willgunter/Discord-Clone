@@ -4,5 +4,4 @@ export class Server {
     // _id: string | undefined;
     name: string | undefined;
     channels: Channel[] | undefined;
-    imagePath: string | undefined;
 }

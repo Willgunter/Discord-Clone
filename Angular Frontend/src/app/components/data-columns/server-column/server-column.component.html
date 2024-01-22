@@ -1,53 +1,23 @@
 <div class="server-column">
     <!-- <nav class="nav"> -->
         <ul>
-            <li class="list">
-                <!-- TODO: replace words w server icons later -->
-                <a
-                routerLink="/school/general" 
-                routerLinkActive="active" 
-                ariaCurrentWhenActive="page">
-                <img src="assets/images/serverImages/school.png" alt="School Icon" width="48" height="48" style="border-radius:50%;">
-                </a>
-            </li>
-            
-            <li class="list">
-                <a
-                routerLink="/gym/general" 
-                routerLinkActive="active" 
-                ariaCurrentWhenActive="page">
-                <img src="assets/images/serverImages/gym.png" alt="Gym Icon" width="48" height="48" style="border-radius:50%;">
-
-                </a>
-            </li>
-
-            <li class="list">
-                <a
-                routerLink="/camping/general" 
-                routerLinkActive="active" 
-                ariaCurrentWhenActive="page">
-                <img src="assets/images/serverImages/camping.png" alt="Camping Icon" width="48" height="48" style="border-radius:50%;">
-
-                </a>
-            </li>
 
         <!-- TEST -->
         
         <!-- TODO uncomment once I have this figured out -->
-        <!-- <tr *ngFor="let sev of configService.servers" style = "border:none;">
+        <tr *ngFor="let sev of configService.servers" style = "border:none;">
             <li class="list">
                 <a
                 routerLink="/{{sev.name}}/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                fuck this
-                <img src="{{imageUrl}}/{{sev.name}}.png" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;"> -->
+                <img src="{{imageUrl}}/{{sev.name}}.png" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;">
                 <!-- TODO need to turn off webpacks or something to get non-assets folder images to appear -->
                 <!-- TODO change camping.png to actual server image -->
 
-            <!-- </a> -->
+            </a>
 
-            <!-- </li> -->
+            </li>
             
         </ul>
         <ul>

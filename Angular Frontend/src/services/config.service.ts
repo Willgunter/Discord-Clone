@@ -58,10 +58,11 @@ export class ConfigService {
     }
 
     postServerImage(serverIcon: File) {
-        console.log("why: " + serverIcon.name); // works
+
+        // need this to work for some reason
         let formParams = new FormData();
         formParams.append('file', serverIcon);
-        // idk if this works better
+
         return this.http.post(this.serverImageApiUrl, formParams);
     }
 
@@ -71,6 +72,10 @@ export class ConfigService {
 
     getServerList() {
         return this.http.get(this.serverApiUrl);
+    }
+
+    getServerImageList() {
+        return this.http.get(this.serverImageApiUrl);
     }
 
     getMessageList() {

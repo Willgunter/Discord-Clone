@@ -18,7 +18,7 @@ declare var M: any;
 export class ServerColumnComponent {
 
     showBox: boolean;
-    imageUrl: String = "http://localhost:3000/servers/create-server-icon/"; // TODO: <-- WIP
+    imageUrl: String = "localhost:3000/servers/server-icon/"; // TODO: <-- WIP
 
     name: string;
     channels: Channel[];
@@ -34,43 +34,37 @@ export class ServerColumnComponent {
     refreshServerList() {
 
         this.configService.getServerList().subscribe((res) => {
-          this.configService.servers = res as Server[];
+            this.configService.servers = res as Server[];
         });
     
     }
 
     resetForm(form?: NgForm) {
-        // if (form)
-        // form.reset();
+        if (form)
+        form.reset();
         this.name = "";
     }
 
     onSubmit(form: NgForm) {
 
-            
-            // TODO I am doubting this part is right but really idfk
-            // retrieves file from form and stores it in serverImage
+            // add a thing to check for duplicate server names
+
             const fileInput = document.getElementById('file') as HTMLInputElement;
-            const serverImage = fileInput ? fileInput.files?.[0] : fileInput;
-            const fileType = serverImage?.type;
-
-            // const file:File = target.files[0];
-
-            console.log(serverImage);
+            const inputImage = fileInput ? fileInput.files?.[0] : fileInput;
+            
+            const fileType = inputImage?.type;
 
             if (!this.name) {
                 alert('Please add a name for your server');
                 return;
             }
 
-            if (!serverImage) {
+            if (!inputImage) {
                 alert('Please select an image for your server');
                 return;
             }
 
             if (fileType !== 'image/png' && fileType !== 'image/jpeg' && fileType !== 'image/jpg') {
-                // why is type undefined?
-                console.log("serverImage type: " + fileType);
                 alert('Please select a .png image for your server');
                 return;
             }
@@ -117,11 +111,10 @@ export class ServerColumnComponent {
             });
 
             form.value.name = this.name;
-            form.value.channels = [ defaultChannels[0]._id, defaultChannels[1]._id, defaultChannels[2]._id ]; // I wanted there to be default channels but there needs to be an object id
+            form.value.channels = [ defaultChannels[0]._id, defaultChannels[1]._id, defaultChannels[2]._id ];
                 
             // replace name of file with name of imagePath for now
             // TODO: may not need imagePath at all if we make image name the servername (can we even do that?)
-            form.value.imagePath = "src/app/assets/images/serverImages" + this.name + ".png"; 
                 
             this.configService.postServer(form.value).subscribe({
                 next: () => {
@@ -134,16 +127,26 @@ export class ServerColumnComponent {
             });
 
             // posts image to server
-            this.configService.postServerImage(serverImage).subscribe({
+            // this.file gives an error in the server (not displayed in app)
+            // serverImage gives an internal server error
+
+            if (inputImage) {
+                console.log("name: " + this.name);
+
+                const serverImage = new File([inputImage], this.name + ".png", { type: inputImage.type });
                 
-                next: () => {
-                                
-                },
-                error: (err) => {
-                    console.error('Error posting image to the database:', err);
-                },
+                this.configService.postServerImage(serverImage).subscribe({
+                    
+                    next: () => {
                         
-            });
+                    },
+                    error: (err) => {
+                        console.error('Error posting image to the database:', err);
+                    },
+                    
+                });
+
+            }
 
             // TODO eventually add a header for the channels (welcome to "general", or something, make sure it actually looks like discord, etc
             
