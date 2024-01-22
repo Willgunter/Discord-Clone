@@ -33,25 +33,26 @@
 
         <!-- TEST -->
         
-        <tr *ngFor="let sev of configService.servers" style = "border:none;">
+        <!-- TODO uncomment once I have this figured out -->
+        <!-- <tr *ngFor="let sev of configService.servers" style = "border:none;">
             <li class="list">
                 <a
                 routerLink="/{{sev.name}}/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <!-- fuck this -->
-                <img src="localhost:3000/servers/create-server-icon/:{{sev.name}}" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;">
+                fuck this
+                <img src="{{imageUrl}}/{{sev.name}}.png" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;"> -->
                 <!-- TODO need to turn off webpacks or something to get non-assets folder images to appear -->
                 <!-- TODO change camping.png to actual server image -->
 
-            </a>
+            <!-- </a> -->
 
-            </li>
+            <!-- </li> -->
             
         </ul>
         <ul>
             <li class="list">
-                <img src="assets/images/serverImages/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
+                <img src="{{imageUrl}}/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
             </li>
 
         </ul>
@@ -64,7 +65,7 @@
 
 <div *ngIf="showBox"  style="text-align: center; margin: 0 auto; max-width: 350px; height: 150px">
 
-    <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
+    <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)" enctype="multipart/form-data">
         
         <!-- I plan on cleaning this stuff up later -->
         <label for="name">Server Name:</label>

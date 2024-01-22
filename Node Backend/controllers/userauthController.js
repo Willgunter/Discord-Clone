@@ -10,7 +10,7 @@ const { body, validationResult} = require("express-validator");
 
 exports.index = asyncHandler(async (req, res, next) => {
     
-    doSomething().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+    doSomething().catch((err) => console.log('Error in get authentication Save :' + JSON.stringify(err, undefined, 2)));
         async function doSomething() {
             
             // why does username:1 not work?

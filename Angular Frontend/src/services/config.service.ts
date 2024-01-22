@@ -34,11 +34,11 @@ export class ConfigService {
     // organized by type of request
     readonly messageApiUrl = 'http://localhost:3000/messages';
     readonly userApiUrl = 'http://localhost:3000/users';
-    readonly getServerApiUrl = 'http://localhost:3000/servers/server-info';
+    readonly serverApiUrl = 'http://localhost:3000/servers/server';
+    readonly serverImageApiUrl = 'http://localhost:3000/servers/server-icon';
+    readonly channelApiUrl = 'http://localhost:3000/channels/channel';
     
     readonly userauthApiUrl = 'http://localhost:3000/authenticate';
-    readonly createServerApiUrl = 'http://localhost:3000/servers/create-server';
-    readonly createChannelApiUrl = 'http://localhost:3000/channels/create-channel';
     
 
     // what does private http:HttpClient service do?
@@ -54,15 +54,23 @@ export class ConfigService {
 
     postServer(server: Server) {
         // how do I make a post request to a specific server? this.serverApiUrl + server ?
-        return this.http.post(this.createServerApiUrl, server);
+        return this.http.post(this.serverApiUrl, server);
+    }
+
+    postServerImage(serverIcon: File) {
+        console.log("why: " + serverIcon.name); // works
+        let formParams = new FormData();
+        formParams.append('file', serverIcon);
+        // idk if this works better
+        return this.http.post(this.serverImageApiUrl, formParams);
     }
 
     postChannel(channel: Channel) {
-        return this.http.post(this.createChannelApiUrl, channel);
+        return this.http.post(this.channelApiUrl, channel);
     }
 
     getServerList() {
-        return this.http.get(this.getServerApiUrl);
+        return this.http.get(this.serverApiUrl);
     }
 
     getMessageList() {

@@ -51,6 +51,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - [Guide for login / logout and user authentication](https://www.youtube.com/playlist?list=PLillGF-RfqbZMNtaOXJQiDebNXjVapWPZ)
 - [Angular Docs](https://angular.io/)
 - [Online Guide](https://www.samarpaninfotech.com/blog/methods-to-share-data-between-angular-components/#h-method-4-unrelated-components-via-a-service)
+- [How to upload images to server](https://medium.com/swlh/how-to-upload-image-using-multer-in-node-js-f3aeffb90657)
 
 ## Timeline  
 
@@ -318,7 +319,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Back from band trip. 15:30ish on part 2, just Pushing to save
     - Finished part 2, how at start of part 3
 
-- 1/6/2924
+- 1/6/2024
     - At end of part 3, running into issues in two spots w/ Postman
     - Update: fixed one issue, but still have another
 
@@ -361,7 +362,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         - fix up messages and stuff
         - Clean up routing and add server / channel feature (???)
         - Change "Enter text" to "Message { name}"
-channel
+        channel
+
 - 1/16/2024
     - Changed emojis of servers to actual images and cleaned tham up and changed placeholder text of message box. Starting to brainstorm how I can add the "add server" and "add channel" feature.
 
@@ -381,3 +383,9 @@ channel
     - FINALLY got form to work, had problems linking default channels w/ server but I fixed them. Server images now display on the screen, although they aren't custum tailored to specific server yet (have to get angular storage to work). Also, links technically work but I have to work on routing and stuff for them to not display the wrong thing.
     - Not completely sure about how to solve file image problem thing but i've literally been working on this thing for like 5-6 hours today so maybe I need to take a break and come back later?
     - Wait if we store it on the server, will we have to store the filepath in the database? I don't think so because it would maybe be all the same file path and if we name it the same thing as the server, we could just have a {{ variableLikeThis }} so maybe that's one good thing?? idk ill wait until tomorrow.
+
+- 1/21/2024
+    - Starting to work on project today. Since this is a two-parter, I am going to try to work on the smallest part first (getting .png images to work from different directories) wait do I even need that?
+    - Found a website that explains how to post images to server, but it is still going wrong
+    - Literally nothing that I have found works wtf...
+    - Going to browse angular docs tmrw see if that helps and if not put all the post request stuff in teh app.js file just to eliminate that as the problem.

@@ -10,9 +10,9 @@ const { body, validationResult} = require("express-validator");
 const path = require("path");
 
 // => localhost:3000/servers
-exports.serverinfo = asyncHandler(async (req, res, next) => {
-    
-    getServer().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+exports.getserver = asyncHandler(async (req, res, next) => {
+    // TODO clean up all error messages
+    getServer().catch((err) => console.log('Error in get Server Save :' + JSON.stringify(err, undefined, 2)));
         async function getServer() {
             
             res.send(await ServerModel.find({}, { name:1, _id:0}).sort({_id:-1}));
@@ -27,9 +27,9 @@ exports.serverinfo = asyncHandler(async (req, res, next) => {
 
 
 
-exports.createserver = asyncHandler(async (req, res, next) => {
+exports.postserver = asyncHandler(async (req, res, next) => {
     
-    saveServer().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+    saveServer().catch((err) => console.log('Error in post Server Save :' + JSON.stringify(err, undefined, 2)));
     async function saveServer() {
         
         // why is this not working?
@@ -51,7 +51,7 @@ exports.createserver = asyncHandler(async (req, res, next) => {
 exports.getservericon = asyncHandler(async (req, res, next) => {
         
         // would it be better to fetch them all at once?
-        getServerIcon().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+        getServerIcon().catch((err) => console.log('Error in get Server Icon Save :' + JSON.stringify(err, undefined, 2)));
             async function getServerIcon() {
                 
                 res.send("test");
@@ -62,11 +62,14 @@ exports.getservericon = asyncHandler(async (req, res, next) => {
 exports.postservericon = asyncHandler(async (req, res, next) => {
     
     // would it be better to fetch them all at once?
-    saveServerIcon().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+    // is not getting displayed???
+    console.log("test for server icon");
+
+    saveServerIcon().catch((err) => console.log('Error in post Server Icon Save :' + JSON.stringify(err, undefined, 2)));
         async function saveServerIcon() {
+            
             // wtf...
-            res.send("upload successful");
-            // Set up storage using Multer
-            const imagePath = path.join(__dirname, '../uploads/', req.file.filename);
+            console.log("file name:" + req.file.name);
+            res.send(req.file);
     }
 });

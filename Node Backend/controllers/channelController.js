@@ -5,9 +5,9 @@ const asyncHandler = require("express-async-handler");
 const { body, validationResult} = require("express-validator");
 
 // => localhost:3000/servers
-exports.channelinfo = asyncHandler(async (req, res, next) => {
+exports.getchannel = asyncHandler(async (req, res, next) => {
     
-    saveChannel().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+    saveChannel().catch((err) => console.log('Error in get Channel Save :' + JSON.stringify(err, undefined, 2)));
         async function saveChannel() {
             
             res.send(await ChannelModel.find({}, { name:1, _id:0}).sort({_id:-1}));
@@ -20,9 +20,9 @@ exports.channelinfo = asyncHandler(async (req, res, next) => {
 
 });
 
-exports.createchannel = asyncHandler(async (req, res, next) => {
+exports.postchannel = asyncHandler(async (req, res, next) => {
     
-    saveChannel().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+    saveChannel().catch((err) => console.log('Error in post Channel Save :' + JSON.stringify(err, undefined, 2)));
     async function saveChannel() {
 
         // why is this not working?

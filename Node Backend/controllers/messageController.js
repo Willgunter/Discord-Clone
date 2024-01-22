@@ -9,7 +9,7 @@ const { body, validationResult} = require("express-validator");
 // => localhost:3000/messages
 exports.index = asyncHandler(async (req, res, next) => {
     
-    saveMessage().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
+    saveMessage().catch((err) => console.log('Error in get Message Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
             
             // why can't it display channel?
@@ -27,7 +27,7 @@ exports.index = asyncHandler(async (req, res, next) => {
 exports.post = asyncHandler(async (req, res, next) => {
 
     // it looks like the code is not being read here
-    saveMessage().catch((err) => console.log('Error in Message Save :' + JSON.stringify(err, undefined, 2)));
+    saveMessage().catch((err) => console.log('Error in post Message Save :' + JSON.stringify(err, undefined, 2)));
         async function saveMessage() {
 
             // why is this not working?
