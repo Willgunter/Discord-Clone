@@ -5,7 +5,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 ## Ideas (check when completed)
 
-- Going to work on:
+- Things to do before I migrate database / deploy:
         
     - Fix login screen
     - ✅✅✅Turn server icons from emojis into pictures✅✅✅
@@ -16,7 +16,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Clean up routing / add add server / channel feature (???)
     - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
     - (maybe) clean up routing for nine different routes
-    and make it so that its more scalable --> working on rn
+    and make it so that its more scalable <-- working on rn
     - make things more discord like (change font / color of name of channel)
     - put a break in between three default channels and rest of channels
     - add websockets for live message display / server updating / channel updating
