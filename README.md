@@ -6,27 +6,26 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 ## Ideas (check when completed)
 
 - Going to work on:
-        - Fix login screen 
-        - ✅✅✅Turn server icons from emojis into pictures✅✅✅
-        - make a profile picture for users and current user - shouldn't be that hard for Users column
-        - let users change color of pictures 
-        - make "profile" route more pretty --> remove profile route and put all information in user box?
-        - fix up messages and stuff (attach a user to a message, make box look better, etc...)
-        - Clean up routing / add add server / channel feature (???)
-        - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
-        - (maybe) clean up routing for nine different routes
-        and make it so that its more scalable --> working on rn
-        - make things more discord like (change font / color of name of channel)
-        - put a break in between three default channels and rest of channels
-        - add websockets for live message display / server updating / channel updating
+        
+    - Fix login screen
+    - ✅✅✅Turn server icons from emojis into pictures✅✅✅
+    - make a fake little profile picture for users and current user - shouldn't be that hard for Users column
+    - let users change color of either profile pictures / font color?? 
+    - make "profile" route more pretty --> remove profile route and put all information in user box?
+    - fix up messages and stuff (attach a user to a message, make box look better, etc...)
+    - Clean up routing / add add server / channel feature (???)
+    - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
+    - (maybe) clean up routing for nine different routes
+    and make it so that its more scalable --> working on rn
+    - make things more discord like (change font / color of name of channel)
+    - put a break in between three default channels and rest of channels
+    - add websockets for live message display / server updating / channel updating
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
 - Add a little more to the wrong turn page to make it seem more distinct? (ex: say: "These might help: <links>") 
-
--  change "server-specific" to like homework or gainz or weekend trips or something (channel-column.component.html), put the number of users next to the table head "users" add a checkbox in the register page for if someone wants to be added to the camping server (Note: do this AFTER you do login / logout just to make it easier I think) CREATE A LIST OF A COUPLE HUNDRED FAKE USERS USING THAT ONE TOOL WE LEARNED
 
 - go back and do most of / all the small TODOs in the TODO extension
 
@@ -37,8 +36,6 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication (OORRRR DO IT FOR NEXT PROJECT???)
 
 - Read through Angular docs to see what else we can do with logic inside of html elements (ex: (click), [ngStyle], [Icon]... idk what any of these mean)
-
-- Not an idea for here but next project could be a program that takes as input your industry / target internship and the network of people you are close and have good relationships with (maybe using linkedin or ancestory or other email groups, or it basically stalks you online or something), and gives you potential people you could ask for internship referrals to (ex: ask for software engineering internships, and gives you a list of people like ex: Mr. such and such's cousin / best friend works at Capital One and could probably give you a solid referral). The program might also give you the ability to "sell yourself" maybe? Ok how would I fit that in there
 
 - ✅✅✅Get it to work with different screen sizes✅✅✅
 
@@ -392,4 +389,5 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Got it to work. Problem was in the upload.single() command in the backend. I did not realize that the argument for the commands needs to be the same as the id tag in the html element for the input file for it to work, otherwise it gives you an error message. Miracle I figured that out. I only figured it out because I wrongly assigned the [ngModel] tag to the submit button, which made it look weird. Once I investigated it, I moved the ngModel tag to the input file element, and for some reason investigated the name of the id compared to whatever I originally put in the upload.single() command. From there it took me about 30 seconds for it to work and submit the file to the backend. If you are going to talk about this in an interview please reword this. Also, since I am not used to working with files, I was using a lot of commands I was unsure about and although I had console log statements, I was still unsure about what was being submitted.
 
-    - Haven't been able to get server image to display on frontend *yet* and running out of ideas to try and not sure where the problem is.
+    - Haven't been able to get server image to display on frontend *yet* and running out of ideas to try and not sure where the problem is. Maybe try the 
+    /:individual_server_image thing?
