@@ -30,6 +30,7 @@ export class ConfigService {
     messages: Message[];
     channels: Channel[];
     servers: Server[];
+    serverImages: File;
 
     // organized by type of request
     readonly messageApiUrl = 'http://localhost:3000/messages';

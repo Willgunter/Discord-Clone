@@ -8,6 +8,7 @@ const asyncHandler = require("express-async-handler");
 const { body, validationResult} = require("express-validator");
 // const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
 // => localhost:3000/servers
 exports.getserver = asyncHandler(async (req, res, next) => {
@@ -15,7 +16,7 @@ exports.getserver = asyncHandler(async (req, res, next) => {
     getServer().catch((err) => console.log('Error in get Server Save :' + JSON.stringify(err, undefined, 2)));
         async function getServer() {
             
-            res.send(await ServerModel.find({}, { name:1, _id:0}).sort({_id:-1}));
+            res.send(await ServerModel.find({}, { name:1, _id:0}).sort({name:1}));
             
         }
 
@@ -54,7 +55,38 @@ exports.getservericon = asyncHandler(async (req, res, next) => {
         getServerIcon().catch((err) => console.log('Error in get Server Icon Save :' + JSON.stringify(err, undefined, 2)));
             async function getServerIcon() {
                 
-                res.send("test");
+                const imageFolderPath = "../Files/serverImages";
+
+                // Read all files in the folder, orders by name and sends them to frontend
+                fs.readdir(imageFolderPath, (err, files) => {
+
+                    if (err) {
+                        console.error("Error reading image folder:", err);
+                        return;
+                    }
+
+                    // const imageFiles = files
+                    //     .filter((file) => file.endsWith(".jpg") || file.endsWith(".png")) // Filter only image files
+                    //     .sort((a, b) => a.localeCompare(b)); // Sort files by name
+
+                    // console.log("Image files:", imageFiles);
+                    // console.log("Image file path:", imageFiles[0]);
+                    // res.send(imageFiles);
+                    
+
+                    // problem
+                    const imagesPath = path.join(__dirname, imageFolderPath, req.params.filename);
+
+                    // const imagePath = path.join(imagesPath, req.params.filename);
+
+                    // Serve the image if it exists, otherwise handle the error
+                    if (fs.existsSync(imagesPath)) {
+                        res.sendFile(imagesPath);
+                        
+                    } else {
+                        res.status(404).send('Image not found');
+                    }
+                });
                 
             }
 });

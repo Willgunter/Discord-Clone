@@ -3,15 +3,22 @@
         <ul>
 
         <!-- TEST -->
-        
+        <!-- <div *ngFor="let entry of serverToFileMap | keyvalue">
+            <img [src]="getImageUrl(entry.value)" alt="Server Image">
+            <p>{{ entry.key.name }}</p>
+        </div> -->
         <!-- TODO uncomment once I have this figured out -->
-        <tr *ngFor="let sev of configService.servers" style = "border:none;">
+        <!-- <tr *ngFor="let sev of configService.serverImages" style = "border:none;"> -->
             <li class="list">
+                <!-- <a
+                routerLink="/{{entry.key.name}}/general" 
+                routerLinkActive="active" 
+                ariaCurrentWhenActive="page"> -->
                 <a
-                routerLink="/{{sev.name}}/general" 
+                routerLink="/welcome/general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="{{imageUrl}}/{{sev.name}}.png" alt="{{sev.name}} Icon" width="48" height="48" style="border-radius:50%;">
+                <img src="https://localhost:3000/servers/server-icon/" alt="{{imageUrl}} Icon" width="48" height="48" style="border-radius:50%;">
                 <!-- TODO need to turn off webpacks or something to get non-assets folder images to appear -->
                 <!-- TODO change camping.png to actual server image -->
 

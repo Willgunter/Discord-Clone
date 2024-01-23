@@ -29,7 +29,10 @@ router.post('/server', server_controller.postserver);
 
 // for server icon
 router.get('/server-icon', server_controller.getservericon);
+
+// is not optimized for ALL server icons just yet
 router.post('/server-icon', upload.single("file"), server_controller.postservericon);
+
 
 // TODO comment out post request here and put it all in app.js just until we get it working. 
 // for frontend, test out different ways we can grab the image

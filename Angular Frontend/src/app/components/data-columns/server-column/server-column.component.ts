@@ -18,11 +18,11 @@ declare var M: any;
 export class ServerColumnComponent {
 
     showBox: boolean;
-    imageUrl: String = "localhost:3000/servers/server-icon/"; // TODO: <-- WIP
+    imageUrl: String = "https://localhost:3000/servers/server-icon/:testgym.png"; // TODO: <-- WIP
 
     name: string;
     channels: Channel[];
-    // imagePath: string;
+    serverToFileMap = new Map<Server, File>();
 
     constructor(public configService: ConfigService) {}
 
@@ -32,11 +32,24 @@ export class ServerColumnComponent {
     }
 
     refreshServerList() {
-
         this.configService.getServerList().subscribe((res) => {
             this.configService.servers = res as Server[];
         });
-    
+
+        this.configService.getServerImageList().subscribe((res) => {
+            this.configService.serverImages = res as File;
+            
+            this.imageUrl = `localhost:3000/servers/server-icon/${this.configService.serverImages.name}`;
+            
+            // this.updateImageUrl();
+        });
+    }
+
+    // fuck this
+    updateImageUrl() {
+        if (this.configService.serverImages.length > 0) {
+            const file = this.configService.serverImages[0]; // Assuming you want to display the first image
+        }
     }
 
     resetForm(form?: NgForm) {
@@ -134,7 +147,8 @@ export class ServerColumnComponent {
                 console.log("name: " + this.name);
 
                 const serverImage = new File([inputImage], this.name + ".png", { type: inputImage.type });
-                
+                // TODO have some thing that gets rid of white space in name and then compares it to see if its in database?
+                // (to make .png images easy to use)
                 this.configService.postServerImage(serverImage).subscribe({
                     
                     next: () => {
