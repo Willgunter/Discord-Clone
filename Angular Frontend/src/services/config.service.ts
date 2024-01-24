@@ -15,12 +15,7 @@ import { Server } from './server.model';
   providedIn: 'root'
 })
 export class ConfigService {
-
-    // vvv these two lines were copypastad from here:
-    // https://www.samarpaninfotech.com/blog/methods-to-share-data-between-angular-components/#h-method-4-unrelated-components-via-a-service
-    // private message = new BehaviorSubject('Initial message!!!');
-    // getMessage = this.message.asObservable();
-  
+    
     // in the tutorial project, this was the url
     // that we interacted with (CRUD interactions)
 
@@ -30,8 +25,6 @@ export class ConfigService {
     messages: Message[];
     channels: Channel[];
     servers: String[];
-    serverImages: File[];
-    serverImage: File;
 
     // organized by type of request
     readonly messageApiUrl = 'http://localhost:3000/messages';
@@ -54,7 +47,6 @@ export class ConfigService {
     }
 
     postServer(server: Server) {
-        // how do I make a post request to a specific server? this.serverApiUrl + server ?
         return this.http.post(this.serverApiUrl, server);
     }
 
@@ -71,7 +63,6 @@ export class ConfigService {
         return this.http.post(this.channelApiUrl, channel);
     }
 
-    // WHAT. THE. FUCK.
     getServerList() {
         return this.http.get(this.serverApiUrl);
     }
@@ -81,27 +72,15 @@ export class ConfigService {
     }
 
     getMessageList() {
-        // this is working so progress?
-        // maybe it was always working I just needed
-        // to uncomment it?
         return this.http.get(this.messageApiUrl);
     }
 
     getUserList() {
-        // why is this not working?
         return this.http.get(this.userauthApiUrl);
     }
 
     authenticateUser(user: User) {
-        // - CHANGE IT USING A DATABASE
-        return this.http.post(this.userauthApiUrl, user); // THIS CAN'T CHANGE
+        return this.http.post(this.userauthApiUrl, user);
     }
-
-    // see above resource
-    // (we are not using said above resource so I commented it out)
-    // setMessage(message: string) {
-    //     console.log("setMessage being read");
-    //     this.message.next(message);
-    // }
 
 }

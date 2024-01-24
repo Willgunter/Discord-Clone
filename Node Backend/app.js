@@ -28,7 +28,6 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/testUploads', express.static('uploads')); // TODO idk if this is right
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true,}),);

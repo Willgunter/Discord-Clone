@@ -1,18 +1,13 @@
 <div class="server-column">
+    <!-- TODO might be able to use nav to make a white dot on the left side of the server just like discord has -->
     <!-- <nav class="nav"> -->
         <ul>
 
-        <!-- TEST -->
-        <!-- <div *ngFor="let entry of serverToFileMap | keyvalue">
-            <img [src]="getImageUrl(entry.value)" alt="Server Image">
-            <p>{{ entry.key.name }}</p>
-        </div> -->
-        <!-- TODO uncomment once I have this figured out -->
         <tr *ngFor="let url of imageUrls" style="border:none;">
-        <!-- ...bruh -->
             <li class="list">
+                <!-- TODO need to splice url eventually lol -->
                 <a
-                routerLink="//general" 
+                routerLink="/{{url}}/general"
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
                 <img src="{{url}}" alt="test Icon" width="48" height="48" style="border-radius:50%;">
@@ -24,14 +19,11 @@
         <ul>
             <li class="list">
 
+                <!-- TODO needs to be updated lol -->
                 <img src="http://localhost:3000/servers/server-icon/testschool.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
             </li>
 
         </ul>
-                <!-- <td>{{mes.text}}</td> -->
-        <!-- </tr> -->
-        <!-- Your box content here -->
-        
         <!-- </nav> -->
 </div>
 

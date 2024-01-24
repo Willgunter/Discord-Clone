@@ -28,9 +28,7 @@ export class ServerColumnComponent {
     constructor(public configService: ConfigService, public http: HttpClient) {}
 
     ngOnInit() {
-        // this.imageUrls[0] = "http://localhost:3000/servers/server-icon/testschool.png";
-        // this.imageUrls[1] = "http://localhost:3000/servers/server-icon/testschool.png";
-        // this.imageUrls[2] = "http://localhost:3000/servers/server-icon/testschool.png";
+        
         this.refreshServerList();
         this.resetForm();
 
@@ -45,7 +43,7 @@ export class ServerColumnComponent {
 
     onSubmit(form: NgForm) {
 
-            // add a thing to check for duplicate server names
+            // TODO add a thing to check for duplicate server names
             
             const fileInput = document.getElementById('file') as HTMLInputElement;
             const inputImage = fileInput ? fileInput.files?.[0] : fileInput;
@@ -127,7 +125,7 @@ export class ServerColumnComponent {
             // posts image to server
             // this.file gives an error in the server (not displayed in app)
             // serverImage gives an internal server error
-            
+            // so we have inputImage instead
             if (inputImage) {
                 console.log("name: " + this.name);
                 

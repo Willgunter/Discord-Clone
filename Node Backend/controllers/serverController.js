@@ -18,7 +18,6 @@ exports.getserver = asyncHandler(async (req, res, next) => {
         async function getServer() {
             const servers = await ServerModel.find({}, { name: 1, _id: 0 }).sort({ name: 1 });
             const serverNames = servers.map(server => server.name);
-            console.log("names: " + serverNames);
             res.send(serverNames);
         }
 
@@ -51,57 +50,16 @@ exports.postserver = asyncHandler(async (req, res, next) => {
     
 });
 
-// Sends a LIST of all the names of the server icons.
-// We send a list here so we can loop through the list and tack the name of the server icon
-// onto the end of the path to get the actual image
-// ACTUALLY instead of doing this, lets try sending a list of the images
-// along with the names of the image
-// TODO get rid of this route if we can get it to work without it
-exports.getallservericon = asyncHandler(async (req, res, next) => {
-        
-    // would it be better to fetch them all at once?
-    getServerIcon().catch((err) => console.log('Error in get Server Icon Save :' + JSON.stringify(err, undefined, 2)));
-        async function getServerIcon() {
-                
-            const imageFolderPath = "../Files/serverImages";
-
-            // Necessary for some reason???
-            fs.readdir(imageFolderPath, (err, files) => {
-
-                if (err) {
-                    console.error("Error reading image folder:", err);
-                    return;
-                }
-
-                // Orders images files alphabetically to make it easy to match with servers
-                // const imageFiles = files
-                //     .filter((file) => file.endsWith(".jpg") || file.endsWith(".png")) // Filter only image files
-                //     .sort((a, b) => a.localeCompare(b)); // Sort files by name
-
-                // console.log("Image files:", imageFiles);
-                // console.log("Image file path:", imageFiles[0]);
-
-                // Sends list of file names
-                res.send(files);
-                    
-            });
-                
-        }
-});
-
-// ONLY FOR TEST PURPOSES
-// we could try to make this work for actual file
-// that might work
+// Used by frontend to get server image from server 
 exports.getservericon = asyncHandler(async (req, res, next) => {
-    // would it be better to fetch them all at once?
+    
     getOneServerIcon().catch((err) => console.log('Error in get Server Icon Save :' + JSON.stringify(err, undefined, 2)));
     async function getOneServerIcon() {
 
-        // This... works????
+        // Path of where images are
         const imageFolderPath = "../Files/serverImages"; // res.params.filename;
 
-        // Read all files in the folder, orders by name and sends them to frontend
-        // TODO: problem right now: it sends the list of files, but it doesn't send the actual image
+        // Read all files in the folder and sends them to frontend
         fs.readdir(imageFolderPath, (err, files) => {
             if (err) {
                 console.error("Error reading image folder:", err);
@@ -109,29 +67,17 @@ exports.getservericon = asyncHandler(async (req, res, next) => {
                 return;
             }
 
-            // all we have to do is replace fileName with the name of the file we want
-            
-            console.log("filename: " + req.params.filename);
+            // Find the index of file with name filename
+            const fileName = req.params.filename;
 
-            const fileName = req.params.filename; //"testgym.png"; // Actual file name you want to send
-
-            // Find the index of the file with the specific name
-            let fileIndex = 0;// = files.findIndex(file => file === fileName);
+            let fileIndex = 0;
             for (fileIndex; files.length; fileIndex++) {
                 if (files[fileIndex] === fileName) {
                     break;
                 }
             }
 
-            console.log("files: " + files);
-
-            // if (fileIndex === -1) {
-            //     console.error("File not found:", fileName);
-            //     res.status(404).send('Image not found');
-            //     return;
-            // }
-
-            // Read the contents of the specific image file
+            // Reads actual file
             fs.readFile(path.join(imageFolderPath, files[fileIndex]), (err, data) => {
                 if (err) {
                     console.error("Error reading image file:", err);
@@ -147,6 +93,7 @@ exports.getservericon = asyncHandler(async (req, res, next) => {
     }
 });
 
+// Saves file to server
 exports.postservericon = asyncHandler(async (req, res, next) => {
 
     saveServerIcon().catch((err) => console.log('Error in post Server Icon Save :' + JSON.stringify(err, undefined, 2)));

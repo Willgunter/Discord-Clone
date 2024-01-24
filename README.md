@@ -400,3 +400,4 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Got configService.getServers to kind of work I think but for some reason I can't *ngFor loop through it in the html file to display the images on screen
     - Got it to finally work. Mapped configService.getServers to an array of strings I made in the ts file and just appended the actual route to it and it worked.
     - Servers and server images now display on the screen although I don't think routes are correct yet (shouldn't be too too hard I think). Very very proud of getting this to work since I have been working on this since the 16th.
+    - Have lots of clean up to do especially in server-side code lol. ... and in front end as well.
