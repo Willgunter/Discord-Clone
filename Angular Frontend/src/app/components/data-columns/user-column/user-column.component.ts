@@ -18,9 +18,7 @@ export class UserColumnComponent {
     refreshUserList() {
   
       this.configService.getUserList().subscribe((res) => {
-        // what tf does this line even do
-        this.configService.users = res as User[];
-        
+            this.configService.users = res as User[];
       });
   
     }

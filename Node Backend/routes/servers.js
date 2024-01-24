@@ -28,17 +28,20 @@ router.get('/server', server_controller.getserver);
 router.post('/server', server_controller.postserver);
 
 // for server icon
-router.get('/server-icon', server_controller.getservericon);
+
+// used to get list of all server icons 
+router.get('/server-icon', server_controller.getallservericon);
+
+// used to get a specific server icon (used in frontend to specify which icon to use)
+router.get('/server-icon/:filename', server_controller.getservericon);
 
 // is not optimized for ALL server icons just yet
-router.post('/server-icon', upload.single("file"), server_controller.postservericon);
-
+router.post('/server-icon/:filename', upload.single("file"), server_controller.postservericon);
 
 // TODO comment out post request here and put it all in app.js just until we get it working. 
 // for frontend, test out different ways we can grab the image
 // also just look through angular page??
 
-// /:serverId ???
-// eventually add a delete server request?
+// TODO eventually add a delete server request????
 
 module.exports = router;

@@ -8,28 +8,23 @@
             <p>{{ entry.key.name }}</p>
         </div> -->
         <!-- TODO uncomment once I have this figured out -->
-        <!-- <tr *ngFor="let sev of configService.serverImages" style = "border:none;"> -->
+        <tr *ngFor="let url of imageUrls" style="border:none;">
+        <!-- ...bruh -->
             <li class="list">
-                <!-- <a
-                routerLink="/{{entry.key.name}}/general" 
-                routerLinkActive="active" 
-                ariaCurrentWhenActive="page"> -->
                 <a
-                routerLink="/welcome/general" 
+                routerLink="//general" 
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="https://localhost:3000/servers/server-icon/" alt="{{imageUrl}} Icon" width="48" height="48" style="border-radius:50%;">
-                <!-- TODO need to turn off webpacks or something to get non-assets folder images to appear -->
-                <!-- TODO change camping.png to actual server image -->
-
+                <img src="{{url}}" alt="test Icon" width="48" height="48" style="border-radius:50%;">
             </a>
 
-            </li>
-            
+            </li>   
+            </tr>
         </ul>
         <ul>
             <li class="list">
-                <img src="{{imageUrl}}/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
+
+                <img src="http://localhost:3000/servers/server-icon/testschool.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
             </li>
 
         </ul>

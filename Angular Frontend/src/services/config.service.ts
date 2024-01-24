@@ -29,18 +29,18 @@ export class ConfigService {
     users: User[];
     messages: Message[];
     channels: Channel[];
-    servers: Server[];
-    serverImages: File;
+    servers: String[];
+    serverImages: File[];
+    serverImage: File;
 
     // organized by type of request
     readonly messageApiUrl = 'http://localhost:3000/messages';
     readonly userApiUrl = 'http://localhost:3000/users';
     readonly serverApiUrl = 'http://localhost:3000/servers/server';
-    readonly serverImageApiUrl = 'http://localhost:3000/servers/server-icon';
+    readonly serverImageApiUrl = 'http://localhost:3000/servers/server-icon/';
     readonly channelApiUrl = 'http://localhost:3000/channels/channel';
     
     readonly userauthApiUrl = 'http://localhost:3000/authenticate';
-    
 
     // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }
@@ -64,18 +64,19 @@ export class ConfigService {
         let formParams = new FormData();
         formParams.append('file', serverIcon);
 
-        return this.http.post(this.serverImageApiUrl, formParams);
+        return this.http.post(this.serverImageApiUrl + serverIcon.name, formParams);
     }
 
     postChannel(channel: Channel) {
         return this.http.post(this.channelApiUrl, channel);
     }
 
+    // WHAT. THE. FUCK.
     getServerList() {
         return this.http.get(this.serverApiUrl);
     }
 
-    getServerImageList() {
+    getServerImage() {
         return this.http.get(this.serverImageApiUrl);
     }
 

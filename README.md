@@ -391,3 +391,12 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
     - Haven't been able to get server image to display on frontend *yet* and running out of ideas to try and not sure where the problem is. Maybe try the 
     /:individual_server_image thing?
+
+- 1/23/2024
+    - Feel like I made no progress. Trying to get server-icon/:filename to work in post man and it. just. doesn't. work.
+
+- 1/24/2024
+    - Woke up, hopped on, and almost instantly found the route that works to send file to frontend. Even though I got a file to display, I had to figure out logic to specify which one I wanted. Got that to work and now configService.getServers is acting super weird and not getting the list of images properly.
+    - Got configService.getServers to kind of work I think but for some reason I can't *ngFor loop through it in the html file to display the images on screen
+    - Got it to finally work. Mapped configService.getServers to an array of strings I made in the ts file and just appended the actual route to it and it worked.
+    - Servers and server images now display on the screen although I don't think routes are correct yet (shouldn't be too too hard I think). Very very proud of getting this to work since I have been working on this since the 16th.

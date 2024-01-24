@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
-import { User } from 'src/services/user.model';
 
 @Component({
   selector: 'app-user-box',

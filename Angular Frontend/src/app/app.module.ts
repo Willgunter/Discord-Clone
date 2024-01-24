@@ -17,6 +17,7 @@ import { LoginComponent } from './components/user-handling/login/login.component
 import { RegisterComponent } from './components/user-handling/register/register.component';
 import { UserBoxComponent } from './components/data-columns/left-main/user-box/user-box.component';
 
+import { ConfigService } from 'src/services/config.service';
 import { ValidateService} from 'src/services/validate.service';
 import { AuthService } from 'src/services/auth.service';
 import { ProfileComponent } from 'src/app/components/user-handling/profile/profile.component';
@@ -44,7 +45,7 @@ import { AuthGuard } from './guards/auth.guard';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ConfigService, ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
