@@ -19,26 +19,32 @@
         <ul>
             <li class="list">
 
-                <!-- TODO needs to be updated lol -->
-                <img src="http://localhost:3000/servers/server-icon/testschool.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
+                <img src="../../../../assets/add-server-image/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="showBox = !showBox">
             </li>
 
         </ul>
         <!-- </nav> -->
 </div>
 
-<div *ngIf="showBox"  style="text-align: center; margin: 0 auto; max-width: 350px; height: 150px">
+<div class="formBox" *ngIf="showBox">
 
     <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)" enctype="multipart/form-data">
-        
+        <h5 style="color:#f2f3f5; font-weight: bold;">Customize Your Server</h5>
+        <h6 style="color: #B5BAC1 ">Give your new server a personality with a name and an icon. You can always change it later (no you can't)</h6>
         <!-- I plan on cleaning this stuff up later -->
-        <label for="name">Server Name:</label>
-        <input [(ngModel)]="name" type="text" id="name" name="name">
+        <br>
+            <label for="name" style="text-align: left; color: #B5BAC1; font-weight: bold;">SERVER NAME</label>
+            <input [(ngModel)]="name" type="text" id="name" name="name" style="border: hidden; background-color: #1E1F22; max-width:350px; border-radius: 5px; height: 30px; margin: 5px; padding-left:10px; padding-right:10px">
+        <br>
         <!-- Does not have ngModel trait because we parse it in a different way in the typescript -->
         <input type="file" id="file" name="image">
-        
-        <input type="submit" value="submit" width="48" height="48">
+
+        <input type="submit" class="btn" value="Create" style="background-color: #4752C4; border-radius: 5px; margin: 5px;">
     
     </form>
+
+    <div>
+        <button class="btn" (click)="showBox = !showBox" style="font-weight: bold; background-color: #313338; border-radius: 5px; margin: 10px; color: #B5BAC1">X</button>
+    </div>
 
 </div>

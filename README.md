@@ -13,10 +13,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - let users change color of either profile pictures / font color?? 
     - make "profile" route more pretty --> remove profile route and put all information in user box?
     - fix up messages and stuff (attach a user to a message, make box look better, etc...)
-    - Clean up routing / add add server / channel feature (???)
+    - Clean up routing / ✅✅✅add add server✅✅✅ / channel feature (???)
     - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
-    - (maybe) clean up routing for nine different routes
-    and make it so that its more scalable <-- working on rn
+    - ✅✅✅(maybe) clean up routing for nine different routes and make it so that its more scalable ✅✅✅
     - make things more discord like (change font / color of name of channel)
     - put a break in between three default channels and rest of channels
     - add websockets for live message display / server updating / channel updating
@@ -401,3 +400,4 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Got it to finally work. Mapped configService.getServers to an array of strings I made in the ts file and just appended the actual route to it and it worked.
     - Servers and server images now display on the screen although I don't think routes are correct yet (shouldn't be too too hard I think). Very very proud of getting this to work since I have been working on this since the 16th.
     - Have lots of clean up to do especially in server-side code lol. ... and in front end as well.
+    - Update: made huge progress on css for create server feature. Need to figure out a way to gray out whole screen except box tho.
