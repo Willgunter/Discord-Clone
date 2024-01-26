@@ -18,6 +18,20 @@ const routes: Routes = [
     { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard] }, // users custom profile page. Not sure how to do this yet
     // such that it can only access current user's profile page
 
+    // const organizations = ['school', 'gym', 'camping'];
+    // use when cleaning up roots
+    // const routes: Routes = [
+    //     ...organizations.map(org => (
+    //         { path: `${org}/welcome`, component: OrganizationComponent, canActivate: [AuthGuard] },
+    //         { path: `${org}/general`, component: OrganizationComponent, canActivate: [AuthGuard] },
+    //         { path: `${org}/server-specific`, component: OrganizationComponent, canActivate: [AuthGuard] }
+    //     )),
+    //     { path: 'school', redirectTo: 'school/welcome', pathMatch: 'full' },
+    //     { path: 'gym', redirectTo: 'gym/welcome', pathMatch: 'full' },
+    //     { path: 'camping', redirectTo: 'camping/welcome', pathMatch: 'full' },
+    //     { path: '**', component: NotFoundComponent }
+    // ];
+
     { path: 'school/welcome', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'school/general', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'school/server-specific', component: OrganizationComponent, canActivate:[AuthGuard] },

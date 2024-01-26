@@ -11,10 +11,6 @@ export class MainComponent {
 
     currentRoute: string;
 
-    // current goal: undo whatever you did in order to follow Method 1 of the online guide thing. 
-
-    // So why 
-
     constructor(public configService: ConfigService, private _router: Router) {
 
         // this.configService.getMessage.subscribe(msg => this.currentRoute = msg);

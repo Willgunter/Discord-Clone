@@ -1,0 +1,35 @@
+.formBox {
+
+    /* test */
+    padding-left: 25px;
+    padding-right: 5px;
+    padding-top: 5px;
+    border-radius: 5px;
+    /* padding: relative; */
+    text-align: center;
+    /* margin: 0 auto; */
+    /* max-width: 350px; */
+    height: 275px;
+    /* width: 500px; */
+    width: 450px;
+    
+    display: flex;
+    
+    /* These three next commands are used to justify it in
+    the center of the screen on top of the other elements
+    on the screen without effecting them */
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-width: 15px;
+    background-color: #313338;
+    /* I forgot what I put the background color as lmao */
+    
+}
+
+input {
+    color: #DBDEE1;
+}

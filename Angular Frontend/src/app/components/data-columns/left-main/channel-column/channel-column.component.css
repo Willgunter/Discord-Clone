@@ -8,6 +8,7 @@
     left: 75px;
     /* position: relative; */
     background-color: #2B2D31;
+    z-index: 0;
     
 } 
 

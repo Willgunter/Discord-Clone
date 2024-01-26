@@ -1,41 +1,28 @@
-import { NgForm } from '@angular/forms';
-
-import { Channel } from 'src/services/channel.model';
-import { Server } from 'src/services/server.model';
-
-import mongoose from 'mongoose';
-
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ConfigService } from 'src/services/config.service';
 import { HttpClient } from '@angular/common/http';
-import { Component, Output, EventEmitter } from '@angular/core';
-
-declare var M: any;
+import { Channel } from 'src/services/channel.model';
+import { NgForm } from '@angular/forms';
+import mongoose from 'mongoose';
 
 @Component({
-  selector: 'app-server-column',
-  templateUrl: './server-column.component.html',
-  styleUrls: ['./server-column.component.css']
+  selector: 'app-create-server',
+  templateUrl: './create-server.component.html',
+  styleUrls: ['./create-server.component.css']
 })
-export class ServerColumnComponent {
-    
-    @Output() showBoxChange = new EventEmitter<boolean>();
-    showBox: boolean;
+export class CreateServerComponent {
 
-    // Method to update the value of showBox and emit the change
+    showBox: boolean;
+    @Output() showBoxChange = new EventEmitter<boolean>();
 
     name: string;
     channels: Channel[];
-    serverImages: File[];
     imageUrls: String[];
 
     constructor(public configService: ConfigService, public http: HttpClient) {}
 
     ngOnInit() {
-        
-        this.refreshServerList();
         this.resetForm();
-        this.showBox = false;
-
     }
 
     updateShowBox() {
@@ -158,19 +145,5 @@ export class ServerColumnComponent {
             
         this.showBox = false;
         
-        
     }
-
-    refreshServerList() {
-        
-        this.configService.getServerList().subscribe((res) => {
-            this.configService.servers = res as String[];
-
-            this.imageUrls = this.configService.servers.map((url: String) => {
-                return "http://localhost:3000/servers/server-icon/" + url + ".png";
-            });
-        });
-
-    }
-
 }

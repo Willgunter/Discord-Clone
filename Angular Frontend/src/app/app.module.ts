@@ -22,6 +22,7 @@ import { ValidateService} from 'src/services/validate.service';
 import { AuthService } from 'src/services/auth.service';
 import { ProfileComponent } from 'src/app/components/user-handling/profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CreateServerComponent } from './components/data-columns/main/create-server/create-server.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AuthGuard } from './guards/auth.guard';
     RegisterComponent,
     UserBoxComponent,
     ProfileComponent,
+    CreateServerComponent,
   ],
   imports: [
     BrowserModule,

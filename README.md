@@ -10,7 +10,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Fix login screen
     - ✅✅✅Turn server icons from emojis into pictures✅✅✅
     - make a fake little profile picture for users and current user - shouldn't be that hard for Users column
-    - let users change color of either profile pictures / font color?? 
+    - let users change color of either profile pictures / font color??
     - make "profile" route more pretty --> remove profile route and put all information in user box?
     - fix up messages and stuff (attach a user to a message, make box look better, etc...)
     - Clean up routing / ✅✅✅add add server✅✅✅ / channel feature (???)
@@ -19,6 +19,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - make things more discord like (change font / color of name of channel)
     - put a break in between three default channels and rest of channels
     - add websockets for live message display / server updating / channel updating
+    - disable text / channel switching when server box is displayed
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
@@ -383,8 +384,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 1/21/2024
     - Starting to work on project today. Since this is a two-parter, I am going to try to work on the smallest part first (getting .png images to work from different directories) wait do I even need that?
     - Found a website that explains how to post images to server, but it is still going wrong
-    - Literally nothing that I have found works wtf...
-    - Going to browse angular docs tmrw see if that helps and if not put all the post request stuff in teh app.js file just to eliminate that as the problem.
+    - Literally nothing that I have found works watf...
+    - Going to browse angular docs tmrw see if tht helps and if not put all the post request stuff in teh app.js file just to eliminate that as the problem.
 
     - Got it to work. Problem was in the upload.single() command in the backend. I did not realize that the argument for the commands needs to be the same as the id tag in the html element for the input file for it to work, otherwise it gives you an error message. Miracle I figured that out. I only figured it out because I wrongly assigned the [ngModel] tag to the submit button, which made it look weird. Once I investigated it, I moved the ngModel tag to the input file element, and for some reason investigated the name of the id compared to whatever I originally put in the upload.single() command. From there it took me about 30 seconds for it to work and submit the file to the backend. If you are going to talk about this in an interview please reword this. Also, since I am not used to working with files, I was using a lot of commands I was unsure about and although I had console log statements, I was still unsure about what was being submitted.
 
@@ -400,4 +401,10 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Got it to finally work. Mapped configService.getServers to an array of strings I made in the ts file and just appended the actual route to it and it worked.
     - Servers and server images now display on the screen although I don't think routes are correct yet (shouldn't be too too hard I think). Very very proud of getting this to work since I have been working on this since the 16th.
     - Have lots of clean up to do especially in server-side code lol. ... and in front end as well.
-    - Update: made huge progress on css for create server feature. Need to figure out a way to gray out whole screen except box tho.
+    - Update: made huge progress on css for create server feature. Need to figure out a way to gray out whole screen except box tho. 
+    - After that I will probably do something easier like clean up login screen.7
+
+- 1/25/2024
+    - Found a solution to changing the background to grayscale and having the create server screen open at the same time but it involves seperating the create server div from the server-column component into its own individual component and tranmitting one boolean value between two different components with a sibling relationship. Trying to figure that out, hopefully it won't take too long.
+    - Got it to work now just need to make it look slightly better and then I'll work on fixing login page and doing a couple other easy things.
+    - Got it to look slightly better and right after fixing login page I will fix *routing*

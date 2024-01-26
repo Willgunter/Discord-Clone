@@ -1,8 +1,11 @@
-<!-- Component that makes things easier to organize -->
-<div class="all">
-    <app-server-column></app-server-column>
+<div *ngIf=showBox>
+    <app-create-server (showBoxChange)="onShowBoxChange(!showBox)"></app-create-server>
+</div>
+<div class="all" [ngClass]="{'all': true, 'gs': showBox}">
+    
+    <app-server-column (showBoxChange)="onShowBoxChange(!showBox)"></app-server-column>
     <app-channel-column></app-channel-column>
     <app-user-column></app-user-column>
     <app-main></app-main>
-
+    
 </div>

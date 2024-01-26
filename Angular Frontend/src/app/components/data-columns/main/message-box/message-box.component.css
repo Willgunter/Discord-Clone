@@ -4,6 +4,7 @@
     position: relative;
     margin-top: 0px;
     height: 68px;
+    z-index:0;
 }
 
 .btn-block {
@@ -27,7 +28,6 @@
     border-radius: 8px;
     /* height: 100vh; */
     background-color: #35373C;
-    /* existing styles */
 }
 
 ::placeholder {
