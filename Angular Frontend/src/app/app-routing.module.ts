@@ -5,48 +5,46 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/user-handling/login/login.component';
 import { RegisterComponent } from './components/user-handling/register/register.component';
 import { ProfileComponent } from './components/user-handling/profile/profile.component';
+
 import { AuthGuard } from './guards/auth.guard';
+import { UserGuard } from './guards/user.gaurd';
+
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+
+import { ConfigService } from 'src/services/config.service';
+import { HttpClient } from '@angular/common/http';
+import { ServerGuard } from './guards/server.guard';
 
 const routes: Routes = [
-    // Note: may need to add a component that contains all of the components
-    // in order to get all the important components to display in each
-    // route (I hope that makes sense)
     
     { path: 'login', component: LoginComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full' }, // default route
+    
     { path: 'register', component: RegisterComponent},
-    // { path: ':username', component: ProfileComponent}, // users profile page
-    { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard] }, // users custom profile page. Not sure how to do this yet
-    // such that it can only access current user's profile page
+    
+    { path: 'me/:username', component: ProfileComponent, canActivate:[AuthGuard, UserGuard] },
+    { path: 'me', redirectTo: 'me/:username', pathMatch: 'full' },
 
-    // const organizations = ['school', 'gym', 'camping'];
-    // use when cleaning up roots
-    // const routes: Routes = [
-    //     ...organizations.map(org => (
-    //         { path: `${org}/welcome`, component: OrganizationComponent, canActivate: [AuthGuard] },
-    //         { path: `${org}/general`, component: OrganizationComponent, canActivate: [AuthGuard] },
-    //         { path: `${org}/server-specific`, component: OrganizationComponent, canActivate: [AuthGuard] }
-    //     )),
-    //     { path: 'school', redirectTo: 'school/welcome', pathMatch: 'full' },
-    //     { path: 'gym', redirectTo: 'gym/welcome', pathMatch: 'full' },
-    //     { path: 'camping', redirectTo: 'camping/welcome', pathMatch: 'full' },
-    //     { path: '**', component: NotFoundComponent }
-    // ];
-
+    
     { path: 'school/welcome', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'school/general', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'school/server-specific', component: OrganizationComponent, canActivate:[AuthGuard] },
-
+    
     { path: 'gym/welcome', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'gym/general', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'gym/server-specific', component: OrganizationComponent, canActivate:[AuthGuard] },
-
+    
     { path: 'camping/welcome', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'camping/general', component: OrganizationComponent, canActivate:[AuthGuard] },
     { path: 'camping/server-specific', component: OrganizationComponent, canActivate:[AuthGuard] },
-
+    
     { path: 'school', redirectTo: 'school/welcome', pathMatch: 'full'},
     { path: 'gym', redirectTo: 'gym/welcome', pathMatch: 'full'},
     { path: 'camping', redirectTo: 'camping/welcome', pathMatch: 'full'},
+    
+    { path: ':server/:channel', component: OrganizationComponent, canActivate:[AuthGuard, ServerGuard] },
+    // { path: ':server/', redirectTo: ':server/welcome', pathMatch: 'full' },
 
     // wild card route, anything link that isn't above links to NotFoundComponent
     { path: '**', component: NotFoundComponent}
@@ -57,4 +55,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+
+    constructor(public configService: ConfigService, public http: HttpClient) { }
+
+}

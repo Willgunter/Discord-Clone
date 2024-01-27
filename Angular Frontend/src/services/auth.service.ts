@@ -29,14 +29,11 @@ export class AuthService {
     }
 
     getProfile() {
-
         this.loadToken();
-        
         const headers = new HttpHeaders({
             'Content-type': 'application/json',
             'Authorization': this.authToken
         });
-
         return this.http.get('http://localhost:3000/users/profile', {headers: headers})
             .pipe(map((res: any) => res));
     }
@@ -56,9 +53,6 @@ export class AuthService {
         this.authToken = token;
     }
 
-    // Not useful to us *quite* yet
-    // use *ngIf="authService.loggedIn()" in html elements to hide/show elements
-    // if user is logged in or not
     loggedIn() {
         this.loadToken();
         const helper = new JwtHelperService();

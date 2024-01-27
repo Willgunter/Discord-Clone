@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ConfigService } from 'src/services/config.service';
-import { User } from 'src/services/user.model';
+import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 import { ValidateService } from 'src/services/validate.service';
 import { AuthService } from 'src/services/auth.service';

@@ -16,13 +16,17 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/user-handling/login/login.component';
 import { RegisterComponent } from './components/user-handling/register/register.component';
 import { UserBoxComponent } from './components/data-columns/left-main/user-box/user-box.component';
+import { ProfileComponent } from 'src/app/components/user-handling/profile/profile.component';
+import { CreateServerComponent } from './components/data-columns/main/create-server/create-server.component';
+
+import { AuthGuard } from './guards/auth.guard';
+import { UserGuard } from './guards/user.gaurd';
+import { ServerGuard } from './guards/server.guard';
 
 import { ConfigService } from 'src/services/config.service';
 import { ValidateService} from 'src/services/validate.service';
 import { AuthService } from 'src/services/auth.service';
-import { ProfileComponent } from 'src/app/components/user-handling/profile/profile.component';
-import { AuthGuard } from './guards/auth.guard';
-import { CreateServerComponent } from './components/data-columns/main/create-server/create-server.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +51,7 @@ import { CreateServerComponent } from './components/data-columns/main/create-ser
     HttpClientModule,
     FormsModule,
   ],
-  providers: [ConfigService, ValidateService, AuthService, AuthGuard],
+  providers: [ConfigService, ValidateService, AuthService, AuthGuard, UserGuard, ServerGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

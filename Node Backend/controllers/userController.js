@@ -72,8 +72,9 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
 
 // protected route
 exports.profile = asyncHandler(async (req, res, next) => {
-    res.json({ user: req.user }); // problem
-    // console.log(user.username);
+
+    res.json({ user: req.user });
+
 });
 
 // delete maybe?

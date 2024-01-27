@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ConfigService } from 'src/services/config.service';
-import { User } from 'src/services/user.model';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-user-column',

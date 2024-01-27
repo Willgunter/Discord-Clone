@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/services/auth.service';
-import { User } from 'src/services/user.model'; // Not the problem
+import { User } from 'src/app/models/user.model'; // Not the problem
 
 declare var M: any;
 

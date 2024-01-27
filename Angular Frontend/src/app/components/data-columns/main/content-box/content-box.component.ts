@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { ConfigService } from 'src/services/config.service';
-import { Message } from 'src/services/message.model';
+import { Message } from 'src/app/models/message.model';
 
 
 @Component({

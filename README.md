@@ -408,3 +408,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Found a solution to changing the background to grayscale and having the create server screen open at the same time but it involves seperating the create server div from the server-column component into its own individual component and tranmitting one boolean value between two different components with a sibling relationship. Trying to figure that out, hopefully it won't take too long.
     - Got it to work now just need to make it look slightly better and then I'll work on fixing login page and doing a couple other easy things.
     - Got it to look slightly better and right after fixing login page I will fix *routing*
+
+1/26/2024
+    - Trying to fix routing
+    - Cleaned up routing now need to get it to work and clean up nav.
+    - Fixed routing for current profile by creating a guard. Now I can use that knowledge to create a guard to school and channels as well.

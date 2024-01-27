@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ConfigService } from 'src/services/config.service';
 import { HttpClient } from '@angular/common/http';
-import { Channel } from 'src/services/channel.model';
+import { Channel } from 'src/app/models/channel.model';
 import { NgForm } from '@angular/forms';
 import mongoose from 'mongoose';
 

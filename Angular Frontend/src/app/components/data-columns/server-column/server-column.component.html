@@ -3,14 +3,14 @@
     <!-- <nav class="nav"> -->
         <ul>
 
-            <tr *ngFor="let url of imageUrls" style="border:none;">
+            <tr *ngFor="let url of imageUrls | keyvalue" style="border:none;">
                 <li class="list">
                 <!-- TODO need to splice url eventually lol -->
                 <a
-                routerLink="/{{url}}/general"
+                routerLink="/{{url.key}}/general"
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="{{url}}" alt="test Icon" width="48" height="48" style="border-radius:50%;">
+                <img src="{{url.value}}" alt="test Icon" width="48" height="48" style="border-radius:50%;">
                 </a>
 
 

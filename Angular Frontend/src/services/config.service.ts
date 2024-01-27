@@ -6,15 +6,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
-import { User } from './user.model';
-import { Message } from './message.model';
-import { Channel } from './channel.model';
-import { Server } from './server.model';
+import { User } from '../app/models/user.model';
+import { Message } from '../app/models/message.model';
+import { Channel } from '../app/models/channel.model';
+import { Server } from '../app/models/server.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
+    static getServerList() {
+        throw new Error('Method not implemented.');
+    }
     
     // in the tutorial project, this was the url
     // that we interacted with (CRUD interactions)
@@ -34,6 +37,7 @@ export class ConfigService {
     readonly channelApiUrl = 'http://localhost:3000/channels/channel';
     
     readonly userauthApiUrl = 'http://localhost:3000/authenticate';
+    static servers: any;
 
     // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }

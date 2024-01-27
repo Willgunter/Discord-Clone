@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { ConfigService } from 'src/services/config.service';
-import { Message } from 'src/services/message.model';
+import { Message } from 'src/app/models/message.model';
 
 
 // used for materialize framework (makes alerts look fancy and clean)
