@@ -5,7 +5,7 @@ const channel_controller = require("../controllers/channelController");
 
 /// SERVER ROUTES ///
 
-router.get('/channel', channel_controller.getchannel);
+router.get('/', channel_controller.getchannel);
 
 router.post('/channel', channel_controller.postchannel);
 // /:serverId ???

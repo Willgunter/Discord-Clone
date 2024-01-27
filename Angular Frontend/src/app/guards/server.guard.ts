@@ -3,6 +3,8 @@ import { Router, CanActivateFn, ActivatedRouteSnapshot, RouterStateSnapshot } fr
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/services/auth.service';
 import { ConfigService } from 'src/services/config.service';
+import { Channel } from '../models/channel.model';
+import { Server } from '../models/server.model';
 
 @Injectable()
 export class ServerGuard  {
@@ -33,29 +35,38 @@ export class ServerGuard  {
 
             if (serverExists) {
 
-                // this.configService.getChannelList().subscribe((res) => {
+                this.configService.getChannelList().subscribe((res) => {
 
-                //     this.configService.channels = res as String[];
+                    this.configService.serversWithChannels = res as Server[];
         
-                //     console.log(this.configService.channels);
-                //     console.log(server);
+                    console.log(this.configService.serversWithChannels);
+                    console.log(server);
         
-                //     let channelExists = false;
+                    let channelExists = false;
         
-                //     this.configService.channels.forEach((c) => {
-                //         if (c === channel) {
-                //             channelExists = true;
-                //         }
-                //     });
+                    this.configService.serversWithChannels.forEach((s) => {
+                        // console.log(s);
+                        if (s.name === server) {
+                            // console.log("channels: " + s.channels);
+                            if (s.channels && s.channels.length > 0) {
+                                for (let i = 0; i < s.channels.length; i++) {
+                                    // console.log("cname" + s.channels[i].name);
+                                    if (s.channels[i].name === channel) {
+                                        channelExists = true;
+                                    }
+                                }
+                            }
+                        }
+                    });
         
-                //     if (channelExists) {
-                //         return true;
+                    if (channelExists) {
+                        return true;
                         
-                //     } else {
-                //         this.Router.navigate(['/' + server + '/welcome']);
-                //         return false;
-                //     }
-                // });
+                    } else {
+                        this.Router.navigate(['/' + server + '/welcome']);
+                        return false;
+                    }
+                });
                 return true;
 
             } else {

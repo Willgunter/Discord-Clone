@@ -15,10 +15,7 @@ import { Server } from '../app/models/server.model';
   providedIn: 'root'
 })
 export class ConfigService {
-    static getServerList() {
-        throw new Error('Method not implemented.');
-    }
-    
+
     // in the tutorial project, this was the url
     // that we interacted with (CRUD interactions)
 
@@ -26,7 +23,7 @@ export class ConfigService {
     selectedUser: User;
     users: User[];
     messages: Message[];
-    channels: Channel[];
+    serversWithChannels: Server[];
     servers: String[];
 
     // organized by type of request
@@ -35,6 +32,7 @@ export class ConfigService {
     readonly serverApiUrl = 'http://localhost:3000/servers/server';
     readonly serverImageApiUrl = 'http://localhost:3000/servers/server-icon/';
     readonly channelApiUrl = 'http://localhost:3000/channels/channel';
+    readonly channelsApiUrl = 'http://localhost:3000/channels';
     
     readonly userauthApiUrl = 'http://localhost:3000/authenticate';
     static servers: any;
@@ -50,6 +48,7 @@ export class ConfigService {
         return this.http.post(this.userApiUrl, user);
     }
 
+    // used to get the list of channels for a server
     postServer(server: Server) {
         return this.http.post(this.serverApiUrl, server);
     }
@@ -71,14 +70,18 @@ export class ConfigService {
         return this.http.get(this.serverApiUrl);
     }
 
+    getChannelList() {
+        return this.http.get(this.channelsApiUrl);
+    }
+    
     getServerImage() {
         return this.http.get(this.serverImageApiUrl);
     }
-
+    
     getMessageList() {
         return this.http.get(this.messageApiUrl);
     }
-
+    
     getUserList() {
         return this.http.get(this.userauthApiUrl);
     }
