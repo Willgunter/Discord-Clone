@@ -21,7 +21,7 @@ import { CreateServerComponent } from './components/data-columns/main/create-ser
 
 import { AuthGuard } from './guards/auth.guard';
 import { UserGuard } from './guards/user.gaurd';
-import { ServerGuard } from './guards/server.guard';
+import { ContentGuard } from './guards/content.guard';
 
 import { ConfigService } from 'src/services/config.service';
 import { ValidateService} from 'src/services/validate.service';
@@ -51,7 +51,7 @@ import { AuthService } from 'src/services/auth.service';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [ConfigService, ValidateService, AuthService, AuthGuard, UserGuard, ServerGuard],
+  providers: [ConfigService, ValidateService, AuthService, AuthGuard, UserGuard, ContentGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 
 import { ConfigService } from 'src/services/config.service';
 import { HttpClient } from '@angular/common/http';
-import { ServerGuard } from './guards/server.guard';
+import { ContentGuard } from './guards/content.guard';
 
 const routes: Routes = [
     
@@ -42,9 +42,9 @@ const routes: Routes = [
     { path: 'school', redirectTo: 'school/welcome', pathMatch: 'full'},
     { path: 'gym', redirectTo: 'gym/welcome', pathMatch: 'full'},
     { path: 'camping', redirectTo: 'camping/welcome', pathMatch: 'full'},
-    
-    { path: ':server/:channel', component: OrganizationComponent, canActivate:[AuthGuard, ServerGuard] },
-    // { path: ':server/', redirectTo: ':server/welcome', pathMatch: 'full' },
+
+    { path: ':server/:channel', component: OrganizationComponent, canActivate:[AuthGuard, ContentGuard] },
+    { path: ':server', redirectTo: ':server/welcome', pathMatch: 'full' },
 
     // wild card route, anything link that isn't above links to NotFoundComponent
     { path: '**', component: NotFoundComponent}
