@@ -143,7 +143,7 @@ export class CreateServerComponent {
 
             // TODO eventually add a header for the channels (welcome to "general", or something, make sure it actually looks like discord, etc
             
-        this.showBox = false;
-        
+        this.updateShowBox();
+        location.reload();
     }
 }

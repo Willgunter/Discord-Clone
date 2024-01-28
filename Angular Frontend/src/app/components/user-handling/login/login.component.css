@@ -1,7 +1,11 @@
-/* .login {
-    
-} */
+div {
+    background-color: #5865F2;
+}
 
-.login-form {
-    background-color: green;
+h5 {
+    color: #F2F3F5;
+}
+
+input {
+    color: #DBDEE1;
 }

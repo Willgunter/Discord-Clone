@@ -39,10 +39,6 @@ export class ConfigService {
 
     // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }
-  
-    postMessage(message: Message) {
-        return this.http.post(this.messageApiUrl, message);
-    }
 
     postUser(user: User) {
         return this.http.post(this.userApiUrl, user);
@@ -51,6 +47,11 @@ export class ConfigService {
     // used to get the list of channels for a server
     postServer(server: Server) {
         return this.http.post(this.serverApiUrl, server);
+    }
+
+    postMessage(message: Message, serverName: String, channelName: String) {
+        const list = [message, serverName, channelName];
+        return this.http.post(this.serverApiUrl, list);
     }
 
     postServerImage(serverIcon: File) {

@@ -10,12 +10,11 @@
                 <!-- li: better fitted, cons: bullet point -->
                 <ol class="serverlink" style="list-style: none;">
                     
-                    <li > <!--[routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" are two css classes basically -->
+                    <li routerLinkActive="active" > <!--[routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" are two css classes basically -->
                         <!-- I think they make the messages take longer to load to I did not include them 
                             although that might just be my parents slow internet-->
                             <a
                             routerLink="/{{splicedChannel}}/welcome"
-                            routerLinkActive="active" 
                             ariaCurrentWhenActive="page"
                             >
                             <!-- how to determine whether a page is active -->
@@ -25,27 +24,24 @@
                         
                     </li>
                     
-                <li>
+                <li routerLinkActive="active">
                     <a
-                    routerLink="/{{splicedChannel}}/general"
-                    routerLinkActive="active" 
+                    routerLink="/{{splicedChannel}}/roles"
                     ariaCurrentWhenActive="page"
                     >
                     <!-- how to determine whether a page is active -->
-                    # general
+                    # roles
                 </a>
             </li>
             
-            <li>
+            <li routerLinkActive="active">
                 <a
-                routerLink="/{{splicedChannel}}/server-specific"
-                
-                routerLinkActive="active" 
+                    routerLink="/{{splicedChannel}}/announcements"
                     ariaCurrentWhenActive="page"
                     >
                     <!-- is this where we display server-specific channel names (referring to routerLink= line) -->
                     <!-- how to determine whether a page is active -->
-                    # server-specific
+                    # announcements
                 </a>
             </li>
             

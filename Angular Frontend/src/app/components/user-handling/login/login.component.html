@@ -1,9 +1,23 @@
 <!-- This is for login, not register for new account -->
-<form #loginForm="ngForm" class="login-form" (ngSubmit)="onLoginSubmit(loginForm)">
+<div style="padding-top: 11%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; height: 100vh">
 
-    <div class="login">
-                <input type="text" [(ngModel)]="username" name="username" id="text" placeholder="Enter Username" style="background-color: blue; border: hidden;">
-                <input type="password" [(ngModel)]="password" name="password" id="text" placeholder="Enter Password" style="border: hidden;">
+    <div class="container" style="background-color: #313338; border-radius: 5px;">
+        
+        <h5 style="text-align: center;">
+            Login
+        </h5>
+
+        <form #loginForm="ngForm" class="login-form" (ngSubmit)="onLoginSubmit(loginForm)">
+            
+            <label for="display-name" style="color: #B5BAC1;"><b>USERNAME</b></label>
+            <input type="text" [(ngModel)]="username" name="username" id="text" style=" border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
+            
+            <label for="display-name" style="color: #B5BAC1;"><b>PASSWORD</b></label>
+            
+            <input type="password" [(ngModel)]="password" name="password" id="text" style=" border: hidden; background-color: #1E1F22; border-radius: 3px;" required>
+
+            <input style="color: black;" type="submit">
+
+        </form>
     </div>
-    <input style="color: black;" type="submit">
-</form>
+</div>

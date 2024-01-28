@@ -30,7 +30,6 @@ export class ContentGuard  {
                     
                     if (s.channels && s.channels.length > 0) {
                         for (let i = 0; i < s.channels.length; i++) {
-                            
                             if (s.channels[i].name === channel) {
                                 channelExists = true;
                                 return true;
@@ -38,22 +37,20 @@ export class ContentGuard  {
                         }
 
                         if(!channelExists) {
-
                             this.Router.navigate(['/' + server + '/welcome']);
                             return false;
                         }
                     }
                 }
-                    return true;
+                    return false;
                 });
 
                 if (!serverExists) {
                     this.Router.navigate(['/login']);
                     return false;
-                } else {
-                    this.Router.navigate(['/' + server + '/welcome']);
-                    return false;
-                }
+                } 
+
+                return true;
         });
     }
 }

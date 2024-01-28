@@ -3,87 +3,10 @@
         <thead>
             <th>Messages:</th>
         </thead>
-                
-            <div [ngSwitch]="currentRoute">
-                
-                <div *ngSwitchCase="'/school/welcome'">
-                    <tr *ngFor="let mes of configService.messages"  style = "border:none;">
-                        <div *ngIf=" mes.server==='school' && mes.channel==='welcome'">
-                            <td class="message">{{mes.text}}</td>
-                        </div>            
-                    </tr>
-                </div>  
-
-                <div *ngSwitchCase="'/school/general'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='school' && mes.channel==='general'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
-                </div>  
-
-                <div *ngSwitchCase="'/school/server-specific'" >
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='school' && mes.channel==='server-specific'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
-                </div>  
-
-                <div *ngSwitchCase="'/gym/welcome'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='gym' && mes.channel==='welcome'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
-                </div>  
-
-                <div *ngSwitchCase="'/gym/general'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='gym' && mes.channel==='general'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
-                </div>  
-
-                <div *ngSwitchCase="'/gym/server-specific'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='gym' && mes.channel==='server-specific'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
-                </div>  
-                
-                <div *ngSwitchCase="'/camping/general'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='camping' && mes.channel==='general'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
-                </div>  
-
-                <div *ngSwitchCase="'/camping/welcome'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='camping' && mes.channel==='welcome'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
-                </div>  
-
-                <div *ngSwitchCase="'/camping/server-specific'">
-                    <tr *ngFor="let mes of configService.messages" style = "border:none;">
-                        <div *ngIf=" mes.server==='camping' && mes.channel==='server-specific'">
-                            <td>{{mes.text}}</td>        
-                        </div>            
-                    </tr>
+            <!-- <tr *ngFor="let mes of configService.messages"  style = "border:none;">
+                <div *ngIf=" mes.server==='school' && mes.channel==='welcome'">
+                    <td class="message">{{mes.text}}</td>
                 </div>            
-
-            </div> <!-- div for parent ngSwitch class -->
-
-            <!-- how to check for only messages with a specific server / channel? -->
-            <!-- have 9 different post requests (ex: postskewlwelcome, postskewlgeneral postboysonlywelcome...)
-            in the message controller file? -->
-            <!-- next step: figure out how to send a message with its current server and channel -->
-
+            </tr> -->
     </table>
 </div>

@@ -7,19 +7,20 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - Things to do before I migrate database / deploy:
         
-    - Fix login screen
+    - ✅✅✅Fix login screen✅✅✅
     - ✅✅✅Turn server icons from emojis into pictures✅✅✅
     - make a fake little profile picture for users and current user - shouldn't be that hard for Users column
     - let users change color of either profile pictures / font color??
     - make "profile" route more pretty --> remove profile route and put all information in user box?
     - fix up messages and stuff (attach a user to a message, make box look better, etc...)
-    - Clean up routing / ✅✅✅add add server✅✅✅ / channel feature (???)
+    - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature (???)
     - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
     - ✅✅✅(maybe) clean up routing for nine different routes and make it so that its more scalable ✅✅✅
     - make things more discord like (change font / color of name of channel)
     - put a break in between three default channels and rest of channels
     - add websockets for live message display / server updating / channel updating
     - disable text / channel switching when server box is displayed
+    - make a small white bar appear for the active server
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
@@ -409,7 +410,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Got it to work now just need to make it look slightly better and then I'll work on fixing login page and doing a couple other easy things.
     - Got it to look slightly better and right after fixing login page I will fix *routing*
 
-1/26/2024
+- 1/26/2024
     - Trying to fix routing
     - Cleaned up routing now need to get it to work and clean up nav.
     - Fixed routing for current profile by creating a guard. Now I can use that knowledge to create a guard to school and channels as well.
+    - Made content guard line 10 lines shorter and cleaned up small routing logic.
+    - Next step is to get channel links / messages to work. Once I get those working I will add small white bar to active link

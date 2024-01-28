@@ -9,6 +9,7 @@
     /* position: relative; */
     background-color: #2B2D31;
     z-index: 0;
+    font-weight: bold;
     
 } 
 
@@ -39,7 +40,14 @@
 
 li:hover {
     width: auto;
+    background-color: #35373C;
+    border-radius: 3px;
+}
+
+li.active {
+    width: auto;
     background-color: #404249;
+    color: FFFFFF;
     border-radius: 3px;
 }
 
@@ -51,6 +59,7 @@ ol {
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0px;
+    
 }
 
 li {

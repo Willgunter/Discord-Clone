@@ -1,13 +1,13 @@
 <div class="server-column">
     <!-- TODO might be able to use nav to make a white dot on the left side of the server just like discord has -->
-    <!-- <nav class="nav"> -->
+    <!-- <nav> -->
         <ul>
-
+            <!-- if server is equal to url, do something? -->
             <tr *ngFor="let url of imageUrls | keyvalue" style="border:none;">
                 <li class="list">
                 <!-- TODO need to splice url eventually lol -->
                 <a
-                routerLink="/{{url.key}}/general"
+                routerLink="/{{url.key}}/welcome"
                 routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
                 <img src="{{url.value}}" alt="test Icon" width="48" height="48" style="border-radius:50%;">
@@ -22,6 +22,6 @@
                 <img src="../../../../assets/add-server-image/addserver.png" alt="Add Server Icon" width="48" height="48" style="border-radius:50%;" (click)="updateShowBox()">
             </li>
         </ul>
+    <!-- </nav> -->
 
-        <!-- </nav> -->
 </div>

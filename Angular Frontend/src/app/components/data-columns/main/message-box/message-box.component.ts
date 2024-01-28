@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/services/auth.service';
 
 import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/app/models/message.model';
+import { User } from 'src/app/models/user.model';
 
 
 // used for materialize framework (makes alerts look fancy and clean)
@@ -25,10 +27,10 @@ export class MessageBoxComponent implements OnInit {
     
     // text, server, and channel of specific message data
     text: string = "";
-    server: string = "";
-    channel: string = "";
+    user: User;
+    authService: any;
 
-    constructor(public configService: ConfigService) {}
+    constructor(public configService: ConfigService) { }
 
     ngOnInit() {
         this.resetForm();
@@ -46,18 +48,13 @@ export class MessageBoxComponent implements OnInit {
                 // commented it out in message.model.ts (is it really necessary?)
                 // _id: "",
                 text: "",
-                server: "",
-                channel: "",
+                user: undefined,// this .user id or whatever
             }
     }
 
     // NOTE: CONSOLE.LOG() COMMANDS DISPLAY IN THE BROWSER CONSOLE,
     // NOT IN THE VSCODE TERMINAL
     onSubmit(form: NgForm) {
-        
-        // parsing current route string
-        this.server = this.currentRoute.substring(1).split("/", 2)[0];
-        this.channel = this.currentRoute.substring(1).split("/", 2)[1];
 
         if(!this.text) {
             alert('Please add a message');
@@ -69,16 +66,16 @@ export class MessageBoxComponent implements OnInit {
             // problem with id obviously
             // _id: "w",
             text: this.text,
-            server: this.server,
-            channel: this.channel,
+            user: this.authService.getProfile()
         };
 
+        const serverName = this.shortenedRoute.split("/", 1)[0];
+        const channelName = this.shortenedRoute.split("/", 2)[1];
+
         // assigning form values to server and channel values inherited from app-main
-        form.value.server = this.server;
-        form.value.channel = this.channel;
 
         // postMessage(newMessage) kind of works but somehow gives an error as well???
-        this.configService.postMessage(form.value).subscribe((res) => {
+        this.configService.postMessage(newMessage, serverName, channelName).subscribe((res) => {
         //     // how to pass form value onto config.service?
         });
         
@@ -98,8 +95,6 @@ export class MessageBoxComponent implements OnInit {
         // vvv does this do anything vvv
         // I think it might reset the text value?
         this.text = '';
-        this.server = '';
-        this.channel = '';
 
   }
 
