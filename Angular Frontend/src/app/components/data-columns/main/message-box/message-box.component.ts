@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/services/auth.service';
 
@@ -23,6 +23,16 @@ export class MessageBoxComponent implements OnInit {
 
     // String for current route of server, courtesy of Main Component
     @Input() currentRoute: string = "";
+
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes['currentRoute'] && !changes['currentRoute'].firstChange) {
+            // Perform your desired action here
+            location.reload();
+            // Call a method or execute code based on the new value of currentRoute
+            // Example: this.refreshMessageList();
+        }
+    }
+
     shortenedRoute: string = "";
     
     // text, server, and channel of specific message data

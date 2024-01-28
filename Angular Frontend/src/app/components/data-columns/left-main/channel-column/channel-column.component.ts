@@ -12,6 +12,9 @@ import { UserBoxComponent } from 'src/app/components/data-columns/left-main/user
 })
 export class ChannelColumnComponent {
 
+    // add @Output decorator so that when 
+    // the user clicks on a channel, the
+    // current route sends to the content box and message
     currentRoute: string;
 
     splicedChannel: string;
@@ -31,14 +34,10 @@ export class ChannelColumnComponent {
                     };
                 
                 })
-    }
+            }
 
-    reloadPage() {
+    onClick() {
         location.reload();
     }
-    
-
-    
 
 }
-

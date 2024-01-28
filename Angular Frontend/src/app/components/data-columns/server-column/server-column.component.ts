@@ -55,7 +55,7 @@ export class ServerColumnComponent {
             this.configService.servers = res as String[];
 
             this.configService.servers.forEach((url: String) => {
-                console.log("url: " + url);
+                
                 this.imageUrls.set(url, "http://localhost:3000/servers/server-icon/" + url + ".png");
             });
             

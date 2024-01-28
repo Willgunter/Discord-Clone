@@ -403,7 +403,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Servers and server images now display on the screen although I don't think routes are correct yet (shouldn't be too too hard I think). Very very proud of getting this to work since I have been working on this since the 16th.
     - Have lots of clean up to do especially in server-side code lol. ... and in front end as well.
     - Update: made huge progress on css for create server feature. Need to figure out a way to gray out whole screen except box tho. 
-    - After that I will probably do something easier like clean up login screen.7
+    - After that I will probably do something easier like clean up login screen.
 
 - 1/25/2024
     - Found a solution to changing the background to grayscale and having the create server screen open at the same time but it involves seperating the create server div from the server-column component into its own individual component and tranmitting one boolean value between two different components with a sibling relationship. Trying to figure that out, hopefully it won't take too long.
@@ -415,4 +415,5 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Cleaned up routing now need to get it to work and clean up nav.
     - Fixed routing for current profile by creating a guard. Now I can use that knowledge to create a guard to school and channels as well.
     - Made content guard line 10 lines shorter and cleaned up small routing logic.
-    - Next step is to get channel links / messages to work. Once I get those working I will add small white bar to active link
+    - Next step is to get channel links / messages to work. Once I get those working I will add small white bar to active link (probably won't be that hard, I already found out a way to do it)
+    - Fixed problem I was having with routes not refreshing if I click the a tag in the channel list. Going to try to get messages working again.
