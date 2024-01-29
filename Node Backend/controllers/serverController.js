@@ -33,7 +33,7 @@ exports.postserver = asyncHandler(async (req, res, next) => {
     
     saveServer().catch((err) => console.log('Error in post Server Save :' + JSON.stringify(err, undefined, 2)));
     async function saveServer() {
-        
+
         // why is this not working?
         const sev = new ServerModel({
             name: req.body.name,
@@ -50,10 +50,31 @@ exports.postserver = asyncHandler(async (req, res, next) => {
     
 });
 
+exports.addmessage = asyncHandler(async (req, res, next) => {
+    
+    addMessage().catch((err) => console.log('Error in Server controller add message :' + JSON.stringify(err, undefined, 2)));
+    async function addMessage() {
+
+        // why is this not working?
+
+        // reminder, res.body.list[0] is the message, res.body.list[1] is the server name and res.body.list[2] is the channel name
+        
+        // get server id
+        // get channel from channel list in server
+        // add message to message list in channel
+        console.log(req.body.list[1]);
+        // res.send(req.body.list[0]);
+        res.send("test");
+        // TODO here when you code next
+        
+    }
+    
+});
+
 // Used by frontend to get server image from server 
 exports.getservericon = asyncHandler(async (req, res, next) => {
     
-    getOneServerIcon().catch((err) => console.log('Error in get Server Icon Save :' + JSON.stringify(err, undefined, 2)));
+    getOneServerIcon().catch((err) => console.log('Error in get Server Icon Get :' + JSON.stringify(err, undefined, 2)));
     async function getOneServerIcon() {
 
         // Path of where images are

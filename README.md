@@ -416,4 +416,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Fixed routing for current profile by creating a guard. Now I can use that knowledge to create a guard to school and channels as well.
     - Made content guard line 10 lines shorter and cleaned up small routing logic.
     - Next step is to get channel links / messages to work. Once I get those working I will add small white bar to active link (probably won't be that hard, I already found out a way to do it)
+
+- 1/28/2024
     - Fixed problem I was having with routes not refreshing if I click the a tag in the channel list. Going to try to get messages working again.
+    - Working on add message. made progress but had to stop bc meal prep.

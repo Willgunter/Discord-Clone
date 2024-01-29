@@ -1,5 +1,7 @@
+import mongoose from 'mongoose';
+
 export class User {
-    // _id: string | undefined;
+    _id: mongoose.Types.ObjectId | undefined;
     name: string | undefined;
     email: string | undefined;
     username: string | undefined;

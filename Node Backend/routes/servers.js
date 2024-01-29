@@ -24,6 +24,7 @@ const upload = multer({ storage: storage });
 // for server object
 router.get('/server', server_controller.getserver);
 router.post('/server', server_controller.postserver);
+router.put('/server', server_controller.addmessage);
 
 
 // for server icons

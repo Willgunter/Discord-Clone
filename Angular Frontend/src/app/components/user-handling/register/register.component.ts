@@ -5,6 +5,7 @@ import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 import { ValidateService } from 'src/services/validate.service';
 import { AuthService } from 'src/services/auth.service';
+import mongoose from 'mongoose';
 
 declare var M: any;
 
@@ -40,7 +41,7 @@ export class RegisterComponent {
         form.reset();
         this.configService.selectedUser = {
             // commented it out in message.model.ts (is it really necessary?)
-            // _id: "",
+            _id: undefined,
             name: "",
             email: "",
             username: "",
@@ -52,6 +53,7 @@ export class RegisterComponent {
 
         // Constructing a new message object with text, server, and channel values
         const newUser = {
+            _id: new mongoose.Types.ObjectId(),
             name: this.name,
             email: this.email,
             username: this.username,

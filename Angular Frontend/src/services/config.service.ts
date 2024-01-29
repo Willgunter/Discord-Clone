@@ -51,7 +51,7 @@ export class ConfigService {
 
     postMessage(message: Message, serverName: String, channelName: String) {
         const list = [message, serverName, channelName];
-        return this.http.post(this.serverApiUrl, list);
+        return this.http.put(this.serverApiUrl, list);
     }
 
     postServerImage(serverIcon: File) {
