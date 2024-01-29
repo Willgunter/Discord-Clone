@@ -420,3 +420,4 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 1/28/2024
     - Fixed problem I was having with routes not refreshing if I click the a tag in the channel list. Going to try to get messages working again.
     - Working on add message. made progress but had to stop bc meal prep.
+    - Made more progress on add message.

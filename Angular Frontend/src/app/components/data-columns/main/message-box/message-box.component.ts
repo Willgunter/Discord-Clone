@@ -57,6 +57,7 @@ export class MessageBoxComponent implements OnInit {
         });
 
         let secondBackslash = this.currentRoute.indexOf("/", 1);
+        
         this.shortenedRoute = this.currentRoute.substring(secondBackslash + 1, this.currentRoute.length);
     }
 
@@ -86,11 +87,16 @@ export class MessageBoxComponent implements OnInit {
             text: this.text,
             user: this.user,
         };
+        
+        console.log("cr:" + this.currentRoute);
+        const parts = this.currentRoute.split("/");
+        
+        const serverName = parts[1];
+        const channelName = parts[2];
 
-        console.log(newMessage);
 
-        const serverName = this.shortenedRoute.split("/", 1)[0];
-        const channelName = this.shortenedRoute.split("/", 2)[1];
+        console.log("sn:" + serverName);
+        console.log("cn:" + channelName);
         
         // postMessage(newMessage) kind of works but somehow gives an error as well???
         this.configService.postMessage(newMessage, serverName, channelName).subscribe((res) => {

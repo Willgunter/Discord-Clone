@@ -58,13 +58,20 @@ exports.addmessage = asyncHandler(async (req, res, next) => {
         // why is this not working?
 
         // reminder, res.body.list[0] is the message, res.body.list[1] is the server name and res.body.list[2] is the channel name
-        
+        // problem with list
         // get server id
         // get channel from channel list in server
         // add message to message list in channel
-        console.log(req.body.list[1]);
+        const server = req.body[1];
+        const channel = req.body[2];
+        console.log(server);
+        console.log(channel);
+        // does this work
+        // WIP
+        const serverId = await ServerModel.findOne({name: server}, {_id: 1});
+        // console.log("test");
         // res.send(req.body.list[0]);
-        res.send("test");
+        // res.send("test");
         // TODO here when you code next
         
     }
