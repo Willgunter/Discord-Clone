@@ -5,6 +5,7 @@ import { AuthService } from 'src/services/auth.service';
 import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/app/models/message.model';
 import { User } from 'src/app/models/user.model';
+import mongoose from 'mongoose';
 
 
 // used for materialize framework (makes alerts look fancy and clean)
@@ -21,22 +22,18 @@ export class MessageBoxComponent implements OnInit {
     // String for current route of server, courtesy of Main Component
     @Input() currentRoute: string = "";
 
-    
-    shortenedRoute: string = "";
-    
-    // text, server, and channel of specific message data
+    shortenedRoute: string = "";    
     text: string = "";
     user: User;
     
 
     constructor(public configService: ConfigService, public authService: AuthService) { }
     
+    // if we click an a tag (server or channel)
+    // then refresh page (transmits new route to this component)
     ngOnChanges(changes: SimpleChanges) {
         if (changes['currentRoute'] && !changes['currentRoute'].firstChange) {
-            // Perform your desired action here
             location.reload();
-            // Call a method or execute code based on the new value of currentRoute
-            // Example: this.refreshMessageList();
         }
     }
 
@@ -62,18 +59,16 @@ export class MessageBoxComponent implements OnInit {
     }
 
     resetForm(form?: NgForm) {
-        // console.log("resetForm is working");
+
         if (form)
             form.reset();
             this.configService.selectedMessage = {
-                // _id: "",
+                _id: undefined,
                 text: "",
                 user: undefined,
             }
     }
 
-    // NOTE: CONSOLE.LOG() COMMANDS DISPLAY IN THE BROWSER CONSOLE,
-    // NOT IN THE VSCODE TERMINAL
     onSubmit(form: NgForm) {
 
         if(!this.text) {
@@ -81,28 +76,23 @@ export class MessageBoxComponent implements OnInit {
             return;
         }
 
-        // new message object
         const newMessage: Message = {
-            // problem with id obviously
+            _id: new mongoose.Types.ObjectId(),
             text: this.text,
             user: this.user,
         };
-        
-        console.log("cr:" + this.currentRoute);
+
         const parts = this.currentRoute.split("/");
         
         const serverName = parts[1];
         const channelName = parts[2];
-
-
-        console.log("sn:" + serverName);
-        console.log("cn:" + channelName);
         
-        // postMessage(newMessage) kind of works but somehow gives an error as well???
+        // Adds message to database
         this.configService.postMessage(newMessage, serverName, channelName).subscribe((res) => {
-        //     // how to pass form value onto config.service?
+
         });
 
+        // Refreshes message list
         this.configService.getMessageList().subscribe((res) => {
             this.resetForm(form);
             this.refreshMessageList();
@@ -111,9 +101,6 @@ export class MessageBoxComponent implements OnInit {
             M.toast({html: 'Message sent', classes: 'rounded'});
         });
         
-
-        // vvv does this do anything vvv
-        // I think it might reset the text value?
         this.text = '';
 
   }
@@ -122,7 +109,11 @@ export class MessageBoxComponent implements OnInit {
    // yes but you still have to refresh the page (lame)
   refreshMessageList() {
     this.configService.getMessageList().subscribe((res) => {
-      this.configService.messages = res as Message[];
+        // need to get list of messages from list of channels from current server
+        // not sure how to do it
+        // going to make this work after I get white dot to work for active server
+        // might need to change some stuff in config.service.ts
+    //   this.configService.messages = res as Server[];
     });
   }
 

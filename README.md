@@ -12,12 +12,13 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - make a fake little profile picture for users and current user - shouldn't be that hard for Users column
     - let users change color of either profile pictures / font color??
     - make "profile" route more pretty --> remove profile route and put all information in user box?
-    - fix up messages and stuff (attach a user to a message, make box look better, etc...)
+    - fix up messages and stuff (✅✅✅attach a user to a message✅✅✅, make box look better, etc...)
     - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature (???)
     - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
     - ✅✅✅(maybe) clean up routing for nine different routes and make it so that its more scalable ✅✅✅
     - make things more discord like (change font / color of name of channel)
     - put a break in between three default channels and rest of channels
+    after I add the add channels feature
     - add websockets for live message display / server updating / channel updating
     - disable text / channel switching when server box is displayed
     - make a small white bar appear for the active server
@@ -421,3 +422,6 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Fixed problem I was having with routes not refreshing if I click the a tag in the channel list. Going to try to get messages working again.
     - Working on add message. made progress but had to stop bc meal prep.
     - Made more progress on add message.
+
+- 1/29/2024
+    - Ran into issues with add message but found out the problem after looking in the wrong spot for like 3 hours. Going to get messages to display and hopefully add a white dot next to active server.

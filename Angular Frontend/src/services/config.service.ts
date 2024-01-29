@@ -80,7 +80,7 @@ export class ConfigService {
     }
     
     getMessageList() {
-        return this.http.get(this.messageApiUrl);
+        return this.http.get(this.serverApiUrl);
     }
     
     getUserList() {

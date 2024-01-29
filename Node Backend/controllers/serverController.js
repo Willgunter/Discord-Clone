@@ -1,7 +1,7 @@
 // place where we submit and store the messages
-
 var { ServerModel } = require("../models/server");
 var { ChannelModel } = require("../models/channel");
+var { UserModel } = require("../models/user");
 // Note: NEEDS TO BE TITLED "MessageModel" exactly for it to work for some reason
 
 const asyncHandler = require("express-async-handler");
@@ -9,6 +9,7 @@ const { body, validationResult} = require("express-validator");
 // const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+var mongoose = require("mongoose");
 
 // => localhost:3000/servers
 exports.getserver = asyncHandler(async (req, res, next) => {
@@ -34,7 +35,6 @@ exports.postserver = asyncHandler(async (req, res, next) => {
     saveServer().catch((err) => console.log('Error in post Server Save :' + JSON.stringify(err, undefined, 2)));
     async function saveServer() {
 
-        // why is this not working?
         const sev = new ServerModel({
             name: req.body.name,
             channels: req.body.channels,
@@ -43,7 +43,6 @@ exports.postserver = asyncHandler(async (req, res, next) => {
 
         await sev.save();
         
-        // vvv what does this even do lmao vvv
         res.send(sev);
         
     }
@@ -55,25 +54,36 @@ exports.addmessage = asyncHandler(async (req, res, next) => {
     addMessage().catch((err) => console.log('Error in Server controller add message :' + JSON.stringify(err, undefined, 2)));
     async function addMessage() {
 
-        // why is this not working?
+        // res.body.list[0] = Message object
+        // res.body.list[1] = server name
+        // res.body.list[2] = channel name
 
-        // reminder, res.body.list[0] is the message, res.body.list[1] is the server name and res.body.list[2] is the channel name
-        // problem with list
-        // get server id
-        // get channel from channel list in server
-        // add message to message list in channel
-        const server = req.body[1];
-        const channel = req.body[2];
-        console.log(server);
-        console.log(channel);
-        // does this work
-        // WIP
-        const serverId = await ServerModel.findOne({name: server}, {_id: 1});
-        // console.log("test");
-        // res.send(req.body.list[0]);
-        // res.send("test");
-        // TODO here when you code next
+        const serverName = req.body[1];
+        const channelName = req.body[2];
         
+        const server = await ServerModel.findOne({name: serverName}, {_id: 0, name: 1, channels: 1});
+
+        for (const channelId of server.channels) {
+
+            const channel = await ChannelModel.findById(channelId);
+
+            if (channel.name === channelName) {
+                
+                const newMessage = {
+                    _id: new mongoose.Types.ObjectId(),
+                    text: req.body[0].text,
+                    user: req.body[0].user,
+                };
+
+                channel.messages.push(newMessage);
+                
+                await channel.save();
+
+                res.send({"Message added": newMessage});
+                
+                break;
+            }
+        }
     }
     
 });

@@ -87,11 +87,9 @@ export class CreateServerComponent {
             // Loop through defaultChannels and post the channels to the database
             defaultChannels.forEach((channel) => {
 
-                // bruh what the fuck is happening
                 this.configService.postChannel(channel).subscribe({
                     
                     next: () => {
-                        // do nothing???
                     },
                     error: (err) => {
                         console.error('Error posting channel to the database:', err);
