@@ -13,22 +13,25 @@ var mongoose = require("mongoose");
 
 // => localhost:3000/servers
 exports.getserver = asyncHandler(async (req, res, next) => {
-    // TODO clean up all error messages
-    // CURRENT PROBLEM (I THINK)
+    
     getServer().catch((err) => console.log('Error in get Server Save :' + JSON.stringify(err, undefined, 2)));
         async function getServer() {
-            const servers = await ServerModel.find({}, { name: 1, _id: 0 }).sort({ name: 1 });
+            const servers = await ServerModel.find({}, { name: 1, channels: 1, _id: 0 })
+                .sort({ name: 1 })
+                .populate({
+                    path: "channels",
+                    populate: {
+                        path: "messages"
+                    }
+                });
+
             const serverNames = servers.map(server => server.name);
-            res.send(serverNames);
+                const messages = servers.map(server => server.channels);
+            // const messages = servers.map(server => server.channels.map(channel => channel.messages));
+            // const messages = [];
+            res.send({ serverNames, messages });
         }
-
-    // where we get all the messages from mongo + send all the messages to the backend (*very important*)
-
-    // NEEDS TO BE TITLED "MessageModel" exactly for it to work for some reason
-
 });
-
-
 
 exports.postserver = asyncHandler(async (req, res, next) => {
     
@@ -86,6 +89,16 @@ exports.addmessage = asyncHandler(async (req, res, next) => {
         }
     }
     
+});
+
+exports.getmessages = asyncHandler(async (req, res, next) => {
+    
+    getServer().catch((err) => console.log('Error in get Server Save :' + JSON.stringify(err, undefined, 2)));
+        async function getServer() {
+            const servers = await ServerModel.find({}, { name: 1, channels: 1, _id: 0 }).sort({ name: 1 });
+            servers.popupate('channels');
+            res.send(servers);
+        }
 });
 
 // Used by frontend to get server image from server 

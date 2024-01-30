@@ -26,6 +26,9 @@ router.get('/server', server_controller.getserver);
 router.post('/server', server_controller.postserver);
 router.put('/server', server_controller.addmessage);
 
+// for messages
+router.get('/server', server_controller.getmessages);
+
 
 // for server icons
 

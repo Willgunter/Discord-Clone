@@ -51,11 +51,11 @@ export class ServerColumnComponent {
     refreshServerList() {
         
         this.configService.getServerList().subscribe((res) => {
-            
-            this.configService.servers = res as String[];
 
-            this.configService.servers.forEach((url: String) => {
-                
+            this.configService.servers = res as JSON;
+            const map = new Map(Object.entries(this.configService.servers));
+            let listOfServers = map.get("serverNames");
+            listOfServers.forEach((url: String) => {
                 this.imageUrls.set(url, "http://localhost:3000/servers/server-icon/" + url + ".png");
             });
             

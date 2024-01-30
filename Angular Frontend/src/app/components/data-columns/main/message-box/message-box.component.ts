@@ -6,6 +6,7 @@ import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/app/models/message.model';
 import { User } from 'src/app/models/user.model';
 import mongoose from 'mongoose';
+import { Server } from 'src/app/models/server.model';
 
 
 // used for materialize framework (makes alerts look fancy and clean)
@@ -23,6 +24,8 @@ export class MessageBoxComponent implements OnInit {
     @Input() currentRoute: string = "";
 
     shortenedRoute: string = "";    
+    serverName: string = "";
+    channelName: string = "";
     text: string = "";
     user: User;
     
@@ -84,11 +87,12 @@ export class MessageBoxComponent implements OnInit {
 
         const parts = this.currentRoute.split("/");
         
-        const serverName = parts[1];
-        const channelName = parts[2];
+        this.serverName = parts[1];
+        this.channelName = parts[2];
         
         // Adds message to database
-        this.configService.postMessage(newMessage, serverName, channelName).subscribe((res) => {
+        // TODO need to make this work for servers with spaces and such
+        this.configService.postMessage(newMessage, this.serverName, this.channelName).subscribe((res) => {
 
         });
 
@@ -109,11 +113,30 @@ export class MessageBoxComponent implements OnInit {
    // yes but you still have to refresh the page (lame)
   refreshMessageList() {
     this.configService.getMessageList().subscribe((res) => {
+
+        this.configService.serversForMessages = res as JSON;
+        console.log(this.configService.serversForMessages);
+
+        const map = new Map(Object.entries(this.configService.servers));
+        let listOfServers = map.get("serverNames");
+        console.log(listOfServers);
+        // for (let i = 0; i < this.configService.serversForMessages.length; i++) {
+            
+            // for (let j = 0; j < this.configService.serversForMessages[i].channels.length; j++) {
+            // if (this.configService.serversForMessages[i].name == this.serverName) {
+                // this.configService.messages = this.configService.serversForMessages[i].channels[0].messages;
+                // console.log(this.configService.messages);
+                // console.log("success");
+            // }
+            // }
+            // console.log("channel: " + this.configService.serversForMessages);
+        // }
+        // console.log(this.configService.serversForMessages);
         // need to get list of messages from list of channels from current server
         // not sure how to do it
         // going to make this work after I get white dot to work for active server
         // might need to change some stuff in config.service.ts
-    //   this.configService.messages = res as Server[];
+        // this.configService.messages = res as Server[];
     });
   }
 

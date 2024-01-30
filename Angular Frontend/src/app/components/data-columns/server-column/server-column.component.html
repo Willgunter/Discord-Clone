@@ -4,13 +4,16 @@
         <ul>
             <!-- if server is equal to url, do something? -->
             <tr *ngFor="let url of imageUrls | keyvalue" style="border:none;">
-                <li class="list">
+                <li class="list" routerLinkActive="active" >
                 <!-- TODO need to splice url eventually lol -->
+                <!-- this might be more complicated than I though -->
+                <!-- <div *ngIf="routerLinkActive === 'active'"> -->
+                    <!-- test -->
+                <!-- </div> -->
                 <a
                 routerLink="/{{url.key}}/welcome"
-                routerLinkActive="active" 
                 ariaCurrentWhenActive="page">
-                <img src="{{url.value}}" alt="test Icon" width="48" height="48" style="border-radius:50%;">
+                <img src="{{url.value}}" alt="test Icon" width="48" height="48"  routerLinkActive="active">
                 </a>
 
 

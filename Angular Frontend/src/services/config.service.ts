@@ -22,9 +22,9 @@ export class ConfigService {
     selectedMessage: Message; // why do I even need this?
     selectedUser: User;
     users: User[];
-    messages: Message[];
-    serversWithChannels: Server[];
-    servers: String[];
+    serversWithChannels: Server[]; // for content guard
+    serversForMessages: JSON; // for message box
+    servers: JSON; // for server column
 
     // organized by type of request
     readonly messageApiUrl = 'http://localhost:3000/messages';

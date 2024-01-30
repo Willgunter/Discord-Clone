@@ -425,3 +425,5 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 1/29/2024
     - Ran into issues with add message but found out the problem after looking in the wrong spot for like 3 hours. Going to get messages to display and hopefully add a white dot next to active server.
+    - Update got active server image to be less rounded, but white bar is still not there. Going to work on getting messages to display
+    - Going to push out minor update to getting messages to display, but not quite done yet.
