@@ -37,14 +37,22 @@ exports.getserver = asyncHandler(async (req, res, next) => {
 
                         const test = await MessageModel.findOne({ _id:  messageIdString }, { text: 1, user: 1}); // works
                         
-                        console.log(test);
+                        console.log("test: " + test.text);
+                        messages[i][j].messages[k] = undefined;
                         console.log("old: " + messages[i][j].messages[k]);
                         messages[i][j].messages[k] = test;
+                        
+                        // TODO
+                        // instead of using messages[i][j].messages[k],
+                        // create new array or something. assign it to 
+                        // messages[i][j], and instead of .messages[k],
+                        // assign messages[i][j][k] equal to actual message
+                        // object (too late tonight but do saturday)
 
                         // value of messages[i][j].messages[k] is not changing for some reason
                         // maybe something to do with how js handles arrays?
                         if (messages[i][j].messages[k]) {
-                            console.log("new: " + messages[i][j].messages[k]);
+                            console.log("new: " + messages[i][j].messages[k].text);
                         }
                     }
                 }
@@ -170,8 +178,6 @@ exports.postservericon = asyncHandler(async (req, res, next) => {
 
     saveServerIcon().catch((err) => console.log('Error in post Server Icon Save :' + JSON.stringify(err, undefined, 2)));
         async function saveServerIcon() {
-            // console.log("test");
-            // Saves file
             res.send(req.file);
     }
 });

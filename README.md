@@ -428,4 +428,6 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Update got active server image to be less rounded, but white bar is still not there. Going to work on getting messages to display
     - Going to push out minor update to getting messages to display, but not quite done yet.
 
-- 1/30/2024
+- 2/2/2024
+    - Fixed create server bug that caused it to not work during my final round interview.
+    - Brainstormed one way to solve messaging thing.
