@@ -2,6 +2,8 @@
 var { ServerModel } = require("../models/server");
 var { ChannelModel } = require("../models/channel");
 var { UserModel } = require("../models/user");
+var { MessageModel } = require("../models/message");
+var { mongoose } = require("mongoose");
 // Note: NEEDS TO BE TITLED "MessageModel" exactly for it to work for some reason
 
 const asyncHandler = require("express-async-handler");
@@ -9,7 +11,6 @@ const { body, validationResult} = require("express-validator");
 // const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-var mongoose = require("mongoose");
 
 // => localhost:3000/servers
 exports.getserver = asyncHandler(async (req, res, next) => {
@@ -20,15 +21,35 @@ exports.getserver = asyncHandler(async (req, res, next) => {
                 .sort({ name: 1 })
                 .populate({
                     path: "channels",
-                    populate: {
-                        path: "messages"
-                    }
                 });
 
             const serverNames = servers.map(server => server.name);
-                const messages = servers.map(server => server.channels);
-            // const messages = servers.map(server => server.channels.map(channel => channel.messages));
-            // const messages = [];
+            let messages = servers.map(server => server.channels);
+            
+            console.log(messages);
+            for (let i = 0; i < messages.length; i++) {
+                
+                for (let j = 0; j < messages[i].length; j++) {
+                    
+                    for (let k = 0; k < messages[i][j].messages.length; k++) {
+                        
+                        const messageIdString = messages[i][j].messages[k].toString();
+
+                        const test = await MessageModel.findOne({ _id:  messageIdString }, { text: 1, user: 1}); // works
+                        
+                        console.log(test);
+                        console.log("old: " + messages[i][j].messages[k]);
+                        messages[i][j].messages[k] = test;
+
+                        // value of messages[i][j].messages[k] is not changing for some reason
+                        // maybe something to do with how js handles arrays?
+                        if (messages[i][j].messages[k]) {
+                            console.log("new: " + messages[i][j].messages[k]);
+                        }
+                    }
+                }
+            }
+            
             res.send({ serverNames, messages });
         }
 });
@@ -60,26 +81,26 @@ exports.addmessage = asyncHandler(async (req, res, next) => {
         // res.body.list[0] = Message object
         // res.body.list[1] = server name
         // res.body.list[2] = channel name
-
+        
         const serverName = req.body[1];
         const channelName = req.body[2];
         
         const server = await ServerModel.findOne({name: serverName}, {_id: 0, name: 1, channels: 1});
 
         for (const channelId of server.channels) {
-
             const channel = await ChannelModel.findById(channelId);
-
             if (channel.name === channelName) {
                 
-                const newMessage = {
+                const newMessage = new MessageModel({
                     _id: new mongoose.Types.ObjectId(),
                     text: req.body[0].text,
                     user: req.body[0].user,
-                };
+                });
+
+                await newMessage.save();
 
                 channel.messages.push(newMessage);
-                
+
                 await channel.save();
 
                 res.send({"Message added": newMessage});
@@ -123,7 +144,7 @@ exports.getservericon = asyncHandler(async (req, res, next) => {
 
             let fileIndex = 0;
             for (fileIndex; files.length; fileIndex++) {
-                if (files[fileIndex] === fileName) {
+                if (files[fileIndex] == fileName) {
                     break;
                 }
             }
@@ -149,7 +170,7 @@ exports.postservericon = asyncHandler(async (req, res, next) => {
 
     saveServerIcon().catch((err) => console.log('Error in post Server Icon Save :' + JSON.stringify(err, undefined, 2)));
         async function saveServerIcon() {
-
+            // console.log("test");
             // Saves file
             res.send(req.file);
     }

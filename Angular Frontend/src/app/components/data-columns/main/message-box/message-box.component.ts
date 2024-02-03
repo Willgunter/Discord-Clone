@@ -23,26 +23,29 @@ export class MessageBoxComponent implements OnInit {
     // String for current route of server, courtesy of Main Component
     @Input() currentRoute: string = "";
 
-    shortenedRoute: string = "";    
     serverName: string = "";
     channelName: string = "";
     text: string = "";
     user: User;
-    
 
     constructor(public configService: ConfigService, public authService: AuthService) { }
     
     // if we click an a tag (server or channel)
     // then refresh page (transmits new route to this component)
-    ngOnChanges(changes: SimpleChanges) {
+    ngOnChanges(changes: SimpleChanges) { 
+        
+        this.updateServerAndChannelName(this.serverName, this.channelName);
+
         if (changes['currentRoute'] && !changes['currentRoute'].firstChange) {
             location.reload();
         }
     }
 
     ngOnInit() {
+        
         this.resetForm();
         this.refreshMessageList();
+        this.updateServerAndChannelName(this.serverName, this.channelName);
 
         this.authService.getProfile().subscribe({
             next: (response) => {
@@ -56,9 +59,6 @@ export class MessageBoxComponent implements OnInit {
             }
         });
 
-        let secondBackslash = this.currentRoute.indexOf("/", 1);
-        
-        this.shortenedRoute = this.currentRoute.substring(secondBackslash + 1, this.currentRoute.length);
     }
 
     resetForm(form?: NgForm) {
@@ -66,7 +66,6 @@ export class MessageBoxComponent implements OnInit {
         if (form)
             form.reset();
             this.configService.selectedMessage = {
-                _id: undefined,
                 text: "",
                 user: undefined,
             }
@@ -80,15 +79,9 @@ export class MessageBoxComponent implements OnInit {
         }
 
         const newMessage: Message = {
-            _id: new mongoose.Types.ObjectId(),
             text: this.text,
             user: this.user,
         };
-
-        const parts = this.currentRoute.split("/");
-        
-        this.serverName = parts[1];
-        this.channelName = parts[2];
         
         // Adds message to database
         // TODO need to make this work for servers with spaces and such
@@ -98,7 +91,9 @@ export class MessageBoxComponent implements OnInit {
 
         // Refreshes message list
         this.configService.getMessageList().subscribe((res) => {
+
             this.resetForm(form);
+            // HELLO???? CODE REUSE????? WHAT IS HAPPENING???
             this.refreshMessageList();
             // at some point I would like to either make this in a better spot
             // or I may even just get rid of it altogether
@@ -111,33 +106,53 @@ export class MessageBoxComponent implements OnInit {
 
    // TODO maybe try it on your own here (fetch most recent 10 comments from db maybe???)
    // yes but you still have to refresh the page (lame)
-  refreshMessageList() {
-    this.configService.getMessageList().subscribe((res) => {
+    refreshMessageList() {
+        this.configService.getMessageList().subscribe(async (res) => {
 
-        this.configService.serversForMessages = res as JSON;
-        console.log(this.configService.serversForMessages);
+            this.configService.serversForMessages = res as JSON;
 
-        const map = new Map(Object.entries(this.configService.servers));
-        let listOfServers = map.get("serverNames");
-        console.log(listOfServers);
-        // for (let i = 0; i < this.configService.serversForMessages.length; i++) {
+            const map = new Map(Object.entries(this.configService.serversForMessages));
             
-            // for (let j = 0; j < this.configService.serversForMessages[i].channels.length; j++) {
-            // if (this.configService.serversForMessages[i].name == this.serverName) {
-                // this.configService.messages = this.configService.serversForMessages[i].channels[0].messages;
-                // console.log(this.configService.messages);
-                // console.log("success");
+            let serverIndex: number;
+            let serverListWithMessages = map.get("messages");
+            let servers = map.get("serverNames");
+            
+            for (serverIndex = 0; serverIndex < servers.length; serverIndex++) {
+                if (servers[serverIndex] == this.serverName) {
+                    break;
+                }
+            }
+
+            // console.log(serverListWithMessages[serverIndex]);
+
+            let channelIndex: number;
+            for (channelIndex = 0; channelIndex < serverListWithMessages[serverIndex].length; channelIndex++) {
+                if (serverListWithMessages[serverIndex][channelIndex].name == this.channelName) {
+                    break;
+                }
+
+            }
+
+            // console.log(serverListWithMessages[serverIndex][channelIndex]); // prints out correct channel
+            // console.log(serverListWithMessages[serverIndex][channelIndex].messages[0]); // prints out correct message
+            
+            // const object = await Message.findOne({ _id: serverListWithMessages[serverIndex][channelIndex].messages[0] });
+
+            // if (object) {
+            //     console.log(object.text);
+            // } else {
+            //     console.log("Object not found");
             // }
-            // }
-            // console.log("channel: " + this.configService.serversForMessages);
-        // }
-        // console.log(this.configService.serversForMessages);
-        // need to get list of messages from list of channels from current server
-        // not sure how to do it
-        // going to make this work after I get white dot to work for active server
-        // might need to change some stuff in config.service.ts
-        // this.configService.messages = res as Server[];
-    });
-  }
+
+        });
+    }
+
+    updateServerAndChannelName(server: string, channel: string) {
+    
+        const parts = this.currentRoute.split("/");
+        this.serverName = parts[1];
+        this.channelName = parts[2];
+    
+    }
 
 }

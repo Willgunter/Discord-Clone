@@ -79,6 +79,7 @@ export class ConfigService {
         return this.http.get(this.serverImageApiUrl);
     }
     
+    // Returns same thing as getServerList()
     getMessageList() {
         return this.http.get(this.serverApiUrl);
     }

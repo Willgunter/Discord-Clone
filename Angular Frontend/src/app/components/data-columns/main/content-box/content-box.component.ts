@@ -21,9 +21,10 @@ export class ContentBoxComponent {
     this.refreshMessageList();
   }
 
+  // not necessary because message-box does it for us
   refreshMessageList() {
-
-    // const server = route.params['server'];
+      
+      // const server = route.params['server'];
     // const channel = route.params['channel'];
 
     // // makes sure server and channel both exist

@@ -119,6 +119,7 @@ export class CreateServerComponent {
             // this.file gives an error in the server (not displayed in app)
             // serverImage gives an internal server error
             // so we have inputImage instead
+
             if (inputImage) {
                 console.log("name: " + this.name);
                 
@@ -129,7 +130,12 @@ export class CreateServerComponent {
                 this.configService.postServerImage(serverImage).subscribe({
                     
                     next: () => {
-                        
+                        // Note to self: this has to be in the next function 
+                        // as opposed to outside the postServerImage function
+                        // Im guessing because it will execute before the image is posted
+                        // this.updateShowBox(); can be outside but is here for cleanliness
+                        location.reload();
+                        this.updateShowBox();
                     },
                     error: (err) => {
                         console.error('Error posting image to the database:', err);
@@ -140,8 +146,5 @@ export class CreateServerComponent {
             }
 
             // TODO eventually add a header for the channels (welcome to "general", or something, make sure it actually looks like discord, etc
-            
-        this.updateShowBox();
-        location.reload();
     }
 }

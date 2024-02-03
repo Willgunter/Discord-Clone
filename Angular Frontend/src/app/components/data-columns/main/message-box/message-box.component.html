@@ -6,12 +6,9 @@
         <!-- ngModel = probably where it stores data about the message
         (in this ) -->
             
-        <input type="text" [(ngModel)]="text" name="text" id="text" placeholder="Message #{{ shortenedRoute }}" style="border: hidden; color: #f2f3f5; margin-left: 12px">
+        <input type="text" [(ngModel)]="text" name="text" id="text" placeholder="Message #{{ channelName }}" style="border: hidden; color: #f2f3f5; margin-left: 12px">
         </div>
-<!-- one of two ways we can do this maybe 1) create two hidden forms with server and channel as the values so we 
-can pass them to the form value and that way make the json parsing in postmessage happy
-other way is to define a json object with the form text, server, and channel values then pass it to the 
-postmessage to make it happy. I like the second way more but don't know how to do it yet -->
+        
     <div>
         <!-- not [(ngModel)]="text", not type="text", not id="text", so probably nothing here -->
         <input name="user" hidden ngModel>
