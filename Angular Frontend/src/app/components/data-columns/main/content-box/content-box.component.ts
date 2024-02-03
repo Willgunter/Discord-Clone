@@ -15,62 +15,65 @@ export class ContentBoxComponent {
     // taking input from Main Component
     @Input() currentRoute: string = "";
 
+    populatedServers: any[] = [];
+    currentServer: any;
+    serverName: string = "";
+    channelName: string = "";
+    messages: Message[] = [];
+
   constructor(public configService: ConfigService) {}
 
   ngOnInit() {
-    this.refreshMessageList();
+        this.updateServerChannel();
+        this.refreshMessageList();
   }
 
   // not necessary because message-box does it for us
   refreshMessageList() {
-      
-      // const server = route.params['server'];
-    // const channel = route.params['channel'];
+        this.configService.getMessageList().subscribe(async (res) => {
 
-    // // makes sure server and channel both exist
-    // this.configService.getChannelList().subscribe((res) => {
+            const parts = this.currentRoute.split("/");
+            this.serverName = parts[1];
+            this.channelName = parts[2];
 
-    //     this.configService.serversWithChannels = res as Server[];
+            this.configService.serversForMessages = res as JSON;
 
-    //     let serverExists = false;
-    //     let channelExists = false;
-    
-    //     this.configService.serversWithChannels.forEach((s) => {
-
-    //         if (s.name === server) {
-    //             serverExists = true;
+            const map = new Map(Object.entries(this.configService.serversForMessages));
+            
+            let placeholderServers = map.get("rtnmessages");
+            console.log(this.populatedServers);
+            
+            let serverIndex: number;
+            for (serverIndex = 0; serverIndex < placeholderServers.length; serverIndex++) {
+                // console.log(placeholderServers[serverIndex][0] + " " + this.serverName);
+                if (placeholderServers[serverIndex][0] == this.serverName) {
+                    break;
+                }
+            }
+            
+            
+            let channelIndex: number;
+            for (channelIndex = 0; channelIndex < placeholderServers[serverIndex][1].length; channelIndex++) {
+                // console.log(placeholderServers[serverIndex][0] + " " + this.serverName);
                 
-    //             if (s.channels && s.channels.length > 0) {
-    //                 for (let i = 0; i < s.channels.length; i++) {
-    //                     if (s.channels[i].name === channel) {
-    //                         channelExists = true;
-    //                         return true;
-    //                     }
-    //                 }
+                if (placeholderServers[serverIndex][1][channelIndex][0] == this.channelName) {
+                    console.log("yay");
+                    break;
+                }
+            }
 
-    //                 if(!channelExists) {
-    //                     this.Router.navigate(['/' + server + '/welcome']);
-    //                     return false;
-    //                 }
-    //             }
-    //         }
-    //             return false;
-    //         });
+            this.populatedServers = placeholderServers[serverIndex][1][channelIndex][1];
 
-    //         if (!serverExists) {
-    //             this.Router.navigate(['/login']);
-    //             return false;
-    //         } 
+        });
+    }
 
-    //         return true;
-    // });
-
-    // this.configService.getMessageList().subscribe((res) => {
-    //   // what tf does this line even do
-    //   this.configService.messages = res as Message[];
-      
-    // });
-
-  }
+    updateServerChannel() {
+    
+        const parts = this.currentRoute.split("/");
+        this.serverName = parts[1];
+        this.channelName = parts[2];
+        console.log(this.serverName);   
+    
+    }
 
 }

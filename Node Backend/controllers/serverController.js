@@ -23,42 +23,36 @@ exports.getserver = asyncHandler(async (req, res, next) => {
                     path: "channels",
                 });
 
-            const serverNames = servers.map(server => server.name);
+            const serverNames = servers.map(server => server.name);            
             let messages = servers.map(server => server.channels);
             
-            console.log(messages);
+            let rtnmessages = [];
+            
             for (let i = 0; i < messages.length; i++) {
-                
+                rtnmessages[i] = [];
+                rtnmessages[i][0] = serverNames[i];
+                rtnmessages[i][1] = [];
+
                 for (let j = 0; j < messages[i].length; j++) {
-                    
+                    rtnmessages[i][1][j] = [];
+                    rtnmessages[i][1][j][0] = messages[i][j].name;
+                    rtnmessages[i][1][j][1] = [];
+
                     for (let k = 0; k < messages[i][j].messages.length; k++) {
                         
                         const messageIdString = messages[i][j].messages[k].toString();
+                        rtnmessages[i][1][j][1][k] = [];
 
-                        const test = await MessageModel.findOne({ _id:  messageIdString }, { text: 1, user: 1}); // works
+                        const test = await MessageModel.findOne({ _id:  messageIdString }, { text: 1, user: 1}).populate("user"); // works
+                        rtnmessages[i][1][j][1][k][0] = test.user.name;
+                        rtnmessages[i][1][j][1][k][1] = test.text;
                         
-                        console.log("test: " + test.text);
-                        messages[i][j].messages[k] = undefined;
-                        console.log("old: " + messages[i][j].messages[k]);
-                        messages[i][j].messages[k] = test;
-                        
-                        // TODO
-                        // instead of using messages[i][j].messages[k],
-                        // create new array or something. assign it to 
-                        // messages[i][j], and instead of .messages[k],
-                        // assign messages[i][j][k] equal to actual message
-                        // object (too late tonight but do saturday)
-
-                        // value of messages[i][j].messages[k] is not changing for some reason
-                        // maybe something to do with how js handles arrays?
-                        if (messages[i][j].messages[k]) {
-                            console.log("new: " + messages[i][j].messages[k].text);
-                        }
+                        console.log("whole: " + rtnmessages);
                     }
                 }
             }
             
-            res.send({ serverNames, messages });
+            res.send({ serverNames, rtnmessages });
         }
 });
 

@@ -3,10 +3,10 @@
         <thead>
             <th>Messages:</th>
         </thead>
-            <!-- <tr *ngFor="let mes of configService.messages"  style = "border:none;">
-                <div *ngIf=" mes.server==='school' && mes.channel==='welcome'">
-                    <td class="message">{{mes.user.name}} said: {{mes.text}}</td>
-                </div>            
-            </tr> -->
+        <tr *ngFor="let thing of populatedServers" style="border:none;">
+            <div>
+                <td class="message">{{thing}} said:</td>
+            </div>
+        </tr>
     </table>
 </div>
