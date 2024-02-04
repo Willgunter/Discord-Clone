@@ -10,7 +10,11 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - ✅✅✅Fix login screen✅✅✅
     - ✅✅✅Turn server icons from emojis into pictures✅✅✅
     - make a fake little profile picture for users and current user - shouldn't be that hard for Users column
-    - let users change color of either profile pictures / font color??
+        idea: make a new property in the user object (maybe enum?) and set it to the color of the profile
+        and have the image be titled that color and store them in the image file maybe??? really shouldn't be too
+        too hard
+    - let users change color of either profile pictures / font color in bottom left corner??
+        add gear icon that links to profile
     - make "profile" route more pretty --> remove profile route and put all information in user box?
     - ✅✅✅fix up messages and stuff (attach a user to a message✅✅✅, make box look better, etc...)
     - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature (???)
@@ -23,6 +27,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - disable text / channel switching when server box is displayed
     - make a small white bar appear for the active server
     - highlight a messages when you mouse over it similar to channels bar
+    - add small (optional) description to servers? - displays at the top next to name? 
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
