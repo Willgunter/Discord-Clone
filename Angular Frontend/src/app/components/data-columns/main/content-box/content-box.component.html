@@ -1,22 +1,18 @@
 <div class="content-box">
-    <!-- <table style="border:none;"> -->
-        <!-- <thead> -->
+    
     <div>
-        insert image here btw
-        <h5 style="font-size: 32px"><strong>Welcome to #{{ this.channelName }}! </strong></h5>
-        <!-- </thead> -->
+        <img src="../../../../../assets/channel-header/channelheader.png" alt="Channel Header Icon" width="64" height="64" style="border-radius: 50%;">
+        <h5 style="font-size: 32px; margin-top: 0px;"><strong>Welcome to #{{ this.channelName }}! </strong></h5>
         <p style="color: #B5BAC1; font-size: 15px"> This is the start of the #{{ this.channelName }} channel.</p>
     </div>
     
     <hr style="border-width: 1px; color: #B5BAC1; opacity: .1;">
     
     <tr *ngFor="let sev of populatedServers" style="border:none; font-size: 15px">
-        <!-- TODO fix formatting of user names to messages later but not rn -->
-        <!-- TODO also, make scroll bar look more like discord? -->
         <div>
             <td class="message"> <strong>{{ sev[0] }}</strong> </td>
         </div>
             <td> {{ sev[1] }} </td>
     </tr>
-    <!-- </table> -->
+    
 </div>

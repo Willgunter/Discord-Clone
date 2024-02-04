@@ -14,19 +14,19 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         and have the image be titled that color and store them in the image file maybe??? really shouldn't be too
         too hard
     - let users change color of either profile pictures / font color in bottom left corner??
-        add gear icon that links to profile
+        ✅✅✅add gear icon that links to profile✅✅✅
     - make "profile" route more pretty --> remove profile route and put all information in user box?
     - ✅✅✅fix up messages and stuff (attach a user to a message✅✅✅, make box look better, etc...)
     - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature (???)
     - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
     - ✅✅✅(maybe) clean up routing for nine different routes and make it so that its more scalable ✅✅✅
-    - make things more discord like (change font / color of name of channel)
+    - ✅✅✅make things more discord like (change font / color of name of channel)✅✅✅
     - put a break in between three default channels and rest of channels
     after I add the add channels feature
     - add websockets for live message display / server updating / channel updating (not going to do)
     - disable text / channel switching when server box is displayed
     - make a small white bar appear for the active server
-    - highlight a messages when you mouse over it similar to channels bar
+    - highlight messages when you mouse them similar to channels bar (add edit / delete functionality?)
     - add small (optional) description to servers? - displays at the top next to name? 
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
@@ -440,3 +440,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Brainstormed one way to solve messaging thing.
     - Got messages to work (with user who sent it this time!). Super slow tho and have to wait a while for message to send.
     - Cleaning up main message area and making it more realistic.
+
+- 2/4/2024
+    - Various small ui changes, made channel header look better, added gear button
+    to user that redirects to profile 
+    - added X button in profile route that redirects user to main page
+    - added button for username that is supposed to let user change color

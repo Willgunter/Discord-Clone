@@ -1,6 +1,10 @@
 
 <div class="user-box">
     
-    <p> Current User: {{user.name}}</p>
+    <!-- <div class="username" style="display: inline"> -->
+    <button class="btn">{{user.username}}</button>
+    <!-- </div> -->
     
+    <button class="btn" style="font-weight: bold; background-color: #232428; border-radius: 5px; margin: 5px; color: #B5BAC1; right: 0;" (click)="toProfile()">⚙</button>
+    <!-- TODO set max username length (like probably 7 or 8 maybe??) after I add profile image here -->
 </div>

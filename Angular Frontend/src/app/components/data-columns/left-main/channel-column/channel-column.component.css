@@ -9,7 +9,7 @@
     /* position: relative; */
     background-color: #2B2D31;
     z-index: 0;
-    font-weight: bold;
+    font-weight: 500;
     
 } 
 
@@ -25,11 +25,6 @@
     /* height: 100vh; */
 
 }
-
-/* table row:hover {
-    background-color: red;
- } */
-
 
 .serverlink {
     /* Note: play around with these numbers
@@ -47,7 +42,6 @@ li:hover {
 li.active {
     width: auto;
     background-color: #404249;
-    color: FFFFFF;
     border-radius: 3px;
 }
 
@@ -67,3 +61,12 @@ li {
     padding-left: 3px;
     height: 30px;
 }
+
+a {
+    color: #879399;
+}
+
+a.active {
+    color: #FFFFF4;
+}
+
