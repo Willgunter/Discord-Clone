@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/services/auth.service';
-import { User } from 'src/app/models/user.model'; // Not the problem
+import { ConfigService } from 'src/services/config.service';
+import { HttpClient } from '@angular/common/http';
 
 declare var M: any;
 
@@ -18,11 +19,13 @@ export class ProfileComponent implements OnInit {
 
     constructor(
         private authService: AuthService,
+        public http: HttpClient,
         private router: Router
     ) { }
     
     // bruh same error but different problem?????
     ngOnInit() {
+
         this.authService.getProfile().subscribe({
             next: (response) => {
                 this.user = response.user;
@@ -32,13 +35,20 @@ export class ProfileComponent implements OnInit {
                 return false;
             }
         });
+
     }
 
     onLogoutClick() {
+
         this.authService.logout();
         M.toast({html: 'You are logged out', classes: 'rounded'});
         this.router.navigate(['/login']);
         return false;
+
+    }
+
+    toMain() {
+        window.location.href = "/newtest/welcome";
     }
     
 }

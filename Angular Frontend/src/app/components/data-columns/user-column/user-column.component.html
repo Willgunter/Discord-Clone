@@ -1,8 +1,8 @@
 <div class="user-column">
-        <table class="user-table">
-            <thead>
-                <th>Users:</th>
-            </thead>
+        <!-- <table class="user-table"> -->
+            <!-- <thead> -->
+                <th style="font-weight: 500; font-size: 12px; color: #B5BAC1;">USERS--{{configService.users.length}}</th>
+            <!-- </thead> -->
                     
                         <tr *ngFor="let user of configService.users"  style = "border:none;">
                                 <td>{{user.name}}</td>
@@ -14,6 +14,6 @@
                 in the message controller file? -->
                 <!-- next step: figure out how to send a message with its current server and channel -->
     
-        </table>
+        <!-- </table> -->
     
 </div>

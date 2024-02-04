@@ -24,4 +24,9 @@ export class UserBoxComponent {
         });
     }
 
+    toProfile() {
+        window.location.href = '/me/' + this.user.username;
+        // note: send current server and channel to profile component so it doesnt wait for servers from backend
+    }
+
 }

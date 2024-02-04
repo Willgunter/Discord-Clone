@@ -4,6 +4,15 @@
     bottom: 0;
     width: 225px;    
     height: 45px;
-    color: white;
-    /* color is to be changed later */
+}
+
+.btn {
+    display: inline;
+    background-color: #232428;
+    border-radius: 5px;
+    text-transform: none;
+}
+
+.btn:hover {
+    background-color: #404249;
 }
