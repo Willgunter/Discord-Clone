@@ -12,16 +12,17 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - make a fake little profile picture for users and current user - shouldn't be that hard for Users column
     - let users change color of either profile pictures / font color??
     - make "profile" route more pretty --> remove profile route and put all information in user box?
-    - fix up messages and stuff (✅✅✅attach a user to a message✅✅✅, make box look better, etc...)
+    - ✅✅✅fix up messages and stuff (attach a user to a message✅✅✅, make box look better, etc...)
     - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature (???)
     - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
     - ✅✅✅(maybe) clean up routing for nine different routes and make it so that its more scalable ✅✅✅
     - make things more discord like (change font / color of name of channel)
     - put a break in between three default channels and rest of channels
     after I add the add channels feature
-    - add websockets for live message display / server updating / channel updating
+    - add websockets for live message display / server updating / channel updating (not going to do)
     - disable text / channel switching when server box is displayed
     - make a small white bar appear for the active server
+    - highlight a messages when you mouse over it similar to channels bar
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
@@ -32,10 +33,11 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - go back and do most of / all the small TODOs in the TODO extension
 
 -  (Definetely not necessary) Get messages to refresh on the frontend without needing to push the refresh button
+(not going to do)
 
 - ✅✅✅ *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*  ✅✅✅
 
-- Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication (OORRRR DO IT FOR NEXT PROJECT???)
+- Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication (not going to do)
 
 - Read through Angular docs to see what else we can do with logic inside of html elements (ex: (click), [ngStyle], [Icon]... idk what any of these mean)
 
@@ -432,3 +434,4 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Fixed create server bug that caused it to not work during my final round interview.
     - Brainstormed one way to solve messaging thing.
     - Got messages to work (with user who sent it this time!). Super slow tho and have to wait a while for message to send.
+    - Cleaning up main message area and making it more realistic.

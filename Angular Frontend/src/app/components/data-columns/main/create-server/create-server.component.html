@@ -17,7 +17,7 @@
     </form>
 
     <div>
-        <button class="btn" (click)="updateShowBox()" style="font-weight: bold; background-color: #313338; border-radius: 5px; margin: 5px; color: #B5BAC1">X</button>
+        <button class="btn" (click)="updateShowBox(); $event.stopPropagation()" style="font-weight: bold; background-color: #313338; border-radius: 5px; margin: 5px; color: #B5BAC1">X</button>
     </div>
 
 </div>

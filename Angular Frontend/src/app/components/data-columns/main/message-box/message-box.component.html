@@ -1,16 +1,11 @@
 <!-- class means class in css -->
 <form #messageForm="ngForm" class="message-form" (ngSubmit)="onSubmit(messageForm)">
 
-    <div class="input-box">
-        <!-- TODO Eventually I want it to say "Message {name of channel}"-->
-        <!-- ngModel = probably where it stores data about the message
-        (in this ) -->
-            
-        <input type="text" [(ngModel)]="text" name="text" id="text" placeholder="Message #{{ channelName }}" style="border: hidden; color: #f2f3f5; margin-left: 12px">
-        </div>
+    <div class="input-box">   
+        <input type="text" [(ngModel)]="text" name="text" id="text" placeholder="Message #{{ channelName }}" style="border: hidden; color: #C2C4C8; margin-left: 12px">
+    </div>
         
     <div>
-        <!-- not [(ngModel)]="text", not type="text", not id="text", so probably nothing here -->
         <input name="user" hidden ngModel>
     </div>
 

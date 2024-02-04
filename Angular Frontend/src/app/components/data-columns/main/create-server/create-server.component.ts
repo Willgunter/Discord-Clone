@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { ConfigService } from 'src/services/config.service';
 import { HttpClient } from '@angular/common/http';
 import { Channel } from 'src/app/models/channel.model';

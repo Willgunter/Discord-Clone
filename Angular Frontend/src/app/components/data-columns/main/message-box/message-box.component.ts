@@ -34,7 +34,7 @@ export class MessageBoxComponent implements OnInit {
     // then refresh page (transmits new route to this component)
     ngOnChanges(changes: SimpleChanges) { 
         
-        this.updateServerAndChannelName(this.serverName, this.channelName);
+        this.updateServerAndChannelName();
 
         if (changes['currentRoute'] && !changes['currentRoute'].firstChange) {
             location.reload();
@@ -45,7 +45,7 @@ export class MessageBoxComponent implements OnInit {
         
         this.resetForm();
         this.refreshMessageList();
-        this.updateServerAndChannelName(this.serverName, this.channelName);
+        this.updateServerAndChannelName();
 
         this.authService.getProfile().subscribe({
             next: (response) => {
@@ -121,9 +121,7 @@ export class MessageBoxComponent implements OnInit {
                 if (servers[serverIndex] == this.serverName) {
                     break;
                 }
-            }
-
-            // console.log(serverListWithMessages[serverIndex]);
+            };
 
             let channelIndex: number;
             for (channelIndex = 0; channelIndex < serverListWithMessages[serverIndex].length; channelIndex++) {
@@ -133,21 +131,10 @@ export class MessageBoxComponent implements OnInit {
 
             }
 
-            // console.log(serverListWithMessages[serverIndex][channelIndex]); // prints out correct channel
-            // console.log(serverListWithMessages[serverIndex][channelIndex].messages[0]); // prints out correct message
-            
-            // const object = await Message.findOne({ _id: serverListWithMessages[serverIndex][channelIndex].messages[0] });
-
-            // if (object) {
-            //     console.log(object.text);
-            // } else {
-            //     console.log("Object not found");
-            // }
-
         });
     }
 
-    updateServerAndChannelName(server: string, channel: string) {
+    updateServerAndChannelName() {
     
         const parts = this.currentRoute.split("/");
         this.serverName = parts[1];
