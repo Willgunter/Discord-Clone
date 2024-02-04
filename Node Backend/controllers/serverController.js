@@ -28,6 +28,8 @@ exports.getserver = asyncHandler(async (req, res, next) => {
             
             let rtnmessages = [];
             
+            // Note to past self: wtf is wrong with you
+            // (it does works btw)
             for (let i = 0; i < messages.length; i++) {
                 rtnmessages[i] = [];
                 rtnmessages[i][0] = serverNames[i];
@@ -46,8 +48,7 @@ exports.getserver = asyncHandler(async (req, res, next) => {
                         const test = await MessageModel.findOne({ _id:  messageIdString }, { text: 1, user: 1}).populate("user"); // works
                         rtnmessages[i][1][j][1][k][0] = test.user.name;
                         rtnmessages[i][1][j][1][k][1] = test.text;
-                        
-                        console.log("whole: " + rtnmessages);
+
                     }
                 }
             }

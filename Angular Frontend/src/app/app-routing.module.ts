@@ -26,23 +26,6 @@ const routes: Routes = [
     { path: 'me/:username', component: ProfileComponent, canActivate:[AuthGuard, UserGuard] },
     { path: 'me', redirectTo: 'me/:username', pathMatch: 'full' },
 
-    
-    { path: 'school/welcome', component: OrganizationComponent, canActivate:[AuthGuard] },
-    { path: 'school/general', component: OrganizationComponent, canActivate:[AuthGuard] },
-    { path: 'school/server-specific', component: OrganizationComponent, canActivate:[AuthGuard] },
-    
-    { path: 'gym/welcome', component: OrganizationComponent, canActivate:[AuthGuard] },
-    { path: 'gym/general', component: OrganizationComponent, canActivate:[AuthGuard] },
-    { path: 'gym/server-specific', component: OrganizationComponent, canActivate:[AuthGuard] },
-    
-    { path: 'camping/welcome', component: OrganizationComponent, canActivate:[AuthGuard] },
-    { path: 'camping/general', component: OrganizationComponent, canActivate:[AuthGuard] },
-    { path: 'camping/server-specific', component: OrganizationComponent, canActivate:[AuthGuard] },
-    
-    { path: 'school', redirectTo: 'school/welcome', pathMatch: 'full'},
-    { path: 'gym', redirectTo: 'gym/welcome', pathMatch: 'full'},
-    { path: 'camping', redirectTo: 'camping/welcome', pathMatch: 'full'},
-
     { path: ':server/:channel', component: OrganizationComponent, canActivate:[AuthGuard, ContentGuard] },
     { path: ':server', redirectTo: ':server/welcome', pathMatch: 'full' },
 

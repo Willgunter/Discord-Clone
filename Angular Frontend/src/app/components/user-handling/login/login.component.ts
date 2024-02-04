@@ -54,7 +54,7 @@ export class LoginComponent {
                     console.log(response);
                     this.authService.storeUserData(response.token, response.user);
                     M.toast({html: 'You are now registered and can log in', classes: 'rounded'});
-                    this.router.navigate(['/school/general']);
+                    this.router.navigate(['/newtest/general']);
 
                 } else {
                     M.toast({html: "Wrong Password", classes: 'rounded'});

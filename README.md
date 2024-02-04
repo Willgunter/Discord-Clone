@@ -431,3 +431,4 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 2/2/2024
     - Fixed create server bug that caused it to not work during my final round interview.
     - Brainstormed one way to solve messaging thing.
+    - Got messages to work (with user who sent it this time!). Super slow tho and have to wait a while for message to send.

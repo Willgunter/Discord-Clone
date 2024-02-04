@@ -3,9 +3,9 @@
         <thead>
             <th>Messages:</th>
         </thead>
-        <tr *ngFor="let thing of populatedServers" style="border:none;">
+        <tr *ngFor="let sev of populatedServers" style="border:none;">
             <div>
-                <td class="message">{{thing}} said:</td>
+                <td class="message"> {{ sev[0] }} said: {{ sev[1] }}  </td>
             </div>
         </tr>
     </table>
