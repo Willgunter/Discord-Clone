@@ -1,19 +1,16 @@
 <div class="user-column">
         <!-- <table class="user-table"> -->
             <!-- <thead> -->
-                <th style="font-weight: 500; font-size: 12px; color: #B5BAC1;">USERS--{{configService.users.length}}</th>
+                <th style="font-weight: 500; font-size: 12px; color: #B5BAC1; border-left: 20px">USERS--{{configService.users.length}}</th>
             <!-- </thead> -->
                     
-                        <tr *ngFor="let user of configService.users"  style = "border:none;">
-                                <td>{{user.name}}</td>
+                        <tr *ngFor="let user of configService.users"  style = "border:none; padding-bottom: 0px; top: 0px">
+                            <td style="padding-left: 10px; width: 200px; vertical-align: middle; border-radius: 5px">
+                                <img src="../../../../../assets/profile-images/white.jpg" alt="User Icon" width="30" height="30" style="border-radius: 50%; display: inline">
+                                <p style="display: inline; margin: 5px; font-size: 16px; ">
+                                    {{user.name}}
+                                </p>
+                            </td>
                         </tr>
-    
-    
-                <!-- how to check for only messages with a specific server / channel? -->
-                <!-- have 9 different post requests (ex: postskewlwelcome, postskewlgeneral postboysonlywelcome...)
-                in the message controller file? -->
-                <!-- next step: figure out how to send a message with its current server and channel -->
-    
         <!-- </table> -->
-    
 </div>

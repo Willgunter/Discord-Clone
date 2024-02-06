@@ -7,6 +7,12 @@
 
 }
 
+td {
+    width: 100%;
+    /* margin-left: 0; */
+    /* padding-right: 12px; */
+}
+
 .messages {
     height: 150 px;
     Overflow-y: scroll;
@@ -14,4 +20,8 @@
 
 .message {
     border-collapse: collapse;
+}
+
+tr:hover {
+    background-color: #2E3035;
 }

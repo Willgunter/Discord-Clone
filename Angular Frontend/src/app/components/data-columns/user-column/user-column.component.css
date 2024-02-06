@@ -6,7 +6,9 @@
     width: 225px;
     right: 0;
     top: 0;
-    margin-left:300px;
+    /* margin: 15px; */
+    /* padding: 5px; */
+    /* margin-left:300px; */
     /* height: 660px; */
     /* height: 100%; */
     /* margin-bottom: 0px; */
@@ -15,5 +17,15 @@
     background-color: #2B2D31;
     height: 100vh;
     color: #F2F3F5;
+    padding-left: 15px;
+    padding-right: 15px;
     
+}
+
+td:hover {
+    background-color: #35373C;
+}
+
+td:active {
+    background-color: #404249;
 }

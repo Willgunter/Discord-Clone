@@ -1,14 +1,16 @@
 <div class="content-box">
-    
-    <div>
-        <img src="../../../../../assets/channel-header/channelheader.png" alt="Channel Header Icon" width="64" height="64" style="border-radius: 50%;">
-        <h5 style="font-size: 32px; margin-top: 0px;"><strong>Welcome to #{{ this.channelName }}! </strong></h5>
-        <p style="color: #B5BAC1; font-size: 15px"> This is the start of the #{{ this.channelName }} channel.</p>
+    <div style="padding: 12px">
+
+        <div>
+            <img src="../../../../../assets/channel-header/channelheader.png" alt="Channel Header Icon" width="64" height="64" style="border-radius: 50%;">
+            <h5 style="font-size: 32px; margin-top: 0px;"><strong>Welcome to #{{ this.channelName }}! </strong></h5>
+            <p style="color: #B5BAC1; font-size: 15px"> This is the start of the #{{ this.channelName }} channel.</p>
+        </div>
+        
+        <hr style="border-width: 1px; color: #B5BAC1; opacity: .1;">
     </div>
     
-    <hr style="border-width: 1px; color: #B5BAC1; opacity: .1;">
-    
-    <tr *ngFor="let sev of populatedServers" style="border:none; font-size: 15px">
+    <tr *ngFor="let sev of populatedServers" style="border:none; font-size: 15px; padding-left: 0">
         <div>
             <td class="message"> <strong>{{ sev[0] }}</strong> </td>
         </div>

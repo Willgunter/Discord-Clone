@@ -9,7 +9,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         
     - ✅✅✅Fix login screen✅✅✅
     - ✅✅✅Turn server icons from emojis into pictures✅✅✅
-    - make a fake little profile picture for users and current user - shouldn't be that hard for Users column
+    - ✅✅✅make a fake little profile picture for users and current user - shouldn't be that hard for Users column✅✅✅
         idea: make a new property in the user object (maybe enum?) and set it to the color of the profile
         and have the image be titled that color and store them in the image file maybe??? really shouldn't be too
         too hard
@@ -28,7 +28,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - make a small white bar appear for the active server
     - highlight messages when you mouse them similar to channels bar (add edit / delete functionality?)
     - add small (optional) description to servers? - displays at the top next to name? 
-    - need to make spaces not allowed in server creation menu
+    - ✅✅✅need to make spaces not allowed in server creation menu✅✅✅
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
@@ -447,3 +447,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     to user that redirects to profile 
     - added X button in profile route that redirects user to main page
     - added button for username that is supposed to let user change color
+
+- 2/5/2024
+    - Added small ui changes like hover for users and messages and white profile picture.
+    - Next plan is to add different colored images and then the ability to change color.
+    - And also change current user button from a button to a link and make it not redirect

@@ -23,7 +23,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/channel-header"
+              "src/assets/channel-header",
+              "src/assets/profile-images"
             ],
             "styles": [
               "src/styles.css"
@@ -86,7 +87,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/channel-header"
+              "src/assets/channel-header",
+              "src/assets/profile-images"
             ],
             "styles": [
               "src/styles.css"

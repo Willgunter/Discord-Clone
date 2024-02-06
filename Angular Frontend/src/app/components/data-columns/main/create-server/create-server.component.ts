@@ -50,6 +50,11 @@ export class CreateServerComponent {
                 return;
             }
 
+            if (this.name.includes(' ')) {
+                alert('Please remove any spaces from your server name');
+                return;
+            }
+
             if (!inputImage) {
                 alert('Please select an image for your server');
                 return;
