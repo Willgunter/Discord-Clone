@@ -6,6 +6,18 @@
     height: 45px;
 }
 
+.profile-box {
+    z-index: 1;
+    bottom: 65px;
+    position: fixed;
+    width: 325px;
+    height: 525px;
+    margin-left: -15px;
+    background-color: #232428;
+    border-width: 25px;
+    border-radius: 8px;
+}
+
 .btn {
     display: inline;
     background-color: #232428;

@@ -9,10 +9,14 @@ import { AuthService } from 'src/services/auth.service';
 export class UserBoxComponent {
 
     user: any;
+    showProfile: boolean;
 
     constructor( private authService: AuthService ) { }
 
     ngOnInit() {
+        
+        this.showProfile = false;
+
         this.authService.getProfile().subscribe({
             next: (response) => {
                 this.user = response.user;
@@ -29,4 +33,13 @@ export class UserBoxComponent {
         // note: send current server and channel to profile component so it doesnt wait for servers from backend
     }
 
+    updateShowProfile() {
+        this.showProfile = !this.showProfile;
+    }
+
+    updateColor(color: string) {
+        // Change users color
+        console.log('color changed' + color);
+        // TODO implement color changing in user model (update in database) tomorrow hopefully
+    }
 }

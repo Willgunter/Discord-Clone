@@ -452,3 +452,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Added small ui changes like hover for users and messages and white profile picture.
     - Next plan is to add different colored images and then the ability to change color.
     - And also change current user button from a button to a link and make it not redirect
+
+- 2/10/2024
+    - Created user box where user will click their username in the lower left corner and a box pops up that displays their
+    information and allows them to change their color.
+    - Color changing properties not fully implemented yet tho...

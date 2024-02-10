@@ -1,10 +1,42 @@
 
+
 <div class="user-box">
     
     <!-- <div class="username" style="display: inline"> -->
-    <button class="btn">{{user.username}}</button>
+    <button class="btn" (click)="updateShowProfile()">{{user.username}}</button>
     <!-- </div> -->
-    
+        
     <button class="btn" style="font-weight: bold; background-color: #232428; border-radius: 5px; margin: 5px; color: #B5BAC1; right: 0;" (click)="toProfile()">⚙</button>
     <!-- TODO set max username length (like probably 7 or 8 maybe??) after I add profile image here -->
+
 </div>
+    
+<div class="profile-box" *ngIf="showProfile">
+<!-- TODO style="background-color: {{user.color}}" -->
+    <div style="vertical-align: center; color: white; width: 91%; height: 94%; padding: 10px; margin: 15px; background-color: #111214; border-radius: 8px">
+        <div style="font-size: x-large; vertical-align: center;">
+            <img src="../../../../../assets/profile-images/white.jpg" alt="User Icon" width="64" height="64" style="display: inline; vertical-align: center; justify-content: flex; border-radius: 50%; display: inline">
+                {{user.username}} 
+            <br>
+        </div>
+        <hr style="border-width: 1px; color: #B5BAC1; opacity: .1;">
+        {{user.name}}
+        <br>
+        {{user.email}}
+        <br>
+        <hr style="border-width: 1px; color: #B5BAC1; opacity: .1;">
+        Change your color here!
+        <div style="margin-top: 10px">
+            <button class="btn" style="background-color: #7289DA; border-radius: 5px; margin: 5px;" (click)="updateColor('blue')"></button>
+            <button class="btn" style="background-color: #FF0000; border-radius: 5px; margin: 5px;" (click)="updateColor('red')"></button>
+            <button class="btn" style="background-color: #FFA500; border-radius: 5px; margin: 5px;" (click)="updateColor('orange')"></button>
+            <button class="btn" style="background-color: #FFFF00; border-radius: 5px; margin: 5px;" (click)="updateColor('yellow')"></button>
+            <button class="btn" style="background-color: #00FF00; border-radius: 5px; margin: 5px;" (click)="updateColor('green')"></button>
+            <button class="btn" style="background-color: #800080; border-radius: 5px; margin: 5px;" (click)="updateColor('purple')"></button>
+            <button class="btn" style="background-color: #FFC0CB; border-radius: 5px; margin: 5px;" (click)="updateColor('pink')"></button>
+            <button class="btn" style="background-color: #FFFFFF; border-radius: 5px; margin: 5px;" (click)="updateColor('white')"></button>
+        <!-- ^^^ add here ^^^ -->
+
+    </div>
+        <!-- vvv add color buttons here vvv -->
+</div></div>
