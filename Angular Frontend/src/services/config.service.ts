@@ -92,4 +92,9 @@ export class ConfigService {
         return this.http.post(this.userauthApiUrl, user);
     }
 
+    changeColor(username: string, color: string) {
+        const list = [username, color];
+        return this.http.put(this.userApiUrl + "/users", list);
+    }
+
 }

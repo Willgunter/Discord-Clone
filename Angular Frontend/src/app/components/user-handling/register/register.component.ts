@@ -46,6 +46,7 @@ export class RegisterComponent {
             email: "",
             username: "",
             password: "",
+            color: ""
         }
     }
 
@@ -58,6 +59,7 @@ export class RegisterComponent {
             email: this.email,
             username: this.username,
             password: this.password,
+            color: "white" // default color is white, can only change after logging in 
         };
 
         // Validates the form

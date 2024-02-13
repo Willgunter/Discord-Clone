@@ -11,7 +11,6 @@ const user_controller = require("../controllers/userController");
 // register
 router.post('/register', user_controller.register);
 
-// router.post('/', user_controller.post);
 // authenticate
 router.post('/authenticate', user_controller.authenticate);
 
@@ -21,6 +20,8 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), user_contr
 router.get('/validate', user_controller.validate);
 
 router.get('/users', user_controller.index);
+
+router.put('/users', user_controller.changecolor);
 
 // LETS NOT WORK ON ROUTING UNTIL WE AT LEAST FIGURE OUT HOW TO ADD A MESSAGE
 // ALSO, WE HAVE TO DO THE ROUTING IN ANGULAR DUMBASS

@@ -18,6 +18,7 @@ exports.register = asyncHandler(async (req, res, next) => {
         email: req.body.email,
         username: req.body.username,
         password: req.body.password,
+        color: req.body.color,
     }) 
 
     try {
@@ -34,6 +35,10 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
 
     const username = req.body.username;
     const password = req.body.password;
+
+    if (username == null || password == null) {
+        return res.json({success: false, msg: 'Please enter a username and/or password'});
+    }
     
     try {
         user = await UserModel.getUserByUsername(username);
@@ -61,7 +66,8 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
                 id: user._id,
                 name: user.name,
                 username: user.username,
-                email: user.email
+                email: user.email,
+                color: user.color
             }
             })
     } else {
@@ -90,4 +96,21 @@ exports.index = asyncHandler(async (req, res, next) => {
 
 exports.validate = asyncHandler(async (req, res, next) => {
     res.send("VALIDATE");
+});
+
+exports.changecolor = asyncHandler(async (req, res, next) => {
+
+    const username = req.body[0];
+    const color = req.body[1];
+    
+    try {
+        user = await UserModel.getUserByUsername(username);
+    } catch (err) {
+        throw err;
+    }
+    
+    user.color = color;
+    user.save();
+    res.send("Color Changed");
+
 });

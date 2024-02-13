@@ -8,12 +8,12 @@
 
 .profile-box {
     z-index: 1;
-    bottom: 65px;
+    bottom: 55px;
     position: fixed;
     width: 325px;
     height: 525px;
     margin-left: -15px;
-    background-color: #232428;
+    /* background-color: #232428; color I want to modify */
     border-width: 25px;
     border-radius: 8px;
 }
