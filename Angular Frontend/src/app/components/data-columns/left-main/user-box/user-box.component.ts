@@ -23,7 +23,32 @@ export class UserBoxComponent {
 
         this.authService.getProfile().subscribe({
             next: (response) => {
+<<<<<<< HEAD
                 this.user = response.user;
+=======
+                const linkElement = document.querySelector('link[href="./user-box.component.css"]') as HTMLLinkElement;
+                if (linkElement) {
+                    linkElement.href = './user-box.component.css?' + new Date().getTime();
+                }
+                // TODO GET IT TO CHANGE THE COLOR LIVE (MAYBE USE A BEHAVIOR SUBJECT)
+                // ngOnInit() {
+                //     this.showProfile = false;
+
+                //     this.authService.getProfile().subscribe({
+                //         next: (response) => {
+                //             this.user = response.user;
+                //             const linkElement = document.querySelector('link[href="./user-box.component.css"]') as HTMLLinkElement;
+                //             if (linkElement) {
+                //                 linkElement.href = './user-box.component.css?' + new Date().getTime();
+                //             }
+                //             this.userSubject.next(this.user); // Emit the updated user object
+                //         },
+                //         error: (error) => {
+                //             console.log(error);
+                //             return false;
+                //         }
+                //     });
+>>>>>>> 9c62ee2dcdb5345711125441ddd4994fdc475b09
                 
             },
             error: (error) => {
@@ -51,8 +76,12 @@ export class UserBoxComponent {
                 next: (response) => {
                     // console.log(response);
                     // this.ngOnInit();
+<<<<<<< HEAD
                     // this.user.color = color;
                     // TODO BEHAVIOR SUBJECT
+=======
+                    this.user.color = color;
+>>>>>>> 9c62ee2dcdb5345711125441ddd4994fdc475b09
                 },
                 error: (error) => {
                     console.log(error);
