@@ -10,25 +10,17 @@ import { ConfigService } from 'src/services/config.service';
 export class MainComponent {
 
     currentRoute: string = "";
-    // @Output() currentRouteEmitter: EventEmitter<string> = new EventEmitter();
-    // don't need because we have the tag thing in the html component
     
     constructor(public configService: ConfigService, private _router: Router) {
         
-        // this.configService.getMessage.subscribe(msg => this.currentRoute = msg);
         
         this._router.events.subscribe((val) => {
             if (val instanceof NavigationEnd) {
                 this.currentRoute = val.urlAfterRedirects;
             } else {
-                // console.log("failure");
-                // do nothing
+                
             }
         });
     }
-
-    // updateMessage() {
-    //     this.configService.setMessage(this.currentRoute);
-    // }
 
 }

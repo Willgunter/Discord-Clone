@@ -10,45 +10,27 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - ✅✅✅Fix login screen✅✅✅
     - ✅✅✅Turn server icons from emojis into pictures✅✅✅
     - ✅✅✅make a fake little profile picture for users and current user - shouldn't be that hard for Users column✅✅✅
-        idea: make a new property in the user object (maybe enum?) and set it to the color of the profile
-        and have the image be titled that color and store them in the image file maybe??? really shouldn't be too
-        too hard
     - ✅✅✅let users change color of either profile pictures / font color in bottom left corner✅✅✅ (profile picture + user box border color)
         ✅✅✅add gear icon that links to profile✅✅✅
-    - make "profile" route more pretty --> remove profile route and put all information in user box?
     - ✅✅✅fix up messages and stuff (attach a user to a message✅✅✅, make box look better, etc...)
-    - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature (???)
+    - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature ( not going to do )
     - ✅✅✅Change "Enter text" to "Message {channel name}"✅✅✅
     - ✅✅✅(maybe) clean up routing for nine different routes and make it so that its more scalable ✅✅✅
     - ✅✅✅make things more discord like (change font / color of name of channel)✅✅✅
-    - put a break in between three default channels and rest of channels
-    after I add the add channels feature
-    - disable text / channel switching when server box is displayed
-    - make a small white bar appear for the active server
     - ✅✅✅highlight messages when you mouse them similar to channels bar✅✅✅ (add edit / delete functionality?)
-    - add small (optional) description to servers? - displays at the top next to name? 
     - ✅✅✅need to make spaces not allowed in server creation menu✅✅✅
+    - make "profile" route more pretty
+    - add delete server functionality
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
 - ✅✅✅Figure out how to display new inputted message on frontend server instead of backend *should probably be somewhat easy maybe idk*✅✅✅
 
-- Add a little more to the wrong turn page to make it seem more distinct? (ex: say: "These might help: <links>") 
+- ✅✅✅Add a little more to the wrong turn page to make it seem more distinct? (ex: say: "These might help: <links>")✅✅✅
 
 - go back and do most of / all the small TODOs in the TODO extension
 
--  (Definetely not necessary) Get messages to refresh on the frontend without needing to push the refresh button
-(not going to do)
-
-- ✅✅✅ *Eventually* rearrange routes into routes and controller files like in node project called "twilltch" to help w organization (and follow mvc paradigms) *need to figure out how to do in Angular*  ✅✅✅
-
-- Use websockets to add voice channels --> might be cool to see what websockets are --> socket.io for communication (not going to do)
-
-- Read through Angular docs to see what else we can do with logic inside of html elements (ex: (click), [ngStyle], [Icon]... idk what any of these mean)
-
 - ✅✅✅Get it to work with different screen sizes✅✅✅
-
-- Should I add delete functionality to messages? I really don't want to because that would maybe take time? would it really though? like it could be just a button where it Deletes it from the collection and it refreshes the page? would it really be that hard? would Update / edit button be hypothetically that easy as well? I could put something about CRUD it in my resume... (would it really be that good though?)
 
 ## Resources I used
 - [How to connect Frontend & Backend](https://www.youtube.com/watch?v=fhRdqbEXp9Y)  
@@ -367,8 +349,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         - make "profile" route more pretty
         - fix up messages and stuff
         - Clean up routing and add server / channel feature (???)
-        - Change "Enter text" to "Message { name}"
-        channel
+        - Change "Enter text" to "Message { name of channel }"
 
 - 1/16/2024
     - Changed emojis of servers to actual images and cleaned tham up and changed placeholder text of message box. Starting to brainstorm how I can add the "add server" and "add channel" feature.
@@ -463,3 +444,5 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
 - 2/13/2024 (Last readme update was 2-3 am rn its 1:30 pm)
     - Got user change color to work without refreshing page by using behavior subject. Made little different colored profile pictures and made users profile picture change as well.
+    - Adding stuff to wrong turn page. Need to fix links but thats it.
+    - Cleaned up wrong turn page.

@@ -9,7 +9,7 @@ import { ConfigService } from 'src/services/config.service';
 })
 export class ContentBoxComponent {
 
-    // taking input from Main Component
+    // taking input from Main Component ( no it isn't )
     @Input() currentRoute: string = "";
 
     populatedServers: any[] = [];

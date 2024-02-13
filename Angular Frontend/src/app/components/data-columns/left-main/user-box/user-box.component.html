@@ -28,11 +28,12 @@
         <div style="margin-top: 10px">
 
             <!-- Notice how there is not UNC blue on here -->
-            <button class="btn" style="background-color: #FFFF00; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('yellow')"></button>
-            <button class="btn" style="background-color: #FF0000; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('red')"></button>
-            <button class="btn" style="background-color: #800080; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('purple')"></button>
-            <button class="btn" style="background-color: #FFC0CB; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('pink')"></button>
-
+            <button class="btn" style="background-color: #FFFF00; border-radius: 5px; margin: 5px; width: 125px; height: 50px;" (mousedown)="updateColor('yellow')"></button>
+            <button class="btn" style="background-color: #FF0000; border-radius: 5px; margin: 5px; width: 125px; height: 50px;" (mousedown)="updateColor('red')"></button>
+            <button class="btn" style="background-color: #800080; border-radius: 5px; margin: 5px; width: 125px; height: 50px;" (mousedown)="updateColor('purple')"></button>
+            <button class="btn" style="background-color: #FFC0CB; border-radius: 5px; margin: 5px; width: 125px; height: 50px;" (mousedown)="updateColor('pink')"></button>
+            <button class="btn" style="border-radius: 5px; margin: 5px; width: 260px; height: 50px;" (click)="refreshPage()">Save color choice</button>
+            
         </div>
     </div>
 </div>

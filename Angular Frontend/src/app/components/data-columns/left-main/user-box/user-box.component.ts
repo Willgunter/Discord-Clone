@@ -65,4 +65,8 @@ export class UserBoxComponent {
         }
     }
 
+    refreshPage() {
+        window.location.reload();
+    }
+
 }

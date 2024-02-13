@@ -1,7 +1,16 @@
-
-<div class="not-found">
-    <p>WRONG TURN?</p>
-
+<div style="width: 600px; height: 600px; position: absolute; bottom: 100px; top: 100px; left: 50%; transform: translateX(-50%);">
+    <img src="../../../assets/wrong-turn-image/noodles.png" alt="Pretend its a picture of noodles" width="256" height="256">
+    <div class="not-found">
+        <p>WRONG TURN?</p>
+    </div>
+    <div style="font-size: 18px;">
+        <p>
+            You look lost, stranger. You know what helps when youre lost? A piping hot bowl of noodles.
+            Take a seat, were frantically at work here cooking up something good. Oh, you need something to read? These might help you:
+        </p>
+        <a  routerLink="/login">Login</a><br>
+        <!-- only show My Profile link if logged in -->
+        <a routerLink="/me/{{user.username}}" *ngIf="showProfile">My Profile<br></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">The Ultimate Guide to Noodles</a><br>
+    </div>
 </div>
-
-
