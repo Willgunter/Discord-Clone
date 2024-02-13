@@ -23,10 +23,9 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - ✅✅✅make things more discord like (change font / color of name of channel)✅✅✅
     - put a break in between three default channels and rest of channels
     after I add the add channels feature
-    - add websockets for live message display / server updating / channel updating (not going to do)
     - disable text / channel switching when server box is displayed
     - make a small white bar appear for the active server
-    - highlight messages when you mouse them similar to channels bar (add edit / delete functionality?)
+    - ✅✅✅highlight messages when you mouse them similar to channels bar✅✅✅ (add edit / delete functionality?)
     - add small (optional) description to servers? - displays at the top next to name? 
     - ✅✅✅need to make spaces not allowed in server creation menu✅✅✅
 
@@ -457,3 +456,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Created user box where user will click their username in the lower left corner and a box pops up that displays their
     information and allows them to change their color.
     - Color changing properties not fully implemented yet tho...
+
+- 2/13/2024
+    - Got user change color to work (with new users anyway), trying to get it to change color without refreshing page, copilor suggested behavior subjects so I might
+    look into that next time I work on the project. 
