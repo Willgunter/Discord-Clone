@@ -13,7 +13,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
         idea: make a new property in the user object (maybe enum?) and set it to the color of the profile
         and have the image be titled that color and store them in the image file maybe??? really shouldn't be too
         too hard
-    - let users change color of either profile pictures / font color in bottom left corner??
+    - ✅✅✅let users change color of either profile pictures / font color in bottom left corner✅✅✅ (profile picture + user box border color)
         ✅✅✅add gear icon that links to profile✅✅✅
     - make "profile" route more pretty --> remove profile route and put all information in user box?
     - ✅✅✅fix up messages and stuff (attach a user to a message✅✅✅, make box look better, etc...)
@@ -458,5 +458,8 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Color changing properties not fully implemented yet tho...
 
 - 2/13/2024
-    - Got user change color to work (with new users anyway), trying to get it to change color without refreshing page, copilor suggested behavior subjects so I might
-    look into that next time I work on the project. 
+    - Got user change color to work (with new users anyway), trying to get it to change color without refreshing page, copilot suggested behavior subjects so I might
+    look into that next time I work on the project.
+
+- 2/13/2024 (Last readme update was 2-3 am rn its 1:30 pm)
+    - Got user change color to work without refreshing page by using behavior subject. Made little different colored profile pictures and made users profile picture change as well.

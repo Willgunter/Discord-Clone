@@ -14,7 +14,12 @@ exports.index = asyncHandler(async (req, res, next) => {
         async function doSomething() {
             
             // why does username:1 not work?
-            res.send(await UserModel.find({}, { name:1, _id:0}).sort({_id:-1}));
+            const users = await UserModel.find({}, { name: 1, color: 1, _id: 0 }).sort({ _id: -1 });
+            const modifiedUsers = users.map(user => ({
+                name: user.name,
+                color: user.color || 'white' // Provide a default color if it is missing
+            }));
+            res.send(modifiedUsers);
 
         }
                 

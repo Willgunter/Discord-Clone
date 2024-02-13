@@ -106,11 +106,13 @@ exports.changecolor = asyncHandler(async (req, res, next) => {
     try {
         user = await UserModel.getUserByUsername(username);
     } catch (err) {
+        res.json({success: false, msg: 'white'}); // default color if glitch for some reason happens
         throw err;
     }
     
     user.color = color;
     user.save();
-    res.send("Color Changed");
+    res.json({success: true, msg: user.color});
+    // res.json({ user: req.user });
 
 });

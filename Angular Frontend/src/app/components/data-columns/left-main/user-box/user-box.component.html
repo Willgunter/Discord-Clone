@@ -11,11 +11,10 @@
 
 </div>
     
-<div class="profile-box" *ngIf="showProfile" [ngStyle]="{'background-color': user.color ? user.color : '#232428'}">
-<!-- TODO style="background-color: {{user.color}}" -->
+<div class="profile-box" *ngIf="showProfile" [ngStyle]="{'background-color': (color | async) ? (color | async) : '#232428'}">
     <div style="vertical-align: center; color: white; width: 91%; height: 94%; padding: 10px; margin: 15px; background-color: #111214; border-radius: 8px">
         <div style="font-size: x-large; vertical-align: center;">
-            <img src="../../../../../assets/profile-images/white.jpg" alt="User Icon" width="64" height="64" style="display: inline; vertical-align: center; justify-content: flex; border-radius: 50%; display: inline">
+            <img src="../../../../../assets/profile-images/{{color | async}}.png" alt="User Icon" width="64" height="64" style="display: inline; vertical-align: center; justify-content: flex; border-radius: 50%; display: inline">
                 {{user.username}} 
             <br>
         </div>
@@ -29,11 +28,11 @@
         <div style="margin-top: 10px">
 
             <!-- Notice how there is not UNC blue on here -->
-            <button class="btn" style="background-color: #FFFF00; border-radius: 5px; margin: 5px;" (click)="updateColor('yellow')"></button>
-            <button class="btn" style="background-color: #FF0000; border-radius: 5px; margin: 5px;" (click)="updateColor('red')"></button>
-            <button class="btn" style="background-color: #800080; border-radius: 5px; margin: 5px;" (click)="updateColor('purple')"></button>
-            <button class="btn" style="background-color: #FFC0CB; border-radius: 5px; margin: 5px;" (click)="updateColor('pink')"></button>
+            <button class="btn" style="background-color: #FFFF00; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('yellow')"></button>
+            <button class="btn" style="background-color: #FF0000; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('red')"></button>
+            <button class="btn" style="background-color: #800080; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('purple')"></button>
+            <button class="btn" style="background-color: #FFC0CB; border-radius: 5px; margin: 5px;" (mousedown)="updateColor('pink')"></button>
 
+        </div>
     </div>
-        <!-- vvv add color buttons here vvv -->
-</div></div>
+</div>

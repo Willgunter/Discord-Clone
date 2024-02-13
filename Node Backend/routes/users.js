@@ -23,8 +23,6 @@ router.get('/users', user_controller.index);
 
 router.put('/users', user_controller.changecolor);
 
-// LETS NOT WORK ON ROUTING UNTIL WE AT LEAST FIGURE OUT HOW TO ADD A MESSAGE
-// ALSO, WE HAVE TO DO THE ROUTING IN ANGULAR DUMBASS
 
 // GET request for general chat for server 1
 // router.get("/:<server1>/:general");

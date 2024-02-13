@@ -20,6 +20,6 @@ export class UserColumnComponent {
       this.configService.getUserList().subscribe((res) => {
             this.configService.users = res as User[];
       });
-  
+
     }
 }

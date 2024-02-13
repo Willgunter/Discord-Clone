@@ -3,6 +3,7 @@ import { User } from 'src/app/models/user.model';
 
 import { ConfigService } from 'src/services/config.service';
 import { AuthService } from 'src/services/auth.service';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class UserBoxComponent {
 
     user: User;
     showProfile: boolean;
+    color = new BehaviorSubject<string>("");
 
     constructor( private authService: AuthService, private configService: ConfigService ) { }
 
@@ -24,7 +26,7 @@ export class UserBoxComponent {
         this.authService.getProfile().subscribe({
             next: (response) => {
                 this.user = response.user;
-                
+                this.color.next(this.user.color);
             },
             error: (error) => {
                 console.log(error);
@@ -45,14 +47,15 @@ export class UserBoxComponent {
     // Change users color
     updateColor(color: string) {
 
+        this.color.next(color); // updates color here so we don't have to wait on response from server (makes it faster)
+
         if (this.user && this.user.username) {
             console.log(this.user.username + " " + color);
             this.configService.changeColor(this.user.username, color).subscribe({
                 next: (response) => {
-                    // console.log(response);
-                    // this.ngOnInit();
-                    // this.user.color = color;
-                    // TODO BEHAVIOR SUBJECT
+                    const responseObj = JSON.parse(JSON.stringify(response));
+                    const color = responseObj.msg;
+
                 },
                 error: (error) => {
                     console.log(error);
