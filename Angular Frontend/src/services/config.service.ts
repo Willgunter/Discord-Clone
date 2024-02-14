@@ -45,7 +45,7 @@ export class ConfigService {
     }
 
     // used to get the list of channels for a server
-    postServer(server: Server) {
+    postServer(server: any) {
         return this.http.post(this.serverApiUrl, server);
     }
 

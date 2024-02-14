@@ -33,6 +33,16 @@
     margin: 8px;
 }
 
+button {
+    position: fixed;
+    background-color: red;
+    text-transform: none;
+    bottom: 45px;
+    border-left: 0px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
 li:hover {
     width: auto;
     background-color: #35373C;

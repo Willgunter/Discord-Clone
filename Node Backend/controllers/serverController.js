@@ -65,8 +65,13 @@ exports.postserver = asyncHandler(async (req, res, next) => {
         const sev = new ServerModel({
             name: req.body.name,
             channels: req.body.channels,
-            imagePath: req.body.imagePath,
         });
+
+        user = await UserModel.findOne({ _id: req.body.owner }, {});
+
+        user.owns.push(req.body.name);
+        
+        await user.save();
 
         await sev.save();
         
@@ -81,9 +86,9 @@ exports.addmessage = asyncHandler(async (req, res, next) => {
     addMessage().catch((err) => console.log('Error in Server controller add message :' + JSON.stringify(err, undefined, 2)));
     async function addMessage() {
 
-        // res.body.list[0] = Message object
-        // res.body.list[1] = server name
-        // res.body.list[2] = channel name
+        // Message object = res.body.list[0]
+        // server name = res.body.list[1]
+        // channel name = res.body.list[2]
         
         const serverName = req.body[1];
         const channelName = req.body[2];

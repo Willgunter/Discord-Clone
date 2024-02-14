@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from 'src/services/config.service';
+import { AuthService } from 'src/services/auth.service';
 import { ContentBoxComponent } from '../../main/content-box/content-box.component';
 import { UserBoxComponent } from 'src/app/components/data-columns/left-main/user-box/user-box.component';
 
@@ -19,8 +20,12 @@ export class ChannelColumnComponent {
 
     splicedChannel: string;
 
+    user: any;
+
+    canDelete: boolean;
+
     // router: Router;
-    constructor(public configService: ConfigService, private _router: Router) {
+    constructor(public configService: ConfigService, private _router: Router, private authService: AuthService ) {
 
         // this.configService.getMessage.subscribe(msg => this.currentRoute = msg);
         
@@ -28,16 +33,54 @@ export class ChannelColumnComponent {
                     if (val instanceof NavigationEnd) {
                         this.currentRoute = this._router.url;
                         this.splicedChannel = decodeURIComponent(this.currentRoute.substring(1).split("/", 2)[0]);
+                        console.log(this.splicedChannel);
                     } else {
                         // console.log("failure");
                         // do nothing
                     };
                 
                 })
-            }
+    }
 
+    ngOnInit() {
+
+        this.authService.getProfile().subscribe({
+            next: (response) => {
+                this.user = response.user;
+                console.log(this.user.owns);
+
+                for (let i = 0; i < this.user.owns.length; i++) {
+                    if (this.user.owns[i] == this.splicedChannel) {
+                        this.canDelete = true;
+                    }
+                }
+            },
+            error: (error) => {
+
+                console.log(error);
+                return false;
+
+            }
+        });
+
+
+        // get current server (done)
+        // get id from current user
+        // if match, make a boolean true
+        // so we can show delete button
+        // (don't forget to add warning and stuff)
+    }
+    
     onClick() {
         location.reload();
+    }
+    
+    deleteServer() {
+
+        this._router.navigate(['/newtest/welcome']);
+        // delete server
+        // make sure to have some sort of "are you sure" box
+    
     }
 
 }

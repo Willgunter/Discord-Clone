@@ -10,7 +10,8 @@ const UserModelSchema = new Schema({
     email: { type: String, required: true},
     username: { type: String, required: true },
     password: { type: String, required: true },
-    color: { type: String, required: true }
+    color: { type: String, required: true },
+    owns: [{ type: String, required: true }],
 });
 
 const UserModel = module.exports = mongoose.model("UserModel", UserModelSchema, "users");

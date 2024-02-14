@@ -20,7 +20,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - ✅✅✅highlight messages when you mouse them similar to channels bar✅✅✅ (add edit / delete functionality?)
     - ✅✅✅need to make spaces not allowed in server creation menu✅✅✅
     - make "profile" route more pretty
-    - add delete server functionality
+    - add delete server functionality (disable duplicate names --> use configServers list of servers that server list component has)
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
@@ -446,3 +446,6 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Got user change color to work without refreshing page by using behavior subject. Made little different colored profile pictures and made users profile picture change as well.
     - Adding stuff to wrong turn page. Need to fix links but thats it.
     - Cleaned up wrong turn page.
+    - Make delete button and added an "owns" list to users (list of servers user made and thus has ability to delete)
+    (still doesn't work for duplicate name tho --> disable duplicate names later)
+    - Note: still have to actually add delete functionality

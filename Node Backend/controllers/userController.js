@@ -36,7 +36,7 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    if (username == null || password == null) {
+    if (password == null) {
         return res.json({success: false, msg: 'Please enter a username and/or password'});
     }
     
@@ -45,16 +45,19 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
     } catch (err) {
         throw err;
     }
-    if (!user) {
-        res.json({success: false, msg: 'User not found'});
+
+    if (user == null) {
+        return res.json({success: false, msg: 'User not found'});
+
     }
 
-    try {
+    // try {
         isMatch = await UserModel.comparePassword(password, user.password);
 
-    } catch (err) {
-        throw err;
-    }
+    // } catch (err) {
+    //     throw err;
+    // }
+
     if (isMatch) {
         const token = jwt.sign({ data: user }, config.secret, { // was {data: user}
             expiresIn: 604800 // 1 week in seconds

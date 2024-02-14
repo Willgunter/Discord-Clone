@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Channel } from 'src/app/models/channel.model';
 import { NgForm } from '@angular/forms';
 import mongoose from 'mongoose';
+import { AuthService } from 'src/services/auth.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-create-server',
@@ -17,12 +19,25 @@ export class CreateServerComponent {
 
     name: string;
     channels: Channel[];
+    user: User;
     imageUrls: String[];
 
-    constructor(public configService: ConfigService, public http: HttpClient) {}
+    constructor(public configService: ConfigService, public http: HttpClient, private authService: AuthService) {}
 
     ngOnInit() {
+        
         this.resetForm();
+
+        this.authService.getProfile().subscribe({
+            next: (response) => {
+                this.user = response.user;
+            },
+            error: (error) => {
+                console.log(error);
+                return false;
+            }
+        });
+
     }
 
     updateShowBox() {
@@ -70,7 +85,7 @@ export class CreateServerComponent {
             const defaultChannels: Channel[] = [
 
                 {
-                    _id: new mongoose.Types.ObjectId(), // problem
+                    _id: new mongoose.Types.ObjectId(),
                     name: "welcome",
                     messages: [],
                 },
@@ -106,7 +121,9 @@ export class CreateServerComponent {
 
             form.value.name = this.name;
             form.value.channels = [ defaultChannels[0]._id, defaultChannels[1]._id, defaultChannels[2]._id ];
-                
+
+            form.value.owner = this.user._id;
+
             // replace name of file with name of imagePath for now
             // TODO: may not need imagePath at all if we make image name the servername (can we even do that?)
                 
@@ -149,7 +166,5 @@ export class CreateServerComponent {
                 });
 
             }
-
-            // TODO eventually add a header for the channels (welcome to "general", or something, make sure it actually looks like discord, etc
     }
 }
