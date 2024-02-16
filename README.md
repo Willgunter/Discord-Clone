@@ -10,7 +10,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - ✅✅✅Fix login screen✅✅✅
     - ✅✅✅Turn server icons from emojis into pictures✅✅✅
     - ✅✅✅make a fake little profile picture for users and current user - shouldn't be that hard for Users column✅✅✅
-    - ✅✅✅let users change color of either profile pictures / font color in bottom left corner✅✅✅ (profile picture + user box border color)
+    - ✅✅✅let users change colro of either profile pictures / font color in bottom left corner✅✅✅ (profile picture + user box border color)
         ✅✅✅add gear icon that links to profile✅✅✅
     - ✅✅✅fix up messages and stuff (attach a user to a message✅✅✅, make box look better, etc...)
     - ✅✅✅Clean up routing✅✅✅ / ✅✅✅add add server✅✅✅ / add channel feature ( not going to do )

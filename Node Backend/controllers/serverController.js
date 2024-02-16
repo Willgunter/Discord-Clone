@@ -89,7 +89,6 @@ exports.deleteserver = asyncHandler(async (req, res, next) => {
             const serverName = req.query.serverName;
             await ServerModel.deleteOne({ name: serverName });
             
-            console.log("Server deleted");
             res.send("server deleted");
         }
 });
