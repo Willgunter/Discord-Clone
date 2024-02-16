@@ -97,4 +97,12 @@ export class ConfigService {
         return this.http.put(this.userApiUrl + "/users", list);
     }
 
+    deleteServer(serverName: string) {
+        return this.http.delete(this.serverApiUrl, { params: { serverName: serverName } });
+    }
+
+    deleteServerIcon(serverName: string) {
+        return this.http.delete(this.serverImageApiUrl + serverName, { params: { serverName: serverName } });
+    }
+
 }

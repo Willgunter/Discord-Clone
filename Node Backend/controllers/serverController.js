@@ -81,6 +81,19 @@ exports.postserver = asyncHandler(async (req, res, next) => {
     
 });
 
+exports.deleteserver = asyncHandler(async (req, res, next) => {
+        
+        deleteServer().catch((err) => console.log('Error in delete Server Save :' + JSON.stringify(err, undefined, 2)));
+        async function deleteServer() {
+
+            const serverName = req.query.serverName;
+            await ServerModel.deleteOne({ name: serverName });
+            
+            console.log("Server deleted");
+            res.send("server deleted");
+        }
+});
+
 exports.addmessage = asyncHandler(async (req, res, next) => {
     
     addMessage().catch((err) => console.log('Error in Server controller add message :' + JSON.stringify(err, undefined, 2)));
@@ -179,5 +192,24 @@ exports.postservericon = asyncHandler(async (req, res, next) => {
     saveServerIcon().catch((err) => console.log('Error in post Server Icon Save :' + JSON.stringify(err, undefined, 2)));
         async function saveServerIcon() {
             res.send(req.file);
+    }
+});
+
+exports.deleteservericon = asyncHandler(async (req, res, next) => {
+    
+    deleteServerIcon().catch((err) => console.log('Error in delete Server Icon Save :' + JSON.stringify(err, undefined, 2)));
+    async function deleteServerIcon() {
+        const imageFolderPath = "../Files/serverImages"; // res.params.filename;
+
+        fs.unlink(path.join(imageFolderPath, req.query.serverName + ".png"), (err) => {
+            if (err) {
+                console.error("Error deleting image file:", err);
+                res.status(500).send('Internal server error');
+                return;
+            }
+
+            res.status(200).send('Image deleted');
+        
+        });
     }
 });

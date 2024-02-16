@@ -25,6 +25,7 @@ const upload = multer({ storage: storage });
 router.get('/server', server_controller.getserver);
 router.post('/server', server_controller.postserver);
 router.put('/server', server_controller.addmessage);
+router.delete('/server', server_controller.deleteserver);
 
 // for messages
 router.get('/server', server_controller.getmessages);
@@ -36,6 +37,7 @@ router.get('/server', server_controller.getmessages);
 router.get('/server-icon/:filename', server_controller.getservericon);
 
 router.post('/server-icon/:filename', upload.single("file"), server_controller.postservericon);
+router.delete('/server-icon/:filename', server_controller.deleteservericon);
 
 // TODO eventually add a delete server request????
 

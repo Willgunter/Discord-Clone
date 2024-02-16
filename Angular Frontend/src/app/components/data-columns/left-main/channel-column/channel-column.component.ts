@@ -77,9 +77,30 @@ export class ChannelColumnComponent {
     
     deleteServer() {
 
-        this._router.navigate(['/newtest/welcome']);
-        // delete server
-        // make sure to have some sort of "are you sure" box
+        console.log(this.splicedChannel);
+        
+        this.configService.deleteServer(this.splicedChannel).subscribe({
+            next: (response) => {
+               
+            },
+            error: (error) => {
+                console.log(error);
+                return false;
+            }
+        });
+
+        this.configService.deleteServerIcon(this.splicedChannel).subscribe({
+                next: (response) => {
+                    console.log("yay");
+                },
+                error: (error) => {
+                        console.log(error);
+                        return false;
+                    }
+                });
+                
+
+        this._router.navigate(['/servername/welcome']);
     
     }
 

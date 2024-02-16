@@ -21,6 +21,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - ✅✅✅need to make spaces not allowed in server creation menu✅✅✅
     - make "profile" route more pretty
     - add delete server functionality (disable duplicate names --> use configServers list of servers that server list component has)
+    - instead of making messages faster (lame) put a "messages loading" and "message queing to send" alert or message when messages are not null or something idk
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 
@@ -449,3 +450,10 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - Make delete button and added an "owns" list to users (list of servers user made and thus has ability to delete)
     (still doesn't work for duplicate name tho --> disable duplicate names later)
     - Note: still have to actually add delete functionality
+
+- 2/15/2024
+    - Got delete server to work. Still have to get delete
+    server icon to work I think
+    - Note: for some reason it works without deleting files.
+    But I want to still name it work
+    - Ok figured it out. Now going to clean up some stuff and finally start on deployment
