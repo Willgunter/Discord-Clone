@@ -3,7 +3,7 @@
 An independent coding project for my own personal self learning (and resume), serving as a replica of the widely used platform Discord  
 Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 
-Note to self: to run: 
+- Note to self: to run: 
     - cd into "Angular Frontend" and run "ng serve"
     - in a different terminal cd into "Node Backend" and run "nodemon app.js"
 
