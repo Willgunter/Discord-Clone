@@ -33,7 +33,6 @@ export class ChannelColumnComponent {
                     if (val instanceof NavigationEnd) {
                         this.currentRoute = this._router.url;
                         this.splicedChannel = decodeURIComponent(this.currentRoute.substring(1).split("/", 2)[0]);
-                        console.log(this.splicedChannel);
                     } else {
                         // console.log("failure");
                         // do nothing
@@ -47,7 +46,6 @@ export class ChannelColumnComponent {
         this.authService.getProfile().subscribe({
             next: (response) => {
                 this.user = response.user;
-                console.log(this.user.owns);
 
                 for (let i = 0; i < this.user.owns.length; i++) {
                     if (this.user.owns[i] == this.splicedChannel) {

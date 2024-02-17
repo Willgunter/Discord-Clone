@@ -39,6 +39,4 @@ router.get('/server-icon/:filename', server_controller.getservericon);
 router.post('/server-icon/:filename', upload.single("file"), server_controller.postservericon);
 router.delete('/server-icon/:filename', server_controller.deleteservericon);
 
-// TODO eventually add a delete server request????
-
 module.exports = router;

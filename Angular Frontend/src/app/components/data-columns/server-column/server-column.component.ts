@@ -21,10 +21,10 @@ export class ServerColumnComponent {
     @Output() showBoxChange = new EventEmitter<boolean>();
     showBox: boolean;
 
+    imageUrls: Map<String, String> = new Map<String, String>();
     
     name: string;
     channels: Channel[];
-    imageUrls: Map<String, String> = new Map<String, String>();
     
     constructor(public configService: ConfigService, public http: HttpClient) {}
     
@@ -33,6 +33,8 @@ export class ServerColumnComponent {
         this.refreshServerList();
         this.resetForm();
         this.showBox = false;
+
+
         
     }
     
@@ -59,6 +61,8 @@ export class ServerColumnComponent {
                 this.imageUrls.set(url, "http://localhost:3000/servers/server-icon/" + url + ".png");
             });
             
+            this.configService.giveServers(listOfServers);
+
         });
 
     }

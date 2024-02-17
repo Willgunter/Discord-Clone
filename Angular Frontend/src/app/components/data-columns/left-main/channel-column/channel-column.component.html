@@ -52,8 +52,8 @@
         </ol>
         
     <app-user-box></app-user-box>
-        
-    <button *ngIf="canDelete" class="btn" (click)="deleteServer()">Delete server</button>
+    
+    <button *ngIf="this.splicedChannel !== 'servername' && canDelete" class="btn" (click)="deleteServer()">Delete server</button>
             
 </div>
     

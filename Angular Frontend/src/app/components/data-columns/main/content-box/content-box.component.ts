@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ConfigService } from 'src/services/config.service';
+
+// used for materialize framework (makes alerts look fancy and clean)
+declare var M: any;
 
 @Component({
   selector: 'app-content-box',
@@ -29,6 +32,10 @@ export class ContentBoxComponent {
 
   // not necessary because message-box does it for us
     refreshMessageList() {
+
+        M.toast({html: 'Loading servers and messages...', classes: 'rounded red', displayLength: Infinity});
+
+
         this.configService.getMessageList().subscribe(async (res) => {
 
             const parts = this.currentRoute.split("/");
@@ -40,7 +47,6 @@ export class ContentBoxComponent {
             const map = new Map(Object.entries(this.configService.serversForMessages));
             
             let placeholderServers = map.get("rtnmessages");
-            console.log(this.populatedServers);
             
             let serverIndex: number;
             for (serverIndex = 0; serverIndex < placeholderServers.length; serverIndex++) {
@@ -57,8 +63,9 @@ export class ContentBoxComponent {
                 }
             }
 
-            this.populatedServers = placeholderServers[serverIndex][1][channelIndex][1];
-        
+            this.populatedServers = placeholderServers[serverIndex][1][channelIndex][1]; // message text and sender of message
+
+            M.Toast.dismissAll();
         });
     }
 
@@ -67,7 +74,6 @@ export class ContentBoxComponent {
         const parts = this.currentRoute.split("/");
         this.serverName = parts[1];
         this.channelName = parts[2];
-        console.log(this.serverName );
     
     }
 

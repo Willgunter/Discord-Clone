@@ -53,8 +53,7 @@ export class LoginComponent {
                 if (response.success) {
                     console.log(response);
                     this.authService.storeUserData(response.token, response.user);
-                    M.toast({html: 'You are now registered and can log in', classes: 'rounded'});
-                    this.router.navigate(['/newtest/general']);
+                    this.router.navigate(['/servername/welcome']);
 
                 } else {
                     M.toast({html: "Wrong Password", classes: 'rounded'});

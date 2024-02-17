@@ -30,8 +30,7 @@ export class MessageBoxComponent implements OnInit {
 
     constructor(public configService: ConfigService, public authService: AuthService) { }
     
-    // if we click an a tag (server or channel)
-    // then refresh page (transmits new route to this component)
+    // if route changes, refresh the page (transmits new route data to other components)
     ngOnChanges(changes: SimpleChanges) { 
         
         this.updateServerAndChannelName();
@@ -50,7 +49,6 @@ export class MessageBoxComponent implements OnInit {
         this.authService.getProfile().subscribe({
             next: (response) => {
                 this.user = response.user;
-                console.log(this.user);
                 
             },
             error: (error) => {
@@ -58,7 +56,6 @@ export class MessageBoxComponent implements OnInit {
                 return false;
             }
         });
-
     }
 
     resetForm(form?: NgForm) {
@@ -83,29 +80,29 @@ export class MessageBoxComponent implements OnInit {
             user: this.user,
         };
         
-        // Adds message to database
-        // TODO need to make this work for servers with spaces and such
+        // make this toast display until the message is actually sent
+        M.toast({html: 'Queueing message...', classes: 'rounded red', displayLength: Infinity});
+
         this.configService.postMessage(newMessage, this.serverName, this.channelName).subscribe((res) => {
-
+            
         });
-
+        
         // Refreshes message list
         this.configService.getMessageList().subscribe((res) => {
-
+            
             this.resetForm(form);
-            // HELLO???? CODE REUSE????? WHAT IS HAPPENING???
             this.refreshMessageList();
-            // at some point I would like to either make this in a better spot
-            // or I may even just get rid of it altogether
-            M.toast({html: 'Message sent', classes: 'rounded'});
+            M.toast({html: 'Message sent', classes: 'rounded red'});
+            setTimeout(() => {
+                M.Toast.dismissAll();
+            }, 1000);
+            
         });
         
         this.text = '';
 
   }
 
-   // TODO maybe try it on your own here (fetch most recent 10 comments from db maybe???)
-   // yes but you still have to refresh the page (lame)
     refreshMessageList() {
         this.configService.getMessageList().subscribe(async (res) => {
 

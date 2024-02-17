@@ -16,6 +16,10 @@ import { Server } from '../app/models/server.model';
 })
 export class ConfigService {
 
+    // used to communicate server values between create server and
+    // server column components
+    private listOfServers = new BehaviorSubject<String[]>([]);
+    currentListOfServers = this.listOfServers.asObservable();
     // in the tutorial project, this was the url
     // that we interacted with (CRUD interactions)
 
@@ -39,6 +43,10 @@ export class ConfigService {
 
     // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }
+
+    giveServers(servers: String[]) {
+        this.listOfServers.next(servers);
+    }
 
     postUser(user: User) {
         return this.http.post(this.userApiUrl, user);

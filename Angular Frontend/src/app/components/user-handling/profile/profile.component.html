@@ -1,15 +1,24 @@
-<div *ngIf="user">
-    
-    <h1>Profile</h1>
-    <!-- <ul> -->
-        <li>
-            Username: {{user.username}}
-        </li>
-        <li>
-            Email: {{user.email}}
-        </li>
-    <!-- </ul> -->
-    <button class="btn" (click)="onLogoutClick()">Logout</button>
-    <button class="btn" (click)="toMain()">X</button>
+<div class="profile" *ngIf="user">
+    <div class="box">
+        
+        <h5>My Account</h5>
+        <ul>
+            <li>
+                Name: {{user.name}}
+            </li>
+            <li>
+                Username: {{user.username}}
+            </li>
+            <li>
+                Email: {{user.email}}
+            </li>
+            <li>
+                Color: {{user.color}}
+            </li>
+        </ul>
+        <!-- dib -->
+        <button class="btn" (click)="onLogoutClick()">Logout</button>
+        <button class="btn" (click)="toMain()">Back to main</button>
+    </div>
 </div>
 

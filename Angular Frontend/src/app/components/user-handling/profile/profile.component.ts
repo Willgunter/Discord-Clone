@@ -23,7 +23,6 @@ export class ProfileComponent implements OnInit {
         private router: Router
     ) { }
     
-    // bruh same error but different problem?????
     ngOnInit() {
 
         this.authService.getProfile().subscribe({
@@ -42,13 +41,13 @@ export class ProfileComponent implements OnInit {
 
         this.authService.logout();
         M.toast({html: 'You are logged out', classes: 'rounded'});
-        this.router.navigate(['/login']);
+        this.router.navigate(['/register']);
         return false;
 
     }
 
     toMain() {
-        window.location.href = "/newtest/welcome";
+        window.location.href = "/servername/welcome";
     }
     
 }

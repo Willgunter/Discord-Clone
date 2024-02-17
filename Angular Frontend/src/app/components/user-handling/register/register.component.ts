@@ -64,6 +64,16 @@ export class RegisterComponent {
             owns: [],
         };
 
+        if (newUser.username.length > 14) {
+            M.toast({html: 'Username too long (max: 14)', classes: 'rounded'});
+            return false;
+        }
+
+        if (newUser.name.length > 14) {
+            M.toast({html: 'Name too long (max: 14)', classes: 'rounded'});
+            return false;
+        }
+
         // Validates the form
         if (!this.validateService.validateRegister(newUser)) {
             // Note: instead of toast we could have used
@@ -81,7 +91,6 @@ export class RegisterComponent {
         // Register User
         this.authService.registerUser(newUser).subscribe({
             next: (response) => {
-                console.log(response);
                 M.toast({html: 'You are now registered and can log in', classes: 'rounded'});
                 this.resetForm(form);
                 this.router.navigate(['/login']);
@@ -92,9 +101,7 @@ export class RegisterComponent {
             }
         });
 
-        // why do I need to return?
         return true;
-
 
     }
 
