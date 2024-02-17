@@ -467,4 +467,4 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
 - 2/17/2024
     - Decided against deployment due to stateful architecture, lack of motivation, and wanting ness to learn rust
 
-----------------------------------------------------------------------------DONE-----------------------------------------------------------------------------------------------------
+                                                    ---DONE---
