@@ -9,9 +9,6 @@ import { ProfileComponent } from './components/user-handling/profile/profile.com
 import { AuthGuard } from './guards/auth.guard';
 import { UserGuard } from './guards/user.gaurd';
 
-import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-
 import { ConfigService } from 'src/services/config.service';
 import { HttpClient } from '@angular/common/http';
 import { ContentGuard } from './guards/content.guard';

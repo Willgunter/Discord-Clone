@@ -1,52 +1,18 @@
 <div class="channel-column">
-        <!-- <nav class="nav"> -->
-    <!-- <table> -->
-        <!-- <li class="list"> -->
     <div [ngSwitch]="currentRoute">
                 
-                <!-- ul: extends to end of screen, curvable, idk -->
-                <!-- li: better fitted, cons: bullet point -->
         <ol class="serverlink" style="list-style: none;">
-                    
-                    <!-- note: routerLinkActive attaches the "active" status to the trait -->
-                    <!-- for li it highlights the background gray and for a 
-                    it makes the text white -->
-            <li routerLinkActive="active" > <!--[routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" are two css classes basically -->
-                        <!-- I think they make the messages take longer to load to I did not include them 
-                            although that might just be my parents slow internet-->
-                <a
-                    routerLinkActive="active"
-                    routerLink="/{{splicedChannel}}/welcome"
-                    ariaCurrentWhenActive="page"
-                            >
-                            <!-- how to determine whether a page is active -->
-                            <!-- <span style="color: black" hover># </span> -->
-                    # welcome
-                </a>
-                        
-                </li>
+
+            <li routerLinkActive="active" >
+                <a routerLinkActive="active" routerLink="/{{splicedChannel}}/welcome" ariaCurrentWhenActive="page"># welcome</a>
+            </li>
                     
             <li routerLinkActive="active">
-                <a 
-                    routerLinkActive="active"
-                    routerLink="/{{splicedChannel}}/roles"
-                    ariaCurrentWhenActive="page"
-                    >
-                    <!-- how to determine whether a page is active -->
-                    # roles
-                </a>
+                <a routerLinkActive="active" routerLink="/{{splicedChannel}}/roles" ariaCurrentWhenActive="page"># roles</a>
             </li>
             
             <li routerLinkActive="active">
-                <a
-                    routerLinkActive="active"
-                    routerLink="/{{splicedChannel}}/announcements"
-                    ariaCurrentWhenActive="page"
-                    >
-                    <!-- is this where we display server-specific channel names (referring to routerLink= line) -->
-                    <!-- how to determine whether a page is active -->
-                    # announcements
-                </a>
+                <a routerLinkActive="active" routerLink="/{{splicedChannel}}/announcements" ariaCurrentWhenActive="page" ># announcements</a>
             </li>
             
         </ol>
@@ -55,5 +21,6 @@
     
     <button *ngIf="this.splicedChannel !== 'servername' && canDelete" class="btn" (click)="deleteServer()">Delete server</button>
             
+    </div>
 </div>
     

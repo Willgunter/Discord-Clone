@@ -5,9 +5,6 @@ import { AuthService } from 'src/services/auth.service';
 import { ConfigService } from 'src/services/config.service';
 import { Message } from 'src/app/models/message.model';
 import { User } from 'src/app/models/user.model';
-import mongoose from 'mongoose';
-import { Server } from 'src/app/models/server.model';
-
 
 // used for materialize framework (makes alerts look fancy and clean)
 declare var M: any;
@@ -32,9 +29,7 @@ export class MessageBoxComponent implements OnInit {
     
     // if route changes, refresh the page (transmits new route data to other components)
     ngOnChanges(changes: SimpleChanges) { 
-        
         this.updateServerAndChannelName();
-
         if (changes['currentRoute'] && !changes['currentRoute'].firstChange) {
             location.reload();
         }
@@ -45,7 +40,6 @@ export class MessageBoxComponent implements OnInit {
         this.resetForm();
         this.refreshMessageList();
         this.updateServerAndChannelName();
-
         this.authService.getProfile().subscribe({
             next: (response) => {
                 this.user = response.user;
@@ -109,11 +103,11 @@ export class MessageBoxComponent implements OnInit {
             this.configService.serversForMessages = res as JSON;
 
             const map = new Map(Object.entries(this.configService.serversForMessages));
-            
+                
             let serverIndex: number;
             let serverListWithMessages = map.get("messages");
             let servers = map.get("serverNames");
-            
+                
             for (serverIndex = 0; serverIndex < servers.length; serverIndex++) {
                 if (servers[serverIndex] == this.serverName) {
                     break;
@@ -125,9 +119,7 @@ export class MessageBoxComponent implements OnInit {
                 if (serverListWithMessages[serverIndex][channelIndex].name == this.channelName) {
                     break;
                 }
-
             }
-
         });
     }
 

@@ -4,11 +4,9 @@ var { ChannelModel } = require("../models/channel");
 var { UserModel } = require("../models/user");
 var { MessageModel } = require("../models/message");
 var { mongoose } = require("mongoose");
-// Note: NEEDS TO BE TITLED "MessageModel" exactly for it to work for some reason
 
 const asyncHandler = require("express-async-handler");
 const { body, validationResult} = require("express-validator");
-// const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
@@ -98,6 +96,7 @@ exports.addmessage = asyncHandler(async (req, res, next) => {
     addMessage().catch((err) => console.log('Error in Server controller add message :' + JSON.stringify(err, undefined, 2)));
     async function addMessage() {
 
+        // Note to self:
         // Message object = res.body.list[0]
         // server name = res.body.list[1]
         // channel name = res.body.list[2]
@@ -198,7 +197,7 @@ exports.deleteservericon = asyncHandler(async (req, res, next) => {
     
     deleteServerIcon().catch((err) => console.log('Error in delete Server Icon Save :' + JSON.stringify(err, undefined, 2)));
     async function deleteServerIcon() {
-        const imageFolderPath = "../Files/serverImages"; // res.params.filename;
+        const imageFolderPath = "../Files/serverImages";
 
         fs.unlink(path.join(imageFolderPath, req.query.serverName + ".png"), (err) => {
             if (err) {

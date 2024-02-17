@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ConfigService } from 'src/services/config.service';
 import {AuthService} from '../../../../services/auth.service';
 
 declare var M: any;
@@ -28,16 +27,6 @@ export class LoginComponent {
     resetForm(form?: NgForm) {
         if (form)
         form.reset();
-
-        // this.configService.selectedUser = {
-        //     // commented it out in message.model.ts (is it really necessary?)
-        //     // _id: "",
-        //     name: "",
-        //     email: "",
-        //     username: "",
-        //     password: "",
-        // }
-
     }
 
     onLoginSubmit(form: NgForm) {
@@ -69,7 +58,4 @@ export class LoginComponent {
             }
         });
     }
-    // add something here about login?
-
-    // if we login successfully, redirect to school page
 }

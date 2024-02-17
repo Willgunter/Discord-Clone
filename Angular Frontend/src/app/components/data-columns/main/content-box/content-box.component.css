@@ -4,13 +4,10 @@
     background-color: #313338;
     height: calc(100vh - 68px);
     padding: 12px;
-
 }
 
 td {
     width: 100%;
-    /* margin-left: 0; */
-    /* padding-right: 12px; */
 }
 
 .messages {

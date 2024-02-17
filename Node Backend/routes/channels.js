@@ -8,7 +8,5 @@ const channel_controller = require("../controllers/channelController");
 router.get('/', channel_controller.getchannel);
 
 router.post('/channel', channel_controller.postchannel);
-// /:serverId ???
-// eventually add a delete server request?
 
 module.exports = router;

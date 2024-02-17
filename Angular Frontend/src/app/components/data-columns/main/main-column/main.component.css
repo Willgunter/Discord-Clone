@@ -1,25 +1,8 @@
 .main-column {
-    /* max-height: 660px; */
-    /* height: 660px; */
     top: 0px;
-    /* position: fixed; */
     margin-right: 225px;
     margin-left: 300px;
     color:#F2F3F5;
     z-index: 0;
     
-    /* height: 100vh; */
-    /* height: 100vh; */
-    /* border: 2px solid purple; */
 }
-
-/* modify these next */
-/* .content { */
-    /* margin-bottom: 100px; */
-    /* margin-left: 0px; */
-/* } */
-
-/* modify these next */
-/* .message {
-    /* margin-bottom: 0px;
-} */

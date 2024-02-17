@@ -18,14 +18,14 @@ const UserModel = module.exports = mongoose.model("UserModel", UserModelSchema, 
 
 module.exports.getUserByUsername = function(username) {
     const query = {username: username}
-    return UserModel.findOne(query); // was callback
+    return UserModel.findOne(query);
 }
 
 module.exports.getUserById = function(id, callback) {
     return UserModel.findById(id, callback);
 }
 
-module.exports.addUser = async function(newUser, callback) { // callback is not in function args but we can still use if for some reason
+module.exports.addUser = async function(newUser, callback) {
 
     try {
         

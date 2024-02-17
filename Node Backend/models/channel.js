@@ -15,8 +15,6 @@ const ChannelModelSchema = new Schema({
 
 const ChannelModel = mongoose.model("ChannelModel", ChannelModelSchema, "channels");
 
-module.exports.getServerByName = function (name) {} // eventually
-
 module.exports.addChannel = asyncHandler(async (newChannel, callback) => {
 
     try {

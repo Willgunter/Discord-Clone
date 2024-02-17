@@ -45,8 +45,6 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-// Add the express-session middleware/////////////////
-
 ////////////////////////////////////////////////////
 app.listen(3000, () => console.log('Server started at port : 3000'));
 

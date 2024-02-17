@@ -20,10 +20,8 @@ export class ConfigService {
     // server column components
     private listOfServers = new BehaviorSubject<String[]>([]);
     currentListOfServers = this.listOfServers.asObservable();
-    // in the tutorial project, this was the url
-    // that we interacted with (CRUD interactions)
 
-    selectedMessage: Message; // why do I even need this?
+    selectedMessage: Message;
     selectedUser: User;
     users: User[];
     serversWithChannels: Server[]; // for content guard
@@ -41,7 +39,6 @@ export class ConfigService {
     readonly userauthApiUrl = 'http://localhost:3000/authenticate';
     static servers: any;
 
-    // what does private http:HttpClient service do?
     constructor(private http: HttpClient) { }
 
     giveServers(servers: String[]) {

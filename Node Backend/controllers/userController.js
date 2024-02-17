@@ -51,15 +51,12 @@ exports.authenticate = asyncHandler(async (req, res, next) => {
 
     }
 
-    // try {
-        isMatch = await UserModel.comparePassword(password, user.password);
+    
+    isMatch = await UserModel.comparePassword(password, user.password);
 
-    // } catch (err) {
-    //     throw err;
-    // }
 
     if (isMatch) {
-        const token = jwt.sign({ data: user }, config.secret, { // was {data: user}
+        const token = jwt.sign({ data: user }, config.secret, {
             expiresIn: 604800 // 1 week in seconds
             });
             return res.json({
@@ -91,8 +88,6 @@ exports.index = asyncHandler(async (req, res, next) => {
     getUsers().catch((err) => console.log('Error in Message {test} Save :' + JSON.stringify(err, undefined, 2)));
         async function getUsers() {
             
-            // why can't it display channel?
-            // why is it not updating at all?
             res.send(await UserModel.find({}, { _id:1}));
         }
 });
@@ -116,6 +111,5 @@ exports.changecolor = asyncHandler(async (req, res, next) => {
     user.color = color;
     user.save();
     res.json({success: true, msg: user.color});
-    // res.json({ user: req.user });
 
 });

@@ -1,9 +1,9 @@
 <div class="server-column">
         
     <ul>
-            <!-- Servers + server images -->
-            <tr *ngFor="let url of imageUrls | keyvalue" style="border:none;">
-                <li class="list" routerLinkActive="active" >
+        <!-- Servers + server images -->
+        <tr *ngFor="let url of imageUrls | keyvalue" style="border:none;">
+            <li class="list" routerLinkActive="active" >
                 <a routerLink="/{{url.key}}/welcome" ariaCurrentWhenActive="page">   
                 <img src="{{url.value}}" alt="test Icon" width="48" height="48"  routerLinkActive="active">
                 </a>

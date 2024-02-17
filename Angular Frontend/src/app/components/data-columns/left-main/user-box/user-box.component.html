@@ -1,13 +1,7 @@
-
-
 <div class="user-box">
-    
-    <!-- <div class="username" style="display: inline"> -->
+
     <button class="btn" (click)="updateShowProfile()">{{user.username}}</button>
-    <!-- </div> -->
-        
     <button class="btn" style="font-weight: bold; background-color: #232428; border-radius: 5px; margin: 5px; color: #B5BAC1; right: 0;" (click)="toProfile()">⚙</button>
-    <!-- TODO set max username length (like probably 7 or 8 maybe??) after I add profile image here -->
 
 </div>
     
@@ -27,7 +21,6 @@
         Change your color here!
         <div style="margin-top: 10px">
 
-            <!-- Notice how there is not UNC blue on here -->
             <button class="btn" style="background-color: #FFFF00; border-radius: 5px; margin: 5px; width: 125px; height: 50px;" (mousedown)="updateColor('yellow')"></button>
             <button class="btn" style="background-color: #FF0000; border-radius: 5px; margin: 5px; width: 125px; height: 50px;" (mousedown)="updateColor('red')"></button>
             <button class="btn" style="background-color: #800080; border-radius: 5px; margin: 5px; width: 125px; height: 50px;" (mousedown)="updateColor('purple')"></button>

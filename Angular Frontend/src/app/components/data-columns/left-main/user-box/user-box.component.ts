@@ -5,7 +5,6 @@ import { ConfigService } from 'src/services/config.service';
 import { AuthService } from 'src/services/auth.service';
 import { BehaviorSubject } from 'rxjs';
 
-
 @Component({
   selector: 'app-user-box',
   templateUrl: './user-box.component.html',
@@ -37,17 +36,15 @@ export class UserBoxComponent {
 
     toProfile() {
         window.location.href = '/me/' + this.user.username;
-        // note: send current server and channel to profile component so it doesnt wait for servers from backend
     }
 
     updateShowProfile() {
         this.showProfile = !this.showProfile;
     }
 
-    // Change users color
     updateColor(color: string) {
 
-        this.color.next(color); // updates color here so we don't have to wait on response from server (makes it faster)
+        this.color.next(color);
 
         if (this.user && this.user.username) {
             console.log(this.user.username + " " + color);

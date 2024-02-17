@@ -20,9 +20,6 @@ export class RegisterComponent {
     email: string = "";
     username : string = "";
     password : string = "";
-    
-    // note: not sure how to implement yet (send user object to database and stuff), will
-    // come back to in a bit once we define the user object
 
     constructor(
         private authService: AuthService,
@@ -40,7 +37,6 @@ export class RegisterComponent {
         if (form)
         form.reset();
         this.configService.selectedUser = {
-            // commented it out in message.model.ts (is it really necessary?)
             _id: undefined,
             name: "",
             email: "",
@@ -76,8 +72,6 @@ export class RegisterComponent {
 
         // Validates the form
         if (!this.validateService.validateRegister(newUser)) {
-            // Note: instead of toast we could have used
-            // flash messages --> would probably look more like a website
             M.toast({html: 'Please fill in all fields', classes: 'rounded'});
             return false;
         }

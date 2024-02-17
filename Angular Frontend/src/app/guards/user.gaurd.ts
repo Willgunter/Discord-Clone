@@ -15,20 +15,20 @@ export class UserGuard {
 
         const username = route.params['username'];
             
-            this.authService.getProfile().subscribe({
-                next: (response) => {
-                    this.user = response.user;
-                    if (username === this.user.username) {
-                        return true;
-                    } else {
-                        this.router.navigate(['/me/' + this.user.username]); // Replace '/wrong-turn' with the path to your wrong turn component
-                        return false;
-                    }
-                },
-                error: (error) => {
-                    console.log(error);
+        this.authService.getProfile().subscribe({
+            next: (response) => {
+                this.user = response.user;
+                if (username === this.user.username) {
+                    return true;
+                } else {
+                    this.router.navigate(['/me/' + this.user.username]);
                     return false;
                 }
-            });
-        }
+            },
+            error: (error) => {
+                console.log(error);
+                return false;
+            }
+        });
+    }
 }

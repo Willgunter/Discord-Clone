@@ -30,11 +30,9 @@ export class ContentBoxComponent {
         this.refreshMessageList();
     }
 
-  // not necessary because message-box does it for us
     refreshMessageList() {
 
         M.toast({html: 'Loading servers and messages...', classes: 'rounded red', displayLength: Infinity});
-
 
         this.configService.getMessageList().subscribe(async (res) => {
 
@@ -45,19 +43,19 @@ export class ContentBoxComponent {
             this.configService.serversForMessages = res as JSON;
 
             const map = new Map(Object.entries(this.configService.serversForMessages));
-            
+                
             let placeholderServers = map.get("rtnmessages");
-            
+                
             let serverIndex: number;
             for (serverIndex = 0; serverIndex < placeholderServers.length; serverIndex++) {
                 if (placeholderServers[serverIndex][0] == this.serverName) {
                     break;
-                }
+                    }
             }
-            
+                
             let channelIndex: number;
             for (channelIndex = 0; channelIndex < placeholderServers[serverIndex][1].length; channelIndex++) {
-                
+                    
                 if (placeholderServers[serverIndex][1][channelIndex][0] == this.channelName) {
                     break;
                 }

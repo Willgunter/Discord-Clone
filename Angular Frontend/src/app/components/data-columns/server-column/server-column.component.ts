@@ -1,10 +1,5 @@
 import { NgForm } from '@angular/forms';
-
 import { Channel } from 'src/app/models/channel.model';
-import { Server } from 'src/app/models/server.model';
-
-import mongoose from 'mongoose';
-
 import { ConfigService } from 'src/services/config.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, Output, EventEmitter } from '@angular/core';
@@ -34,8 +29,6 @@ export class ServerColumnComponent {
         this.resetForm();
         this.showBox = false;
 
-
-        
     }
     
     // Method to update the value of showBox and emit the change
@@ -57,6 +50,7 @@ export class ServerColumnComponent {
             this.configService.servers = res as JSON;
             const map = new Map(Object.entries(this.configService.servers));
             let listOfServers = map.get("serverNames");
+            
             listOfServers.forEach((url: String) => {
                 this.imageUrls.set(url, "http://localhost:3000/servers/server-icon/" + url + ".png");
             });
@@ -64,7 +58,5 @@ export class ServerColumnComponent {
             this.configService.giveServers(listOfServers);
 
         });
-
     }
-
 }

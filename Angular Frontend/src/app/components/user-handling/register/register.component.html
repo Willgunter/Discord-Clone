@@ -1,16 +1,10 @@
-<!-- grrr... how to i make the entire background color a color -->
-
 <div  style=" padding-top: 11% ; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; height: 100vh">
 <div class="container" style=" background-color: #313338; border-radius: 5px;">
 
         <h5 style="text-align: center;">
             Create an Account
         </h5>
-        <!-- name: { type: String },
-        email: { type: String, required: true},
-        username: { type: String, required: true },
-        password: { type: String, required: true }, -->
-        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"> <!-- redirect to skewl or something? -->
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
             
             <label for="display-name" style="color: #B5BAC1;"><b>NAME</b></label>
             <input type="text" [(ngModel)]="name" name="name" id="dname" style=" border: hidden; background-color: #1E1F22; border-radius: 3px;" required>

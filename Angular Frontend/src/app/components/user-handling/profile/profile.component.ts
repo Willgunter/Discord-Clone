@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/services/auth.service';
-import { ConfigService } from 'src/services/config.service';
 import { HttpClient } from '@angular/common/http';
 
 declare var M: any;

@@ -22,7 +22,7 @@ Tech Stack: MongoDB, Express, Angular, and Node.js (MEAN)
     - ✅✅✅add delete server functionality (disable duplicate names --> use configServers list of servers that server list component has)✅✅✅
     - ✅✅✅instead of making messages faster (lame) put a "messages loading" and "message queing to send" alert or message when messages are not null or something idk✅✅✅
     - ✅✅✅make "profile" route more pretty✅✅✅
-    - clean up comments / spacing / unused code
+    - clean up comments / spacing / consolelogs / unused code and start **deployment**
 
 - ✅✅✅Break up screen into 5 parts just like Discord (narrow left side bar, left list of channels, main chat area, list of users, and small little bar the left w settings and stuff) *will work on when I can display a freaking message*✅✅✅
 

@@ -43,14 +43,14 @@ export class ContentGuard  {
                     }
                 }
                     return false;
-                });
+            });
 
-                if (!serverExists) {
-                    this.Router.navigate(['/login']);
-                    return false;
-                } 
+            if (!serverExists) {
+                this.Router.navigate(['/login']);
+                return false;
+            } 
 
-                return true;
+            return true;
         });
     }
 }

@@ -1,8 +1,7 @@
-<!-- Acting parent of content-box and message-box (idk how to actually make it a parent) -->
+<!-- Acting parent of content-box and message-box -->
 <div class="main-column">
     
     <!-- Passing currentRoute from Main Component to Content Box and Message Box component -->
-    <!-- I cannot describe to you how good it feels to reduce 9 booleans to 1 string -->
     <div class="content">
         <app-content-box [currentRoute]="currentRoute">
         </app-content-box>
